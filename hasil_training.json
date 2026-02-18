@@ -1,0 +1,6 @@
+{
+    "akurasi": 0.8,
+    "total_data": 400,
+    "fitur_tfidf": 951,
+    "estimators": 200
+}

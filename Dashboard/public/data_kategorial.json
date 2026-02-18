@@ -1,0 +1,937 @@
+[
+    {
+        "nama": "Farid",
+        "deskripsi": "Ini di samping rumah tiap hari ribut kalo malam",
+        "processed": "samping rumah tiap hari ribut kalo malam",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-27 22:12:12"
+    },
+    {
+        "nama": "Farid",
+        "no_wa": "",
+        "deskripsi": "Ini di samping rumah tiap hari ribut kalo malam",
+        "processed": "samping rumah tiap hari ribut kalo malam",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-27 22:24:47"
+    },
+    {
+        "nama": "farid",
+        "no_wa": "",
+        "deskripsi": "Ini sungai seluang udah meluap banyak orang buang sampah sembarangan karena tidak ada larangan",
+        "processed": "sungai seluang udah luap banyak orang buang sampah sembarang larang",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-27 22:24:53"
+    },
+    {
+        "nama": "Farid",
+        "no_wa": "",
+        "deskripsi": "Ini di samping rumah tiap hari ribut kalo malam",
+        "processed": "samping rumah tiap hari ribut kalo malam",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-27 22:25:12"
+    },
+    {
+        "nama": "farid",
+        "no_wa": "6282254343597",
+        "deskripsi": "tetangga sering mabuk mabuk dan bikin rusuh tiap malam",
+        "processed": "tetangga sering mabuk mabuk bikin rusuh tiap malam",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-27 22:47:35"
+    },
+    {
+        "nama": "farid",
+        "no_wa": "6282254343597",
+        "deskripsi": "anak anak sering tawuran di gang dan membuat takut anak anak",
+        "processed": "anak anak sering tawur gang buat takut anak anak",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-27 22:47:40"
+    },
+    {
+        "nama": "tono",
+        "no_wa": "6282254343597",
+        "deskripsi": "Di daerah dekat pasar kuala sering banget kebanjiran karena banyak orang buang sampah ke sungai",
+        "processed": "daerah dekat pasar kuala sering banget banjir banyak orang buang sampah sungai",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-27 23:34:43"
+    },
+    {
+        "nama": "Karina",
+        "no_wa": "",
+        "deskripsi": "Ada ular besar masuk ke garasi rumah di Teluk Pemedas. Kami takut, min. Tolong segera ditangkap petugas.",
+        "processed": "ular besar masuk garasi rumah teluk pedas takut min segera tangkap tugas",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:03:38"
+    },
+    {
+        "nama": "Lutfi",
+        "no_wa": "",
+        "deskripsi": "Jambret beraksi di Karya Jaya, ngambil tas ibu-ibu. Pelaku lari ke arah gang sepi. Kami mohon patroli rutin sore hari.",
+        "processed": "jambret aksi karya jaya ngambil tas ibu ibu laku lari arah gang sepi mohon patroli rutin sore hari",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:03:51"
+    },
+    {
+        "nama": "Sinta",
+        "no_wa": "",
+        "deskripsi": "Pencurian jemuran terjadi di Selili. Padahal sudah malam. Maling ini nekat banget. Kami butuh keamanan yang siaga.",
+        "processed": "curi jemur jadi lil padahal malam maling nekat banget butuh aman siaga",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:03:59"
+    },
+    {
+        "nama": "Teguh",
+        "no_wa": "",
+        "deskripsi": "Ada anjing liar di Teluk Pemedas yang terlihat sakit dan agresif. Kami khawatir kena rabies. Minta dijemput petugas.",
+        "processed": "anjing liar teluk pedas lihat sakit agresif khawatir kena rabies minta jemput tugas",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:04:05"
+    },
+    {
+        "nama": "Umar",
+        "no_wa": "",
+        "deskripsi": "Pohon rapuh di pinggir jalan Karya Jaya miring, membahayakan pengendara motor yang lewat di bawahnya.",
+        "processed": "pohon rapuh pinggir jalan karya jaya miring bahaya kendara motor lewat bawah",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:04:11"
+    },
+    {
+        "nama": "Vivi",
+        "no_wa": "",
+        "deskripsi": "Di Handil Baru Darat sering ada motor ngebut-ngebutan di jalan komplek. Bikin kaget dan bahaya buat anak-anak.",
+        "processed": "handil baru darat sering motor ngebut ngebut jalan komplek bikin kaget bahaya buat anak anak",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:04:30"
+    },
+    {
+        "nama": "Wawan",
+        "no_wa": "",
+        "deskripsi": "Jalanan di Wonotirto gelap gulita, jadi tempat yang nyaman buat orang mabuk. Warga takut melintas.",
+        "processed": "jalan wonotirto gelap gulita jadi tempat nyaman buat orang mabuk warga takut lintas",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:04:32"
+    },
+    {
+        "nama": "Yani",
+        "no_wa": "",
+        "deskripsi": "Ada upaya pencurian di Muara Sembilang, malingnya masuk lewat atap. Untung gagal. Kami butuh keamanan yang lebih pintar.",
+        "processed": "upaya curi muara sembilang maling masuk lewat atap untung gagal butuh aman lebih pintar",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:04:35"
+    },
+    {
+        "nama": "Zaki",
+        "no_wa": "",
+        "deskripsi": "Ular sanca masuk ke pemukiman di Sungai Seluang. Ini bahaya banget, min. Tolong segera ditangkap.",
+        "processed": "ular sanca masuk mukim sungai seluang bahaya banget min segera tangkap",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:04:39"
+    },
+    {
+        "nama": "Adi Pratama",
+        "no_wa": "",
+        "deskripsi": "Ada upaya pencurian kotak amal masjid di Margomulyo. Pelaku kabur saat diteriaki marbot. Kami butuh CCTV di area itu.",
+        "processed": "upaya curi kotak amal masjid margomulyo laku kabur riak marbot butuh cctv area",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:04:45"
+    },
+    {
+        "nama": "Bella Rosa",
+        "no_wa": "",
+        "deskripsi": "Sekelompok remaja mabuk di pinggir sungai Selili sering membuat onar dan melempar batu ke rumah warga. Kami resah sekali.",
+        "processed": "kelompok remaja mabuk pinggir sungai lil sering buat onar lempar batu rumah warga resah sekali",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:04:50"
+    },
+    {
+        "nama": "Cahyo Nugroho",
+        "no_wa": "",
+        "deskripsi": "Di Teluk Pemedas, lampu PJU mati total. Jalan gelap banget, apalagi malam. Rawan begal yang mengincar motor.",
+        "processed": "teluk pedas lampu pju mati total jalan gelap banget malam rawan begal incar motor",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:04:52"
+    },
+    {
+        "nama": "Dina Merliana",
+        "no_wa": "",
+        "deskripsi": "Saya melihat orang mencurigakan memantau toko emas di Karya Jaya. Diduga komplotan pencuri. Mohon segera patroli ke lokasi.",
+        "processed": "lihat orang curiga pantau toko emas karya jaya duga komplot curi mohon segera patroli lokasi",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:05:06"
+    },
+    {
+        "nama": "Eko Saputra",
+        "no_wa": "",
+        "deskripsi": "Balapan liar di Handil Baru Darat kembali marak malam ini. Suara knalpot memekakkan telinga dan sangat mengganggu istirahat.",
+        "processed": "balap liar handil baru darat marak malam suara knalpot pekak telinga sangat ganggu istirahat",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:05:11"
+    },
+    {
+        "nama": "Fitriani",
+        "no_wa": "",
+        "deskripsi": "Pohon besar di belakang SDN Wonotirto sudah keropos dan miring ke arah sekolah. Bahaya kalau tumbang saat jam pelajaran.",
+        "processed": "pohon besar belakang sdn wonotirto keropos miring arah sekolah bahaya kalau tumbang jam ajar",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:05:16"
+    },
+    {
+        "nama": "Gatot Subroto",
+        "no_wa": "",
+        "deskripsi": "Ada sekelompok pemuda asing di Muara Sembilang, mereka bawa tas ransel besar dan terlihat mondar-mandir tanpa tujuan jelas.",
+        "processed": "kelompok pemuda asing muara sembilang bawa tas ransel besar lihat mondar mandir tuju jelas",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:05:31"
+    },
+    {
+        "nama": "Hadi Wijaya",
+        "no_wa": "",
+        "deskripsi": "Anjing liar di Sungai Seluang sudah sangat agresif, sering mengejar anak-anak yang pulang mengaji. Warga jadi takut.",
+        "processed": "anjing liar sungai seluang sangat agresif sering kejar anak anak pulang aji warga jadi takut",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:05:41"
+    },
+    {
+        "nama": "Indah Permata",
+        "no_wa": "",
+        "deskripsi": "Pencurian helm di parkiran Margomulyo sering terjadi. Kami butuh keamanan yang siaga di area parkir umum.",
+        "processed": "curi helm parkir margomulyo sering jadi butuh aman siaga area parkir umum",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:06:22"
+    },
+    {
+        "nama": "Joko Santoso",
+        "no_wa": "",
+        "deskripsi": "Di Selili, ada orang mabuk teriak-teriak dan mengganggu ibu-ibu yang lagi belanja sayur. Tolong segera dijemput.",
+        "processed": "lil orang mabuk teriak teriak ganggu ibu ibu belanja sayur segera jemput",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:06:26"
+    },
+    {
+        "nama": "Kurniawan",
+        "no_wa": "",
+        "deskripsi": "Ular sanca masuk ke kolong mobil warga di Teluk Pemedas. Kami takut, min. Minta bantuan penanganan hewan.",
+        "processed": "ular sanca masuk kolong mobil warga teluk pedas takut min minta bantu tangan hewan",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:06:27"
+    },
+    {
+        "nama": "Lia Aprilia",
+        "no_wa": "",
+        "deskripsi": "Ada copet beraksi di Karya Jaya, mengambil HP dari saku celana. Pelaku lari ke jalan tikus. Daerah ini rawan di siang hari.",
+        "processed": "copet aksi karya jaya ambil hp saku celana laku lari jalan tikus daerah rawan siang hari",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:06:27"
+    },
+    {
+        "nama": "Maman Sudiro",
+        "no_wa": "",
+        "deskripsi": "Lampu PJU di sepanjang Handil Baru Darat mati semua. Gelap gulita, saya hampir jatuh dari motor karena lubang jalan tidak terlihat.",
+        "processed": "lampu pju panjang handil baru darat mati semua gelap gulita hampir jatuh motor lubang jalan lihat",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:06:27"
+    },
+    {
+        "nama": "Nita Sari",
+        "no_wa": "",
+        "deskripsi": "Pagar sekolah Wonotirto jebol, membuat sekolah rawan dimasuki maling. Kami butuh perbaikan segera.",
+        "processed": "pagar sekolah wonotirto jebol buat sekolah rawan masuk maling butuh baik segera",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:06:28"
+    },
+    {
+        "nama": "Oscar",
+        "no_wa": "",
+        "deskripsi": "Tadi malam, ada suara ribut besar di Muara Sembilang, diduga tawuran antar pemuda. Warga tidak berani keluar.",
+        "processed": "tadi malam suara ribut besar muara sembilang duga tawur antar pemuda warga berani keluar",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:06:46"
+    },
+    {
+        "nama": "Putra",
+        "no_wa": "",
+        "deskripsi": "Balapan liar di jalan pintas Sungai Seluang sering terjadi, min. Bikin kaget dan rawan kecelakaan. Mohon ditindak.",
+        "processed": "balap liar jalan pintas sungai seluang sering jadi min bikin kaget rawan celaka mohon tindak",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:06:48"
+    },
+    {
+        "nama": "Rina",
+        "no_wa": "",
+        "deskripsi": "Di Margomulyo sering ada orang asing masuk gang dan menawarkan barang dengan paksa. Kami khawatir mereka adalah penipu.",
+        "processed": "margomulyo sering orang asing masuk gang tawar barang paksa khawatir tipu",
+        "kategori_prediksi": "PELAYANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:06:49"
+    },
+    {
+        "nama": "Surya",
+        "no_wa": "",
+        "deskripsi": "Pencurian motor terjadi di Selili. Pelaku lari ke arah kebun. Warga sudah sangat resah dengan kasus pencurian motor yang marak.",
+        "processed": "curi motor jadi lil laku lari arah kebun warga sangat resah kasus curi motor marak",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:06:50"
+    },
+    {
+        "nama": "Teguh",
+        "no_wa": "",
+        "deskripsi": "Ada anjing liar di Teluk Pemedas yang terlihat sakit parah. Kami takut menularkan penyakit. Minta bantuan kesehatan hewan.",
+        "processed": "anjing liar teluk pedas lihat sakit parah takut tular sakit minta bantu sehat hewan",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:06:51"
+    },
+    {
+        "nama": "Uli",
+        "no_wa": "",
+        "deskripsi": "Pohon di pinggir jalan Karya Jaya sudah sangat rapuh, cabangnya bisa sewaktu-waktu jatuh. Mohon dipangkas sebelum ada korban.",
+        "processed": "pohon pinggir jalan karya jaya sangat rapuh cabang waktu waktu jatuh mohon pangkas korban",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:06:52"
+    },
+    {
+        "nama": "Pak Roni",
+        "no_wa": "",
+        "deskripsi": "Lampu PJU di dekat pos ronda Margomulyo sudah mati 3 hari. Tolong diperbaiki, karena malam hari jadi tempat nongkrong yang mencurigakan.",
+        "processed": "lampu pju dekat pos ronda margomulyo mati 3 hari baik malam hari jadi tempat nongkrong curiga",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:06:52"
+    },
+    {
+        "nama": "Bu Titi",
+        "no_wa": "",
+        "deskripsi": "Sekelompok remaja mabuk di Selili sering mengganggu ketenangan, mereka menyalakan petasan dan teriak-teriak.",
+        "processed": "kelompok remaja mabuk lil sering ganggu tenang nyala petas teriak teriak",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:06:53"
+    },
+    {
+        "nama": "Wawan",
+        "no_wa": "",
+        "deskripsi": "Ada ular kobra masuk ke pekarangan rumah warga di Teluk Pemedas. Kami butuh bantuan penangkap ular secepatnya.",
+        "processed": "ular kobra masuk pekarang rumah warga teluk pedas butuh bantu tangkap ular cepat",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:06:53"
+    },
+    {
+        "nama": "Xenia",
+        "no_wa": "",
+        "deskripsi": "Jambret beraksi di Karya Jaya. Korban adalah mahasiswi yang sedang berjalan kaki. Kami butuh patroli polisi di jam rawan.",
+        "processed": "jambret aksi karya jaya korban mahasiswi sedang jalan kaki butuh patroli polisi jam rawan",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:34"
+    },
+    {
+        "nama": "Yuda",
+        "no_wa": "",
+        "deskripsi": "Balapan liar di Handil Baru Darat ini sudah keterlaluan. Motornya sangat bising, mengganggu warga yang sakit.",
+        "processed": "balap liar handil baru darat terlalu motor sangat bising ganggu warga sakit",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:35"
+    },
+    {
+        "nama": "Zaki",
+        "no_wa": "",
+        "deskripsi": "Pohon besar di Wonotirto sudah miring, akarnya mulai terangkat. Rawan tumbang menimpa atap rumah warga.",
+        "processed": "pohon besar wonotirto miring akar mulai angkat rawan tumbang timpa atap rumah warga",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:36"
+    },
+    {
+        "nama": "Alia",
+        "no_wa": "",
+        "deskripsi": "Ada orang asing mencurigakan menawarkan pinjaman online ilegal di Muara Sembilang, sambil memaksa warga.",
+        "processed": "orang asing curiga tawar pinjam online ilegal muara sembilang paksa warga",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:37"
+    },
+    {
+        "nama": "Bima",
+        "no_wa": "",
+        "deskripsi": "Anjing liar di Sungai Seluang menyerang hewan peliharaan warga. Kami khawatir keselamatannya terancam.",
+        "processed": "anjing liar sungai seluang serang hewan pelihara warga khawatir selamat ancam",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:38"
+    },
+    {
+        "nama": "Zaki A.",
+        "no_wa": "",
+        "deskripsi": "Jalan di Selili berlubang dan ditambal dengan batu kerikil yang tidak rata. Bikin ban motor cepat rusak.",
+        "processed": "jalan lil lubang tambal batu kerikil rata bikin ban motor cepat rusak",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:38"
+    },
+    {
+        "nama": "Andi B.",
+        "no_wa": "",
+        "deskripsi": "Pagar pembatas jembatan di Teluk Pemedas sudah keropos. Anak-anak sering main di situ. Sangat bahaya kalau jatuh.",
+        "processed": "pagar batas jembatan teluk pedas keropos anak anak sering main situ sangat bahaya kalau jatuh",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:39"
+    },
+    {
+        "nama": "Bima C.",
+        "no_wa": "",
+        "deskripsi": "Tiang PJU di Karya Jaya sering mengeluarkan api kecil saat hujan. Kami takut ada kebakaran. Mohon segera dicek dan diperbaiki.",
+        "processed": "tiang pju karya jaya sering keluar api kecil hujan takut bakar mohon segera cek baik",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:40"
+    },
+    {
+        "nama": "Citra D.",
+        "no_wa": "",
+        "deskripsi": "Jalan masuk ke perumahan Margomulyo sudah tidak ada aspalnya, hanya bebatuan. Sangat susah dilewati mobil.",
+        "processed": "jalan masuk rumah margomulyo aspal bebatuan sangat susah lewat mobil",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:41"
+    },
+    {
+        "nama": "Dani E.",
+        "no_wa": "",
+        "deskripsi": "Saluran irigasi di Selili dipenuhi lumpur tebal. Kalau hujan, airnya meluap ke rumah warga. Minta segera dikeruk.",
+        "processed": "salur irigasi lil penuh lumpur tebal kalau hujan air luap rumah warga minta segera keruk",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:42"
+    },
+    {
+        "nama": "Eka F.",
+        "no_wa": "",
+        "deskripsi": "Pagar beton di tepi sungai Teluk Pemedas sudah retak-retak parah. Khawatir roboh dan menyebabkan longsor di bantaran sungai.",
+        "processed": "pagar beton tepi sungai teluk pedas retak retak parah khawatir roboh sebab longsor bantaran sungai",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:42"
+    },
+    {
+        "nama": "Fajar G.",
+        "no_wa": "",
+        "deskripsi": "Jalan di Karya Jaya sudah ambles separuh. Truk pengangkut sering lewat, takut ambles total dan memutus akses.",
+        "processed": "jalan karya jaya ambles paruh truk angkut sering lewat takut ambles total putus akses",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:43"
+    },
+    {
+        "nama": "Gita H.",
+        "no_wa": "",
+        "deskripsi": "Air PDAM di Handil Baru Darat alirannya sangat kecil. Kami susah menampung air. Mohon dicek tekanan pipanya.",
+        "processed": "air pdam handil baru darat alir sangat kecil susah tampung air mohon cek tekan pipa",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:44"
+    },
+    {
+        "nama": "Hadi I.",
+        "no_wa": "",
+        "deskripsi": "Lampu PJU di dekat jembatan Wonotirto mati sudah lebih dari 10 hari. Gelap sekali dan sangat rawan begal.",
+        "processed": "lampu pju dekat jembatan wonotirto mati lebih 10 hari gelap sekali sangat rawan begal",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:44"
+    },
+    {
+        "nama": "Irma J.",
+        "no_wa": "",
+        "deskripsi": "Dermaga kayu di Muara Sembilang sudah banyak yang keropos. Kami takut kalau ada perahu sandar, dermaganya ambruk.",
+        "processed": "dermaga kayu muara sembilang banyak keropos takut kalau perahu sandar dermaga ambruk",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:45"
+    },
+    {
+        "nama": "Joko K.",
+        "no_wa": "",
+        "deskripsi": "Pipa air kotor di Sungai Seluang bocor di pinggir jalan. Kotoran meluber ke jalan dan bau busuknya menyengat.",
+        "processed": "pipa air kotor sungai seluang bocor pinggir jalan kotor luber jalan bau busuk sengat",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:45"
+    },
+    {
+        "nama": "Karina L.",
+        "no_wa": "",
+        "deskripsi": "Jalanan di Margomulyo penuh tambalan yang tidak rata. Kalau motor lewat, seperti naik ombak. Mohon diaspal ulang.",
+        "processed": "jalan margomulyo penuh tambal rata kalau motor lewat naik ombak mohon aspal ulang",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:46"
+    },
+    {
+        "nama": "Lutfi M.",
+        "no_wa": "",
+        "deskripsi": "Penutup gorong-gorong di Selili pecah. Lubangnya menganga dan sering ada motor yang terperosok di malam hari.",
+        "processed": "tutup gorong gorong lil pecah lubang nganga sering motor perosok malam hari",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:46"
+    },
+    {
+        "nama": "Maman N.",
+        "no_wa": "",
+        "deskripsi": "Tiang telepon di Teluk Pemedas sudah hampir roboh. Kabelnya menyentuh atap rumah warga. Bahaya kebakaran.",
+        "processed": "tiang telepon teluk pedas hampir roboh kabel sentuh atap rumah warga bahaya bakar",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:47"
+    },
+    {
+        "nama": "Nadia O.",
+        "no_wa": "",
+        "deskripsi": "Jalan di Karya Jaya ada retakan lebar sekali. Kalau hujan, airnya masuk ke retakan dan mengikis pondasi jalan.",
+        "processed": "jalan karya jaya reta lebar sekali kalau hujan air masuk reta kikis pondasi jalan",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:47"
+    },
+    {
+        "nama": "Oscar P.",
+        "no_wa": "",
+        "deskripsi": "Pagar sekolah di Handil Baru Darat sudah keropos dan rubuh. Sekolah jadi tidak aman karena mudah dimasuki orang luar.",
+        "processed": "pagar sekolah handil baru darat keropos rubuh sekolah jadi aman mudah masuk orang luar",
+        "kategori_prediksi": "KEAMANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:48"
+    },
+    {
+        "nama": "Putri Q.",
+        "no_wa": "",
+        "deskripsi": "Area parkir umum di Wonotirto gelap gulita. Lampu PJU-nya mati semua dan tidak kunjung diperbaiki.",
+        "processed": "area parkir umum wonotirto gelap gulita lampu pju nya mati semua kunjung baik",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:48"
+    },
+    {
+        "nama": "Rizky R.",
+        "no_wa": "",
+        "deskripsi": "Tangga menuju pelabuhan Muara Sembilang sudah rusak parah. Besinya berkarat dan anak tangganya banyak yang hilang.",
+        "processed": "tangga tuju labuh muara sembilang rusak parah besi karat anak tangga banyak hilang",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:49"
+    },
+    {
+        "nama": "Siska S.",
+        "no_wa": "",
+        "deskripsi": "Jalan di Sungai Seluang sudah ditutupi lumpur tebal dari luapan got. Motor sering tergelincir di sana.",
+        "processed": "jalan sungai seluang tutup lumpur tebal luap got motor sering gelincir sana",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:49"
+    },
+    {
+        "nama": "Teguh T.",
+        "no_wa": "",
+        "deskripsi": "Jalan Margomulyo yang menuju ke kebun sudah putus karena banjir. Warga tidak bisa akses kebun mereka.",
+        "processed": "jalan margomulyo tuju kebun putus banjir warga akses kebun",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:50"
+    },
+    {
+        "nama": "Umar U.",
+        "no_wa": "",
+        "deskripsi": "Got di Selili sudah dangkal dan penuh sampah. Setiap hujan deras pasti banjir sampai selutut.",
+        "processed": "got lil dangkal penuh sampah hujan deras banjir lutut",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:50"
+    },
+    {
+        "nama": "Vina V.",
+        "no_wa": "",
+        "deskripsi": "Perempatan jalan di Teluk Pemedas rambu lalu lintasnya tidak berfungsi. Macet parah setiap jam sibuk.",
+        "processed": "empat jalan teluk pedas rambu lalu lintas fungsi macet parah jam sibuk",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:51"
+    },
+    {
+        "nama": "Wawan W.",
+        "no_wa": "",
+        "deskripsi": "Jalan di Karya Jaya sudah banyak yang pecah dan berlubang. Pengendara motor sering jatuh karena kaget.",
+        "processed": "jalan karya jaya banyak pecah lubang kendara motor sering jatuh kaget",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:51"
+    },
+    {
+        "nama": "Yuni Z.",
+        "no_wa": "",
+        "deskripsi": "Gorong-gorong di depan rumah saya di Margomulyo bocor dan mengeluarkan bau tidak sedap. Minta segera ditangani.",
+        "processed": "gorong gorong depan rumah margomulyo bocor keluar bau sedap minta segera tangan",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:07:51"
+    },
+    {
+        "nama": "Zahra A.",
+        "no_wa": "",
+        "deskripsi": "Tiang PJU di Selili sudah miring dan hampir menimpa warung warga. Minta tolong segera diikat atau diganti.",
+        "processed": "tiang pju lil miring hampir timpa warung warga minta segera ikat ganti",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:06"
+    },
+    {
+        "nama": "Aldi B.",
+        "no_wa": "",
+        "deskripsi": "Jalan Teluk Pemedas yang baru diaspal sudah retak-retak lagi. Kualitas pengerjaannya sepertinya kurang bagus, min.",
+        "processed": "jalan teluk pedas baru aspal retak retak kualitas kerja seperti kurang bagus min",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:08"
+    },
+    {
+        "nama": "Bima C.",
+        "no_wa": "",
+        "deskripsi": "Jembatan penyeberangan di Karya Jaya sudah berkarat di mana-mana. Terlihat tidak aman kalau dilewati saat hujan.",
+        "processed": "jembatan seberang karya jaya karat mana mana lihat aman kalau lewat hujan",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:09"
+    },
+    {
+        "nama": "Joko M.",
+        "no_wa": "",
+        "deskripsi": "Pengurusan sertifikat tanah di Muara Sembilang terlalu lama. Katanya perlu 'dana percepatan' agar bisa cepat keluar.",
+        "processed": "urus sertifikat tanah muara sembilang terlalu lama kata perlu dana cepat cepat keluar",
+        "kategori_prediksi": "PELAYANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:10"
+    },
+    {
+        "nama": "Karina N.",
+        "no_wa": "",
+        "deskripsi": "Nomor layanan pengaduan PDAM Sungai Seluang tidak pernah aktif. Kami tidak bisa lapor air di rumah kotor.",
+        "processed": "nomor layan adu pdam sungai seluang pernah aktif lapor air rumah kotor",
+        "kategori_prediksi": "PELAYANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:11"
+    },
+    {
+        "nama": "Lutfi O.",
+        "no_wa": "",
+        "deskripsi": "Petugas di loket pengurusan surat Margomulyo sering menyuruh bolak-balik karena berkas yang diminta selalu berubah.",
+        "processed": "tugas loket urus surat margomulyo sering suruh bolak balik berkas minta selalu ubah",
+        "kategori_prediksi": "PELAYANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:12"
+    },
+    {
+        "nama": "Maya P.",
+        "no_wa": "",
+        "deskripsi": "Ada preman yang memalak biaya parkir di Selili. Mereka bukan petugas resmi tapi memaksa minta uang.",
+        "processed": "preman malak biaya parkir lil bukan tugas resmi paksa minta uang",
+        "kategori_prediksi": "PELAYANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:12"
+    },
+    {
+        "nama": "Nadia Q.",
+        "no_wa": "",
+        "deskripsi": "Obat untuk pasien BPJS di Puskesmas Teluk Pemedas sering dibilang habis, padahal pasien lain yang bayar dikasih.",
+        "processed": "obat pasien bpjs puskesmas teluk pedas sering bilang habis padahal pasien bayar kasih",
+        "kategori_prediksi": "PELAYANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:13"
+    },
+    {
+        "nama": "Oscar R.",
+        "no_wa": "",
+        "deskripsi": "Papan prosedur pelayanan di kantor Karya Jaya sudah buram dan sulit dibaca. Kami tidak tahu alur pengurusan.",
+        "processed": "papan prosedur layan kantor karya jaya buram sulit baca tahu alur urus",
+        "kategori_prediksi": "PELAYANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:14"
+    },
+    {
+        "nama": "Putri S.",
+        "no_wa": "",
+        "deskripsi": "Bus kota di Handil Baru Darat sering ngebut dan ugal-ugalan. Kami takut terjadi kecelakaan.",
+        "processed": "bus kota handil baru darat sering ngebut ugal ugalan takut jadi celaka",
+        "kategori_prediksi": "PELAYANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:15"
+    },
+    {
+        "nama": "Rizky T.",
+        "no_wa": "",
+        "deskripsi": "Lampu penerangan di taman Wonotirto mati total. Kalau malam jadi tempat nongkrong yang rawan tindak kriminal.",
+        "processed": "lampu terang taman wonotirto mati total kalau malam jadi tempat nongkrong rawan tindak kriminal",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:16"
+    },
+    {
+        "nama": "Siska U.",
+        "no_wa": "",
+        "deskripsi": "Petugas di kantor layanan publik Muara Sembilang sering meninggalkan meja saat jam kerja. Kami harus menunggu lama.",
+        "processed": "tugas kantor layan publik muara sembilang sering tinggal meja jam kerja tunggu lama",
+        "kategori_prediksi": "PELAYANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:17"
+    },
+    {
+        "nama": "Teguh V.",
+        "no_wa": "",
+        "deskripsi": "Mobil tangki air bersih Sungai Seluang datangnya tidak sesuai jadwal yang dijanjikan. Warga jadi kehabisan air.",
+        "processed": "mobil tangki air bersih sungai seluang datang sesuai jadwal janji warga jadi habis air",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:17"
+    },
+    {
+        "nama": "Umar W.",
+        "no_wa": "",
+        "deskripsi": "Layanan cetak akta kelahiran di Margomulyo sangat lambat. Sudah 4 bulan belum ada kejelasan.",
+        "processed": "layan cetak akta lahir margomulyo sangat lambat 4 bulan jelas",
+        "kategori_prediksi": "PELAYANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:18"
+    },
+    {
+        "nama": "Vina X.",
+        "no_wa": "",
+        "deskripsi": "Ada pungutan liar saat mengurus surat nikah di Selili. Diminta biaya yang tidak ada dasar hukumnya.",
+        "processed": "pungut liar urus surat nikah lil minta biaya dasar hukum",
+        "kategori_prediksi": "PELAYANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:19"
+    },
+    {
+        "nama": "Wawan Y.",
+        "no_wa": "",
+        "deskripsi": "Dokter di Puskesmas Teluk Pemedas sering datang terlambat. Kami harus menunggu sampai satu jam lebih.",
+        "processed": "dokter puskesmas teluk pedas sering datang lambat tunggu satu jam lebih",
+        "kategori_prediksi": "PELAYANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:20"
+    },
+    {
+        "nama": "Xena Z.",
+        "no_wa": "",
+        "deskripsi": "Fasilitas parkir motor di kantor Karya Jaya sering kelebihan kapasitas. Motor sering parkir di luar mengganggu jalan.",
+        "processed": "fasilitas parkir motor kantor karya jaya sering lebih kapasitas motor sering parkir luar ganggu jalan",
+        "kategori_prediksi": "PELAYANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:20"
+    },
+    {
+        "nama": "Yani A.",
+        "no_wa": "",
+        "deskripsi": "Staf kelurahan Margomulyo sering sibuk dengan urusan pribadi (main HP, ngobrol) saat warga antri dilayani.",
+        "processed": "staf lurah margomulyo sering sibuk urus pribadi main hp ngobrol warga antri layan",
+        "kategori_prediksi": "PELAYANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:21"
+    },
+    {
+        "nama": "Zaki B.",
+        "no_wa": "",
+        "deskripsi": "Toilet umum di terminal Selili tidak ada airnya. Sangat kotor dan tidak layak digunakan.",
+        "processed": "toilet umum terminal lil air sangat kotor layak guna",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:22"
+    },
+    {
+        "nama": "Andi C.",
+        "no_wa": "",
+        "deskripsi": "Layanan ambulans di Teluk Pemedas sering menolak pasien dengan alasan ambulans sedang dicuci. Ini masalah darurat, min!",
+        "processed": "layan ambulans teluk pedas sering tolak pasien alas ambulans sedang cuci masalah darurat min",
+        "kategori_prediksi": "PELAYANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:22"
+    },
+    {
+        "nama": "Bima D.",
+        "no_wa": "",
+        "deskripsi": "Petugas kebersihan di Karya Jaya hanya membersihkan jalan utama. Gang-gang kecil di perumahan dibiarkan kotor.",
+        "processed": "tugas bersih karya jaya bersih jalan utama gang gang kecil rumah biar kotor",
+        "kategori_prediksi": "PELAYANAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:23"
+    },
+    {
+        "nama": "Joko N.",
+        "no_wa": "",
+        "deskripsi": "Warga di Selili sering membuang kasur bekas dan perabotan rusak ke sungai kecil. Memicu banjir bandang.",
+        "processed": "warga lil sering buang kasur bekas perabot rusak sungai kecil picu banjir bandang",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:24"
+    },
+    {
+        "nama": "Karina O.",
+        "no_wa": "",
+        "deskripsi": "Polusi suara dari tempat karaoke di Teluk Pemedas sangat bising. Kami tidak bisa tidur sampai dini hari.",
+        "processed": "polusi suara tempat karaoke teluk pedas sangat bising tidur dini hari",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:24"
+    },
+    {
+        "nama": "Lutfi P.",
+        "no_wa": "",
+        "deskripsi": "Area hijau di Karya Jaya dipenuhi puing-puing bangunan. Terlihat kotor dan tidak terawat sama sekali.",
+        "processed": "area hijau karya jaya penuh puing puing bangun lihat kotor awat sama sekali",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:25"
+    },
+    {
+        "nama": "Maya Q.",
+        "no_wa": "",
+        "deskripsi": "Banyak anjing liar berkeliaran di Handil Baru Darat karena sering diberi makan sisa sampah di pinggir jalan.",
+        "processed": "banyak anjing liar liar handil baru darat sering beri makan sisa sampah pinggir jalan",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:25"
+    },
+    {
+        "nama": "Nadia R.",
+        "no_wa": "",
+        "deskripsi": "Penerangan di taman Wonotirto banyak yang rusak. Kalau malam, taman jadi gelap gulita dan rawan kejahatan.",
+        "processed": "terang taman wonotirto banyak rusak kalau malam taman jadi gelap gulita rawan jahat",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:26"
+    },
+    {
+        "nama": "Oscar S.",
+        "no_wa": "",
+        "deskripsi": "Ada penangkapan ikan menggunakan racun (potassium) di perairan Muara Sembilang. Merusak terumbu karang dan biota laut.",
+        "processed": "tangkap ikan guna racun potassium air muara sembilang rusak terumbu karang biota laut",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:27"
+    },
+    {
+        "nama": "Putri T.",
+        "no_wa": "",
+        "deskripsi": "Limbah sisa rumah tangga sering dibuang ke Sungai Seluang. Air sungai jadi kotor dan tidak bisa dipakai mandi.",
+        "processed": "limbah sisa rumah tangga sering buang sungai seluang air sungai jadi kotor pakai mandi",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:27"
+    },
+    {
+        "nama": "Rizky U.",
+        "no_wa": "",
+        "deskripsi": "Pohon di dekat tiang listrik Margomulyo sudah sangat rimbun. Rantingnya sering bergesekan dengan kabel. Bahaya konslet.",
+        "processed": "pohon dekat tiang listrik margomulyo sangat rimbun ranting sering gesek kabel bahaya konslet",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:28"
+    },
+    {
+        "nama": "Siska V.",
+        "no_wa": "",
+        "deskripsi": "Ada tumpukan sampah liar di lahan kosong Selili. Sudah menumpuk tinggi dan baunya menyebar ke perumahan.",
+        "processed": "tumpu sampah liar lahan kosong lil tumpuk tinggi bau sebar rumah",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:29"
+    },
+    {
+        "nama": "Teguh W.",
+        "no_wa": "",
+        "deskripsi": "Pembakaran sampah oleh warga di Teluk Pemedas sangat sering. Asapnya membuat mata perih dan sesak napas.",
+        "processed": "bakar sampah warga teluk pedas sangat sering asap buat mata perih sesak napas",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:29"
+    },
+    {
+        "nama": "Umar X.",
+        "no_wa": "",
+        "deskripsi": "Tanaman di median jalan Karya Jaya banyak yang mati kekeringan. Tidak ada petugas yang menyiram tanaman.",
+        "processed": "tanam median jalan karya jaya banyak mati kering tugas siram tanam",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:30"
+    },
+    {
+        "nama": "Vina Y.",
+        "no_wa": "",
+        "deskripsi": "Saluran air di Margomulyo penuh sampah dan lumut tebal. Airnya tidak mengalir lancar dan bau busuk.",
+        "processed": "salur air margomulyo penuh sampah lumut tebal air alir lancar bau busuk",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:31"
+    },
+    {
+        "nama": "Wawan Z.",
+        "no_wa": "",
+        "deskripsi": "Sampah plastik di Selili berserakan di jalan. Tidak ada bak sampah yang memadai di area itu.",
+        "processed": "sampah plastik lil sera jalan bak sampah pada area",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:32"
+    },
+    {
+        "nama": "Xena A.",
+        "no_wa": "",
+        "deskripsi": "Ada pembukaan lahan baru di Teluk Pemedas dengan cara dibakar. Asapnya sangat mengganggu perumahan kami.",
+        "processed": "buka lahan baru teluk pedas cara bakar asap sangat ganggu rumah",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:32"
+    },
+    {
+        "nama": "Yani B.",
+        "no_wa": "",
+        "deskripsi": "Pohon di dekat perempatan Karya Jaya sudah terlalu tinggi dan menghalangi pandangan. Bahaya kalau ada rambu lalu lintas tertutup.",
+        "processed": "pohon dekat empat karya jaya terlalu tinggi halang pandang bahaya kalau rambu lalu lintas tutup",
+        "kategori_prediksi": "LINGKUNGAN",
+        "akurasi_model": 0.8,
+        "timestamp": "2025-11-28 00:08:33"
+    }
+]
