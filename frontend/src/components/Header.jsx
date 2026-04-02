@@ -25,7 +25,7 @@ export default function Header() {
               <p className="text-sm text-gray-900">Admin Samboja</p>
               <p className="text-xs text-gray-500">Administrator</p>
             </div>
-            <div className="w-10 h-10 bg-gradient-to-br from-[#2E7D32] to-[#4CAF50] rounded-xl flex items-center justify-center shadow-md">
+            <div className="w-10 h-10 bg-linear-to-br from-[#2E7D32] to-[#4CAF50] rounded-xl flex items-center justify-center shadow-md">
               <User className="w-5 h-5 text-white" />
             </div>
           </div>
