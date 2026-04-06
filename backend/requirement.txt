@@ -1,0 +1,11 @@
+# Buat file requirements.txt yang BENAR
+@"
+pandas==2.1.4
+scikit-learn==1.3.2
+numpy==1.24.3
+Sastrawi==1.4.2
+fastapi==0.104.1
+uvicorn==0.24.0
+python-multipart==0.0.6
+joblib==1.3.2
+"@ | Out-File -FilePath "backend/requirements.txt" -Encoding utf8
