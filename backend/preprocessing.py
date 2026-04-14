@@ -1,81 +1,54 @@
-# backend/preprocessing.py
-import json
-import re
-import pandas as pd
-from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
-from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
-
-# Inisialisasi Sastrawi
-factory = StemmerFactory()
-stemmer = factory.create_stemmer()
-
-stop_factory = StopWordRemoverFactory()
-stopwords = stop_factory.get_stop_words()
-
-# Kamus Normalisasi
-norm_dict = {
-    "gk": "tidak",
-    "rt": "rukun tetangga",
-    "rw": "rukun warga",
-    "jl": "jalan",
-    "yg": "yang",
-    "tdk": "tidak",
-    "ga": "tidak"
-}
-
-def preprocess(text):
-    # 1. Cleaning
-    text = re.sub(r"http\S+|www\S+|https\S+", "", text, flags=re.MULTILINE)
-    text = re.sub(r"[^a-zA-Z\s]", " ", text)
-    
-    # 2. Case Folding
-    text = text.lower()
-    
-    # 3. Tokenizing & Normalisasi
-    tokens = text.split()
-    tokens = [norm_dict.get(w, w) for w in tokens]
-    
-    # 4. Stopword Removal
-    tokens = [w for w in tokens if w not in stopwords]
-    
-    # 5. Stemming
-    tokens = [stemmer.stem(w) for w in tokens]
-    
-    return " ".join(tokens)
-
 def run_preprocessing():
-    input_file = "data/backup_pengaduan.json"
-    output_file = "data/data_preprocessed.json"
-    
+    # Menentukan direktori dasar proyek
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+    input_file = os.path.join(BASE_DIR, "data", "backup_pengaduan.json")
+    output_file = os.path.join(BASE_DIR, "data", "data_preprocessed.json")
+
     print("🚀 === TAHAP 1: PREPROCESSING ===")
-    
-    # Load data backup
+
     try:
         with open(input_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
-        print(f"✅ Data input dimuat: {len(data)} pengaduan")
-    except FileNotFoundError:
-        print(f"❌ File {input_file} tidak ditemukan!")
-        return
-    
-    # Preprocessing
-    processed_data = []
-    for item in data:
-        cleaned_text = preprocess(item.get('text', ''))
-        processed_item = item.copy()
-        processed_item['text_cleaned'] = cleaned_text
-        processed_data.append(processed_item)
-    
-    # Simpan hasil preprocessing
-    df = pd.DataFrame(processed_data)
-    df.to_json(output_file, orient="records", indent=2)
-    
-    print(f"✅ Preprocessing selesai!")
-    print(f"📊 Data sebelum: {len(data)} records")
-    print(f"📊 Data setelah: {len(processed_data)} records")
-    print(f"💾 Disimpan di: {output_file}")
-    
-    return processed_data
 
-if __name__ == "__main__":
-    run_preprocessing()
+        if isinstance(data, dict):
+            data = [data]
+
+        print(f"✅ Data input dimuat: {len(data)} pengaduan")
+
+    except Exception as e:
+        print(f"❌ Gagal membaca file: {e}")
+        return
+
+    processed_data = []
+
+    for index, item in enumerate(data):
+        # MENGAMBIL DATA: Pastikan key sesuai dengan JSON (deskripsi & Kategori)
+        original_text = item.get("deskripsi", "")
+         # Menggunakan K-kapital sesuai input
+
+        print(f"[{index+1}] Memproses pengaduan dari: {item.get('nama')}")
+        
+        # PROSES PREPROCESSING
+        cleaned_text = preprocess_text(original_text)
+        
+        print(f"    - Teks Asli: {original_text[:50]}...")
+        print(f"    - Teks Hasil: {cleaned_text}")
+
+        processed_item = {
+            "nama": item.get("nama", ""),
+            "no_wa": item.get("no_wa", ""),
+            "deskripsi_asli": original_text,
+            "text_cleaned": cleaned_text,
+            "kategori_label": category,
+            "processing_time": datetime.now().isoformat()
+        }
+
+        processed_data.append(processed_item)
+
+    # Simpan Hasil
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
+    with open(output_file, 'w', encoding='utf-8') as f:
+        json.dump(processed_data, f, indent=2, ensure_ascii=False)
+
+    print(f"\n✅ Selesai! {len(processed_data)} data disimpan di: {output_file}")
