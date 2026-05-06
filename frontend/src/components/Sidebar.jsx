@@ -1,11 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { LayoutDashboard, FileText, BarChart3, Download, Settings, LogOut, Users } from 'lucide-react';
 
-interface SidebarProps {
-  onLogout: () => void;
-}
-
-export default function Sidebar({ onLogout }: SidebarProps) {
+export default function Sidebar({ onLogout }) {
   const location = useLocation();
 
   const menuItems = [

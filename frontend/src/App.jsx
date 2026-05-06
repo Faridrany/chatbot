@@ -5,6 +5,9 @@ import QRCode from './components/QRCode';
 import Dashboard from './components/Dashboard';
 import DataPengaduan from './components/DataPengaduan';
 import DetailPengaduan from './components/DetailPengaduan';
+import Statistik from './components/Statistik';
+import ExportData from './components/ExportData';
+import Pengaturan from './components/Pengaturan';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -73,6 +76,36 @@ function App() {
           element={
             isAuthenticated && qrConnected ? (
               <DetailPengaduan onLogout={handleLogout} />
+            ) : (
+              <Navigate to="/login" replace />
+            )
+          } 
+        />
+        <Route 
+          path="/statistik" 
+          element={
+            isAuthenticated && qrConnected ? (
+              <Statistik onLogout={handleLogout} />
+            ) : (
+              <Navigate to="/login" replace />
+            )
+          } 
+        />
+        <Route 
+          path="/export" 
+          element={
+            isAuthenticated && qrConnected ? (
+              <ExportData onLogout={handleLogout} />
+            ) : (
+              <Navigate to="/login" replace />
+            )
+          } 
+        />
+        <Route 
+          path="/pengaturan" 
+          element={
+            isAuthenticated && qrConnected ? (
+              <Pengaturan onLogout={handleLogout} />
             ) : (
               <Navigate to="/login" replace />
             )

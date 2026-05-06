@@ -112,7 +112,7 @@ export default function DataPengaduan({ onLogout }) {
                     </td>
 
                     <td className="p-3">
-                      <Button onClick={() => navigate(`/detail/${index}`)}>
+                      <Button onClick={() => navigate(`/detail-pengaduan/${startIndex + index}`)}>
                         <Eye className="w-4 h-4 mr-2" />
                         Detail
                       </Button>
