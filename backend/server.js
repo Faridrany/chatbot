@@ -7,12 +7,12 @@ const app = express();
 const PORT = 3001;
 
 app.use(cors({
-  origin: "http://localhost:3000",  // Vite port
+  origin: ["http://localhost:3000", "http://localhost:5173"],
   credentials: true
 }));
 app.use(express.json());
 
-const DATA_FILE = path.join(__dirname, "../data/data_kategorial.json");
+const DATA_FILE = path.join(__dirname, "../data/processed/final_processed.json");
 
 // 🟢 QR CODE (placeholder — integrasikan dengan whatsapp-web.js jika diperlukan)
 app.get("/qr", (req, res) => {
@@ -111,26 +111,42 @@ app.get("/api/pengaduan/:id/processed", async (req, res) => {
 
     if (!item) return res.status(404).json({ error: "Data tidak ditemukan" });
 
-    // Coba cocokkan dengan file processed berdasarkan deskripsi
     const processedDir = path.join(__dirname, "../data/processed");
-    const files = ["casefolded.json", "cleaned.json", "normalized.json", "tokenized.json", "stop_removed.json", "stemmed.json", "final_processed.json"];
+
+    // Setiap file pipeline: { filename, key hasil }
+    const pipelineFiles = [
+      { file: "casefolded.json",   key: "casefolded"   },
+      { file: "cleaned.json",      key: "cleaned"      },
+      { file: "normalized.json",   key: "normalized"   },
+      { file: "tokenized.json",    key: "tokenized"    },
+      { file: "stop_removed.json", key: "stop_removed" },
+      { file: "stemmed.json",      key: "stemmed"      },
+    ];
 
     const pipeline = {};
-    for (const file of files) {
+
+    for (const { file, key } of pipelineFiles) {
       try {
-        const raw = await fs.readFile(path.join(processedDir, file), "utf-8");
-        const arr = JSON.parse(raw);
-        const match = arr.find((d) => d.deskripsi?.trim() === item.deskripsi?.trim());
-        if (match) {
-          const key = Object.keys(match).find((k) => k !== "deskripsi");
+        const raw  = await fs.readFile(path.join(processedDir, file), "utf-8");
+        const arr  = JSON.parse(raw);
+        // Cocokkan berdasarkan deskripsi (trim whitespace & newline)
+        const match = arr.find(
+          (d) => d.deskripsi?.trim().replace(/\s+/g, " ") === item.deskripsi?.trim().replace(/\s+/g, " ")
+        );
+        if (match && match[key] !== undefined) {
           pipeline[key] = match[key];
         }
-      } catch (_) {}
+      } catch (_) {
+        // file tidak ada atau error — skip
+      }
     }
+
+    // Hasil akhir preprocessing diambil dari field 'processed' di item
+    pipeline["final_text"] = item.processed ?? "";
 
     res.json({
       ...item,
-      pipeline: Object.keys(pipeline).length > 0 ? pipeline : null,
+      pipeline,
     });
   } catch (err) {
     res.status(500).json({ error: "Error server" });

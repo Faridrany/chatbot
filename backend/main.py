@@ -223,27 +223,58 @@ def predict_new_data():
     data_baru = load_json(DATA_BARU_PATH)
     print(f"📊 Jumlah data baru: {len(data_baru)}")
 
-    data_baru = preprocess_pipeline(data_baru)
+    # Jalankan preprocessing pipeline
+    data_preprocessed = preprocess_pipeline(data_baru)
 
-    model = joblib.load(MODEL_PATH)
-    vectorizer = joblib.load(VECTORIZER_PATH)
-    selector = joblib.load(SELECTOR_PATH)
+    # Load model dan komponen
+    model         = joblib.load(MODEL_PATH)
+    vectorizer    = joblib.load(VECTORIZER_PATH)
+    selector      = joblib.load(SELECTOR_PATH)
     label_encoder = joblib.load(LABEL_ENCODER_PATH)
 
-    df = pd.DataFrame(data_baru)
+    df     = pd.DataFrame(data_preprocessed)
     X_text = df["final_text"]
 
-    X_tfidf = vectorizer.transform(X_text)
+    X_tfidf    = vectorizer.transform(X_text)
     X_selected = selector.transform(X_tfidf)
 
-    predictions = model.predict(X_selected)
+    predictions      = model.predict(X_selected)
     predicted_labels = label_encoder.inverse_transform(predictions)
+    probabilities    = model.predict_proba(X_selected)
+    confidence_scores = probabilities.max(axis=1)
 
+    # Baca final_processed.json yang sudah ada (data lama)
+    existing_data = []
+    if os.path.exists(FINAL_PROCESSED_PATH):
+        try:
+            existing_data = load_json(FINAL_PROCESSED_PATH)
+        except Exception:
+            existing_data = []
+
+    # Buat entri baru dengan struktur sama persis seperti data_kategorial.json
+    from datetime import datetime
+    new_entries = []
     for i, item in enumerate(data_baru):
-        item["Kategori"] = predicted_labels[i]
+        entry = {
+            "nama"              : item.get("nama", ""),
+            "no_wa"             : item.get("no_wa", ""),
+            "deskripsi"         : item.get("deskripsi", ""),
+            "processed"         : data_preprocessed[i].get("final_text", ""),
+            "kategori_prediksi" : predicted_labels[i],
+            "akurasi_model"     : round(float(confidence_scores[i]), 4),
+            "timestamp"         : item.get("timestamp", datetime.now().strftime("%Y-%m-%d %H:%M:%S")),
+        }
+        new_entries.append(entry)
 
-    save_json(data_baru, HASIL_PREDIKSI_PATH)
-    print(f"✅ Hasil prediksi disimpan di: {HASIL_PREDIKSI_PATH}")
+    # Gabungkan dengan data lama dan simpan ke final_processed.json
+    combined = existing_data + new_entries
+    save_json(combined, FINAL_PROCESSED_PATH)
+
+    # Simpan juga ke hasil_prediksi.json (kompatibilitas dengan kode lama)
+    save_json(new_entries, HASIL_PREDIKSI_PATH)
+
+    print(f"✅ {len(new_entries)} data baru ditambahkan ke: {FINAL_PROCESSED_PATH}")
+    print(f"✅ Hasil prediksi juga disimpan di: {HASIL_PREDIKSI_PATH}")
 
 # =====================================================
 # 7. MAIN PROGRAM

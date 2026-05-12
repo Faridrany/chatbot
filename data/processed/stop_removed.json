@@ -1,9 +1,1737 @@
 [
     {
-        "deskripsi": "posko kebakaran\n\n",
+        "deskripsi": "Ini di samping rumah tiap hari ribut kalo malam",
         "stop_removed": [
-            "posko",
+            "samping",
+            "rumah",
+            "hari",
+            "ribut",
+            "malam"
+        ]
+    },
+    {
+        "deskripsi": "Ini di samping rumah tiap hari ribut kalo malam",
+        "stop_removed": [
+            "samping",
+            "rumah",
+            "hari",
+            "ribut",
+            "malam"
+        ]
+    },
+    {
+        "deskripsi": "Ini sungai seluang udah meluap banyak orang buang sampah sembarangan karena tidak ada larangan",
+        "stop_removed": [
+            "sungai",
+            "seluang",
+            "udah",
+            "meluap",
+            "banyak",
+            "orang",
+            "buang",
+            "sampah",
+            "sembarangan",
+            "larangan"
+        ]
+    },
+    {
+        "deskripsi": "Ini di samping rumah tiap hari ribut kalo malam",
+        "stop_removed": [
+            "samping",
+            "rumah",
+            "hari",
+            "ribut",
+            "malam"
+        ]
+    },
+    {
+        "deskripsi": "tetangga sering mabuk mabuk dan bikin rusuh tiap malam",
+        "stop_removed": [
+            "tetangga",
+            "mabuk",
+            "mabuk",
+            "bikin",
+            "rusuh",
+            "malam"
+        ]
+    },
+    {
+        "deskripsi": "anak anak sering tawuran di gang dan membuat takut anak anak",
+        "stop_removed": [
+            "anak",
+            "anak",
+            "tawuran",
+            "gang",
+            "membuat",
+            "takut",
+            "anak",
+            "anak"
+        ]
+    },
+    {
+        "deskripsi": "Di daerah dekat pasar kuala sering banget kebanjiran karena banyak orang buang sampah ke sungai",
+        "stop_removed": [
+            "daerah",
+            "dekat",
+            "pasar",
+            "kuala",
+            "kebanjiran",
+            "banyak",
+            "orang",
+            "buang",
+            "sampah",
+            "sungai"
+        ]
+    },
+    {
+        "deskripsi": "Ada ular besar masuk ke garasi rumah di Teluk Pemedas. Kami takut, min. Tolong segera ditangkap petugas.",
+        "stop_removed": [
+            "ular",
+            "besar",
+            "masuk",
+            "garasi",
+            "rumah",
+            "teluk",
+            "pemedas",
+            "takut",
+            "segera",
+            "ditangkap",
+            "petugas"
+        ]
+    },
+    {
+        "deskripsi": "Jambret beraksi di Karya Jaya, ngambil tas ibu-ibu. Pelaku lari ke arah gang sepi. Kami mohon patroli rutin sore hari.",
+        "stop_removed": [
+            "jambret",
+            "beraksi",
+            "karya",
+            "jaya",
+            "ngambil",
+            "tas",
+            "ibu",
+            "ibu",
+            "pelaku",
+            "lari",
+            "arah",
+            "gang",
+            "sepi",
+            "patroli",
+            "rutin",
+            "sore",
+            "hari"
+        ]
+    },
+    {
+        "deskripsi": "Pencurian jemuran terjadi di Selili. Padahal sudah malam. Maling ini nekat banget. Kami butuh keamanan yang siaga.",
+        "stop_removed": [
+            "pencurian",
+            "jemuran",
+            "terjadi",
+            "selili",
+            "padahal",
+            "malam",
+            "maling",
+            "nekat",
+            "butuh",
+            "keamanan",
+            "siaga"
+        ]
+    },
+    {
+        "deskripsi": "Ada anjing liar di Teluk Pemedas yang terlihat sakit dan agresif. Kami khawatir kena rabies. Minta dijemput petugas.",
+        "stop_removed": [
+            "anjing",
+            "liar",
+            "teluk",
+            "pemedas",
+            "terlihat",
+            "sakit",
+            "agresif",
+            "khawatir",
+            "kena",
+            "rabies",
+            "dijemput",
+            "petugas"
+        ]
+    },
+    {
+        "deskripsi": "Pohon rapuh di pinggir jalan Karya Jaya miring, membahayakan pengendara motor yang lewat di bawahnya.",
+        "stop_removed": [
+            "pohon",
+            "rapuh",
+            "pinggir",
+            "jalan",
+            "karya",
+            "jaya",
+            "miring",
+            "membahayakan",
+            "pengendara",
+            "motor",
+            "lewat",
+            "bawahnya"
+        ]
+    },
+    {
+        "deskripsi": "Di Handil Baru Darat sering ada motor ngebut-ngebutan di jalan komplek. Bikin kaget dan bahaya buat anak-anak.",
+        "stop_removed": [
+            "handil",
+            "baru",
+            "darat",
+            "motor",
+            "ngebut",
+            "ngebutan",
+            "jalan",
+            "komplek",
+            "bikin",
+            "kaget",
+            "bahaya",
+            "anak",
+            "anak"
+        ]
+    },
+    {
+        "deskripsi": "Jalanan di Wonotirto gelap gulita, jadi tempat yang nyaman buat orang mabuk. Warga takut melintas.",
+        "stop_removed": [
+            "jalanan",
+            "wonotirto",
+            "gelap",
+            "gulita",
+            "tempat",
+            "nyaman",
+            "orang",
+            "mabuk",
+            "warga",
+            "takut",
+            "melintas"
+        ]
+    },
+    {
+        "deskripsi": "Ada upaya pencurian di Muara Sembilang, malingnya masuk lewat atap. Untung gagal. Kami butuh keamanan yang lebih pintar.",
+        "stop_removed": [
+            "upaya",
+            "pencurian",
+            "muara",
+            "sembilang",
+            "malingnya",
+            "masuk",
+            "lewat",
+            "atap",
+            "untung",
+            "gagal",
+            "butuh",
+            "keamanan",
+            "pintar"
+        ]
+    },
+    {
+        "deskripsi": "Ular sanca masuk ke pemukiman di Sungai Seluang. Ini bahaya banget, min. Tolong segera ditangkap.",
+        "stop_removed": [
+            "ular",
+            "sanca",
+            "masuk",
+            "pemukiman",
+            "sungai",
+            "seluang",
+            "bahaya",
+            "segera",
+            "ditangkap"
+        ]
+    },
+    {
+        "deskripsi": "Ada upaya pencurian kotak amal masjid di Margomulyo. Pelaku kabur saat diteriaki marbot. Kami butuh CCTV di area itu.",
+        "stop_removed": [
+            "upaya",
+            "pencurian",
+            "kotak",
+            "amal",
+            "masjid",
+            "margomulyo",
+            "pelaku",
+            "kabur",
+            "diteriaki",
+            "marbot",
+            "butuh",
+            "cctv",
+            "area"
+        ]
+    },
+    {
+        "deskripsi": "Sekelompok remaja mabuk di pinggir sungai Selili sering membuat onar dan melempar batu ke rumah warga. Kami resah sekali.",
+        "stop_removed": [
+            "sekelompok",
+            "remaja",
+            "mabuk",
+            "pinggir",
+            "sungai",
+            "selili",
+            "membuat",
+            "onar",
+            "melempar",
+            "batu",
+            "rumah",
+            "warga",
+            "resah"
+        ]
+    },
+    {
+        "deskripsi": "Di Teluk Pemedas, lampu PJU mati total. Jalan gelap banget, apalagi malam. Rawan begal yang mengincar motor.",
+        "stop_removed": [
+            "teluk",
+            "pemedas",
+            "lampu",
+            "penerangan jalan umum",
+            "mati",
+            "total",
+            "jalan",
+            "gelap",
+            "apalagi",
+            "malam",
+            "rawan",
+            "begal",
+            "mengincar",
+            "motor"
+        ]
+    },
+    {
+        "deskripsi": "Saya melihat orang mencurigakan memantau toko emas di Karya Jaya. Diduga komplotan pencuri. Mohon segera patroli ke lokasi.",
+        "stop_removed": [
+            "melihat",
+            "orang",
+            "mencurigakan",
+            "memantau",
+            "toko",
+            "emas",
+            "karya",
+            "jaya",
+            "diduga",
+            "komplotan",
+            "pencuri",
+            "segera",
+            "patroli",
+            "lokasi"
+        ]
+    },
+    {
+        "deskripsi": "Balapan liar di Handil Baru Darat kembali marak malam ini. Suara knalpot memekakkan telinga dan sangat mengganggu istirahat.",
+        "stop_removed": [
+            "balapan",
+            "liar",
+            "handil",
+            "baru",
+            "darat",
+            "kembali",
+            "marak",
+            "malam",
+            "suara",
+            "knalpot",
+            "memekakkan",
+            "telinga",
+            "mengganggu",
+            "istirahat"
+        ]
+    },
+    {
+        "deskripsi": "Pohon besar di belakang SDN Wonotirto sudah keropos dan miring ke arah sekolah. Bahaya kalau tumbang saat jam pelajaran.",
+        "stop_removed": [
+            "pohon",
+            "besar",
+            "belakang",
+            "sdn",
+            "wonotirto",
+            "keropos",
+            "miring",
+            "arah",
+            "sekolah",
+            "bahaya",
+            "tumbang",
+            "jam",
+            "pelajaran"
+        ]
+    },
+    {
+        "deskripsi": "Ada sekelompok pemuda asing di Muara Sembilang, mereka bawa tas ransel besar dan terlihat mondar-mandir tanpa tujuan jelas.",
+        "stop_removed": [
+            "sekelompok",
+            "pemuda",
+            "asing",
+            "muara",
+            "sembilang",
+            "bawa",
+            "tas",
+            "ransel",
+            "besar",
+            "terlihat",
+            "mondar",
+            "mandir",
+            "tanpa",
+            "tujuan",
+            "jelas"
+        ]
+    },
+    {
+        "deskripsi": "Anjing liar di Sungai Seluang sudah sangat agresif, sering mengejar anak-anak yang pulang mengaji. Warga jadi takut.",
+        "stop_removed": [
+            "anjing",
+            "liar",
+            "sungai",
+            "seluang",
+            "agresif",
+            "mengejar",
+            "anak",
+            "anak",
+            "pulang",
+            "mengaji",
+            "warga",
+            "takut"
+        ]
+    },
+    {
+        "deskripsi": "Pencurian helm di parkiran Margomulyo sering terjadi. Kami butuh keamanan yang siaga di area parkir umum.",
+        "stop_removed": [
+            "pencurian",
+            "helm",
+            "parkiran",
+            "margomulyo",
+            "terjadi",
+            "butuh",
+            "keamanan",
+            "siaga",
+            "area",
+            "parkir",
+            "umum"
+        ]
+    },
+    {
+        "deskripsi": "Di Selili, ada orang mabuk teriak-teriak dan mengganggu ibu-ibu yang lagi belanja sayur. Tolong segera dijemput.",
+        "stop_removed": [
+            "selili",
+            "orang",
+            "mabuk",
+            "teriak",
+            "teriak",
+            "mengganggu",
+            "ibu",
+            "ibu",
+            "belanja",
+            "sayur",
+            "segera",
+            "dijemput"
+        ]
+    },
+    {
+        "deskripsi": "Ular sanca masuk ke kolong mobil warga di Teluk Pemedas. Kami takut, min. Minta bantuan penanganan hewan.",
+        "stop_removed": [
+            "ular",
+            "sanca",
+            "masuk",
+            "kolong",
+            "mobil",
+            "warga",
+            "teluk",
+            "pemedas",
+            "takut",
+            "bantuan",
+            "penanganan",
+            "hewan"
+        ]
+    },
+    {
+        "deskripsi": "Ada copet beraksi di Karya Jaya, mengambil HP dari saku celana. Pelaku lari ke jalan tikus. Daerah ini rawan di siang hari.",
+        "stop_removed": [
+            "copet",
+            "beraksi",
+            "karya",
+            "jaya",
+            "mengambil",
+            "hp",
+            "saku",
+            "celana",
+            "pelaku",
+            "lari",
+            "jalan",
+            "tikus",
+            "daerah",
+            "rawan",
+            "siang",
+            "hari"
+        ]
+    },
+    {
+        "deskripsi": "Lampu PJU di sepanjang Handil Baru Darat mati semua. Gelap gulita, saya hampir jatuh dari motor karena lubang jalan tidak terlihat.",
+        "stop_removed": [
+            "lampu",
+            "penerangan jalan umum",
+            "sepanjang",
+            "handil",
+            "baru",
+            "darat",
+            "mati",
+            "semua",
+            "gelap",
+            "gulita",
+            "hampir",
+            "jatuh",
+            "motor",
+            "lubang",
+            "jalan",
+            "terlihat"
+        ]
+    },
+    {
+        "deskripsi": "Pagar sekolah Wonotirto jebol, membuat sekolah rawan dimasuki maling. Kami butuh perbaikan segera.",
+        "stop_removed": [
+            "pagar",
+            "sekolah",
+            "wonotirto",
+            "jebol",
+            "membuat",
+            "sekolah",
+            "rawan",
+            "dimasuki",
+            "maling",
+            "butuh",
+            "perbaikan",
+            "segera"
+        ]
+    },
+    {
+        "deskripsi": "Tadi malam, ada suara ribut besar di Muara Sembilang, diduga tawuran antar pemuda. Warga tidak berani keluar.",
+        "stop_removed": [
+            "tadi",
+            "malam",
+            "suara",
+            "ribut",
+            "besar",
+            "muara",
+            "sembilang",
+            "diduga",
+            "tawuran",
+            "antar",
+            "pemuda",
+            "warga",
+            "berani",
+            "keluar"
+        ]
+    },
+    {
+        "deskripsi": "Balapan liar di jalan pintas Sungai Seluang sering terjadi, min. Bikin kaget dan rawan kecelakaan. Mohon ditindak.",
+        "stop_removed": [
+            "balapan",
+            "liar",
+            "jalan",
+            "pintas",
+            "sungai",
+            "seluang",
+            "terjadi",
+            "bikin",
+            "kaget",
+            "rawan",
+            "kecelakaan",
+            "ditindak"
+        ]
+    },
+    {
+        "deskripsi": "Di Margomulyo sering ada orang asing masuk gang dan menawarkan barang dengan paksa. Kami khawatir mereka adalah penipu.",
+        "stop_removed": [
+            "margomulyo",
+            "orang",
+            "asing",
+            "masuk",
+            "gang",
+            "menawarkan",
+            "barang",
+            "paksa",
+            "khawatir",
+            "penipu"
+        ]
+    },
+    {
+        "deskripsi": "Pencurian motor terjadi di Selili. Pelaku lari ke arah kebun. Warga sudah sangat resah dengan kasus pencurian motor yang marak.",
+        "stop_removed": [
+            "pencurian",
+            "motor",
+            "terjadi",
+            "selili",
+            "pelaku",
+            "lari",
+            "arah",
+            "kebun",
+            "warga",
+            "resah",
+            "kasus",
+            "pencurian",
+            "motor",
+            "marak"
+        ]
+    },
+    {
+        "deskripsi": "Ada anjing liar di Teluk Pemedas yang terlihat sakit parah. Kami takut menularkan penyakit. Minta bantuan kesehatan hewan.",
+        "stop_removed": [
+            "anjing",
+            "liar",
+            "teluk",
+            "pemedas",
+            "terlihat",
+            "sakit",
+            "parah",
+            "takut",
+            "menularkan",
+            "penyakit",
+            "bantuan",
+            "kesehatan",
+            "hewan"
+        ]
+    },
+    {
+        "deskripsi": "Pohon di pinggir jalan Karya Jaya sudah sangat rapuh, cabangnya bisa sewaktu-waktu jatuh. Mohon dipangkas sebelum ada korban.",
+        "stop_removed": [
+            "pohon",
+            "pinggir",
+            "jalan",
+            "karya",
+            "jaya",
+            "rapuh",
+            "cabangnya",
+            "sewaktu",
+            "waktu",
+            "jatuh",
+            "dipangkas",
+            "korban"
+        ]
+    },
+    {
+        "deskripsi": "Lampu PJU di dekat pos ronda Margomulyo sudah mati 3 hari. Tolong diperbaiki, karena malam hari jadi tempat nongkrong yang mencurigakan.",
+        "stop_removed": [
+            "lampu",
+            "penerangan jalan umum",
+            "dekat",
+            "pos",
+            "ronda",
+            "margomulyo",
+            "mati",
+            "hari",
+            "diperbaiki",
+            "malam",
+            "hari",
+            "tempat",
+            "nongkrong",
+            "mencurigakan"
+        ]
+    },
+    {
+        "deskripsi": "Sekelompok remaja mabuk di Selili sering mengganggu ketenangan, mereka menyalakan petasan dan teriak-teriak.",
+        "stop_removed": [
+            "sekelompok",
+            "remaja",
+            "mabuk",
+            "selili",
+            "mengganggu",
+            "ketenangan",
+            "menyalakan",
+            "petasan",
+            "teriak",
+            "teriak"
+        ]
+    },
+    {
+        "deskripsi": "Ada ular kobra masuk ke pekarangan rumah warga di Teluk Pemedas. Kami butuh bantuan penangkap ular secepatnya.",
+        "stop_removed": [
+            "ular",
+            "kobra",
+            "masuk",
+            "pekarangan",
+            "rumah",
+            "warga",
+            "teluk",
+            "pemedas",
+            "butuh",
+            "bantuan",
+            "penangkap",
+            "ular",
+            "secepatnya"
+        ]
+    },
+    {
+        "deskripsi": "Jambret beraksi di Karya Jaya. Korban adalah mahasiswi yang sedang berjalan kaki. Kami butuh patroli polisi di jam rawan.",
+        "stop_removed": [
+            "jambret",
+            "beraksi",
+            "karya",
+            "jaya",
+            "korban",
+            "mahasiswi",
+            "sedang",
+            "berjalan",
+            "kaki",
+            "butuh",
+            "patroli",
+            "polisi",
+            "jam",
+            "rawan"
+        ]
+    },
+    {
+        "deskripsi": "Balapan liar di Handil Baru Darat ini sudah keterlaluan. Motornya sangat bising, mengganggu warga yang sakit.",
+        "stop_removed": [
+            "balapan",
+            "liar",
+            "handil",
+            "baru",
+            "darat",
+            "keterlaluan",
+            "motornya",
+            "bising",
+            "mengganggu",
+            "warga",
+            "sakit"
+        ]
+    },
+    {
+        "deskripsi": "Pohon besar di Wonotirto sudah miring, akarnya mulai terangkat. Rawan tumbang menimpa atap rumah warga.",
+        "stop_removed": [
+            "pohon",
+            "besar",
+            "wonotirto",
+            "miring",
+            "akarnya",
+            "mulai",
+            "terangkat",
+            "rawan",
+            "tumbang",
+            "menimpa",
+            "atap",
+            "rumah",
+            "warga"
+        ]
+    },
+    {
+        "deskripsi": "Ada orang asing mencurigakan menawarkan pinjaman online ilegal di Muara Sembilang, sambil memaksa warga.",
+        "stop_removed": [
+            "orang",
+            "asing",
+            "mencurigakan",
+            "menawarkan",
+            "pinjaman",
+            "online",
+            "ilegal",
+            "muara",
+            "sembilang",
+            "sambil",
+            "memaksa",
+            "warga"
+        ]
+    },
+    {
+        "deskripsi": "Anjing liar di Sungai Seluang menyerang hewan peliharaan warga. Kami khawatir keselamatannya terancam.",
+        "stop_removed": [
+            "anjing",
+            "liar",
+            "sungai",
+            "seluang",
+            "menyerang",
+            "hewan",
+            "peliharaan",
+            "warga",
+            "khawatir",
+            "keselamatannya",
+            "terancam"
+        ]
+    },
+    {
+        "deskripsi": "Jalan di Selili berlubang dan ditambal dengan batu kerikil yang tidak rata. Bikin ban motor cepat rusak.",
+        "stop_removed": [
+            "jalan",
+            "selili",
+            "berlubang",
+            "ditambal",
+            "batu",
+            "kerikil",
+            "rata",
+            "bikin",
+            "ban",
+            "motor",
+            "cepat",
+            "rusak"
+        ]
+    },
+    {
+        "deskripsi": "Pagar pembatas jembatan di Teluk Pemedas sudah keropos. Anak-anak sering main di situ. Sangat bahaya kalau jatuh.",
+        "stop_removed": [
+            "pagar",
+            "pembatas",
+            "jembatan",
+            "teluk",
+            "pemedas",
+            "keropos",
+            "anak",
+            "anak",
+            "main",
+            "situ",
+            "bahaya",
+            "jatuh"
+        ]
+    },
+    {
+        "deskripsi": "Tiang PJU di Karya Jaya sering mengeluarkan api kecil saat hujan. Kami takut ada kebakaran. Mohon segera dicek dan diperbaiki.",
+        "stop_removed": [
+            "tiang",
+            "penerangan jalan umum",
+            "karya",
+            "jaya",
+            "mengeluarkan",
+            "api",
+            "kecil",
+            "hujan",
+            "takut",
+            "kebakaran",
+            "segera",
+            "dicek",
+            "diperbaiki"
+        ]
+    },
+    {
+        "deskripsi": "Jalan masuk ke perumahan Margomulyo sudah tidak ada aspalnya, hanya bebatuan. Sangat susah dilewati mobil.",
+        "stop_removed": [
+            "jalan",
+            "masuk",
+            "perumahan",
+            "margomulyo",
+            "aspalnya",
+            "hanya",
+            "bebatuan",
+            "susah",
+            "dilewati",
+            "mobil"
+        ]
+    },
+    {
+        "deskripsi": "Saluran irigasi di Selili dipenuhi lumpur tebal. Kalau hujan, airnya meluap ke rumah warga. Minta segera dikeruk.",
+        "stop_removed": [
+            "saluran",
+            "irigasi",
+            "selili",
+            "dipenuhi",
+            "lumpur",
+            "tebal",
+            "hujan",
+            "airnya",
+            "meluap",
+            "rumah",
+            "warga",
+            "segera",
+            "dikeruk"
+        ]
+    },
+    {
+        "deskripsi": "Pagar beton di tepi sungai Teluk Pemedas sudah retak-retak parah. Khawatir roboh dan menyebabkan longsor di bantaran sungai.",
+        "stop_removed": [
+            "pagar",
+            "beton",
+            "tepi",
+            "sungai",
+            "teluk",
+            "pemedas",
+            "retak",
+            "retak",
+            "parah",
+            "khawatir",
+            "roboh",
+            "menyebabkan",
+            "longsor",
+            "bantaran",
+            "sungai"
+        ]
+    },
+    {
+        "deskripsi": "Jalan di Karya Jaya sudah ambles separuh. Truk pengangkut sering lewat, takut ambles total dan memutus akses.",
+        "stop_removed": [
+            "jalan",
+            "karya",
+            "jaya",
+            "ambles",
+            "separuh",
+            "truk",
+            "pengangkut",
+            "lewat",
+            "takut",
+            "ambles",
+            "total",
+            "memutus",
+            "akses"
+        ]
+    },
+    {
+        "deskripsi": "Air PDAM di Handil Baru Darat alirannya sangat kecil. Kami susah menampung air. Mohon dicek tekanan pipanya.",
+        "stop_removed": [
+            "air",
+            "pdam",
+            "handil",
+            "baru",
+            "darat",
+            "alirannya",
+            "kecil",
+            "susah",
+            "menampung",
+            "air",
+            "dicek",
+            "tekanan",
+            "pipanya"
+        ]
+    },
+    {
+        "deskripsi": "Lampu PJU di dekat jembatan Wonotirto mati sudah lebih dari 10 hari. Gelap sekali dan sangat rawan begal.",
+        "stop_removed": [
+            "lampu",
+            "penerangan jalan umum",
+            "dekat",
+            "jembatan",
+            "wonotirto",
+            "mati",
+            "hari",
+            "gelap",
+            "rawan",
+            "begal"
+        ]
+    },
+    {
+        "deskripsi": "Dermaga kayu di Muara Sembilang sudah banyak yang keropos. Kami takut kalau ada perahu sandar, dermaganya ambruk.",
+        "stop_removed": [
+            "dermaga",
+            "kayu",
+            "muara",
+            "sembilang",
+            "banyak",
+            "keropos",
+            "takut",
+            "perahu",
+            "sandar",
+            "dermaganya",
+            "ambruk"
+        ]
+    },
+    {
+        "deskripsi": "Pipa air kotor di Sungai Seluang bocor di pinggir jalan. Kotoran meluber ke jalan dan bau busuknya menyengat.",
+        "stop_removed": [
+            "pipa",
+            "air",
+            "kotor",
+            "sungai",
+            "seluang",
+            "bocor",
+            "pinggir",
+            "jalan",
+            "kotoran",
+            "meluber",
+            "jalan",
+            "bau",
+            "busuknya",
+            "menyengat"
+        ]
+    },
+    {
+        "deskripsi": "Jalanan di Margomulyo penuh tambalan yang tidak rata. Kalau motor lewat, seperti naik ombak. Mohon diaspal ulang.",
+        "stop_removed": [
+            "jalanan",
+            "margomulyo",
+            "penuh",
+            "tambalan",
+            "rata",
+            "motor",
+            "lewat",
+            "seperti",
+            "naik",
+            "ombak",
+            "diaspal",
+            "ulang"
+        ]
+    },
+    {
+        "deskripsi": "Penutup gorong-gorong di Selili pecah. Lubangnya menganga dan sering ada motor yang terperosok di malam hari.",
+        "stop_removed": [
+            "penutup",
+            "gorong",
+            "gorong",
+            "selili",
+            "pecah",
+            "lubangnya",
+            "menganga",
+            "motor",
+            "terperosok",
+            "malam",
+            "hari"
+        ]
+    },
+    {
+        "deskripsi": "Tiang telepon di Teluk Pemedas sudah hampir roboh. Kabelnya menyentuh atap rumah warga. Bahaya kebakaran.",
+        "stop_removed": [
+            "tiang",
+            "telepon",
+            "teluk",
+            "pemedas",
+            "hampir",
+            "roboh",
+            "kabelnya",
+            "menyentuh",
+            "atap",
+            "rumah",
+            "warga",
+            "bahaya",
             "kebakaran"
+        ]
+    },
+    {
+        "deskripsi": "Jalan di Karya Jaya ada retakan lebar sekali. Kalau hujan, airnya masuk ke retakan dan mengikis pondasi jalan.",
+        "stop_removed": [
+            "jalan",
+            "karya",
+            "jaya",
+            "retakan",
+            "lebar",
+            "hujan",
+            "airnya",
+            "masuk",
+            "retakan",
+            "mengikis",
+            "pondasi",
+            "jalan"
+        ]
+    },
+    {
+        "deskripsi": "Pagar sekolah di Handil Baru Darat sudah keropos dan rubuh. Sekolah jadi tidak aman karena mudah dimasuki orang luar.",
+        "stop_removed": [
+            "pagar",
+            "sekolah",
+            "handil",
+            "baru",
+            "darat",
+            "keropos",
+            "rubuh",
+            "sekolah",
+            "aman",
+            "mudah",
+            "dimasuki",
+            "orang",
+            "luar"
+        ]
+    },
+    {
+        "deskripsi": "Area parkir umum di Wonotirto gelap gulita. Lampu PJU-nya mati semua dan tidak kunjung diperbaiki.",
+        "stop_removed": [
+            "area",
+            "parkir",
+            "umum",
+            "wonotirto",
+            "gelap",
+            "gulita",
+            "lampu",
+            "penerangan jalan umum",
+            "mati",
+            "semua",
+            "kunjung",
+            "diperbaiki"
+        ]
+    },
+    {
+        "deskripsi": "Tangga menuju pelabuhan Muara Sembilang sudah rusak parah. Besinya berkarat dan anak tangganya banyak yang hilang.",
+        "stop_removed": [
+            "tangga",
+            "menuju",
+            "pelabuhan",
+            "muara",
+            "sembilang",
+            "rusak",
+            "parah",
+            "besinya",
+            "berkarat",
+            "anak",
+            "tangganya",
+            "banyak",
+            "hilang"
+        ]
+    },
+    {
+        "deskripsi": "Jalan di Sungai Seluang sudah ditutupi lumpur tebal dari luapan got. Motor sering tergelincir di sana.",
+        "stop_removed": [
+            "jalan",
+            "sungai",
+            "seluang",
+            "ditutupi",
+            "lumpur",
+            "tebal",
+            "luapan",
+            "got",
+            "motor",
+            "tergelincir",
+            "sana"
+        ]
+    },
+    {
+        "deskripsi": "Jalan Margomulyo yang menuju ke kebun sudah putus karena banjir. Warga tidak bisa akses kebun mereka.",
+        "stop_removed": [
+            "jalan",
+            "margomulyo",
+            "menuju",
+            "kebun",
+            "putus",
+            "banjir",
+            "warga",
+            "akses",
+            "kebun"
+        ]
+    },
+    {
+        "deskripsi": "Got di Selili sudah dangkal dan penuh sampah. Setiap hujan deras pasti banjir sampai selutut.",
+        "stop_removed": [
+            "got",
+            "selili",
+            "dangkal",
+            "penuh",
+            "sampah",
+            "hujan",
+            "deras",
+            "pasti",
+            "banjir",
+            "sampai",
+            "selutut"
+        ]
+    },
+    {
+        "deskripsi": "Perempatan jalan di Teluk Pemedas rambu lalu lintasnya tidak berfungsi. Macet parah setiap jam sibuk.",
+        "stop_removed": [
+            "perempatan",
+            "jalan",
+            "teluk",
+            "pemedas",
+            "rambu",
+            "lintasnya",
+            "berfungsi",
+            "macet",
+            "parah",
+            "jam",
+            "sibuk"
+        ]
+    },
+    {
+        "deskripsi": "Jalan di Karya Jaya sudah banyak yang pecah dan berlubang. Pengendara motor sering jatuh karena kaget.",
+        "stop_removed": [
+            "jalan",
+            "karya",
+            "jaya",
+            "banyak",
+            "pecah",
+            "berlubang",
+            "pengendara",
+            "motor",
+            "jatuh",
+            "kaget"
+        ]
+    },
+    {
+        "deskripsi": "Gorong-gorong di depan rumah saya di Margomulyo bocor dan mengeluarkan bau tidak sedap. Minta segera ditangani.",
+        "stop_removed": [
+            "gorong",
+            "gorong",
+            "depan",
+            "rumah",
+            "margomulyo",
+            "bocor",
+            "mengeluarkan",
+            "bau",
+            "sedap",
+            "segera",
+            "ditangani"
+        ]
+    },
+    {
+        "deskripsi": "Tiang PJU di Selili sudah miring dan hampir menimpa warung warga. Minta tolong segera diikat atau diganti.",
+        "stop_removed": [
+            "tiang",
+            "penerangan jalan umum",
+            "selili",
+            "miring",
+            "hampir",
+            "menimpa",
+            "warung",
+            "warga",
+            "segera",
+            "diikat",
+            "diganti"
+        ]
+    },
+    {
+        "deskripsi": "Jalan Teluk Pemedas yang baru diaspal sudah retak-retak lagi. Kualitas pengerjaannya sepertinya kurang bagus, min.",
+        "stop_removed": [
+            "jalan",
+            "teluk",
+            "pemedas",
+            "baru",
+            "diaspal",
+            "retak",
+            "retak",
+            "kualitas",
+            "pengerjaannya",
+            "sepertinya",
+            "kurang",
+            "bagus"
+        ]
+    },
+    {
+        "deskripsi": "Jembatan penyeberangan di Karya Jaya sudah berkarat di mana-mana. Terlihat tidak aman kalau dilewati saat hujan.",
+        "stop_removed": [
+            "jembatan",
+            "penyeberangan",
+            "karya",
+            "jaya",
+            "berkarat",
+            "mana",
+            "mana",
+            "terlihat",
+            "aman",
+            "dilewati",
+            "hujan"
+        ]
+    },
+    {
+        "deskripsi": "Pengurusan sertifikat tanah di Muara Sembilang terlalu lama. Katanya perlu 'dana percepatan' agar bisa cepat keluar.",
+        "stop_removed": [
+            "pengurusan",
+            "sertifikat",
+            "tanah",
+            "muara",
+            "sembilang",
+            "terlalu",
+            "lama",
+            "katanya",
+            "dana",
+            "percepatan",
+            "cepat",
+            "keluar"
+        ]
+    },
+    {
+        "deskripsi": "Nomor layanan pengaduan PDAM Sungai Seluang tidak pernah aktif. Kami tidak bisa lapor air di rumah kotor.",
+        "stop_removed": [
+            "nomor",
+            "layanan",
+            "pengaduan",
+            "pdam",
+            "sungai",
+            "seluang",
+            "pernah",
+            "aktif",
+            "lapor",
+            "air",
+            "rumah",
+            "kotor"
+        ]
+    },
+    {
+        "deskripsi": "Petugas di loket pengurusan surat Margomulyo sering menyuruh bolak-balik karena berkas yang diminta selalu berubah.",
+        "stop_removed": [
+            "petugas",
+            "loket",
+            "pengurusan",
+            "surat",
+            "margomulyo",
+            "menyuruh",
+            "bolak",
+            "balik",
+            "berkas",
+            "diminta",
+            "selalu",
+            "berubah"
+        ]
+    },
+    {
+        "deskripsi": "Ada preman yang memalak biaya parkir di Selili. Mereka bukan petugas resmi tapi memaksa minta uang.",
+        "stop_removed": [
+            "preman",
+            "memalak",
+            "biaya",
+            "parkir",
+            "selili",
+            "bukan",
+            "petugas",
+            "resmi",
+            "memaksa",
+            "uang"
+        ]
+    },
+    {
+        "deskripsi": "Obat untuk pasien BPJS di Puskesmas Teluk Pemedas sering dibilang habis, padahal pasien lain yang bayar dikasih.",
+        "stop_removed": [
+            "obat",
+            "pasien",
+            "bpjs",
+            "puskesmas",
+            "teluk",
+            "pemedas",
+            "dibilang",
+            "habis",
+            "padahal",
+            "pasien",
+            "lain",
+            "bayar",
+            "dikasih"
+        ]
+    },
+    {
+        "deskripsi": "Papan prosedur pelayanan di kantor Karya Jaya sudah buram dan sulit dibaca. Kami tidak tahu alur pengurusan.",
+        "stop_removed": [
+            "papan",
+            "prosedur",
+            "pelayanan",
+            "kantor",
+            "karya",
+            "jaya",
+            "buram",
+            "sulit",
+            "dibaca",
+            "tahu",
+            "alur",
+            "pengurusan"
+        ]
+    },
+    {
+        "deskripsi": "Bus kota di Handil Baru Darat sering ngebut dan ugal-ugalan. Kami takut terjadi kecelakaan.",
+        "stop_removed": [
+            "bus",
+            "kota",
+            "handil",
+            "baru",
+            "darat",
+            "ngebut",
+            "ugal",
+            "ugalan",
+            "takut",
+            "terjadi",
+            "kecelakaan"
+        ]
+    },
+    {
+        "deskripsi": "Lampu penerangan di taman Wonotirto mati total. Kalau malam jadi tempat nongkrong yang rawan tindak kriminal.",
+        "stop_removed": [
+            "lampu",
+            "penerangan",
+            "taman",
+            "wonotirto",
+            "mati",
+            "total",
+            "malam",
+            "tempat",
+            "nongkrong",
+            "rawan",
+            "tindak",
+            "kriminal"
+        ]
+    },
+    {
+        "deskripsi": "Petugas di kantor layanan publik Muara Sembilang sering meninggalkan meja saat jam kerja. Kami harus menunggu lama.",
+        "stop_removed": [
+            "petugas",
+            "kantor",
+            "layanan",
+            "publik",
+            "muara",
+            "sembilang",
+            "meninggalkan",
+            "meja",
+            "jam",
+            "kerja",
+            "menunggu",
+            "lama"
+        ]
+    },
+    {
+        "deskripsi": "Mobil tangki air bersih Sungai Seluang datangnya tidak sesuai jadwal yang dijanjikan. Warga jadi kehabisan air.",
+        "stop_removed": [
+            "mobil",
+            "tangki",
+            "air",
+            "bersih",
+            "sungai",
+            "seluang",
+            "datangnya",
+            "sesuai",
+            "jadwal",
+            "dijanjikan",
+            "warga",
+            "kehabisan",
+            "air"
+        ]
+    },
+    {
+        "deskripsi": "Layanan cetak akta kelahiran di Margomulyo sangat lambat. Sudah 4 bulan belum ada kejelasan.",
+        "stop_removed": [
+            "layanan",
+            "cetak",
+            "akta",
+            "kelahiran",
+            "margomulyo",
+            "lambat",
+            "bulan",
+            "kejelasan"
+        ]
+    },
+    {
+        "deskripsi": "Ada pungutan liar saat mengurus surat nikah di Selili. Diminta biaya yang tidak ada dasar hukumnya.",
+        "stop_removed": [
+            "pungutan",
+            "liar",
+            "mengurus",
+            "surat",
+            "nikah",
+            "selili",
+            "diminta",
+            "biaya",
+            "dasar",
+            "hukumnya"
+        ]
+    },
+    {
+        "deskripsi": "Dokter di Puskesmas Teluk Pemedas sering datang terlambat. Kami harus menunggu sampai satu jam lebih.",
+        "stop_removed": [
+            "dokter",
+            "puskesmas",
+            "teluk",
+            "pemedas",
+            "datang",
+            "terlambat",
+            "menunggu",
+            "sampai",
+            "satu",
+            "jam"
+        ]
+    },
+    {
+        "deskripsi": "Fasilitas parkir motor di kantor Karya Jaya sering kelebihan kapasitas. Motor sering parkir di luar mengganggu jalan.",
+        "stop_removed": [
+            "fasilitas",
+            "parkir",
+            "motor",
+            "kantor",
+            "karya",
+            "jaya",
+            "kelebihan",
+            "kapasitas",
+            "motor",
+            "parkir",
+            "luar",
+            "mengganggu",
+            "jalan"
+        ]
+    },
+    {
+        "deskripsi": "Staf kelurahan Margomulyo sering sibuk dengan urusan pribadi (main HP, ngobrol) saat warga antri dilayani.",
+        "stop_removed": [
+            "staf",
+            "kelurahan",
+            "margomulyo",
+            "sibuk",
+            "urusan",
+            "pribadi",
+            "main",
+            "hp",
+            "ngobrol",
+            "warga",
+            "antri",
+            "dilayani"
+        ]
+    },
+    {
+        "deskripsi": "Toilet umum di terminal Selili tidak ada airnya. Sangat kotor dan tidak layak digunakan.",
+        "stop_removed": [
+            "toilet",
+            "umum",
+            "terminal",
+            "selili",
+            "airnya",
+            "kotor",
+            "layak",
+            "digunakan"
+        ]
+    },
+    {
+        "deskripsi": "Layanan ambulans di Teluk Pemedas sering menolak pasien dengan alasan ambulans sedang dicuci. Ini masalah darurat, min!",
+        "stop_removed": [
+            "layanan",
+            "ambulans",
+            "teluk",
+            "pemedas",
+            "menolak",
+            "pasien",
+            "alasan",
+            "ambulans",
+            "sedang",
+            "dicuci",
+            "masalah",
+            "darurat"
+        ]
+    },
+    {
+        "deskripsi": "Petugas kebersihan di Karya Jaya hanya membersihkan jalan utama. Gang-gang kecil di perumahan dibiarkan kotor.",
+        "stop_removed": [
+            "petugas",
+            "kebersihan",
+            "karya",
+            "jaya",
+            "hanya",
+            "membersihkan",
+            "jalan",
+            "utama",
+            "gang",
+            "gang",
+            "kecil",
+            "perumahan",
+            "dibiarkan",
+            "kotor"
+        ]
+    },
+    {
+        "deskripsi": "Warga di Selili sering membuang kasur bekas dan perabotan rusak ke sungai kecil. Memicu banjir bandang.",
+        "stop_removed": [
+            "warga",
+            "selili",
+            "membuang",
+            "kasur",
+            "bekas",
+            "perabotan",
+            "rusak",
+            "sungai",
+            "kecil",
+            "memicu",
+            "banjir",
+            "bandang"
+        ]
+    },
+    {
+        "deskripsi": "Polusi suara dari tempat karaoke di Teluk Pemedas sangat bising. Kami tidak bisa tidur sampai dini hari.",
+        "stop_removed": [
+            "polusi",
+            "suara",
+            "tempat",
+            "karaoke",
+            "teluk",
+            "pemedas",
+            "bising",
+            "tidur",
+            "sampai",
+            "dini",
+            "hari"
+        ]
+    },
+    {
+        "deskripsi": "Area hijau di Karya Jaya dipenuhi puing-puing bangunan. Terlihat kotor dan tidak terawat sama sekali.",
+        "stop_removed": [
+            "area",
+            "hijau",
+            "karya",
+            "jaya",
+            "dipenuhi",
+            "puing",
+            "puing",
+            "bangunan",
+            "terlihat",
+            "kotor",
+            "terawat",
+            "sama"
+        ]
+    },
+    {
+        "deskripsi": "Banyak anjing liar berkeliaran di Handil Baru Darat karena sering diberi makan sisa sampah di pinggir jalan.",
+        "stop_removed": [
+            "banyak",
+            "anjing",
+            "liar",
+            "berkeliaran",
+            "handil",
+            "baru",
+            "darat",
+            "diberi",
+            "makan",
+            "sisa",
+            "sampah",
+            "pinggir",
+            "jalan"
+        ]
+    },
+    {
+        "deskripsi": "Penerangan di taman Wonotirto banyak yang rusak. Kalau malam, taman jadi gelap gulita dan rawan kejahatan.",
+        "stop_removed": [
+            "penerangan",
+            "taman",
+            "wonotirto",
+            "banyak",
+            "rusak",
+            "malam",
+            "taman",
+            "gelap",
+            "gulita",
+            "rawan",
+            "kejahatan"
+        ]
+    },
+    {
+        "deskripsi": "Ada penangkapan ikan menggunakan racun (potassium) di perairan Muara Sembilang. Merusak terumbu karang dan biota laut.",
+        "stop_removed": [
+            "penangkapan",
+            "ikan",
+            "menggunakan",
+            "racun",
+            "potassium",
+            "perairan",
+            "muara",
+            "sembilang",
+            "merusak",
+            "terumbu",
+            "karang",
+            "biota",
+            "laut"
+        ]
+    },
+    {
+        "deskripsi": "Limbah sisa rumah tangga sering dibuang ke Sungai Seluang. Air sungai jadi kotor dan tidak bisa dipakai mandi.",
+        "stop_removed": [
+            "limbah",
+            "sisa",
+            "rumah",
+            "tangga",
+            "dibuang",
+            "sungai",
+            "seluang",
+            "air",
+            "sungai",
+            "kotor",
+            "dipakai",
+            "mandi"
+        ]
+    },
+    {
+        "deskripsi": "Pohon di dekat tiang listrik Margomulyo sudah sangat rimbun. Rantingnya sering bergesekan dengan kabel. Bahaya konslet.",
+        "stop_removed": [
+            "pohon",
+            "dekat",
+            "tiang",
+            "listrik",
+            "margomulyo",
+            "rimbun",
+            "rantingnya",
+            "bergesekan",
+            "kabel",
+            "bahaya",
+            "konslet"
+        ]
+    },
+    {
+        "deskripsi": "Ada tumpukan sampah liar di lahan kosong Selili. Sudah menumpuk tinggi dan baunya menyebar ke perumahan.",
+        "stop_removed": [
+            "tumpukan",
+            "sampah",
+            "liar",
+            "lahan",
+            "kosong",
+            "selili",
+            "menumpuk",
+            "tinggi",
+            "baunya",
+            "menyebar",
+            "perumahan"
+        ]
+    },
+    {
+        "deskripsi": "Pembakaran sampah oleh warga di Teluk Pemedas sangat sering. Asapnya membuat mata perih dan sesak napas.",
+        "stop_removed": [
+            "pembakaran",
+            "sampah",
+            "warga",
+            "teluk",
+            "pemedas",
+            "asapnya",
+            "membuat",
+            "mata",
+            "perih",
+            "sesak",
+            "napas"
+        ]
+    },
+    {
+        "deskripsi": "Tanaman di median jalan Karya Jaya banyak yang mati kekeringan. Tidak ada petugas yang menyiram tanaman.",
+        "stop_removed": [
+            "tanaman",
+            "median",
+            "jalan",
+            "karya",
+            "jaya",
+            "banyak",
+            "mati",
+            "kekeringan",
+            "petugas",
+            "menyiram",
+            "tanaman"
+        ]
+    },
+    {
+        "deskripsi": "Saluran air di Margomulyo penuh sampah dan lumut tebal. Airnya tidak mengalir lancar dan bau busuk.",
+        "stop_removed": [
+            "saluran",
+            "air",
+            "margomulyo",
+            "penuh",
+            "sampah",
+            "lumut",
+            "tebal",
+            "airnya",
+            "mengalir",
+            "lancar",
+            "bau",
+            "busuk"
+        ]
+    },
+    {
+        "deskripsi": "Sampah plastik di Selili berserakan di jalan. Tidak ada bak sampah yang memadai di area itu.",
+        "stop_removed": [
+            "sampah",
+            "plastik",
+            "selili",
+            "berserakan",
+            "jalan",
+            "bak",
+            "sampah",
+            "memadai",
+            "area"
+        ]
+    },
+    {
+        "deskripsi": "Ada pembukaan lahan baru di Teluk Pemedas dengan cara dibakar. Asapnya sangat mengganggu perumahan kami.",
+        "stop_removed": [
+            "pembukaan",
+            "lahan",
+            "baru",
+            "teluk",
+            "pemedas",
+            "cara",
+            "dibakar",
+            "asapnya",
+            "mengganggu",
+            "perumahan"
+        ]
+    },
+    {
+        "deskripsi": "Pohon di dekat perempatan Karya Jaya sudah terlalu tinggi dan menghalangi pandangan. Bahaya kalau ada rambu lalu lintas tertutup.",
+        "stop_removed": [
+            "pohon",
+            "dekat",
+            "perempatan",
+            "karya",
+            "jaya",
+            "terlalu",
+            "tinggi",
+            "menghalangi",
+            "pandangan",
+            "bahaya",
+            "rambu",
+            "lintas",
+            "tertutup"
         ]
     }
 ]

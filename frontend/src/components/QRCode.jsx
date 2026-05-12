@@ -8,7 +8,7 @@ export default function QRCode({ onConnect }) {
 
   const fetchQR = async () => {
     try {
-      const res = await fetch("http://localhost:3001/qr");
+      const res = await fetch("/qr");
       const data = await res.json();
 
       if (data.qr) {

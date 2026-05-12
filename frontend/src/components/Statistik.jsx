@@ -51,7 +51,7 @@ export default function Statistik({ onLogout }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/statistik")
+    fetch("/api/statistik")
       .then((r) => r.json())
       .then((d) => { setData(d); setLoading(false); })
       .catch((e) => { setError(e.message); setLoading(false); });

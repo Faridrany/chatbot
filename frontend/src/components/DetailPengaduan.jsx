@@ -46,7 +46,7 @@ export default function DetailPengaduan({ onLogout }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/api/pengaduan/${id}/processed`)
+    fetch(`/api/pengaduan/${id}/processed`)
       .then((res) => res.json())
       .then((res) => { setData(res); setLoading(false); })
       .catch((err) => { console.error(err); setLoading(false); });
@@ -55,7 +55,7 @@ export default function DetailPengaduan({ onLogout }) {
   if (loading) return <div className="p-10 text-gray-500">Memuat data...</div>;
   if (!data)   return <div className="p-10 text-red-500">Data tidak ditemukan.</div>;
 
-  // Gabungkan sumber data: dari field langsung + dari pipeline (jika ada)
+  // Pipeline selalu ada — final_text dari field processed, sisanya dari file pipeline
   const pipelineSource = {
     deskripsi:    data.deskripsi,
     casefolded:   data.pipeline?.casefolded,
@@ -68,7 +68,7 @@ export default function DetailPengaduan({ onLogout }) {
   };
 
   const hasPipeline = PIPELINE_STEPS.some(
-    (s) => s.key !== "deskripsi" && pipelineSource[s.key] != null
+    (s) => s.key !== "deskripsi" && s.key !== "final_text" && pipelineSource[s.key] != null
   );
 
   return (
@@ -197,7 +197,7 @@ export default function DetailPengaduan({ onLogout }) {
 
             {!hasPipeline && (
               <div className="mt-2 p-3 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-700">
-                Data pipeline lengkap tidak tersedia untuk pengaduan ini. Hanya menampilkan teks asli dan hasil akhir preprocessing.
+                ⚠️ Data tahapan pipeline (casefolding, cleaning, dll) tidak tersedia untuk pengaduan ini karena preprocessing dilakukan sebelum data ini masuk. Hanya teks asli dan hasil akhir yang ditampilkan.
               </div>
             )}
           </div>

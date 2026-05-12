@@ -15,7 +15,7 @@ export default function Dashboard({ onLogout }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/stats")
+    fetch("/api/stats")
       .then((res) => res.json())
       .then((data) => {
         setStats(data);
