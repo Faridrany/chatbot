@@ -17,9 +17,9 @@ app.use(express.json());
 const PORT = 3002; // Port berbeda untuk chatbot
 
 // 📁 File Paths
-const BACKUP_FILE = path.join(__dirname, "../data/backup_pengaduan.json");
-const CATEGORIAL_FILE = path.join(__dirname, "../server/data/data_kategorial.json");
-const ML_API_URL = "http://localhost:8000/api/predict"; // FastAPI ML
+const BACKUP_FILE     = path.join(__dirname, "../data/backup_pengaduan.json");
+const CATEGORIAL_FILE = path.join(__dirname, "../data/data_kategorial.json");
+const ML_API_URL      = "http://localhost:8000/api/predict";
 
 // 🛠️ Setup Files
 async function setupFiles() {
@@ -94,7 +94,7 @@ client.on("message", async (msg) => {
     if (text.toLowerCase() === "ya") {
       await msg.reply("Silakan kirim pengaduan berikutnya:\n\n*Format:*\nNama: [Nama]\nPengaduan: [Isi keluhan]");
     } else {
-      await msg.reply("✅ Terima kasih! Semua pengaduan sudah tercatat.\n\n*Ketik "HALO" untuk pengaduan baru.*");
+      await msg.reply('✅ Terima kasih! Semua pengaduan sudah tercatat.\n\n*Ketik "HALO" untuk pengaduan baru.*');
     }
     userLoopStatus[from].waitingForMore = false;
     return;

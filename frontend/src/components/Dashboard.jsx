@@ -66,7 +66,9 @@ export default function Dashboard({ onLogout }) {
                 <div className="bg-white p-6 rounded-2xl shadow">
                   <h3 className="text-sm text-gray-500 mb-1">Kategori Terbanyak</h3>
                   <p className="text-lg font-semibold capitalize">
-                    {stats?.kategoriTerbanyak?.charAt(0) + stats?.kategoriTerbanyak?.slice(1).toLowerCase() ?? "-"}
+                    {stats?.kategoriTerbanyak
+                        ? stats.kategoriTerbanyak.charAt(0) + stats.kategoriTerbanyak.slice(1).toLowerCase()
+                        : "-"}
                   </p>
                 </div>
               </div>

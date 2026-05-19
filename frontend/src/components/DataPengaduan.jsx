@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
@@ -28,19 +28,22 @@ export default function DataPengaduan({ onLogout }) {
   }, []);
 
   // ── Filter ──
-  const filteredData = data.filter((item) => {
+  const filteredData = useMemo(() => data.filter((item) => {
     const matchSearch =
       item.deskripsi?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.nama?.toLowerCase().includes(searchTerm.toLowerCase());
     const matchCategory =
       selectedCategory === "semua" || item.kategori_prediksi === selectedCategory;
     return matchSearch && matchCategory;
-  });
+  }), [data, searchTerm, selectedCategory]);
 
   // ── Pagination ──
-  const totalPages  = Math.ceil(filteredData.length / itemsPerPage);
-  const startIndex  = (currentPage - 1) * itemsPerPage;
-  const paginatedData = filteredData.slice(startIndex, startIndex + itemsPerPage);
+  const totalPages    = Math.ceil(filteredData.length / itemsPerPage);
+  const startIndex    = (currentPage - 1) * itemsPerPage;
+  const paginatedData = useMemo(
+    () => filteredData.slice(startIndex, startIndex + itemsPerPage),
+    [filteredData, startIndex]
+  );
 
   // Reset ke halaman 1 saat filter berubah
   const handleSearch = (val) => { setSearchTerm(val); setCurrentPage(1); };

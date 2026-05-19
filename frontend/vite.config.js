@@ -56,6 +56,7 @@
     },
     server: {
       port: 3000,
+      strictPort: false,
       open: true,
       proxy: {
         '/api': {
@@ -63,7 +64,11 @@
           changeOrigin: true,
         },
         '/qr': {
-          target: 'http://localhost:3001',
+          target: 'http://localhost:3002',
+          changeOrigin: true,
+        },
+        '/status': {
+          target: 'http://localhost:3002',
           changeOrigin: true,
         },
       },
