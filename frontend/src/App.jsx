@@ -11,106 +11,35 @@ import Pengaturan from './components/Pengaturan';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [qrConnected, setQrConnected] = useState(false);
 
-  const handleLogin = () => {
-    setIsAuthenticated(true);
-  };
+  const handleLogin  = () => setIsAuthenticated(true);
+  const handleLogout = () => setIsAuthenticated(false);
 
-  const handleQRConnect = () => {
-    setQrConnected(true);
-  };
-
-  const handleLogout = () => {
-    setIsAuthenticated(false);
-    setQrConnected(false);
-  };
+  // Guard: hanya butuh login, QR opsional
+  const auth = (element) =>
+    isAuthenticated ? element : <Navigate to="/login" replace />;
 
   return (
     <Router>
       <Routes>
-        <Route 
-          path="/login" 
+        <Route
+          path="/login"
           element={
-            !isAuthenticated ? (
-              <Login onLogin={handleLogin} />
-            ) : (
-              <Navigate to="/qr-code" replace />
-            )
-          } 
+            !isAuthenticated
+              ? <Login onLogin={handleLogin} />
+              : <Navigate to="/qr-code" replace />
+          }
         />
-        <Route 
-          path="/qr-code" 
-          element={
-            isAuthenticated && !qrConnected ? (
-              <QRCode onConnect={handleQRConnect} />
-            ) : isAuthenticated && qrConnected ? (
-              <Navigate to="/dashboard" replace />
-            ) : (
-              <Navigate to="/login" replace />
-            )
-          } 
+        <Route
+          path="/qr-code"
+          element={auth(<QRCode onConnect={() => {}} />)}
         />
-        <Route 
-          path="/dashboard" 
-          element={
-            isAuthenticated && qrConnected ? (
-              <Dashboard onLogout={handleLogout} />
-            ) : (
-              <Navigate to="/login" replace />
-            )
-          } 
-        />
-        <Route 
-          path="/data-pengaduan" 
-          element={
-            isAuthenticated && qrConnected ? (
-              <DataPengaduan onLogout={handleLogout} />
-            ) : (
-              <Navigate to="/login" replace />
-            )
-          } 
-        />
-        <Route 
-          path="/detail-pengaduan/:id" 
-          element={
-            isAuthenticated && qrConnected ? (
-              <DetailPengaduan onLogout={handleLogout} />
-            ) : (
-              <Navigate to="/login" replace />
-            )
-          } 
-        />
-        <Route 
-          path="/statistik" 
-          element={
-            isAuthenticated && qrConnected ? (
-              <Statistik onLogout={handleLogout} />
-            ) : (
-              <Navigate to="/login" replace />
-            )
-          } 
-        />
-        <Route 
-          path="/export" 
-          element={
-            isAuthenticated && qrConnected ? (
-              <ExportData onLogout={handleLogout} />
-            ) : (
-              <Navigate to="/login" replace />
-            )
-          } 
-        />
-        <Route 
-          path="/pengaturan" 
-          element={
-            isAuthenticated && qrConnected ? (
-              <Pengaturan onLogout={handleLogout} />
-            ) : (
-              <Navigate to="/login" replace />
-            )
-          } 
-        />
+        <Route path="/dashboard"            element={auth(<Dashboard onLogout={handleLogout} />)} />
+        <Route path="/data-pengaduan"       element={auth(<DataPengaduan onLogout={handleLogout} />)} />
+        <Route path="/detail-pengaduan/:id" element={auth(<DetailPengaduan onLogout={handleLogout} />)} />
+        <Route path="/statistik"            element={auth(<Statistik onLogout={handleLogout} />)} />
+        <Route path="/export"               element={auth(<ExportData onLogout={handleLogout} />)} />
+        <Route path="/pengaturan"           element={auth(<Pengaturan onLogout={handleLogout} />)} />
         <Route path="/" element={<Navigate to="/login" replace />} />
       </Routes>
     </Router>

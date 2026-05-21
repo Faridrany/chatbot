@@ -2,8 +2,13 @@
   "name": "chatbot-pengaduan-root",
   "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    "backend",
+    "chatbotdol",
+    "frontend"
+  ],
   "scripts": {
-    "dev": "concurrently --names \"BACKEND,CHATBOT,FRONTEND\" --prefix-colors \"green,yellow,cyan\" \"npm run start --prefix backend\" \"npm run start --prefix chatbot\" \"npm run dev --prefix frontend\""
+    "dev": "concurrently --names \"BACKEND,CHATBOT,FRONTEND\" --prefix-colors \"green,yellow,cyan\" \"npm start --workspace=backend\" \"npm start --workspace=chatbot-whatsapp\" \"npm run dev --workspace=klasifikasi-pengaduan-frontend\""
   },
   "devDependencies": {
     "concurrently": "^9.2.1"

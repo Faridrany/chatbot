@@ -1,31 +1,27 @@
-import { useEffect, useState, useRef } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { RefreshCw, Wifi, Loader2, AlertCircle } from "lucide-react";
 import { Button } from "./ui/button";
 
-// status: "offline" | "initializing" | "scan" | "connected"
+// status: "idle" | "loading" | "scan" | "connected" | "offline"
 
 export default function QRCode({ onConnect }) {
-  const [qr, setQr]         = useState(null);
-  const [status, setStatus] = useState("initializing");
-  const [isRefreshing, setIsRefreshing] = useState(false);
-  const intervalRef = useRef(null);
+  const navigate        = useNavigate();
+  const [qr, setQr]     = useState(null);
+  const [status, setStatus] = useState("idle");
 
+  // Fetch QR sekali — hanya saat user klik tombol
   const fetchQR = async () => {
+    setStatus("loading");
     try {
-      const res  = await fetch("/qr");
-
-      // Kalau chatbot belum jalan, response bukan JSON valid
-      if (!res.ok) {
-        setStatus("offline");
-        return;
-      }
+      const res = await fetch("/qr");
+      if (!res.ok) { setStatus("offline"); return; }
 
       const data = await res.json();
 
       if (data.status === "connected") {
         setStatus("connected");
         setQr(null);
-        // TIDAK auto-redirect — user harus klik tombol sendiri
       } else if (data.status === "scan" && data.qr) {
         setStatus("scan");
         setQr(data.qr);
@@ -33,36 +29,31 @@ export default function QRCode({ onConnect }) {
         setStatus("initializing");
         setQr(null);
       } else {
-        // Response tidak dikenal (misal dari backend lain yang salah proxy)
         setStatus("offline");
         setQr(null);
       }
     } catch {
-      // Chatbot server belum jalan
       setStatus("offline");
       setQr(null);
     }
   };
 
-  useEffect(() => {
-    fetchQR();
-    intervalRef.current = setInterval(fetchQR, 3000);
-    return () => clearInterval(intervalRef.current);
-  }, []);
+  const handleSkip = () => navigate("/dashboard");
 
-  const handleRefresh = () => {
-    setIsRefreshing(true);
-    fetchQR();
-    setTimeout(() => setIsRefreshing(false), 1000);
+  const handleConnect = () => {
+    onConnect();
+    navigate("/dashboard");
   };
 
   const statusConfig = {
-    connected:    { bg: "bg-green-100",  text: "text-green-700",  dot: "bg-green-500",              label: "WhatsApp Terhubung"   },
-    scan:         { bg: "bg-blue-100",   text: "text-blue-700",   dot: "bg-blue-500 animate-pulse", label: "Menunggu Scan QR"     },
-    initializing: { bg: "bg-yellow-100", text: "text-yellow-700", dot: "bg-yellow-500 animate-pulse",label: "Menginisialisasi..."  },
-    offline:      { bg: "bg-red-100",    text: "text-red-700",    dot: "bg-red-500",                label: "Chatbot Tidak Aktif"  },
+    idle:         { bg: "bg-gray-100",   text: "text-gray-500",   dot: "bg-gray-400",                label: "Belum dimuat"         },
+    loading:      { bg: "bg-blue-100",   text: "text-blue-600",   dot: "bg-blue-400 animate-pulse",  label: "Memuat..."            },
+    scan:         { bg: "bg-blue-100",   text: "text-blue-700",   dot: "bg-blue-500",                label: "Menunggu Scan QR"     },
+    connected:    { bg: "bg-green-100",  text: "text-green-700",  dot: "bg-green-500",               label: "WhatsApp Terhubung"   },
+    initializing: { bg: "bg-yellow-100", text: "text-yellow-700", dot: "bg-yellow-500 animate-pulse", label: "Bot sedang inisialisasi..." },
+    offline:      { bg: "bg-red-100",    text: "text-red-700",    dot: "bg-red-500",                 label: "Chatbot Tidak Aktif"  },
   };
-  const sc = statusConfig[status];
+  const sc = statusConfig[status] ?? statusConfig.idle;
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-green-50">
@@ -74,7 +65,7 @@ export default function QRCode({ onConnect }) {
           <h1 className="text-xl font-bold text-gray-800">Hubungkan WhatsApp</h1>
         </div>
         <p className="text-sm text-gray-500 mb-6">
-          Scan QR Code dengan WhatsApp di HP kamu
+          Opsional — scan QR untuk menghubungkan bot WhatsApp.
         </p>
 
         {/* QR Area */}
@@ -90,13 +81,20 @@ export default function QRCode({ onConnect }) {
             <div className="flex flex-col items-center gap-3 text-red-400">
               <AlertCircle className="w-10 h-10" />
               <p className="text-sm font-medium">Chatbot tidak aktif</p>
-              <p className="text-xs text-gray-400">Jalankan <code className="bg-gray-100 px-1 rounded">npm run dev</code> di root</p>
+              <p className="text-xs text-gray-400">Pastikan chatbot sudah dijalankan</p>
             </div>
-          ) : (
+          ) : status === "loading" || status === "initializing" ? (
             <div className="flex flex-col items-center gap-3 text-gray-400">
               <Loader2 className="w-10 h-10 animate-spin text-green-500" />
-              <p className="text-sm">Menunggu QR Code...</p>
-              <p className="text-xs text-gray-300">WhatsApp client sedang inisialisasi</p>
+              <p className="text-sm">
+                {status === "initializing" ? "Bot sedang inisialisasi..." : "Memuat QR..."}
+              </p>
+            </div>
+          ) : (
+            // idle — belum ada aksi
+            <div className="flex flex-col items-center gap-3 text-gray-300">
+              <MessageSquareIcon className="w-12 h-12" />
+              <p className="text-sm text-gray-400">Klik "Muat QR" untuk memulai</p>
             </div>
           )}
         </div>
@@ -117,28 +115,41 @@ export default function QRCode({ onConnect }) {
           </ol>
         )}
 
-        {/* Tombol */}
-        <div className="flex gap-3 justify-center">
-          <Button
-            variant="outline"
-            onClick={handleRefresh}
-            disabled={isRefreshing}
-            className="flex items-center gap-2"
-          >
-            <RefreshCw className={`w-4 h-4 ${isRefreshing ? "animate-spin" : ""}`} />
-            Refresh
-          </Button>
+        {/* Tombol utama */}
+        <div className="flex gap-3 justify-center mb-4">
+          {/* Muat / Refresh QR — manual, tidak ada polling */}
+          {status !== "connected" && (
+            <Button
+              variant="outline"
+              onClick={fetchQR}
+              disabled={status === "loading"}
+              className="flex items-center gap-2"
+            >
+              <RefreshCw className={`w-4 h-4 ${status === "loading" ? "animate-spin" : ""}`} />
+              {status === "idle" ? "Muat QR" : "Muat Ulang"}
+            </Button>
+          )}
 
+          {/* Masuk setelah scan berhasil */}
           {status === "connected" && (
             <Button
-              onClick={onConnect}
+              onClick={handleConnect}
               className="bg-green-700 hover:bg-green-800 text-white flex items-center gap-2"
             >
               <Wifi className="w-4 h-4" />
-              Lanjut ke Dashboard
+              Masuk Dashboard
             </Button>
           )}
         </div>
+
+        {/* Tombol skip — selalu tersedia */}
+        <button
+          onClick={handleSkip}
+          className="text-xs text-gray-400 hover:text-gray-600 underline underline-offset-2 transition-colors"
+        >
+          Lewati, masuk dashboard tanpa menghubungkan WhatsApp
+        </button>
+
       </div>
     </div>
   );
