@@ -1,6 +1,81 @@
 {
-    "akurasi": 0.8,
+    "akurasi": 0.7583,
+    "presisi": 0.7891,
+    "recall": 0.7583,
     "total_data": 400,
-    "fitur_tfidf": 951,
-    "estimators": 200
+    "data_train": 280,
+    "data_test": 120,
+    "jumlah_kelas": 4,
+    "kelas": [
+        "INFRASTRUKTUR",
+        "KEAMANAN",
+        "LINGKUNGAN",
+        "PELAYANAN"
+    ],
+    "fitur_tfidf": 963,
+    "estimators": 200,
+    "perClass": {
+        "INFRASTRUKTUR": {
+            "precision": 0.6389,
+            "recall": 0.7667,
+            "f1": 0.697,
+            "support": 30,
+            "tp": 23,
+            "fp": 13,
+            "fn": 7
+        },
+        "KEAMANAN": {
+            "precision": 0.8148,
+            "recall": 0.7333,
+            "f1": 0.7719,
+            "support": 30,
+            "tp": 22,
+            "fp": 5,
+            "fn": 8
+        },
+        "LINGKUNGAN": {
+            "precision": 0.7027,
+            "recall": 0.8667,
+            "f1": 0.7761,
+            "support": 30,
+            "tp": 26,
+            "fp": 11,
+            "fn": 4
+        },
+        "PELAYANAN": {
+            "precision": 1.0,
+            "recall": 0.6667,
+            "f1": 0.8,
+            "support": 30,
+            "tp": 20,
+            "fp": 0,
+            "fn": 10
+        }
+    },
+    "confusionMatrix": {
+        "INFRASTRUKTUR": {
+            "INFRASTRUKTUR": 23,
+            "KEAMANAN": 4,
+            "LINGKUNGAN": 3,
+            "PELAYANAN": 0
+        },
+        "KEAMANAN": {
+            "INFRASTRUKTUR": 6,
+            "KEAMANAN": 22,
+            "LINGKUNGAN": 2,
+            "PELAYANAN": 0
+        },
+        "LINGKUNGAN": {
+            "INFRASTRUKTUR": 3,
+            "KEAMANAN": 1,
+            "LINGKUNGAN": 26,
+            "PELAYANAN": 0
+        },
+        "PELAYANAN": {
+            "INFRASTRUKTUR": 4,
+            "KEAMANAN": 0,
+            "LINGKUNGAN": 6,
+            "PELAYANAN": 20
+        }
+    }
 }

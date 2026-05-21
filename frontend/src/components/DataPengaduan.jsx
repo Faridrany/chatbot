@@ -19,9 +19,9 @@ export default function DataPengaduan({ onLogout }) {
 
   const itemsPerPage = 8;
 
-  // ── Fetch dari final_processed.json via backend ──
+  // ── Fetch dari dataset_berlabel.json via backend ──
   useEffect(() => {
-    fetch("/api/pengaduan")
+    fetch("/api/dataset")
       .then((res) => res.json())
       .then((res) => { setData(res); setLoading(false); })
       .catch((err) => { console.error(err); setLoading(false); });
@@ -110,37 +110,28 @@ export default function DataPengaduan({ onLogout }) {
                     <thead className="bg-green-100 text-green-900">
                       <tr>
                         <th className="p-3 text-left font-semibold w-8">#</th>
-                        <th className="p-3 text-left font-semibold">Tanggal</th>
                         <th className="p-3 text-left font-semibold">Nama</th>
+                        <th className="p-3 text-left font-semibold">No. WA</th>
                         <th className="p-3 text-left font-semibold">Deskripsi</th>
-                        <th className="p-3 text-left font-semibold">Teks Processed</th>
                         <th className="p-3 text-left font-semibold">Kategori</th>
-                        <th className="p-3 text-left font-semibold">Akurasi</th>
                         <th className="p-3 text-left font-semibold">Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
                       {paginatedData.map((item, pageIdx) => {
-                        // Index asli dalam array data (bukan filtered) untuk navigasi
-                        const globalIndex = data.indexOf(item);
+                        const globalIndex = item._id ?? data.indexOf(item);
                         return (
                           <tr key={globalIndex} className="border-t hover:bg-gray-50 transition-colors">
                             <td className="p-3 text-gray-400">{startIndex + pageIdx + 1}</td>
-                            <td className="p-3 text-gray-600 whitespace-nowrap">{item.timestamp}</td>
                             <td className="p-3 font-medium text-gray-800 whitespace-nowrap">{item.nama}</td>
+                            <td className="p-3 text-gray-500 whitespace-nowrap">{item.no_wa || "-"}</td>
                             <td className="p-3 text-gray-700 max-w-xs">
                               <p className="line-clamp-2">{item.deskripsi}</p>
-                            </td>
-                            <td className="p-3 text-gray-500 max-w-xs">
-                              <p className="line-clamp-2 font-mono text-xs">{item.processed}</p>
                             </td>
                             <td className="p-3">
                               <Badge className={getCategoryColor(item.kategori_prediksi)}>
                                 {item.kategori_prediksi}
                               </Badge>
-                            </td>
-                            <td className="p-3 text-green-700 font-semibold">
-                              {((item.akurasi_model ?? 0) * 100).toFixed(0)}%
                             </td>
                             <td className="p-3">
                               <Button

@@ -51,7 +51,7 @@ export default function Statistik({ onLogout }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("/api/statistik")
+    fetch("/api/evaluasi")
       .then((r) => r.json())
       .then((d) => { setData(d); setLoading(false); })
       .catch((e) => { setError(e.message); setLoading(false); });
@@ -71,36 +71,41 @@ export default function Statistik({ onLogout }) {
     </div>
   );
 
-  const { akurasi, tfidf, confusionMatrix, perClass, distribusi, totalPrediksi } = data;
+  const { akurasi, perClass, confusionMatrix, fitur_tfidf, estimators,
+          total_data, data_train, data_test } = data;
+
+  // Distribusi dari final_processed (prediksi 400 data)
+  const distribusiCount = {};
+  CATEGORIES.forEach(c => distribusiCount[c] = 0);
 
   // Data untuk bar chart per-class metrics
   const metricsChartData = CATEGORIES.map((cat) => ({
     name: CAT_LABEL[cat],
-    Precision: parseFloat((perClass[cat]?.precision * 100).toFixed(1)),
-    Recall:    parseFloat((perClass[cat]?.recall    * 100).toFixed(1)),
-    "F1-Score": parseFloat((perClass[cat]?.f1       * 100).toFixed(1)),
+    Precision: parseFloat(((perClass?.[cat]?.precision || 0) * 100).toFixed(1)),
+    Recall:    parseFloat(((perClass?.[cat]?.recall    || 0) * 100).toFixed(1)),
+    "F1-Score": parseFloat(((perClass?.[cat]?.f1       || 0) * 100).toFixed(1)),
     color: CAT_COLOR[cat],
   }));
 
   // Data untuk radar chart
   const radarData = CATEGORIES.map((cat) => ({
     subject: CAT_LABEL[cat],
-    Precision: parseFloat((perClass[cat]?.precision * 100).toFixed(1)),
-    Recall:    parseFloat((perClass[cat]?.recall    * 100).toFixed(1)),
-    "F1-Score": parseFloat((perClass[cat]?.f1       * 100).toFixed(1)),
+    Precision: parseFloat(((perClass?.[cat]?.precision || 0) * 100).toFixed(1)),
+    Recall:    parseFloat(((perClass?.[cat]?.recall    || 0) * 100).toFixed(1)),
+    "F1-Score": parseFloat(((perClass?.[cat]?.f1       || 0) * 100).toFixed(1)),
   }));
 
-  // Distribusi data
+  // Distribusi dari perClass support
   const distribusiData = CATEGORIES.map((cat) => ({
     name: CAT_LABEL[cat],
-    jumlah: distribusi[cat] || 0,
+    jumlah: perClass?.[cat]?.support || 0,
     color: CAT_COLOR[cat],
   }));
 
-  // Macro avg
-  const macroPrec = CATEGORIES.reduce((s, c) => s + (perClass[c]?.precision || 0), 0) / CATEGORIES.length;
-  const macroRec  = CATEGORIES.reduce((s, c) => s + (perClass[c]?.recall    || 0), 0) / CATEGORIES.length;
-  const macroF1   = CATEGORIES.reduce((s, c) => s + (perClass[c]?.f1        || 0), 0) / CATEGORIES.length;
+  // Macro avg dari perClass yang sudah benar
+  const macroPrec = CATEGORIES.reduce((s, c) => s + (perClass?.[c]?.precision || 0), 0) / CATEGORIES.length;
+  const macroRec  = CATEGORIES.reduce((s, c) => s + (perClass?.[c]?.recall    || 0), 0) / CATEGORIES.length;
+  const macroF1   = CATEGORIES.reduce((s, c) => s + (perClass?.[c]?.f1        || 0), 0) / CATEGORIES.length;
 
   return (
     <div className="flex min-h-screen bg-gray-50">
@@ -153,15 +158,15 @@ export default function Statistik({ onLogout }) {
               <div className="space-y-3">
                 <div className="flex justify-between items-center py-2 border-b">
                   <span className="text-sm text-gray-500">Jumlah Fitur</span>
-                  <span className="font-semibold text-green-700">{tfidf.fitur.toLocaleString()}</span>
+                  <span className="font-semibold text-green-700">{(fitur_tfidf || 0).toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b">
                   <span className="text-sm text-gray-500">Total Data Training</span>
-                  <span className="font-semibold text-green-700">{tfidf.total_data.toLocaleString()}</span>
+                  <span className="font-semibold text-green-700">{(total_data || 0).toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b">
-                  <span className="text-sm text-gray-500">Total Data Prediksi</span>
-                  <span className="font-semibold text-green-700">{totalPrediksi.toLocaleString()}</span>
+                  <span className="text-sm text-gray-500">Data Train / Test</span>
+                  <span className="font-semibold text-green-700">{data_train} / {data_test}</span>
                 </div>
                 <div className="flex justify-between items-center py-2">
                   <span className="text-sm text-gray-500">Metode Vektorisasi</span>
@@ -176,7 +181,7 @@ export default function Statistik({ onLogout }) {
               <div className="space-y-3">
                 <div className="flex justify-between items-center py-2 border-b">
                   <span className="text-sm text-gray-500">Jumlah Estimator (Pohon)</span>
-                  <span className="font-semibold text-green-700">{tfidf.estimators}</span>
+                  <span className="font-semibold text-green-700">{estimators || 200}</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b">
                   <span className="text-sm text-gray-500">Jumlah Kelas</span>
@@ -242,11 +247,6 @@ export default function Statistik({ onLogout }) {
               </table>
             </div>
 
-            {data.matched === 0 && (
-              <p className="mt-3 text-xs text-yellow-600 bg-yellow-50 p-2 rounded">
-                ⚠️ Confusion matrix dihitung berdasarkan estimasi dari akurasi model ({(data.akurasi * 100).toFixed(0)}%) dan distribusi dataset berlabel ({data.totalLabel} data), karena data prediksi chatbot berbeda dengan dataset training.
-              </p>
-            )}
           </div>
 
           {/* ── Per-Class Metrics Table ── */}

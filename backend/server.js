@@ -12,9 +12,6 @@ app.use(cors({
 }));
 app.use(express.json());
 
-// ─────────────────────────────────────────────
-// IN-MEMORY CACHE — semua file dibaca SEKALI saat server start
-// ─────────────────────────────────────────────
 const DATA_DIR      = path.join(__dirname, "../data");
 const PROCESSED_DIR = path.join(DATA_DIR, "processed");
 
@@ -29,7 +26,6 @@ const cache = {
 async function loadCache() {
   console.log("⏳ Loading data into memory...");
 
-  // Baca semua file secara paralel
   const [
     pengaduanRaw,
     casefoldedRaw,
@@ -56,7 +52,6 @@ async function loadCache() {
   cache.training        = JSON.parse(trainingRaw);
   cache.datasetBerlabel = JSON.parse(labelRaw);
 
-  // Bangun Map pipeline: key = deskripsi (normalized), value = semua tahap
   const normalize = (s) => s?.trim().replace(/\s+/g, " ") ?? "";
 
   const pipelineArrays = {
@@ -68,7 +63,6 @@ async function loadCache() {
     stemmed:      JSON.parse(stemmedRaw),
   };
 
-  // Gabungkan semua tahap ke satu Map berdasarkan deskripsi
   const pipelineMap = new Map();
 
   for (const [key, arr] of Object.entries(pipelineArrays)) {
@@ -82,15 +76,10 @@ async function loadCache() {
 
   cache.pipeline = pipelineMap;
 
-  // Pre-hitung stats sekali
   cache.stats = computeStats(cache.pengaduan);
 
   console.log(`✅ Cache loaded: ${cache.pengaduan.length} pengaduan, ${pipelineMap.size} pipeline entries`);
 }
-
-// ─────────────────────────────────────────────
-// HELPER: hitung stats dari array pengaduan
-// ─────────────────────────────────────────────
 function computeStats(pengaduan) {
   const kategoriCount = {};
   let latestTs = new Date(0);
@@ -123,29 +112,42 @@ function computeStats(pengaduan) {
 
   return { total: pengaduan.length, baru3Hari, baru7Hari, kategoriTerbanyak, kategori: kategoriCount, weeklyData };
 }
+// Evaluasi model — baca langsung dari hasil_training.json (akurat dari training)
+app.get("/api/evaluasi", async (_req, res) => {
+  try {
+    const raw  = await fs.readFile(path.join(DATA_DIR, "hasil_training.json"), "utf-8");
+    res.json(JSON.parse(raw));
+  } catch {
+    res.status(404).json({ error: "hasil_training.json belum ada. Jalankan python main.py terlebih dahulu." });
+  }
+});
 
-// ─────────────────────────────────────────────
-// ROUTES
-// ─────────────────────────────────────────────
-
-// Semua pengaduan
 app.get("/api/pengaduan", (_req, res) => {
   res.json(cache.pengaduan);
 });
 
-// Stats (sudah di-cache, langsung return)
+// Dataset berlabel — untuk halaman Data Pengaduan
+// Normalisasi field: Kategori → kategori_prediksi, no_wa dibersihkan
+app.get("/api/dataset", (_req, res) => {
+  const data = cache.datasetBerlabel.map((item, i) => ({
+    _id:               i,
+    nama:              item.nama              ?? "",
+    no_wa:             (item.no_wa ?? "").replace("@c.us", ""),
+    deskripsi:         item.deskripsi         ?? "",
+    kategori_prediksi: item.Kategori || item.kategori || "-",
+    timestamp:         item.timestamp         ?? "-",
+  }));
+  res.json(data);
+});
 app.get("/api/stats", (_req, res) => {
   res.json(cache.stats);
 });
-
-// Detail satu pengaduan
 app.get("/api/pengaduan/:id", (req, res) => {
   const item = cache.pengaduan[parseInt(req.params.id)];
   if (!item) return res.status(404).json({ error: "Data tidak ditemukan" });
   res.json(item);
 });
 
-// Detail + pipeline preprocessing
 app.get("/api/pengaduan/:id/processed", (req, res) => {
   const item = cache.pengaduan[parseInt(req.params.id)];
   if (!item) return res.status(404).json({ error: "Data tidak ditemukan" });
@@ -180,8 +182,6 @@ app.get("/api/statistik", (_req, res) => {
     for (const item of predData) {
       if (predCount[item.kategori_prediksi] !== undefined) predCount[item.kategori_prediksi]++;
     }
-
-    // Confusion matrix via Map lookup
     const predMap = new Map(predData.map((i) => [i.deskripsi?.trim(), i.kategori_prediksi]));
 
     const matrix = Object.fromEntries(

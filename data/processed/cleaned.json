@@ -1,418 +1,1602 @@
 [
     {
-        "deskripsi": "Ini di samping rumah tiap hari ribut kalo malam",
-        "cleaned": "Ini di samping rumah tiap hari ribut kalo malam"
+        "deskripsi": "Lampu PJU di sekitar Jembatan Merah Margomulyo mati total. Sangat rawan jambret setelah pukul 10 malam.",
+        "hasil": "Lampu PJU di sekitar Jembatan Merah Margomulyo mati total Sangat rawan jambret setelah pukul malam"
     },
     {
-        "deskripsi": "Ini di samping rumah tiap hari ribut kalo malam",
-        "cleaned": "Ini di samping rumah tiap hari ribut kalo malam"
+        "deskripsi": "Sekelompok pemuda mabuk dan main gitar keras-keras di pos ronda Selili. Warga takut dan terganggu.",
+        "hasil": "Sekelompok pemuda mabuk dan main gitar keras keras di pos ronda Selili Warga takut dan terganggu"
     },
     {
-        "deskripsi": "Ini sungai seluang udah meluap banyak orang buang sampah sembarangan karena tidak ada larangan",
-        "cleaned": "Ini sungai seluang udah meluap banyak orang buang sampah sembarangan karena tidak ada larangan"
+        "deskripsi": "Ada anjing liar yang agresif sering berkeliaran di dekat sekolah Teluk Pemedas. Bahaya bagi anak-anak pulang sekolah.",
+        "hasil": "Ada anjing liar yang agresif sering berkeliaran di dekat sekolah Teluk Pemedas Bahaya bagi anak anak pulang sekolah"
     },
     {
-        "deskripsi": "Ini di samping rumah tiap hari ribut kalo malam",
-        "cleaned": "Ini di samping rumah tiap hari ribut kalo malam"
+        "deskripsi": "Saya melihat orang mencurigakan memantau rumah kosong di Karya Jaya sejak pagi hari. Diduga maling.",
+        "hasil": "Saya melihat orang mencurigakan memantau rumah kosong di Karya Jaya sejak pagi hari Diduga maling"
     },
     {
-        "deskripsi": "tetangga sering mabuk mabuk dan bikin rusuh tiap malam",
-        "cleaned": "tetangga sering mabuk mabuk dan bikin rusuh tiap malam"
+        "deskripsi": "Setiap Sabtu malam ada balapan motor liar di jalan utama Handil Baru Darat. Knalpotnya memekakkan telinga.",
+        "hasil": "Setiap Sabtu malam ada balapan motor liar di jalan utama Handil Baru Darat Knalpotnya memekakkan telinga"
     },
     {
-        "deskripsi": "anak anak sering tawuran di gang dan membuat takut anak anak",
-        "cleaned": "anak anak sering tawuran di gang dan membuat takut anak anak"
+        "deskripsi": "Pohon asam besar di Wonotirto sudah rapuh di bagian akarnya, sangat rawan tumbang ke jalan saat angin kencang.",
+        "hasil": "Pohon asam besar di Wonotirto sudah rapuh di bagian akarnya sangat rawan tumbang ke jalan saat angin kencang"
     },
     {
-        "deskripsi": "Di daerah dekat pasar kuala sering banget kebanjiran karena banyak orang buang sampah ke sungai",
-        "cleaned": "Di daerah dekat pasar kuala sering banget kebanjiran karena banyak orang buang sampah ke sungai"
+        "deskripsi": "Ada tiga orang asing nongkrong di Muara Sembilang, wajah mereka ditutup. Warga takut ada upaya penculikan atau kejahatan.",
+        "hasil": "Ada tiga orang asing nongkrong di Muara Sembilang wajah mereka ditutup Warga takut ada upaya penculikan atau kejahatan"
     },
     {
-        "deskripsi": "Ada ular besar masuk ke garasi rumah di Teluk Pemedas. Kami takut, min. Tolong segera ditangkap petugas.",
-        "cleaned": "Ada ular besar masuk ke garasi rumah di Teluk Pemedas Kami takut min Tolong segera ditangkap petugas"
+        "deskripsi": "Ular sawah besar sering masuk ke halaman rumah warga di pinggir Sungai Seluang. Ini sangat bahaya.",
+        "hasil": "Ular sawah besar sering masuk ke halaman rumah warga di pinggir Sungai Seluang Ini sangat bahaya"
     },
     {
-        "deskripsi": "Jambret beraksi di Karya Jaya, ngambil tas ibu-ibu. Pelaku lari ke arah gang sepi. Kami mohon patroli rutin sore hari.",
-        "cleaned": "Jambret beraksi di Karya Jaya ngambil tas ibu ibu Pelaku lari ke arah gang sepi Kami mohon patroli rutin sore hari"
+        "deskripsi": "Kasus copet di angkot rute Margomulyo kembali terjadi. Pelaku hilang setelah beraksi di perempatan.",
+        "hasil": "Kasus copet di angkot rute Margomulyo kembali terjadi Pelaku hilang setelah beraksi di perempatan"
     },
     {
-        "deskripsi": "Pencurian jemuran terjadi di Selili. Padahal sudah malam. Maling ini nekat banget. Kami butuh keamanan yang siaga.",
-        "cleaned": "Pencurian jemuran terjadi di Selili Padahal sudah malam Maling ini nekat banget Kami butuh keamanan yang siaga"
+        "deskripsi": "Remaja mabuk di Selili sering memecahkan botol dan berkelahi. Warga ingin keamanan ditingkatkan.",
+        "hasil": "Remaja mabuk di Selili sering memecahkan botol dan berkelahi Warga ingin keamanan ditingkatkan"
     },
     {
-        "deskripsi": "Ada anjing liar di Teluk Pemedas yang terlihat sakit dan agresif. Kami khawatir kena rabies. Minta dijemput petugas.",
-        "cleaned": "Ada anjing liar di Teluk Pemedas yang terlihat sakit dan agresif Kami khawatir kena rabies Minta dijemput petugas"
+        "deskripsi": "Anjing liar Teluk Pemedas menyerang kucing peliharaan warga. Kami khawatir jika anak-anak yang jadi korban.",
+        "hasil": "Anjing liar Teluk Pemedas menyerang kucing peliharaan warga Kami khawatir jika anak anak yang jadi korban"
     },
     {
-        "deskripsi": "Pohon rapuh di pinggir jalan Karya Jaya miring, membahayakan pengendara motor yang lewat di bawahnya.",
-        "cleaned": "Pohon rapuh di pinggir jalan Karya Jaya miring membahayakan pengendara motor yang lewat di bawahnya"
+        "deskripsi": "Jambret beraksi di gang Karya Jaya, mengambil HP pengendara motor wanita. Area ini rawan kejahatan jalanan.",
+        "hasil": "Jambret beraksi di gang Karya Jaya mengambil HP pengendara motor wanita Area ini rawan kejahatan jalanan"
     },
     {
-        "deskripsi": "Di Handil Baru Darat sering ada motor ngebut-ngebutan di jalan komplek. Bikin kaget dan bahaya buat anak-anak.",
-        "cleaned": "Di Handil Baru Darat sering ada motor ngebut ngebutan di jalan komplek Bikin kaget dan bahaya buat anak anak"
+        "deskripsi": "Sekelompok preman memalak warga di Handil Baru Darat. Mohon patroli keamanan segera datang.",
+        "hasil": "Sekelompok preman memalak warga di Handil Baru Darat Mohon patroli keamanan segera datang"
     },
     {
-        "deskripsi": "Jalanan di Wonotirto gelap gulita, jadi tempat yang nyaman buat orang mabuk. Warga takut melintas.",
-        "cleaned": "Jalanan di Wonotirto gelap gulita jadi tempat yang nyaman buat orang mabuk Warga takut melintas"
+        "deskripsi": "Pagar kompleks Wonotirto dirusak orang tak dikenal. Diduga upaya pembobolan dan pencurian.",
+        "hasil": "Pagar kompleks Wonotirto dirusak orang tak dikenal Diduga upaya pembobolan dan pencurian"
     },
     {
-        "deskripsi": "Ada upaya pencurian di Muara Sembilang, malingnya masuk lewat atap. Untung gagal. Kami butuh keamanan yang lebih pintar.",
-        "cleaned": "Ada upaya pencurian di Muara Sembilang malingnya masuk lewat atap Untung gagal Kami butuh keamanan yang lebih pintar"
+        "deskripsi": "Lampu penerangan di jalan Muara Sembilang mati total, rawan kecelakaan dan tindak kriminal.",
+        "hasil": "Lampu penerangan di jalan Muara Sembilang mati total rawan kecelakaan dan tindak kriminal"
     },
     {
-        "deskripsi": "Ular sanca masuk ke pemukiman di Sungai Seluang. Ini bahaya banget, min. Tolong segera ditangkap.",
-        "cleaned": "Ular sanca masuk ke pemukiman di Sungai Seluang Ini bahaya banget min Tolong segera ditangkap"
+        "deskripsi": "Pohon di dekat Puskesmas Wonotirto sudah doyong. Sangat rapuh dan bahaya jika tumbang ke parkiran.",
+        "hasil": "Pohon di dekat Puskesmas Wonotirto sudah doyong Sangat rapuh dan bahaya jika tumbang ke parkiran"
     },
     {
-        "deskripsi": "Ada upaya pencurian kotak amal masjid di Margomulyo. Pelaku kabur saat diteriaki marbot. Kami butuh CCTV di area itu.",
-        "cleaned": "Ada upaya pencurian kotak amal masjid di Margomulyo Pelaku kabur saat diteriaki marbot Kami butuh CCTV di area itu"
+        "deskripsi": "Ada ular kobra muncul di kebun warga di Muara Sembilang. Warga panik dan takut.",
+        "hasil": "Ada ular kobra muncul di kebun warga di Muara Sembilang Warga panik dan takut"
     },
     {
-        "deskripsi": "Sekelompok remaja mabuk di pinggir sungai Selili sering membuat onar dan melempar batu ke rumah warga. Kami resah sekali.",
-        "cleaned": "Sekelompok remaja mabuk di pinggir sungai Selili sering membuat onar dan melempar batu ke rumah warga Kami resah sekali"
+        "deskripsi": "Di Sungai Seluang sering ada tawuran antar remaja. Kami butuh patroli keamanan setiap malam minggu.",
+        "hasil": "Di Sungai Seluang sering ada tawuran antar remaja Kami butuh patroli keamanan setiap malam minggu"
     },
     {
-        "deskripsi": "Di Teluk Pemedas, lampu PJU mati total. Jalan gelap banget, apalagi malam. Rawan begal yang mengincar motor.",
-        "cleaned": "Di Teluk Pemedas lampu PJU mati total Jalan gelap banget apalagi malam Rawan begal yang mengincar motor"
+        "deskripsi": "Anjing liar Margomulyo mengejar motor anak-anak. Salah satu anak jatuh dan terluka. Perlu penanganan serius.",
+        "hasil": "Anjing liar Margomulyo mengejar motor anak anak Salah satu anak jatuh dan terluka Perlu penanganan serius"
     },
     {
-        "deskripsi": "Saya melihat orang mencurigakan memantau toko emas di Karya Jaya. Diduga komplotan pencuri. Mohon segera patroli ke lokasi.",
-        "cleaned": "Saya melihat orang mencurigakan memantau toko emas di Karya Jaya Diduga komplotan pencuri Mohon segera patroli ke lokasi"
+        "deskripsi": "Pencurian tabung gas terjadi di Selili. Pelaku berhasil hilang saat dikejar. Maling semakin nekat.",
+        "hasil": "Pencurian tabung gas terjadi di Selili Pelaku berhasil hilang saat dikejar Maling semakin nekat"
     },
     {
-        "deskripsi": "Balapan liar di Handil Baru Darat kembali marak malam ini. Suara knalpot memekakkan telinga dan sangat mengganggu istirahat.",
-        "cleaned": "Balapan liar di Handil Baru Darat kembali marak malam ini Suara knalpot memekakkan telinga dan sangat mengganggu istirahat"
+        "deskripsi": "Sekelompok remaja ribut dan mabuk di Teluk Pemedas, membuat bising dan mengganggu warga saat sahur.",
+        "hasil": "Sekelompok remaja ribut dan mabuk di Teluk Pemedas membuat bising dan mengganggu warga saat sahur"
     },
     {
-        "deskripsi": "Pohon besar di belakang SDN Wonotirto sudah keropos dan miring ke arah sekolah. Bahaya kalau tumbang saat jam pelajaran.",
-        "cleaned": "Pohon besar di belakang SDN Wonotirto sudah keropos dan miring ke arah sekolah Bahaya kalau tumbang saat jam pelajaran"
+        "deskripsi": "Jalanan di Karya Jaya gelap karena lampu mati, rawan copet. Mohon segera diperbaiki agar aman.",
+        "hasil": "Jalanan di Karya Jaya gelap karena lampu mati rawan copet Mohon segera diperbaiki agar aman"
     },
     {
-        "deskripsi": "Ada sekelompok pemuda asing di Muara Sembilang, mereka bawa tas ransel besar dan terlihat mondar-mandir tanpa tujuan jelas.",
-        "cleaned": "Ada sekelompok pemuda asing di Muara Sembilang mereka bawa tas ransel besar dan terlihat mondar mandir tanpa tujuan jelas"
+        "deskripsi": "Ada orang asing mencurigakan berdiri di depan rumah warga Handil Baru Darat dari subuh. Kami takut.",
+        "hasil": "Ada orang asing mencurigakan berdiri di depan rumah warga Handil Baru Darat dari subuh Kami takut"
     },
     {
-        "deskripsi": "Anjing liar di Sungai Seluang sudah sangat agresif, sering mengejar anak-anak yang pulang mengaji. Warga jadi takut.",
-        "cleaned": "Anjing liar di Sungai Seluang sudah sangat agresif sering mengejar anak anak yang pulang mengaji Warga jadi takut"
+        "deskripsi": "Balapan motor liar di Wonotirto mengganggu ketenangan dan rawan kecelakaan di jalan utama.",
+        "hasil": "Balapan motor liar di Wonotirto mengganggu ketenangan dan rawan kecelakaan di jalan utama"
     },
     {
-        "deskripsi": "Pencurian helm di parkiran Margomulyo sering terjadi. Kami butuh keamanan yang siaga di area parkir umum.",
-        "cleaned": "Pencurian helm di parkiran Margomulyo sering terjadi Kami butuh keamanan yang siaga di area parkir umum"
+        "deskripsi": "Pagar rumah di Muara Sembilang dirusak, diduga upaya maling. Kami butuh keamanan lebih.",
+        "hasil": "Pagar rumah di Muara Sembilang dirusak diduga upaya maling Kami butuh keamanan lebih"
     },
     {
-        "deskripsi": "Di Selili, ada orang mabuk teriak-teriak dan mengganggu ibu-ibu yang lagi belanja sayur. Tolong segera dijemput.",
-        "cleaned": "Di Selili ada orang mabuk teriak teriak dan mengganggu ibu ibu yang lagi belanja sayur Tolong segera dijemput"
+        "deskripsi": "Jambret beraksi di Sungai Seluang saat sore hari. Korban kehilangan dompet dan trauma.",
+        "hasil": "Jambret beraksi di Sungai Seluang saat sore hari Korban kehilangan dompet dan trauma"
     },
     {
-        "deskripsi": "Ular sanca masuk ke kolong mobil warga di Teluk Pemedas. Kami takut, min. Minta bantuan penanganan hewan.",
-        "cleaned": "Ular sanca masuk ke kolong mobil warga di Teluk Pemedas Kami takut min Minta bantuan penanganan hewan"
+        "deskripsi": "Di gang 5 Margomulyo, motor saya hampir hilang dicuri subuh tadi. Untung ketahuan, tapi malingnya bawa sajam. Tolong patroli malam diperketat.",
+        "hasil": "Di gang Margomulyo motor saya hampir hilang dicuri subuh tadi Untung ketahuan tapi malingnya bawa sajam Tolong patroli malam diperketat"
     },
     {
-        "deskripsi": "Ada copet beraksi di Karya Jaya, mengambil HP dari saku celana. Pelaku lari ke jalan tikus. Daerah ini rawan di siang hari.",
-        "cleaned": "Ada copet beraksi di Karya Jaya mengambil HP dari saku celana Pelaku lari ke jalan tikus Daerah ini rawan di siang hari"
+        "deskripsi": "Ada sekelompok ABG tiap sore kumpul di Selili sambil ngelem, baunya kemana-mana. Warga udah tegur tapi gak didengar. Mereka bawa ribut.",
+        "hasil": "Ada sekelompok ABG tiap sore kumpul di Selili sambil ngelem baunya kemana mana Warga udah tegur tapi gak didengar Mereka bawa ribut"
     },
     {
-        "deskripsi": "Lampu PJU di sepanjang Handil Baru Darat mati semua. Gelap gulita, saya hampir jatuh dari motor karena lubang jalan tidak terlihat.",
-        "cleaned": "Lampu PJU di sepanjang Handil Baru Darat mati semua Gelap gulita saya hampir jatuh dari motor karena lubang jalan tidak terlihat"
+        "deskripsi": "Jalan masuk Teluk Pemedas gelap banget, min. Lampu mati semua, dari jam 8 malam udah sepi. Saya takut pulang kerja jadi korban begal.",
+        "hasil": "Jalan masuk Teluk Pemedas gelap banget min Lampu mati semua dari jam malam udah sepi Saya takut pulang kerja jadi korban begal"
     },
     {
-        "deskripsi": "Pagar sekolah Wonotirto jebol, membuat sekolah rawan dimasuki maling. Kami butuh perbaikan segera.",
-        "cleaned": "Pagar sekolah Wonotirto jebol membuat sekolah rawan dimasuki maling Kami butuh perbaikan segera"
+        "deskripsi": "Saya liat ada orang mencurigakan pakai jaket tebal di Karya Jaya, mondar-mandir lihat isi rumah. Kayaknya mau nyopet rumah kosong.",
+        "hasil": "Saya liat ada orang mencurigakan pakai jaket tebal di Karya Jaya mondar mandir lihat isi rumah Kayaknya mau nyopet rumah kosong"
     },
     {
-        "deskripsi": "Tadi malam, ada suara ribut besar di Muara Sembilang, diduga tawuran antar pemuda. Warga tidak berani keluar.",
-        "cleaned": "Tadi malam ada suara ribut besar di Muara Sembilang diduga tawuran antar pemuda Warga tidak berani keluar"
+        "deskripsi": "Balapan liar di Handil Baru Darat ini sudah keterlaluan. Motornya di-gas kenceng di permukiman. Mohon ditangkap dan disita motornya.",
+        "hasil": "Balapan liar di Handil Baru Darat ini sudah keterlaluan Motornya di gas kenceng di permukiman Mohon ditangkap dan disita motornya"
     },
     {
-        "deskripsi": "Balapan liar di jalan pintas Sungai Seluang sering terjadi, min. Bikin kaget dan rawan kecelakaan. Mohon ditindak.",
-        "cleaned": "Balapan liar di jalan pintas Sungai Seluang sering terjadi min Bikin kaget dan rawan kecelakaan Mohon ditindak"
+        "deskripsi": "Pohon di dekat tower Wonotirto tumbang kena hujan semalam. Untung gak ada korban, tapi kabel listrik jadi ketarik. Bahaya banget.",
+        "hasil": "Pohon di dekat tower Wonotirto tumbang kena hujan semalam Untung gak ada korban tapi kabel listrik jadi ketarik Bahaya banget"
     },
     {
-        "deskripsi": "Di Margomulyo sering ada orang asing masuk gang dan menawarkan barang dengan paksa. Kami khawatir mereka adalah penipu.",
-        "cleaned": "Di Margomulyo sering ada orang asing masuk gang dan menawarkan barang dengan paksa Kami khawatir mereka adalah penipu"
+        "deskripsi": "Preman di Muara Sembilang minta jatah parkir ke semua warung. Kalau gak dikasih, mereka ancam merusak. Warga udah takut banget.",
+        "hasil": "Preman di Muara Sembilang minta jatah parkir ke semua warung Kalau gak dikasih mereka ancam merusak Warga udah takut banget"
     },
     {
-        "deskripsi": "Pencurian motor terjadi di Selili. Pelaku lari ke arah kebun. Warga sudah sangat resah dengan kasus pencurian motor yang marak.",
-        "cleaned": "Pencurian motor terjadi di Selili Pelaku lari ke arah kebun Warga sudah sangat resah dengan kasus pencurian motor yang marak"
+        "deskripsi": "Anjing liar di Sungai Seluang makin banyak, min. Saya mau lari pagi jadi takut karena mereka agresif dan bergerombol.",
+        "hasil": "Anjing liar di Sungai Seluang makin banyak min Saya mau lari pagi jadi takut karena mereka agresif dan bergerombol"
     },
     {
-        "deskripsi": "Ada anjing liar di Teluk Pemedas yang terlihat sakit parah. Kami takut menularkan penyakit. Minta bantuan kesehatan hewan.",
-        "cleaned": "Ada anjing liar di Teluk Pemedas yang terlihat sakit parah Kami takut menularkan penyakit Minta bantuan kesehatan hewan"
+        "deskripsi": "Tadi malam ada upaya pencurian helm di Margomulyo. Pelaku kabur naik motor tanpa plat. Patroli harus lebih sering di malam hari.",
+        "hasil": "Tadi malam ada upaya pencurian helm di Margomulyo Pelaku kabur naik motor tanpa plat Patroli harus lebih sering di malam hari"
     },
     {
-        "deskripsi": "Pohon di pinggir jalan Karya Jaya sudah sangat rapuh, cabangnya bisa sewaktu-waktu jatuh. Mohon dipangkas sebelum ada korban.",
-        "cleaned": "Pohon di pinggir jalan Karya Jaya sudah sangat rapuh cabangnya bisa sewaktu waktu jatuh Mohon dipangkas sebelum ada korban"
+        "deskripsi": "Di Selili sering ada sekelompok orang ribut dan teriak-teriak keras di pos kamling yang kosong. Bikin warga gak bisa tidur tenang.",
+        "hasil": "Di Selili sering ada sekelompok orang ribut dan teriak teriak keras di pos kamling yang kosong Bikin warga gak bisa tidur tenang"
     },
     {
-        "deskripsi": "Lampu PJU di dekat pos ronda Margomulyo sudah mati 3 hari. Tolong diperbaiki, karena malam hari jadi tempat nongkrong yang mencurigakan.",
-        "cleaned": "Lampu PJU di dekat pos ronda Margomulyo sudah mati hari Tolong diperbaiki karena malam hari jadi tempat nongkrong yang mencurigakan"
+        "deskripsi": "Anak saya hampir digigit anjing liar di Teluk Pemedas, min. Kelihatan anjingnya sakit. Tolong ditertibkan sebelum ada korban serius.",
+        "hasil": "Anak saya hampir digigit anjing liar di Teluk Pemedas min Kelihatan anjingnya sakit Tolong ditertibkan sebelum ada korban serius"
     },
     {
-        "deskripsi": "Sekelompok remaja mabuk di Selili sering mengganggu ketenangan, mereka menyalakan petasan dan teriak-teriak.",
-        "cleaned": "Sekelompok remaja mabuk di Selili sering mengganggu ketenangan mereka menyalakan petasan dan teriak teriak"
+        "deskripsi": "Ada jambret tas di Karya Jaya saat saya lewat. Pelaku lari ke arah jalan tikus. Saya trauma banget.",
+        "hasil": "Ada jambret tas di Karya Jaya saat saya lewat Pelaku lari ke arah jalan tikus Saya trauma banget"
     },
     {
-        "deskripsi": "Ada ular kobra masuk ke pekarangan rumah warga di Teluk Pemedas. Kami butuh bantuan penangkap ular secepatnya.",
-        "cleaned": "Ada ular kobra masuk ke pekarangan rumah warga di Teluk Pemedas Kami butuh bantuan penangkap ular secepatnya"
+        "deskripsi": "Di Handil Baru Darat, kabel listrik di tiang udah miring banget, hampir putus. Takut jatuh ke jalan dan bikin orang kesetrum.",
+        "hasil": "Di Handil Baru Darat kabel listrik di tiang udah miring banget hampir putus Takut jatuh ke jalan dan bikin orang kesetrum"
     },
     {
-        "deskripsi": "Jambret beraksi di Karya Jaya. Korban adalah mahasiswi yang sedang berjalan kaki. Kami butuh patroli polisi di jam rawan.",
-        "cleaned": "Jambret beraksi di Karya Jaya Korban adalah mahasiswi yang sedang berjalan kaki Kami butuh patroli polisi di jam rawan"
+        "deskripsi": "Lampu di gerbang masuk Wonotirto mati sudah 3 hari. Kalau malam gelap, motor sering ugal-ugalan dan rawan kecelakaan.",
+        "hasil": "Lampu di gerbang masuk Wonotirto mati sudah hari Kalau malam gelap motor sering ugal ugalan dan rawan kecelakaan"
     },
     {
-        "deskripsi": "Balapan liar di Handil Baru Darat ini sudah keterlaluan. Motornya sangat bising, mengganggu warga yang sakit.",
-        "cleaned": "Balapan liar di Handil Baru Darat ini sudah keterlaluan Motornya sangat bising mengganggu warga yang sakit"
+        "deskripsi": "Pohon besar di pinggir jalan Muara Sembilang udah tua banget, min. Batangnya udah keropos, rawan tumbang ke jalan raya.",
+        "hasil": "Pohon besar di pinggir jalan Muara Sembilang udah tua banget min Batangnya udah keropos rawan tumbang ke jalan raya"
     },
     {
-        "deskripsi": "Pohon besar di Wonotirto sudah miring, akarnya mulai terangkat. Rawan tumbang menimpa atap rumah warga.",
-        "cleaned": "Pohon besar di Wonotirto sudah miring akarnya mulai terangkat Rawan tumbang menimpa atap rumah warga"
+        "deskripsi": "Ada ular sanca besar di dekat sawah Sungai Seluang. Warga takut banget, min. Tolong segera panggil petugas penanganan hewan buas.",
+        "hasil": "Ada ular sanca besar di dekat sawah Sungai Seluang Warga takut banget min Tolong segera panggil petugas penanganan hewan buas"
     },
     {
-        "deskripsi": "Ada orang asing mencurigakan menawarkan pinjaman online ilegal di Muara Sembilang, sambil memaksa warga.",
-        "cleaned": "Ada orang asing mencurigakan menawarkan pinjaman online ilegal di Muara Sembilang sambil memaksa warga"
+        "deskripsi": "Kemarin malam, maling masuk rumah tetangga saya di Margomulyo. Cuma ambil HP. Keamanan di sini mulai longgar lagi.",
+        "hasil": "Kemarin malam maling masuk rumah tetangga saya di Margomulyo Cuma ambil HP Keamanan di sini mulai longgar lagi"
     },
     {
-        "deskripsi": "Anjing liar di Sungai Seluang menyerang hewan peliharaan warga. Kami khawatir keselamatannya terancam.",
-        "cleaned": "Anjing liar di Sungai Seluang menyerang hewan peliharaan warga Kami khawatir keselamatannya terancam"
+        "deskripsi": "Di Selili, sering ada kumpulan remaja mabuk yang suka mengganggu cewek-cewek lewat. Mereka ngomong kotor dan teriak-teriak.",
+        "hasil": "Di Selili sering ada kumpulan remaja mabuk yang suka mengganggu cewek cewek lewat Mereka ngomong kotor dan teriak teriak"
     },
     {
-        "deskripsi": "Jalan di Selili berlubang dan ditambal dengan batu kerikil yang tidak rata. Bikin ban motor cepat rusak.",
-        "cleaned": "Jalan di Selili berlubang dan ditambal dengan batu kerikil yang tidak rata Bikin ban motor cepat rusak"
+        "deskripsi": "Anjing liar di Teluk Pemedas ngejar motor saya sampai jatuh. Saya luka parah. Ini harus diurus cepat, min. Bahaya banget.",
+        "hasil": "Anjing liar di Teluk Pemedas ngejar motor saya sampai jatuh Saya luka parah Ini harus diurus cepat min Bahaya banget"
     },
     {
-        "deskripsi": "Pagar pembatas jembatan di Teluk Pemedas sudah keropos. Anak-anak sering main di situ. Sangat bahaya kalau jatuh.",
-        "cleaned": "Pagar pembatas jembatan di Teluk Pemedas sudah keropos Anak anak sering main di situ Sangat bahaya kalau jatuh"
+        "deskripsi": "Sering ada anak motor nongkrong di Karya Jaya sampai subuh, bawa knalpot bising. Mengganggu ibadah dan istirahat warga.",
+        "hasil": "Sering ada anak motor nongkrong di Karya Jaya sampai subuh bawa knalpot bising Mengganggu ibadah dan istirahat warga"
     },
     {
-        "deskripsi": "Tiang PJU di Karya Jaya sering mengeluarkan api kecil saat hujan. Kami takut ada kebakaran. Mohon segera dicek dan diperbaiki.",
-        "cleaned": "Tiang PJU di Karya Jaya sering mengeluarkan api kecil saat hujan Kami takut ada kebakaran Mohon segera dicek dan diperbaiki"
+        "deskripsi": "Motor saya hampir dicuri di Margomulyo, min! Pelaku bawa kunci T. Untung saya keburu keluar rumah. Mohon keamanan di gang-gang ditingkatkan.",
+        "hasil": "Motor saya hampir dicuri di Margomulyo min Pelaku bawa kunci T Untung saya keburu keluar rumah Mohon keamanan di gang gang ditingkatkan"
     },
     {
-        "deskripsi": "Jalan masuk ke perumahan Margomulyo sudah tidak ada aspalnya, hanya bebatuan. Sangat susah dilewati mobil.",
-        "cleaned": "Jalan masuk ke perumahan Margomulyo sudah tidak ada aspalnya hanya bebatuan Sangat susah dilewati mobil"
+        "deskripsi": "Di Selili sering ada sekelompok orang main judi di pos ronda lama. Suaranya bikin gaduh dan warga takut lapor. Tolong ditindak, min.",
+        "hasil": "Di Selili sering ada sekelompok orang main judi di pos ronda lama Suaranya bikin gaduh dan warga takut lapor Tolong ditindak min"
     },
     {
-        "deskripsi": "Saluran irigasi di Selili dipenuhi lumpur tebal. Kalau hujan, airnya meluap ke rumah warga. Minta segera dikeruk.",
-        "cleaned": "Saluran irigasi di Selili dipenuhi lumpur tebal Kalau hujan airnya meluap ke rumah warga Minta segera dikeruk"
+        "deskripsi": "Lampu penerangan di Teluk Pemedas mati semua, gelap kayak kuburan. Rawan banget buat begal kalau malam.",
+        "hasil": "Lampu penerangan di Teluk Pemedas mati semua gelap kayak kuburan Rawan banget buat begal kalau malam"
     },
     {
-        "deskripsi": "Pagar beton di tepi sungai Teluk Pemedas sudah retak-retak parah. Khawatir roboh dan menyebabkan longsor di bantaran sungai.",
-        "cleaned": "Pagar beton di tepi sungai Teluk Pemedas sudah retak retak parah Khawatir roboh dan menyebabkan longsor di bantaran sungai"
+        "deskripsi": "Ada jambret beraksi di Karya Jaya. Nyopet kalung ibu-ibu yang lagi belanja di pasar. Kami butuh patroli polisi di pasar.",
+        "hasil": "Ada jambret beraksi di Karya Jaya Nyopet kalung ibu ibu yang lagi belanja di pasar Kami butuh patroli polisi di pasar"
     },
     {
-        "deskripsi": "Jalan di Karya Jaya sudah ambles separuh. Truk pengangkut sering lewat, takut ambles total dan memutus akses.",
-        "cleaned": "Jalan di Karya Jaya sudah ambles separuh Truk pengangkut sering lewat takut ambles total dan memutus akses"
+        "deskripsi": "Tadi malam, ada motor knalpot racing ngebut-ngebut di Handil Baru Darat. Kayak balapan liar, mengganggu banget istirahat warga.",
+        "hasil": "Tadi malam ada motor knalpot racing ngebut ngebut di Handil Baru Darat Kayak balapan liar mengganggu banget istirahat warga"
     },
     {
-        "deskripsi": "Air PDAM di Handil Baru Darat alirannya sangat kecil. Kami susah menampung air. Mohon dicek tekanan pipanya.",
-        "cleaned": "Air PDAM di Handil Baru Darat alirannya sangat kecil Kami susah menampung air Mohon dicek tekanan pipanya"
+        "deskripsi": "Pohon di pinggir sungai Wonotirto tumbang. Untung gak ada korban, tapi kabel listrik jadi putus. Bahaya kesetrum.",
+        "hasil": "Pohon di pinggir sungai Wonotirto tumbang Untung gak ada korban tapi kabel listrik jadi putus Bahaya kesetrum"
     },
     {
-        "deskripsi": "Lampu PJU di dekat jembatan Wonotirto mati sudah lebih dari 10 hari. Gelap sekali dan sangat rawan begal.",
-        "cleaned": "Lampu PJU di dekat jembatan Wonotirto mati sudah lebih dari hari Gelap sekali dan sangat rawan begal"
+        "deskripsi": "Ada sekelompok orang mabuk di depan warung Muara Sembilang, teriak-teriak gak jelas. Tolong dibubarkan sebelum terjadi keributan.",
+        "hasil": "Ada sekelompok orang mabuk di depan warung Muara Sembilang teriak teriak gak jelas Tolong dibubarkan sebelum terjadi keributan"
     },
     {
-        "deskripsi": "Dermaga kayu di Muara Sembilang sudah banyak yang keropos. Kami takut kalau ada perahu sandar, dermaganya ambruk.",
-        "cleaned": "Dermaga kayu di Muara Sembilang sudah banyak yang keropos Kami takut kalau ada perahu sandar dermaganya ambruk"
+        "deskripsi": "Anjing liar di Sungai Seluang sudah mulai menyerang anak-anak, min. Ada yang luka gigit. Ini serius, tolong segera ditangani.",
+        "hasil": "Anjing liar di Sungai Seluang sudah mulai menyerang anak anak min Ada yang luka gigit Ini serius tolong segera ditangani"
     },
     {
-        "deskripsi": "Pipa air kotor di Sungai Seluang bocor di pinggir jalan. Kotoran meluber ke jalan dan bau busuknya menyengat.",
-        "cleaned": "Pipa air kotor di Sungai Seluang bocor di pinggir jalan Kotoran meluber ke jalan dan bau busuknya menyengat"
+        "deskripsi": "Kemarin malam, ada orang asing bolak-balik di Margomulyo. Wajahnya mencurigakan, kayak lagi ngintai barang yang bisa dicuri.",
+        "hasil": "Kemarin malam ada orang asing bolak balik di Margomulyo Wajahnya mencurigakan kayak lagi ngintai barang yang bisa dicuri"
     },
     {
-        "deskripsi": "Jalanan di Margomulyo penuh tambalan yang tidak rata. Kalau motor lewat, seperti naik ombak. Mohon diaspal ulang.",
-        "cleaned": "Jalanan di Margomulyo penuh tambalan yang tidak rata Kalau motor lewat seperti naik ombak Mohon diaspal ulang"
+        "deskripsi": "Pencurian ban serep mobil sering terjadi di parkiran Selili. Mobil saya juga jadi korban. Kami butuh keamanan parkir.",
+        "hasil": "Pencurian ban serep mobil sering terjadi di parkiran Selili Mobil saya juga jadi korban Kami butuh keamanan parkir"
     },
     {
-        "deskripsi": "Penutup gorong-gorong di Selili pecah. Lubangnya menganga dan sering ada motor yang terperosok di malam hari.",
-        "cleaned": "Penutup gorong gorong di Selili pecah Lubangnya menganga dan sering ada motor yang terperosok di malam hari"
+        "deskripsi": "Saya melihat ular sanca di Teluk Pemedas, dekat gorong-gorong. Kami takut ular itu masuk ke rumah warga.",
+        "hasil": "Saya melihat ular sanca di Teluk Pemedas dekat gorong gorong Kami takut ular itu masuk ke rumah warga"
     },
     {
-        "deskripsi": "Tiang telepon di Teluk Pemedas sudah hampir roboh. Kabelnya menyentuh atap rumah warga. Bahaya kebakaran.",
-        "cleaned": "Tiang telepon di Teluk Pemedas sudah hampir roboh Kabelnya menyentuh atap rumah warga Bahaya kebakaran"
+        "deskripsi": "Ada sekelompok anak muda tawuran di Karya Jaya. Mereka bawa senjata tumpul. Tolong segera diintervensi, min.",
+        "hasil": "Ada sekelompok anak muda tawuran di Karya Jaya Mereka bawa senjata tumpul Tolong segera diintervensi min"
     },
     {
-        "deskripsi": "Jalan di Karya Jaya ada retakan lebar sekali. Kalau hujan, airnya masuk ke retakan dan mengikis pondasi jalan.",
-        "cleaned": "Jalan di Karya Jaya ada retakan lebar sekali Kalau hujan airnya masuk ke retakan dan mengikis pondasi jalan"
+        "deskripsi": "Di Handil Baru Darat, sering ada begal motor yang ngincer HP. Biasanya beraksi di jalan sepi dekat kebun.",
+        "hasil": "Di Handil Baru Darat sering ada begal motor yang ngincer HP Biasanya beraksi di jalan sepi dekat kebun"
     },
     {
-        "deskripsi": "Pagar sekolah di Handil Baru Darat sudah keropos dan rubuh. Sekolah jadi tidak aman karena mudah dimasuki orang luar.",
-        "cleaned": "Pagar sekolah di Handil Baru Darat sudah keropos dan rubuh Sekolah jadi tidak aman karena mudah dimasuki orang luar"
+        "deskripsi": "Lampu di jembatan Wonotirto mati. Gelap banget, rawan orang jatuh atau jadi tempat kejahatan.",
+        "hasil": "Lampu di jembatan Wonotirto mati Gelap banget rawan orang jatuh atau jadi tempat kejahatan"
     },
     {
-        "deskripsi": "Area parkir umum di Wonotirto gelap gulita. Lampu PJU-nya mati semua dan tidak kunjung diperbaiki.",
-        "cleaned": "Area parkir umum di Wonotirto gelap gulita Lampu PJU nya mati semua dan tidak kunjung diperbaiki"
+        "deskripsi": "Pagar sekolah di Muara Sembilang dijebol maling. Mereka masuk dan mengambil beberapa peralatan elektronik. Perlu keamanan malam.",
+        "hasil": "Pagar sekolah di Muara Sembilang dijebol maling Mereka masuk dan mengambil beberapa peralatan elektronik Perlu keamanan malam"
     },
     {
-        "deskripsi": "Tangga menuju pelabuhan Muara Sembilang sudah rusak parah. Besinya berkarat dan anak tangganya banyak yang hilang.",
-        "cleaned": "Tangga menuju pelabuhan Muara Sembilang sudah rusak parah Besinya berkarat dan anak tangganya banyak yang hilang"
+        "deskripsi": "Sering ada yang buang sampah sembarangan di Sungai Seluang, dan kalau malam jadi tempat kumpul orang mabuk. Lingkungan jadi kotor dan rawan.",
+        "hasil": "Sering ada yang buang sampah sembarangan di Sungai Seluang dan kalau malam jadi tempat kumpul orang mabuk Lingkungan jadi kotor dan rawan"
     },
     {
-        "deskripsi": "Jalan di Sungai Seluang sudah ditutupi lumpur tebal dari luapan got. Motor sering tergelincir di sana.",
-        "cleaned": "Jalan di Sungai Seluang sudah ditutupi lumpur tebal dari luapan got Motor sering tergelincir di sana"
+        "deskripsi": "Rumah kosong di Margomulyo sering jadi tempat nongkrong anak-anak nakal. Mereka merokok dan ribut. Warga takut jadi tempat maksiat.",
+        "hasil": "Rumah kosong di Margomulyo sering jadi tempat nongkrong anak anak nakal Mereka merokok dan ribut Warga takut jadi tempat maksiat"
     },
     {
-        "deskripsi": "Jalan Margomulyo yang menuju ke kebun sudah putus karena banjir. Warga tidak bisa akses kebun mereka.",
-        "cleaned": "Jalan Margomulyo yang menuju ke kebun sudah putus karena banjir Warga tidak bisa akses kebun mereka"
+        "deskripsi": "Ada anjing liar besar di Selili, kayaknya mau melahirkan. Warga takut jadi lebih agresif. Minta tolong ditangani.",
+        "hasil": "Ada anjing liar besar di Selili kayaknya mau melahirkan Warga takut jadi lebih agresif Minta tolong ditangani"
     },
     {
-        "deskripsi": "Got di Selili sudah dangkal dan penuh sampah. Setiap hujan deras pasti banjir sampai selutut.",
-        "cleaned": "Got di Selili sudah dangkal dan penuh sampah Setiap hujan deras pasti banjir sampai selutut"
+        "deskripsi": "Ada pohon rapuh di Teluk Pemedas yang cabangnya besar. Kalau jatuh bisa menimpa jalan dan mobil yang parkir.",
+        "hasil": "Ada pohon rapuh di Teluk Pemedas yang cabangnya besar Kalau jatuh bisa menimpa jalan dan mobil yang parkir"
     },
     {
-        "deskripsi": "Perempatan jalan di Teluk Pemedas rambu lalu lintasnya tidak berfungsi. Macet parah setiap jam sibuk.",
-        "cleaned": "Perempatan jalan di Teluk Pemedas rambu lalu lintasnya tidak berfungsi Macet parah setiap jam sibuk"
+        "deskripsi": "Jambret beraksi di Karya Jaya. Korban adalah ibu-ibu yang lagi telepon di pinggir jalan. Kami harap ada patroli di jam sibuk.",
+        "hasil": "Jambret beraksi di Karya Jaya Korban adalah ibu ibu yang lagi telepon di pinggir jalan Kami harap ada patroli di jam sibuk"
     },
     {
-        "deskripsi": "Jalan di Karya Jaya sudah banyak yang pecah dan berlubang. Pengendara motor sering jatuh karena kaget.",
-        "cleaned": "Jalan di Karya Jaya sudah banyak yang pecah dan berlubang Pengendara motor sering jatuh karena kaget"
+        "deskripsi": "Di Margomulyo, saya liat ada pria asing tidur di teras rumah kosong. Warga takut dia pengemis atau maling. Mohon dicek.",
+        "hasil": "Di Margomulyo saya liat ada pria asing tidur di teras rumah kosong Warga takut dia pengemis atau maling Mohon dicek"
     },
     {
-        "deskripsi": "Gorong-gorong di depan rumah saya di Margomulyo bocor dan mengeluarkan bau tidak sedap. Minta segera ditangani.",
-        "cleaned": "Gorong gorong di depan rumah saya di Margomulyo bocor dan mengeluarkan bau tidak sedap Minta segera ditangani"
+        "deskripsi": "Balapan liar di jalan tembus Selili tiap malam Jumat parah banget. Suaranya bikin anak saya gak bisa tidur.",
+        "hasil": "Balapan liar di jalan tembus Selili tiap malam Jumat parah banget Suaranya bikin anak saya gak bisa tidur"
     },
     {
-        "deskripsi": "Tiang PJU di Selili sudah miring dan hampir menimpa warung warga. Minta tolong segera diikat atau diganti.",
-        "cleaned": "Tiang PJU di Selili sudah miring dan hampir menimpa warung warga Minta tolong segera diikat atau diganti"
+        "deskripsi": "Ada anjing liar di Teluk Pemedas yang menyerang gerobak makanan. Pedagang jadi takut. Minta ditangkap.",
+        "hasil": "Ada anjing liar di Teluk Pemedas yang menyerang gerobak makanan Pedagang jadi takut Minta ditangkap"
     },
     {
-        "deskripsi": "Jalan Teluk Pemedas yang baru diaspal sudah retak-retak lagi. Kualitas pengerjaannya sepertinya kurang bagus, min.",
-        "cleaned": "Jalan Teluk Pemedas yang baru diaspal sudah retak retak lagi Kualitas pengerjaannya sepertinya kurang bagus min"
+        "deskripsi": "Pencurian burung di Karya Jaya marak lagi. Kawat kandang dipotong. Kami butuh keamanan lebih di lingkungan perumahan.",
+        "hasil": "Pencurian burung di Karya Jaya marak lagi Kawat kandang dipotong Kami butuh keamanan lebih di lingkungan perumahan"
     },
     {
-        "deskripsi": "Jembatan penyeberangan di Karya Jaya sudah berkarat di mana-mana. Terlihat tidak aman kalau dilewati saat hujan.",
-        "cleaned": "Jembatan penyeberangan di Karya Jaya sudah berkarat di mana mana Terlihat tidak aman kalau dilewati saat hujan"
+        "deskripsi": "Lampu PJU di Handil Baru Darat mati total, gelap banget dari jam 7 malam. Rawan begal di area itu.",
+        "hasil": "Lampu PJU di Handil Baru Darat mati total gelap banget dari jam malam Rawan begal di area itu"
     },
     {
-        "deskripsi": "Pengurusan sertifikat tanah di Muara Sembilang terlalu lama. Katanya perlu 'dana percepatan' agar bisa cepat keluar.",
-        "cleaned": "Pengurusan sertifikat tanah di Muara Sembilang terlalu lama Katanya perlu dana percepatan agar bisa cepat keluar"
+        "deskripsi": "Pohon di dekat lapangan Wonotirto sudah keropos di tengah. Bahaya kalau tumbang pas anak-anak lagi main.",
+        "hasil": "Pohon di dekat lapangan Wonotirto sudah keropos di tengah Bahaya kalau tumbang pas anak anak lagi main"
     },
     {
-        "deskripsi": "Nomor layanan pengaduan PDAM Sungai Seluang tidak pernah aktif. Kami tidak bisa lapor air di rumah kotor.",
-        "cleaned": "Nomor layanan pengaduan PDAM Sungai Seluang tidak pernah aktif Kami tidak bisa lapor air di rumah kotor"
+        "deskripsi": "Ada ular air besar di got Muara Sembilang. Warga takut kalau keluar saat hujan deras. Tolong segera diatasi.",
+        "hasil": "Ada ular air besar di got Muara Sembilang Warga takut kalau keluar saat hujan deras Tolong segera diatasi"
     },
     {
-        "deskripsi": "Petugas di loket pengurusan surat Margomulyo sering menyuruh bolak-balik karena berkas yang diminta selalu berubah.",
-        "cleaned": "Petugas di loket pengurusan surat Margomulyo sering menyuruh bolak balik karena berkas yang diminta selalu berubah"
+        "deskripsi": "Di Sungai Seluang sering ada anak muda mabuk dan corat-coret tembok warga. Mengganggu ketertiban umum.",
+        "hasil": "Di Sungai Seluang sering ada anak muda mabuk dan corat coret tembok warga Mengganggu ketertiban umum"
     },
     {
-        "deskripsi": "Ada preman yang memalak biaya parkir di Selili. Mereka bukan petugas resmi tapi memaksa minta uang.",
-        "cleaned": "Ada preman yang memalak biaya parkir di Selili Mereka bukan petugas resmi tapi memaksa minta uang"
+        "deskripsi": "Di Margomulyo, saya liat ada upaya pencurian aki mobil. Pelaku kabur naik motor butut saat diteriaki. Kami mohon patroli rutin.",
+        "hasil": "Di Margomulyo saya liat ada upaya pencurian aki mobil Pelaku kabur naik motor butut saat diteriaki Kami mohon patroli rutin"
     },
     {
-        "deskripsi": "Obat untuk pasien BPJS di Puskesmas Teluk Pemedas sering dibilang habis, padahal pasien lain yang bayar dikasih.",
-        "cleaned": "Obat untuk pasien BPJS di Puskesmas Teluk Pemedas sering dibilang habis padahal pasien lain yang bayar dikasih"
+        "deskripsi": "Lampu penerangan di jalan pintas Selili udah lama mati. Sekarang jadi tempat kumpul orang mabuk dan rawan jambret.",
+        "hasil": "Lampu penerangan di jalan pintas Selili udah lama mati Sekarang jadi tempat kumpul orang mabuk dan rawan jambret"
     },
     {
-        "deskripsi": "Papan prosedur pelayanan di kantor Karya Jaya sudah buram dan sulit dibaca. Kami tidak tahu alur pengurusan.",
-        "cleaned": "Papan prosedur pelayanan di kantor Karya Jaya sudah buram dan sulit dibaca Kami tidak tahu alur pengurusan"
+        "deskripsi": "Ular kobra kecil masuk ke teras rumah warga di Teluk Pemedas. Kami butuh penanganan cepat dari petugas Damkar.",
+        "hasil": "Ular kobra kecil masuk ke teras rumah warga di Teluk Pemedas Kami butuh penanganan cepat dari petugas Damkar"
     },
     {
-        "deskripsi": "Bus kota di Handil Baru Darat sering ngebut dan ugal-ugalan. Kami takut terjadi kecelakaan.",
-        "cleaned": "Bus kota di Handil Baru Darat sering ngebut dan ugal ugalan Kami takut terjadi kecelakaan"
+        "deskripsi": "Jambret HP beraksi di Karya Jaya, tepat di depan pos ronda yang kosong. Kami butuh petugas ronda yang siaga.",
+        "hasil": "Jambret HP beraksi di Karya Jaya tepat di depan pos ronda yang kosong Kami butuh petugas ronda yang siaga"
     },
     {
-        "deskripsi": "Lampu penerangan di taman Wonotirto mati total. Kalau malam jadi tempat nongkrong yang rawan tindak kriminal.",
-        "cleaned": "Lampu penerangan di taman Wonotirto mati total Kalau malam jadi tempat nongkrong yang rawan tindak kriminal"
+        "deskripsi": "Pohon di pinggir jalan Handil Baru Darat sudah sangat tua dan miring, rawan tumbang ke jalan saat ada angin kencang.",
+        "hasil": "Pohon di pinggir jalan Handil Baru Darat sudah sangat tua dan miring rawan tumbang ke jalan saat ada angin kencang"
     },
     {
-        "deskripsi": "Petugas di kantor layanan publik Muara Sembilang sering meninggalkan meja saat jam kerja. Kami harus menunggu lama.",
-        "cleaned": "Petugas di kantor layanan publik Muara Sembilang sering meninggalkan meja saat jam kerja Kami harus menunggu lama"
+        "deskripsi": "Sering ada tawuran antar remaja di Wonotirto, mereka bawa kayu. Warga takut jadi korban salah sasaran.",
+        "hasil": "Sering ada tawuran antar remaja di Wonotirto mereka bawa kayu Warga takut jadi korban salah sasaran"
     },
     {
-        "deskripsi": "Mobil tangki air bersih Sungai Seluang datangnya tidak sesuai jadwal yang dijanjikan. Warga jadi kehabisan air.",
-        "cleaned": "Mobil tangki air bersih Sungai Seluang datangnya tidak sesuai jadwal yang dijanjikan Warga jadi kehabisan air"
+        "deskripsi": "Beberapa orang mencurigakan nongkrong di Muara Sembilang, mereka bawa tas besar dan matanya liar melihat sekeliling.",
+        "hasil": "Beberapa orang mencurigakan nongkrong di Muara Sembilang mereka bawa tas besar dan matanya liar melihat sekeliling"
     },
     {
-        "deskripsi": "Layanan cetak akta kelahiran di Margomulyo sangat lambat. Sudah 4 bulan belum ada kejelasan.",
-        "cleaned": "Layanan cetak akta kelahiran di Margomulyo sangat lambat Sudah bulan belum ada kejelasan"
+        "deskripsi": "Anjing liar Sungai Seluang menyerang ternak di kandang warga. Kami harus jaga malam. Tolong diatasi cepat.",
+        "hasil": "Anjing liar Sungai Seluang menyerang ternak di kandang warga Kami harus jaga malam Tolong diatasi cepat"
     },
     {
-        "deskripsi": "Ada pungutan liar saat mengurus surat nikah di Selili. Diminta biaya yang tidak ada dasar hukumnya.",
-        "cleaned": "Ada pungutan liar saat mengurus surat nikah di Selili Diminta biaya yang tidak ada dasar hukumnya"
+        "deskripsi": "Di Margomulyo, tadi malam ada pencurian spion mobil di komplek perumahan. Pelaku bawa motor berdua. Warga jadi was-was.",
+        "hasil": "Di Margomulyo tadi malam ada pencurian spion mobil di komplek perumahan Pelaku bawa motor berdua Warga jadi was was"
     },
     {
-        "deskripsi": "Dokter di Puskesmas Teluk Pemedas sering datang terlambat. Kami harus menunggu sampai satu jam lebih.",
-        "cleaned": "Dokter di Puskesmas Teluk Pemedas sering datang terlambat Kami harus menunggu sampai satu jam lebih"
+        "deskripsi": "Sekelompok remaja mabuk di Selili sering ngajak ribut pejalan kaki. Mereka membawa botol pecah. Tolong ditindak tegas, min.",
+        "hasil": "Sekelompok remaja mabuk di Selili sering ngajak ribut pejalan kaki Mereka membawa botol pecah Tolong ditindak tegas min"
     },
     {
-        "deskripsi": "Fasilitas parkir motor di kantor Karya Jaya sering kelebihan kapasitas. Motor sering parkir di luar mengganggu jalan.",
-        "cleaned": "Fasilitas parkir motor di kantor Karya Jaya sering kelebihan kapasitas Motor sering parkir di luar mengganggu jalan"
+        "deskripsi": "Anjing liar di Teluk Pemedas makin ganas. Mereka sering nyerang anak-anak yang naik sepeda. Warga minta segera ditertibkan.",
+        "hasil": "Anjing liar di Teluk Pemedas makin ganas Mereka sering nyerang anak anak yang naik sepeda Warga minta segera ditertibkan"
     },
     {
-        "deskripsi": "Staf kelurahan Margomulyo sering sibuk dengan urusan pribadi (main HP, ngobrol) saat warga antri dilayani.",
-        "cleaned": "Staf kelurahan Margomulyo sering sibuk dengan urusan pribadi main HP ngobrol saat warga antri dilayani"
+        "deskripsi": "Jalan di Karya Jaya gelap banget, min. Lampu PJU mati lebih dari seminggu. Kami takut ada begal motor lagi.",
+        "hasil": "Jalan di Karya Jaya gelap banget min Lampu PJU mati lebih dari seminggu Kami takut ada begal motor lagi"
     },
     {
-        "deskripsi": "Toilet umum di terminal Selili tidak ada airnya. Sangat kotor dan tidak layak digunakan.",
-        "cleaned": "Toilet umum di terminal Selili tidak ada airnya Sangat kotor dan tidak layak digunakan"
+        "deskripsi": "Ada tawuran remaja di Handil Baru Darat tadi sore. Mereka pakai senjata tajam. Warga takut melintas di jalan itu.",
+        "hasil": "Ada tawuran remaja di Handil Baru Darat tadi sore Mereka pakai senjata tajam Warga takut melintas di jalan itu"
     },
     {
-        "deskripsi": "Layanan ambulans di Teluk Pemedas sering menolak pasien dengan alasan ambulans sedang dicuci. Ini masalah darurat, min!",
-        "cleaned": "Layanan ambulans di Teluk Pemedas sering menolak pasien dengan alasan ambulans sedang dicuci Ini masalah darurat min"
+        "deskripsi": "Pohon besar di Wonotirto tumbang, untung gak ada rumah yang kena, tapi menutupi sebagian jalan. Mohon segera dipotong.",
+        "hasil": "Pohon besar di Wonotirto tumbang untung gak ada rumah yang kena tapi menutupi sebagian jalan Mohon segera dipotong"
     },
     {
-        "deskripsi": "Petugas kebersihan di Karya Jaya hanya membersihkan jalan utama. Gang-gang kecil di perumahan dibiarkan kotor.",
-        "cleaned": "Petugas kebersihan di Karya Jaya hanya membersihkan jalan utama Gang gang kecil di perumahan dibiarkan kotor"
+        "deskripsi": "Di Muara Sembilang, sering ada bising knalpot dari motor yang ngebut-ngebut malam hari. Mengganggu banget, min.",
+        "hasil": "Di Muara Sembilang sering ada bising knalpot dari motor yang ngebut ngebut malam hari Mengganggu banget min"
     },
     {
-        "deskripsi": "Warga di Selili sering membuang kasur bekas dan perabotan rusak ke sungai kecil. Memicu banjir bandang.",
-        "cleaned": "Warga di Selili sering membuang kasur bekas dan perabotan rusak ke sungai kecil Memicu banjir bandang"
+        "deskripsi": "Saya liat ada ular piton di semak-semak dekat sungai Seluang. Warga takut buat buang sampah. Minta bantuan penangkapan.",
+        "hasil": "Saya liat ada ular piton di semak semak dekat sungai Seluang Warga takut buat buang sampah Minta bantuan penangkapan"
     },
     {
-        "deskripsi": "Polusi suara dari tempat karaoke di Teluk Pemedas sangat bising. Kami tidak bisa tidur sampai dini hari.",
-        "cleaned": "Polusi suara dari tempat karaoke di Teluk Pemedas sangat bising Kami tidak bisa tidur sampai dini hari"
+        "deskripsi": "Pencurian kotak amal masjid Margomulyo terjadi lagi. Pelaku kabur naik motor matic. Kami butuh patroli khusus tempat ibadah.",
+        "hasil": "Pencurian kotak amal masjid Margomulyo terjadi lagi Pelaku kabur naik motor matic Kami butuh patroli khusus tempat ibadah"
     },
     {
-        "deskripsi": "Area hijau di Karya Jaya dipenuhi puing-puing bangunan. Terlihat kotor dan tidak terawat sama sekali.",
-        "cleaned": "Area hijau di Karya Jaya dipenuhi puing puing bangunan Terlihat kotor dan tidak terawat sama sekali"
+        "deskripsi": "Di Selili, sekelompok pemuda mabuk sering merusak fasilitas taman. Mereka bikin onar setiap malam Minggu.",
+        "hasil": "Di Selili sekelompok pemuda mabuk sering merusak fasilitas taman Mereka bikin onar setiap malam Minggu"
     },
     {
-        "deskripsi": "Banyak anjing liar berkeliaran di Handil Baru Darat karena sering diberi makan sisa sampah di pinggir jalan.",
-        "cleaned": "Banyak anjing liar berkeliaran di Handil Baru Darat karena sering diberi makan sisa sampah di pinggir jalan"
+        "deskripsi": "Saya hampir jadi korban copet di Teluk Pemedas, dia ngincer HP saya saat lagi tunggu bus. Area ini rawan di jam sibuk.",
+        "hasil": "Saya hampir jadi korban copet di Teluk Pemedas dia ngincer HP saya saat lagi tunggu bus Area ini rawan di jam sibuk"
     },
     {
-        "deskripsi": "Penerangan di taman Wonotirto banyak yang rusak. Kalau malam, taman jadi gelap gulita dan rawan kejahatan.",
-        "cleaned": "Penerangan di taman Wonotirto banyak yang rusak Kalau malam taman jadi gelap gulita dan rawan kejahatan"
+        "deskripsi": "Ada maling masuk ke Karya Jaya, tapi gak berhasil ambil apa-apa karena keburu diteriakin warga. Keamanan harus ditingkatkan, min.",
+        "hasil": "Ada maling masuk ke Karya Jaya tapi gak berhasil ambil apa apa karena keburu diteriakin warga Keamanan harus ditingkatkan min"
     },
     {
-        "deskripsi": "Ada penangkapan ikan menggunakan racun (potassium) di perairan Muara Sembilang. Merusak terumbu karang dan biota laut.",
-        "cleaned": "Ada penangkapan ikan menggunakan racun potassium di perairan Muara Sembilang Merusak terumbu karang dan biota laut"
+        "deskripsi": "Balapan liar di Handil Baru Darat ini parah banget, min. Udah bawa-bawa motor yang dimodif kenceng. Mengganggu ketenangan total.",
+        "hasil": "Balapan liar di Handil Baru Darat ini parah banget min Udah bawa bawa motor yang dimodif kenceng Mengganggu ketenangan total"
     },
     {
-        "deskripsi": "Limbah sisa rumah tangga sering dibuang ke Sungai Seluang. Air sungai jadi kotor dan tidak bisa dipakai mandi.",
-        "cleaned": "Limbah sisa rumah tangga sering dibuang ke Sungai Seluang Air sungai jadi kotor dan tidak bisa dipakai mandi"
+        "deskripsi": "Pagar rumah di Wonotirto dirusak, diduga upaya pencurian. Kami butuh keamanan yang siaga setiap malam.",
+        "hasil": "Pagar rumah di Wonotirto dirusak diduga upaya pencurian Kami butuh keamanan yang siaga setiap malam"
     },
     {
-        "deskripsi": "Pohon di dekat tiang listrik Margomulyo sudah sangat rimbun. Rantingnya sering bergesekan dengan kabel. Bahaya konslet.",
-        "cleaned": "Pohon di dekat tiang listrik Margomulyo sudah sangat rimbun Rantingnya sering bergesekan dengan kabel Bahaya konslet"
+        "deskripsi": "Ada orang asing mencurigakan di Muara Sembilang, dia foto-foto rumah warga yang kosong. Kami takut itu maling.",
+        "hasil": "Ada orang asing mencurigakan di Muara Sembilang dia foto foto rumah warga yang kosong Kami takut itu maling"
     },
     {
-        "deskripsi": "Ada tumpukan sampah liar di lahan kosong Selili. Sudah menumpuk tinggi dan baunya menyebar ke perumahan.",
-        "cleaned": "Ada tumpukan sampah liar di lahan kosong Selili Sudah menumpuk tinggi dan baunya menyebar ke perumahan"
+        "deskripsi": "Di Sungai Seluang sering ada yang buang sampah bangkai binatang. Bikin bau dan rawan penyakit. Minta ditindak tegas.",
+        "hasil": "Di Sungai Seluang sering ada yang buang sampah bangkai binatang Bikin bau dan rawan penyakit Minta ditindak tegas"
     },
     {
-        "deskripsi": "Pembakaran sampah oleh warga di Teluk Pemedas sangat sering. Asapnya membuat mata perih dan sesak napas.",
-        "cleaned": "Pembakaran sampah oleh warga di Teluk Pemedas sangat sering Asapnya membuat mata perih dan sesak napas"
+        "deskripsi": "Anjing liar di Margomulyo mulai menyerang ternak unggas warga. Kalau malam suara ributnya mengganggu. Mohon diatasi.",
+        "hasil": "Anjing liar di Margomulyo mulai menyerang ternak unggas warga Kalau malam suara ributnya mengganggu Mohon diatasi"
     },
     {
-        "deskripsi": "Tanaman di median jalan Karya Jaya banyak yang mati kekeringan. Tidak ada petugas yang menyiram tanaman.",
-        "cleaned": "Tanaman di median jalan Karya Jaya banyak yang mati kekeringan Tidak ada petugas yang menyiram tanaman"
+        "deskripsi": "Lampu penerangan di jalan Selili mati, jadi rawan kejahatan. Saya hampir ditabrak motor karena gelap.",
+        "hasil": "Lampu penerangan di jalan Selili mati jadi rawan kejahatan Saya hampir ditabrak motor karena gelap"
     },
     {
-        "deskripsi": "Saluran air di Margomulyo penuh sampah dan lumut tebal. Airnya tidak mengalir lancar dan bau busuk.",
-        "cleaned": "Saluran air di Margomulyo penuh sampah dan lumut tebal Airnya tidak mengalir lancar dan bau busuk"
+        "deskripsi": "Jalan utama Margomulyo berlubang besar di depan minimarket. Udah banyak motor yang jatuh, apalagi kalau malam dan hujan.",
+        "hasil": "Jalan utama Margomulyo berlubang besar di depan minimarket Udah banyak motor yang jatuh apalagi kalau malam dan hujan"
     },
     {
-        "deskripsi": "Sampah plastik di Selili berserakan di jalan. Tidak ada bak sampah yang memadai di area itu.",
-        "cleaned": "Sampah plastik di Selili berserakan di jalan Tidak ada bak sampah yang memadai di area itu"
+        "deskripsi": "Saluran air di Selili mampet total, min. Kalau hujan, airnya meluap ke jalanan dan masuk ke teras rumah. Tolong segera dibersihkan.",
+        "hasil": "Saluran air di Selili mampet total min Kalau hujan airnya meluap ke jalanan dan masuk ke teras rumah Tolong segera dibersihkan"
     },
     {
-        "deskripsi": "Ada pembukaan lahan baru di Teluk Pemedas dengan cara dibakar. Asapnya sangat mengganggu perumahan kami.",
-        "cleaned": "Ada pembukaan lahan baru di Teluk Pemedas dengan cara dibakar Asapnya sangat mengganggu perumahan kami"
+        "deskripsi": "Tiang listrik di Teluk Pemedas udah miring banget, min. Kabelnya menjuntai rendah, takut banget kalau kena angin kencang pasti roboh.",
+        "hasil": "Tiang listrik di Teluk Pemedas udah miring banget min Kabelnya menjuntai rendah takut banget kalau kena angin kencang pasti roboh"
     },
     {
-        "deskripsi": "Pohon di dekat perempatan Karya Jaya sudah terlalu tinggi dan menghalangi pandangan. Bahaya kalau ada rambu lalu lintas tertutup.",
-        "cleaned": "Pohon di dekat perempatan Karya Jaya sudah terlalu tinggi dan menghalangi pandangan Bahaya kalau ada rambu lalu lintas tertutup"
+        "deskripsi": "Jembatan kayu di Karya Jaya sudah rapuh dan berderit kencang kalau dilewati motor. Sangat bahaya, min. Perlu perbaikan total.",
+        "hasil": "Jembatan kayu di Karya Jaya sudah rapuh dan berderit kencang kalau dilewati motor Sangat bahaya min Perlu perbaikan total"
+    },
+    {
+        "deskripsi": "Air PDAM di Handil Baru Darat mati sejak kemarin pagi. Gak ada pemberitahuan. Warga kesulitan air bersih buat masak dan mandi.",
+        "hasil": "Air PDAM di Handil Baru Darat mati sejak kemarin pagi Gak ada pemberitahuan Warga kesulitan air bersih buat masak dan mandi"
+    },
+    {
+        "deskripsi": "Lampu penerangan di taman kota Wonotirto banyak yang pecah dan mati. Kalau malam jadi gelap dan rawan kejahatan.",
+        "hasil": "Lampu penerangan di taman kota Wonotirto banyak yang pecah dan mati Kalau malam jadi gelap dan rawan kejahatan"
+    },
+    {
+        "deskripsi": "Jalan masuk Muara Sembilang pecah-pecah parah. Kalau mobil lewat, goncangannya keras banget. Mohon segera diaspal ulang.",
+        "hasil": "Jalan masuk Muara Sembilang pecah pecah parah Kalau mobil lewat goncangannya keras banget Mohon segera diaspal ulang"
+    },
+    {
+        "deskripsi": "Tandon air di atas sekolah Sungai Seluang bocor, airnya netes terus. Ini pemborosan air dan bisa merusak bangunan di bawahnya.",
+        "hasil": "Tandon air di atas sekolah Sungai Seluang bocor airnya netes terus Ini pemborosan air dan bisa merusak bangunan di bawahnya"
+    },
+    {
+        "deskripsi": "Pipa air bersih di Margomulyo ada yang pecah, airnya mancur ke jalan. Sudah dari pagi, tolong segera diperbaiki sebelum air habis.",
+        "hasil": "Pipa air bersih di Margomulyo ada yang pecah airnya mancur ke jalan Sudah dari pagi tolong segera diperbaiki sebelum air habis"
+    },
+    {
+        "deskripsi": "Trotoar di depan pasar Selili rusak parah, banyak yang retak. Pejalan kaki susah lewat, kadang harus turun ke jalan.",
+        "hasil": "Trotoar di depan pasar Selili rusak parah banyak yang retak Pejalan kaki susah lewat kadang harus turun ke jalan"
+    },
+    {
+        "deskripsi": "Lampu penerangan jalan di Teluk Pemedas mati semua, padahal baru ganti bulan lalu. Minta tolong dicek, min. Gelap banget.",
+        "hasil": "Lampu penerangan jalan di Teluk Pemedas mati semua padahal baru ganti bulan lalu Minta tolong dicek min Gelap banget"
+    },
+    {
+        "deskripsi": "Saluran drainase di Karya Jaya tersumbat sampah proyek. Sudah beberapa hari airnya menggenang dan baunya gak enak.",
+        "hasil": "Saluran drainase di Karya Jaya tersumbat sampah proyek Sudah beberapa hari airnya menggenang dan baunya gak enak"
+    },
+    {
+        "deskripsi": "Tiang telepon di Handil Baru Darat miring, udah bahaya banget mau jatuh ke arah rumah warga. Tolong segera ditopang atau diganti.",
+        "hasil": "Tiang telepon di Handil Baru Darat miring udah bahaya banget mau jatuh ke arah rumah warga Tolong segera ditopang atau diganti"
+    },
+    {
+        "deskripsi": "Air PDAM di Wonotirto sering keruh, min. Kadang airnya kuning. Kami takut kalau dipakai masak. Tolong dicek kualitas airnya.",
+        "hasil": "Air PDAM di Wonotirto sering keruh min Kadang airnya kuning Kami takut kalau dipakai masak Tolong dicek kualitas airnya"
+    },
+    {
+        "deskripsi": "Jalan berlubang besar di tengah jalan Muara Sembilang. Lubangnya tertutup air saat hujan. Sangat rawan kecelakaan.",
+        "hasil": "Jalan berlubang besar di tengah jalan Muara Sembilang Lubangnya tertutup air saat hujan Sangat rawan kecelakaan"
+    },
+    {
+        "deskripsi": "Pintu gerbang sekolah di Sungai Seluang sudah karatan dan hampir copot. Bahaya kalau jatuh menimpa anak-anak.",
+        "hasil": "Pintu gerbang sekolah di Sungai Seluang sudah karatan dan hampir copot Bahaya kalau jatuh menimpa anak anak"
+    },
+    {
+        "deskripsi": "Gorong-gorong di Margomulyo ambrol. Membuat jalan jadi sempit dan rawan banjir saat hujan deras.",
+        "hasil": "Gorong gorong di Margomulyo ambrol Membuat jalan jadi sempit dan rawan banjir saat hujan deras"
+    },
+    {
+        "deskripsi": "Perempatan jalan di Selili lampu merahnya mati total, min. Jadi macet dan rawan tabrakan. Mohon segera diperbaiki.",
+        "hasil": "Perempatan jalan di Selili lampu merahnya mati total min Jadi macet dan rawan tabrakan Mohon segera diperbaiki"
+    },
+    {
+        "deskripsi": "Jalan aspal di Teluk Pemedas mengelupas dan batu-batunya berserakan. Bikin ban motor cepat rusak.",
+        "hasil": "Jalan aspal di Teluk Pemedas mengelupas dan batu batunya berserakan Bikin ban motor cepat rusak"
+    },
+    {
+        "deskripsi": "Tiang PJU di Karya Jaya sudah berkarat di bagian bawah, takut roboh. Bahaya banget buat yang lewat di bawahnya.",
+        "hasil": "Tiang PJU di Karya Jaya sudah berkarat di bagian bawah takut roboh Bahaya banget buat yang lewat di bawahnya"
+    },
+    {
+        "deskripsi": "Saluran irigasi di Wonotirto banyak yang rusak dan bocor. Airnya terbuang sia-sia, kasihan petani kesulitan air.",
+        "hasil": "Saluran irigasi di Wonotirto banyak yang rusak dan bocor Airnya terbuang sia sia kasihan petani kesulitan air"
+    },
+    {
+        "deskripsi": "Jalan di dekat pelabuhan Muara Sembilang banyak retakan parah, min. Truk besar sering lewat, takut jalannya ambles.",
+        "hasil": "Jalan di dekat pelabuhan Muara Sembilang banyak retakan parah min Truk besar sering lewat takut jalannya ambles"
+    },
+    {
+        "deskripsi": "Pagar pembatas di jembatan Sungai Seluang sudah keropos dan hilang. Sangat bahaya buat anak-anak yang main di situ.",
+        "hasil": "Pagar pembatas di jembatan Sungai Seluang sudah keropos dan hilang Sangat bahaya buat anak anak yang main di situ"
+    },
+    {
+        "deskripsi": "Di Margomulyo ada penutup manhole yang hilang. Lubangnya besar banget. Rawan motor dan pejalan kaki jatuh.",
+        "hasil": "Di Margomulyo ada penutup manhole yang hilang Lubangnya besar banget Rawan motor dan pejalan kaki jatuh"
+    },
+    {
+        "deskripsi": "Lampu penerangan di terminal Selili mati semua. Kalau malam jadi tempat nongkrong yang bikin takut.",
+        "hasil": "Lampu penerangan di terminal Selili mati semua Kalau malam jadi tempat nongkrong yang bikin takut"
+    },
+    {
+        "deskripsi": "Jalan di Teluk Pemedas becek parah, min. Aspalnya udah gak ada, cuma lumpur. Mobil sering susah lewat.",
+        "hasil": "Jalan di Teluk Pemedas becek parah min Aspalnya udah gak ada cuma lumpur Mobil sering susah lewat"
+    },
+    {
+        "deskripsi": "Tiang telepon di depan kantor Karya Jaya miring, kabelnya menjuntai ke jalan. Bahaya tersangkut kendaraan tinggi.",
+        "hasil": "Tiang telepon di depan kantor Karya Jaya miring kabelnya menjuntai ke jalan Bahaya tersangkut kendaraan tinggi"
+    },
+    {
+        "deskripsi": "Air PDAM di Handil Baru Darat bau kaporit menyengat dan berbusa. Kami gak berani pakai buat minum, min.",
+        "hasil": "Air PDAM di Handil Baru Darat bau kaporit menyengat dan berbusa Kami gak berani pakai buat minum min"
+    },
+    {
+        "deskripsi": "Jalan Margomulyo di depan kantor lurah bergelombang parah, min. Aspalnya udah retak-retak. Mobil kalau lewat pasti pelan-pelan banget.",
+        "hasil": "Jalan Margomulyo di depan kantor lurah bergelombang parah min Aspalnya udah retak retak Mobil kalau lewat pasti pelan pelan banget"
+    },
+    {
+        "deskripsi": "Got di Selili mampet lagi, min! Airnya udah meluap ke rumah warga. Padahal baru dibersihin bulan lalu. Kayaknya ada yang buang sampah sembarangan.",
+        "hasil": "Got di Selili mampet lagi min Airnya udah meluap ke rumah warga Padahal baru dibersihin bulan lalu Kayaknya ada yang buang sampah sembarangan"
+    },
+    {
+        "deskripsi": "Tiang telepon di Teluk Pemedas sudah sangat miring, min. Kabelnya menjuntai ke bawah, bahaya banget kalau sampai putus.",
+        "hasil": "Tiang telepon di Teluk Pemedas sudah sangat miring min Kabelnya menjuntai ke bawah bahaya banget kalau sampai putus"
+    },
+    {
+        "deskripsi": "Jalan di Karya Jaya rusak parah, banyak kerikil dan batu lepas. Bikin ban cepat botak dan motor jadi licin.",
+        "hasil": "Jalan di Karya Jaya rusak parah banyak kerikil dan batu lepas Bikin ban cepat botak dan motor jadi licin"
+    },
+    {
+        "deskripsi": "Air PDAM di Handil Baru Darat mati total dari semalam. Kami gak bisa masak atau mandi. Mohon segera dicek pipanya.",
+        "hasil": "Air PDAM di Handil Baru Darat mati total dari semalam Kami gak bisa masak atau mandi Mohon segera dicek pipanya"
+    },
+    {
+        "deskripsi": "Lampu penerangan di depan sekolah Wonotirto mati sudah dua minggu. Gelap sekali, rawan anak-anak jatuh kalau malam.",
+        "hasil": "Lampu penerangan di depan sekolah Wonotirto mati sudah dua minggu Gelap sekali rawan anak anak jatuh kalau malam"
+    },
+    {
+        "deskripsi": "Jalan Muara Sembilang di dekat pertigaan amblas sekitar 1 meter. Bahaya banget, min! Tolong segera dikasih rambu darurat.",
+        "hasil": "Jalan Muara Sembilang di dekat pertigaan amblas sekitar meter Bahaya banget min Tolong segera dikasih rambu darurat"
+    },
+    {
+        "deskripsi": "Pagar pembatas jembatan Sungai Seluang udah hilang dicuri. Bahaya banget, min! Takut ada yang jatuh ke sungai.",
+        "hasil": "Pagar pembatas jembatan Sungai Seluang udah hilang dicuri Bahaya banget min Takut ada yang jatuh ke sungai"
+    },
+    {
+        "deskripsi": "Penutup saluran air di Margomulyo hilang. Lobangnya besar banget, kalau malam motor bisa masuk. Mohon diganti.",
+        "hasil": "Penutup saluran air di Margomulyo hilang Lobangnya besar banget kalau malam motor bisa masuk Mohon diganti"
+    },
+    {
+        "deskripsi": "Trotoar di depan balai desa Selili hancur lebur. Pejalan kaki terpaksa jalan di aspal. Bahaya banget, min.",
+        "hasil": "Trotoar di depan balai desa Selili hancur lebur Pejalan kaki terpaksa jalan di aspal Bahaya banget min"
+    },
+    {
+        "deskripsi": "Tiang PJU di Teluk Pemedas sering konslet dan mati sendiri. Kalau malam, di sana gelap total. Mohon dicek kabelnya.",
+        "hasil": "Tiang PJU di Teluk Pemedas sering konslet dan mati sendiri Kalau malam di sana gelap total Mohon dicek kabelnya"
+    },
+    {
+        "deskripsi": "Jalan Karya Jaya penuh tambalan yang gak rata. Bikin motor oleng dan tidak nyaman dilewati.",
+        "hasil": "Jalan Karya Jaya penuh tambalan yang gak rata Bikin motor oleng dan tidak nyaman dilewati"
+    },
+    {
+        "deskripsi": "Air PDAM di Handil Baru Darat cuma netes-netes dari pagi. Aliran sangat kecil. Kami butuh air buat usaha warung.",
+        "hasil": "Air PDAM di Handil Baru Darat cuma netes netes dari pagi Aliran sangat kecil Kami butuh air buat usaha warung"
+    },
+    {
+        "deskripsi": "Pagar kantor lurah Wonotirto sudah doyong, takut roboh. Bahaya kalau menimpa motor yang parkir di dekat situ.",
+        "hasil": "Pagar kantor lurah Wonotirto sudah doyong takut roboh Bahaya kalau menimpa motor yang parkir di dekat situ"
+    },
+    {
+        "deskripsi": "Jalan masuk Muara Sembilang ambles lagi, min. Lubangnya makin besar setelah hujan deras. Tolong segera ditangani.",
+        "hasil": "Jalan masuk Muara Sembilang ambles lagi min Lubangnya makin besar setelah hujan deras Tolong segera ditangani"
+    },
+    {
+        "deskripsi": "Pintu bendungan air di Sungai Seluang sudah keropos. Takut jebol kalau airnya naik. Mohon dicek kekuatannya.",
+        "hasil": "Pintu bendungan air di Sungai Seluang sudah keropos Takut jebol kalau airnya naik Mohon dicek kekuatannya"
+    },
+    {
+        "deskripsi": "Saluran air di Margomulyo bau busuk. Airnya gak mengalir sama sekali. Tolong segera dibongkar dan dibersihkan.",
+        "hasil": "Saluran air di Margomulyo bau busuk Airnya gak mengalir sama sekali Tolong segera dibongkar dan dibersihkan"
+    },
+    {
+        "deskripsi": "Lampu lalu lintas di Selili padam. Bikin macet panjang dan rawan tabrakan. Tolong segera diperbaiki, min.",
+        "hasil": "Lampu lalu lintas di Selili padam Bikin macet panjang dan rawan tabrakan Tolong segera diperbaiki min"
+    },
+    {
+        "deskripsi": "Jalan di Teluk Pemedas yang nanjak banyak lubang. Mobil sering selip dan susah naik, apalagi kalau hujan.",
+        "hasil": "Jalan di Teluk Pemedas yang nanjak banyak lubang Mobil sering selip dan susah naik apalagi kalau hujan"
+    },
+    {
+        "deskripsi": "Tiang listrik di Karya Jaya miring, kabelnya terlalu rendah. Saya takut tersangkut mobil pikap yang lewat.",
+        "hasil": "Tiang listrik di Karya Jaya miring kabelnya terlalu rendah Saya takut tersangkut mobil pikap yang lewat"
+    },
+    {
+        "deskripsi": "Saluran air di Handil Baru Darat bau banget, min. Kayaknya ada bangkai binatang di dalamnya. Mohon dibersihkan.",
+        "hasil": "Saluran air di Handil Baru Darat bau banget min Kayaknya ada bangkai binatang di dalamnya Mohon dibersihkan"
+    },
+    {
+        "deskripsi": "Lampu penerangan di gerbang Wonotirto mati, gelap dan rawan. Minta tolong diganti lampunya, min.",
+        "hasil": "Lampu penerangan di gerbang Wonotirto mati gelap dan rawan Minta tolong diganti lampunya min"
+    },
+    {
+        "deskripsi": "Jalan Muara Sembilang di dekat sekolah berlubang besar. Bahaya buat anak-anak yang jalan kaki. Mohon segera ditambal.",
+        "hasil": "Jalan Muara Sembilang di dekat sekolah berlubang besar Bahaya buat anak anak yang jalan kaki Mohon segera ditambal"
+    },
+    {
+        "deskripsi": "Pagar kawat di sekitar embung air Sungai Seluang sudah robek-robek. Takut ada yang nyebur. Butuh perbaikan pagar.",
+        "hasil": "Pagar kawat di sekitar embung air Sungai Seluang sudah robek robek Takut ada yang nyebur Butuh perbaikan pagar"
+    },
+    {
+        "deskripsi": "Got di Margomulyo dangkal banget. Airnya langsung meluap kalau hujan sebentar. Mohon dikeruk lagi, min.",
+        "hasil": "Got di Margomulyo dangkal banget Airnya langsung meluap kalau hujan sebentar Mohon dikeruk lagi min"
+    },
+    {
+        "deskripsi": "Jalan di Selili banyak yang retak rambut. Kalau dibiarkan, nanti bisa jadi lubang besar lagi. Mohon segera diaspal ulang.",
+        "hasil": "Jalan di Selili banyak yang retak rambut Kalau dibiarkan nanti bisa jadi lubang besar lagi Mohon segera diaspal ulang"
+    },
+    {
+        "deskripsi": "Tiang bendera di Teluk Pemedas sudah miring parah. Takut jatuh menimpa warga. Mohon segera diperbaiki.",
+        "hasil": "Tiang bendera di Teluk Pemedas sudah miring parah Takut jatuh menimpa warga Mohon segera diperbaiki"
+    },
+    {
+        "deskripsi": "Lampu penerangan di jalan Karya Jaya mati total. Gelap banget, apalagi di jalan menikung. Bahaya kecelakaan.",
+        "hasil": "Lampu penerangan di jalan Karya Jaya mati total Gelap banget apalagi di jalan menikung Bahaya kecelakaan"
+    },
+    {
+        "deskripsi": "Jalan di Muara Sembilang banyak tambalan yang gak rata. Bikin suspensi mobil cepat rusak. Mohon diaspal ulang saja.",
+        "hasil": "Jalan di Muara Sembilang banyak tambalan yang gak rata Bikin suspensi mobil cepat rusak Mohon diaspal ulang saja"
+    },
+    {
+        "deskripsi": "Pagar pembatas kali di Sungai Seluang sudah roboh. Anak-anak sering main di pinggir kali. Bahaya banget, min.",
+        "hasil": "Pagar pembatas kali di Sungai Seluang sudah roboh Anak anak sering main di pinggir kali Bahaya banget min"
+    },
+    {
+        "deskripsi": "Di Margomulyo ada penutup manhole yang hilang lagi. Lobangnya di tengah jalan. Mohon segera diganti.",
+        "hasil": "Di Margomulyo ada penutup manhole yang hilang lagi Lobangnya di tengah jalan Mohon segera diganti"
+    },
+    {
+        "deskripsi": "Gorong-gorong di Selili mampet total, airnya menggenang di depan rumah warga. Bau busuk sekali. Kami butuh bantuan dinas kebersihan.",
+        "hasil": "Gorong gorong di Selili mampet total airnya menggenang di depan rumah warga Bau busuk sekali Kami butuh bantuan dinas kebersihan"
+    },
+    {
+        "deskripsi": "Tiang PJU di Teluk Pemedas sudah karatan di pangkalnya. Takut roboh saat ada angin kencang. Mohon dicek kondisinya.",
+        "hasil": "Tiang PJU di Teluk Pemedas sudah karatan di pangkalnya Takut roboh saat ada angin kencang Mohon dicek kondisinya"
+    },
+    {
+        "deskripsi": "Jalan di Karya Jaya di depan gerbang perumahan banyak lubang kecil yang mulai membesar. Rawan kecelakaan di malam hari.",
+        "hasil": "Jalan di Karya Jaya di depan gerbang perumahan banyak lubang kecil yang mulai membesar Rawan kecelakaan di malam hari"
+    },
+    {
+        "deskripsi": "Pipa air bersih di Handil Baru Darat bocor parah di bawah tanah. Airnya merembes terus ke jalan. Minta tolong diperbaiki.",
+        "hasil": "Pipa air bersih di Handil Baru Darat bocor parah di bawah tanah Airnya merembes terus ke jalan Minta tolong diperbaiki"
+    },
+    {
+        "deskripsi": "Lampu penerangan di Wonotirto sering mati hidup sendiri. Kami khawatir kalau ada konslet listrik. Mohon segera diperiksa.",
+        "hasil": "Lampu penerangan di Wonotirto sering mati hidup sendiri Kami khawatir kalau ada konslet listrik Mohon segera diperiksa"
+    },
+    {
+        "deskripsi": "Jalan di dekat pelabuhan Muara Sembilang sudah ambles separuh. Truk besar sering lewat, takutnya ambles total.",
+        "hasil": "Jalan di dekat pelabuhan Muara Sembilang sudah ambles separuh Truk besar sering lewat takutnya ambles total"
+    },
+    {
+        "deskripsi": "Tanggul kecil di Sungai Seluang sudah retak-retak. Kalau hujan deras, air bisa meluap ke pemukiman warga.",
+        "hasil": "Tanggul kecil di Sungai Seluang sudah retak retak Kalau hujan deras air bisa meluap ke pemukiman warga"
+    },
+    {
+        "deskripsi": "Jalan Margomulyo di dekat pabrik berlubang besar dan dalam. Motor sering oleng saat melintas. Mohon segera ditambal.",
+        "hasil": "Jalan Margomulyo di dekat pabrik berlubang besar dan dalam Motor sering oleng saat melintas Mohon segera ditambal"
+    },
+    {
+        "deskripsi": "Lampu lalu lintas di Selili mati lagi. Bikin macet total di jam sibuk. Mohon ada petugas yang jaga sementara.",
+        "hasil": "Lampu lalu lintas di Selili mati lagi Bikin macet total di jam sibuk Mohon ada petugas yang jaga sementara"
+    },
+    {
+        "deskripsi": "Trotoar di Teluk Pemedas hancur parah. Pejalan kaki harus jalan di bahu jalan. Bahaya banget, min.",
+        "hasil": "Trotoar di Teluk Pemedas hancur parah Pejalan kaki harus jalan di bahu jalan Bahaya banget min"
+    },
+    {
+        "deskripsi": "Tiang telepon di Karya Jaya miring, kabelnya putus dan menjuntai. Bahaya kalau disentuh. Mohon segera diperbaiki.",
+        "hasil": "Tiang telepon di Karya Jaya miring kabelnya putus dan menjuntai Bahaya kalau disentuh Mohon segera diperbaiki"
+    },
+    {
+        "deskripsi": "Air PDAM di Handil Baru Darat sering mati mendadak tanpa pemberitahuan. Kami jadi kesulitan menampung air.",
+        "hasil": "Air PDAM di Handil Baru Darat sering mati mendadak tanpa pemberitahuan Kami jadi kesulitan menampung air"
+    },
+    {
+        "deskripsi": "Pagar sekolah di Wonotirto sudah roboh dan hilang dicuri. Sekolah jadi rawan dimasuki orang asing.",
+        "hasil": "Pagar sekolah di Wonotirto sudah roboh dan hilang dicuri Sekolah jadi rawan dimasuki orang asing"
+    },
+    {
+        "deskripsi": "Jalan di Muara Sembilang penuh lubang yang dalam. Bikin truk sering tersangkut. Mohon segera ada perbaikan besar.",
+        "hasil": "Jalan di Muara Sembilang penuh lubang yang dalam Bikin truk sering tersangkut Mohon segera ada perbaikan besar"
+    },
+    {
+        "deskripsi": "Pintu air di Sungai Seluang sudah keropos. Takut jebol kalau air pasang. Mohon dicek kekuatannya.",
+        "hasil": "Pintu air di Sungai Seluang sudah keropos Takut jebol kalau air pasang Mohon dicek kekuatannya"
+    },
+    {
+        "deskripsi": "Penutup saluran air di Margomulyo ambrol. Lubangnya besar banget. Saya hampir jatuh saat jalan malam.",
+        "hasil": "Penutup saluran air di Margomulyo ambrol Lubangnya besar banget Saya hampir jatuh saat jalan malam"
+    },
+    {
+        "deskripsi": "Lampu PJU di Selili mati semua. Gelap total. Rawan jambret di area itu. Mohon segera diperbaiki.",
+        "hasil": "Lampu PJU di Selili mati semua Gelap total Rawan jambret di area itu Mohon segera diperbaiki"
+    },
+    {
+        "deskripsi": "Tiang listrik di Teluk Pemedas miring banget. Kabelnya sudah kendor. Bahaya kalau putus dan mengenai warga.",
+        "hasil": "Tiang listrik di Teluk Pemedas miring banget Kabelnya sudah kendor Bahaya kalau putus dan mengenai warga"
+    },
+    {
+        "deskripsi": "Jalan Karya Jaya penuh lubang dan batu lepas. Bikin ban motor cepat rusak. Kami butuh pengaspalan ulang.",
+        "hasil": "Jalan Karya Jaya penuh lubang dan batu lepas Bikin ban motor cepat rusak Kami butuh pengaspalan ulang"
+    },
+    {
+        "deskripsi": "Air PDAM di Handil Baru Darat keruh lagi, min. Kadang airnya berwarna cokelat. Kami takut kalau dipakai masak.",
+        "hasil": "Air PDAM di Handil Baru Darat keruh lagi min Kadang airnya berwarna cokelat Kami takut kalau dipakai masak"
+    },
+    {
+        "deskripsi": "Jalan di Margomulyo bergelombang dan banyak retakan panjang. Aspalnya sudah menipis dan rawan kecelakaan.",
+        "hasil": "Jalan di Margomulyo bergelombang dan banyak retakan panjang Aspalnya sudah menipis dan rawan kecelakaan"
+    },
+    {
+        "deskripsi": "Penutup saluran air di jalan utama Selili ambrol. Lubangnya besar sekali di tengah jalan. Bahaya untuk kendaraan.",
+        "hasil": "Penutup saluran air di jalan utama Selili ambrol Lubangnya besar sekali di tengah jalan Bahaya untuk kendaraan"
+    },
+    {
+        "deskripsi": "Tiang PJU di Teluk Pemedas miring banget dan kabelnya menjuntai rendah. Kami takut roboh saat ada angin kencang.",
+        "hasil": "Tiang PJU di Teluk Pemedas miring banget dan kabelnya menjuntai rendah Kami takut roboh saat ada angin kencang"
+    },
+    {
+        "deskripsi": "Jalan di Karya Jaya licin karena aspalnya mengelupas dan menyisakan kerikil tajam. Bikin motor sering selip.",
+        "hasil": "Jalan di Karya Jaya licin karena aspalnya mengelupas dan menyisakan kerikil tajam Bikin motor sering selip"
+    },
+    {
+        "deskripsi": "Air PDAM di Handil Baru Darat sering mati mendadak tanpa pemberitahuan. Mohon ada perbaikan jadwal distribusi.",
+        "hasil": "Air PDAM di Handil Baru Darat sering mati mendadak tanpa pemberitahuan Mohon ada perbaikan jadwal distribusi"
+    },
+    {
+        "deskripsi": "Lampu penerangan di area parkir Wonotirto mati total. Gelap dan rawan aksi kriminalitas di malam hari.",
+        "hasil": "Lampu penerangan di area parkir Wonotirto mati total Gelap dan rawan aksi kriminalitas di malam hari"
+    },
+    {
+        "deskripsi": "Jembatan kayu penghubung di Muara Sembilang sudah lapuk. Papan-papannya banyak yang bolong. Bahaya kalau dilewati.",
+        "hasil": "Jembatan kayu penghubung di Muara Sembilang sudah lapuk Papan papannya banyak yang bolong Bahaya kalau dilewati"
+    },
+    {
+        "deskripsi": "Pipa air bersih di Sungai Seluang bocor di bawah jalan. Airnya sudah merembes dan membuat aspal cepat rusak.",
+        "hasil": "Pipa air bersih di Sungai Seluang bocor di bawah jalan Airnya sudah merembes dan membuat aspal cepat rusak"
+    },
+    {
+        "deskripsi": "Gorong-gorong di Margomulyo mampet total, min. Air menggenang di jalanan setiap hujan. Bau busuk sekali.",
+        "hasil": "Gorong gorong di Margomulyo mampet total min Air menggenang di jalanan setiap hujan Bau busuk sekali"
+    },
+    {
+        "deskripsi": "Trotoar di depan sekolah Selili sudah hancur. Pejalan kaki terpaksa jalan di bahu jalan. Rawan kecelakaan.",
+        "hasil": "Trotoar di depan sekolah Selili sudah hancur Pejalan kaki terpaksa jalan di bahu jalan Rawan kecelakaan"
+    },
+    {
+        "deskripsi": "Tiang listrik di Teluk Pemedas mengeluarkan suara mendesis keras. Kami takut ada konslet listrik dan kebakaran.",
+        "hasil": "Tiang listrik di Teluk Pemedas mengeluarkan suara mendesis keras Kami takut ada konslet listrik dan kebakaran"
+    },
+    {
+        "deskripsi": "Jalan di Karya Jaya ada lubang besar yang ditutupi oleh genangan air. Saya hampir jatuh dari motor tadi malam.",
+        "hasil": "Jalan di Karya Jaya ada lubang besar yang ditutupi oleh genangan air Saya hampir jatuh dari motor tadi malam"
+    },
+    {
+        "deskripsi": "Penutup manhole di Handil Baru Darat hilang dicuri. Lubangnya menganga di tengah jalan. Bahaya fatal!",
+        "hasil": "Penutup manhole di Handil Baru Darat hilang dicuri Lubangnya menganga di tengah jalan Bahaya fatal"
+    },
+    {
+        "deskripsi": "Pagar pembatas taman di Wonotirto sudah roboh di beberapa bagian. Taman jadi rawan dimasuki hewan liar.",
+        "hasil": "Pagar pembatas taman di Wonotirto sudah roboh di beberapa bagian Taman jadi rawan dimasuki hewan liar"
+    },
+    {
+        "deskripsi": "Lampu lalu lintas di Muara Sembilang mati total. Bikin macet dan rawan tabrakan di perempatan.",
+        "hasil": "Lampu lalu lintas di Muara Sembilang mati total Bikin macet dan rawan tabrakan di perempatan"
+    },
+    {
+        "deskripsi": "Air PDAM di Sungai Seluang keruh sekali dan bau kaporit menyengat. Kami takut kalau diminum atau untuk masak.",
+        "hasil": "Air PDAM di Sungai Seluang keruh sekali dan bau kaporit menyengat Kami takut kalau diminum atau untuk masak"
+    },
+    {
+        "deskripsi": "Jalan Margomulyo di dekat pom bensin berlubang besar. Motor sering oleng saat menghindari lubang. Mohon segera ditambal.",
+        "hasil": "Jalan Margomulyo di dekat pom bensin berlubang besar Motor sering oleng saat menghindari lubang Mohon segera ditambal"
+    },
+    {
+        "deskripsi": "Jalan di Selili sering banjir karena saluran drainase tidak berfungsi. Minta tolong dicek dan dikeruk lumpurnya.",
+        "hasil": "Jalan di Selili sering banjir karena saluran drainase tidak berfungsi Minta tolong dicek dan dikeruk lumpurnya"
+    },
+    {
+        "deskripsi": "Trotoar di Teluk Pemedas ambles di beberapa titik. Pejalan kaki harus ekstra hati-hati. Mohon segera diperbaiki.",
+        "hasil": "Trotoar di Teluk Pemedas ambles di beberapa titik Pejalan kaki harus ekstra hati hati Mohon segera diperbaiki"
+    },
+    {
+        "deskripsi": "Tiang telepon di Karya Jaya miring parah. Kabelnya menjuntai ke jalan. Bahaya kalau disentuh saat hujan.",
+        "hasil": "Tiang telepon di Karya Jaya miring parah Kabelnya menjuntai ke jalan Bahaya kalau disentuh saat hujan"
+    },
+    {
+        "deskripsi": "Lampu penerangan di Margomulyo mati semua sejak semalam. Gelap sekali di tikungan tajam, rawan kecelakaan.",
+        "hasil": "Lampu penerangan di Margomulyo mati semua sejak semalam Gelap sekali di tikungan tajam rawan kecelakaan"
+    },
+    {
+        "deskripsi": "Staf di kantor kelurahan Margomulyo kurang ramah saat melayani. Ditanya baik-baik jawabnya ketus dan tidak jelas.",
+        "hasil": "Staf di kantor kelurahan Margomulyo kurang ramah saat melayani Ditanya baik baik jawabnya ketus dan tidak jelas"
+    },
+    {
+        "deskripsi": "Proses pengurusan surat domisili di Selili lama sekali, sudah seminggu belum ada kabar. Padahal cuma ganti alamat.",
+        "hasil": "Proses pengurusan surat domisili di Selili lama sekali sudah seminggu belum ada kabar Padahal cuma ganti alamat"
+    },
+    {
+        "deskripsi": "Antrian di Puskesmas Teluk Pemedas panjang banget, min. Loket pendaftaran cuma buka satu, padahal pasien sudah banyak.",
+        "hasil": "Antrian di Puskesmas Teluk Pemedas panjang banget min Loket pendaftaran cuma buka satu padahal pasien sudah banyak"
+    },
+    {
+        "deskripsi": "Pengurusan akta kelahiran anak saya di Karya Jaya dipersulit, min. Dibilang ada berkas yang kurang padahal sudah lengkap semua.",
+        "hasil": "Pengurusan akta kelahiran anak saya di Karya Jaya dipersulit min Dibilang ada berkas yang kurang padahal sudah lengkap semua"
+    },
+    {
+        "deskripsi": "Petugas kebersihan di Handil Baru Darat sudah 4 hari tidak angkut sampah. Sampah di bak penampungan sudah meluber dan bau.",
+        "hasil": "Petugas kebersihan di Handil Baru Darat sudah hari tidak angkut sampah Sampah di bak penampungan sudah meluber dan bau"
+    },
+    {
+        "deskripsi": "Toilet umum di taman Wonotirto kotor dan rusak parah. Airnya juga mati. Tidak layak digunakan sama sekali.",
+        "hasil": "Toilet umum di taman Wonotirto kotor dan rusak parah Airnya juga mati Tidak layak digunakan sama sekali"
+    },
+    {
+        "deskripsi": "Pengurusan IMB di Muara Sembilang terlalu lama dan berbelit-belit. Katanya perlu 'uang pelicin' agar cepat selesai.",
+        "hasil": "Pengurusan IMB di Muara Sembilang terlalu lama dan berbelit belit Katanya perlu uang pelicin agar cepat selesai"
+    },
+    {
+        "deskripsi": "Telepon layanan pengaduan PDAM Sungai Seluang selalu sibuk atau tidak diangkat. Air di rumah saya mati total.",
+        "hasil": "Telepon layanan pengaduan PDAM Sungai Seluang selalu sibuk atau tidak diangkat Air di rumah saya mati total"
+    },
+    {
+        "deskripsi": "Kartu Keluarga (KK) saya yang hilang sudah diurus sebulan di Margomulyo, tapi sampai sekarang belum dicetak. Hanya disuruh tunggu.",
+        "hasil": "Kartu Keluarga KK saya yang hilang sudah diurus sebulan di Margomulyo tapi sampai sekarang belum dicetak Hanya disuruh tunggu"
+    },
+    {
+        "deskripsi": "Petugas parkir di Selili narik biaya seenaknya, padahal motor cuma sebentar. Gak ada karcis resmi juga.",
+        "hasil": "Petugas parkir di Selili narik biaya seenaknya padahal motor cuma sebentar Gak ada karcis resmi juga"
+    },
+    {
+        "deskripsi": "Obat di Puskesmas Teluk Pemedas sering kosong. Saya harus beli di luar padahal sudah berobat di sana.",
+        "hasil": "Obat di Puskesmas Teluk Pemedas sering kosong Saya harus beli di luar padahal sudah berobat di sana"
+    },
+    {
+        "deskripsi": "Petugas kelurahan Karya Jaya sering tidak ada di tempat saat jam pelayanan. Kami datang jauh-jauh tapi kantornya kosong.",
+        "hasil": "Petugas kelurahan Karya Jaya sering tidak ada di tempat saat jam pelayanan Kami datang jauh jauh tapi kantornya kosong"
+    },
+    {
+        "deskripsi": "Layanan bus kota di Handil Baru Darat sering telat parah. Kadang sampai satu jam. Bikin saya sering terlambat kerja.",
+        "hasil": "Layanan bus kota di Handil Baru Darat sering telat parah Kadang sampai satu jam Bikin saya sering terlambat kerja"
+    },
+    {
+        "deskripsi": "Air mancur di taman Wonotirto sudah lama mati, min. Taman jadi kelihatan kusam dan tidak terawat.",
+        "hasil": "Air mancur di taman Wonotirto sudah lama mati min Taman jadi kelihatan kusam dan tidak terawat"
+    },
+    {
+        "deskripsi": "Pelayanan di kantor pajak Muara Sembilang lambat sekali, min. Sudah antri berjam-jam, petugasnya malah ngobrol.",
+        "hasil": "Pelayanan di kantor pajak Muara Sembilang lambat sekali min Sudah antri berjam jam petugasnya malah ngobrol"
+    },
+    {
+        "deskripsi": "Mobil penyedot limbah Sungai Seluang datangnya selalu telat dari jadwal yang ditentukan. Kami sudah menunggu lama.",
+        "hasil": "Mobil penyedot limbah Sungai Seluang datangnya selalu telat dari jadwal yang ditentukan Kami sudah menunggu lama"
+    },
+    {
+        "deskripsi": "Layanan cetak KTP elektronik di Margomulyo sering dibilang blanko habis. Sudah 3 bulan saya pakai surat keterangan.",
+        "hasil": "Layanan cetak KTP elektronik di Margomulyo sering dibilang blanko habis Sudah bulan saya pakai surat keterangan"
+    },
+    {
+        "deskripsi": "Ada pungutan liar saat mengurus surat pindah di Selili. Diminta biaya yang tidak ada di papan informasi.",
+        "hasil": "Ada pungutan liar saat mengurus surat pindah di Selili Diminta biaya yang tidak ada di papan informasi"
+    },
+    {
+        "deskripsi": "Dokter di Puskesmas Teluk Pemedas kurang komunikatif. Saya tanya keluhan dijawabnya singkat-singkat sekali.",
+        "hasil": "Dokter di Puskesmas Teluk Pemedas kurang komunikatif Saya tanya keluhan dijawabnya singkat singkat sekali"
+    },
+    {
+        "deskripsi": "Petugas di kantor kelurahan Karya Jaya sering main HP saat melayani. Kami merasa tidak dihargai sebagai warga.",
+        "hasil": "Petugas di kantor kelurahan Karya Jaya sering main HP saat melayani Kami merasa tidak dihargai sebagai warga"
+    },
+    {
+        "deskripsi": "Saya sudah mengurus BPJS di Margomulyo 2 minggu lalu, tapi kartunya belum bisa dicetak. Alasannya server down terus.",
+        "hasil": "Saya sudah mengurus BPJS di Margomulyo minggu lalu tapi kartunya belum bisa dicetak Alasannya server down terus"
+    },
+    {
+        "deskripsi": "Toilet umum di area pasar Selili kotor dan bau, min. Tidak ada petugas kebersihan yang standby.",
+        "hasil": "Toilet umum di area pasar Selili kotor dan bau min Tidak ada petugas kebersihan yang standby"
+    },
+    {
+        "deskripsi": "Pelayanan ambulans di Teluk Pemedas lambat, min. Kami telepon lama sekali baru direspon. Padahal ini kasus darurat.",
+        "hasil": "Pelayanan ambulans di Teluk Pemedas lambat min Kami telepon lama sekali baru direspon Padahal ini kasus darurat"
+    },
+    {
+        "deskripsi": "Petugas kebersihan di Karya Jaya sering pilih-pilih sampah. Sampah yang mereka anggap tidak penting dibiarkan menumpuk.",
+        "hasil": "Petugas kebersihan di Karya Jaya sering pilih pilih sampah Sampah yang mereka anggap tidak penting dibiarkan menumpuk"
+    },
+    {
+        "deskripsi": "Petugas di kelurahan Margomulyo sering minta fotokopi berkas yang tidak tertera di persyaratan. Ini bikin bolak-balik terus.",
+        "hasil": "Petugas di kelurahan Margomulyo sering minta fotokopi berkas yang tidak tertera di persyaratan Ini bikin bolak balik terus"
+    },
+    {
+        "deskripsi": "Pelayanan di kantor camat Selili lama banget, min. Alasannya harus menunggu tandatangan atasan, padahal orangnya ada.",
+        "hasil": "Pelayanan di kantor camat Selili lama banget min Alasannya harus menunggu tandatangan atasan padahal orangnya ada"
+    },
+    {
+        "deskripsi": "Perawat di Puskesmas Teluk Pemedas jutek dan tidak sabar saat menangani pasien lansia. Tolong beri teguran keras.",
+        "hasil": "Perawat di Puskesmas Teluk Pemedas jutek dan tidak sabar saat menangani pasien lansia Tolong beri teguran keras"
+    },
+    {
+        "deskripsi": "Pengurusan surat izin usaha di Karya Jaya dipersulit, min. Diminta biaya yang tidak wajar dan tanpa kuitansi resmi.",
+        "hasil": "Pengurusan surat izin usaha di Karya Jaya dipersulit min Diminta biaya yang tidak wajar dan tanpa kuitansi resmi"
+    },
+    {
+        "deskripsi": "Bus kota di Handil Baru Darat sering ngetem lama di pinggir jalan. Bikin macet dan penumpang telat sampai tujuan.",
+        "hasil": "Bus kota di Handil Baru Darat sering ngetem lama di pinggir jalan Bikin macet dan penumpang telat sampai tujuan"
+    },
+    {
+        "deskripsi": "Lampu penerangan di area parkir puskesmas Wonotirto mati semua. Kalau malam jadi gelap dan rawan pencurian motor.",
+        "hasil": "Lampu penerangan di area parkir puskesmas Wonotirto mati semua Kalau malam jadi gelap dan rawan pencurian motor"
+    },
+    {
+        "deskripsi": "Petugas kebersihan di Muara Sembilang sering tidak mengangkut sampah rumah tangga kami. Kami sudah bayar iuran rutin.",
+        "hasil": "Petugas kebersihan di Muara Sembilang sering tidak mengangkut sampah rumah tangga kami Kami sudah bayar iuran rutin"
+    },
+    {
+        "deskripsi": "Telepon layanan air bersih Sungai Seluang tidak pernah dijawab. Air di rumah saya sudah 2 hari keruh sekali.",
+        "hasil": "Telepon layanan air bersih Sungai Seluang tidak pernah dijawab Air di rumah saya sudah hari keruh sekali"
+    },
+    {
+        "deskripsi": "Pengurusan surat kematian di Margomulyo ribet, min. Persyaratan yang diminta terus berubah-ubah. Kami jadi frustrasi.",
+        "hasil": "Pengurusan surat kematian di Margomulyo ribet min Persyaratan yang diminta terus berubah ubah Kami jadi frustrasi"
+    },
+    {
+        "deskripsi": "Petugas parkir di Selili sering memaksakan tarif, min. Mereka tidak mau kasih kembalian pas.",
+        "hasil": "Petugas parkir di Selili sering memaksakan tarif min Mereka tidak mau kasih kembalian pas"
+    },
+    {
+        "deskripsi": "Obat untuk penyakit kronis di Puskesmas Teluk Pemedas selalu kosong. Kami harus beli ke apotek luar dan biayanya mahal.",
+        "hasil": "Obat untuk penyakit kronis di Puskesmas Teluk Pemedas selalu kosong Kami harus beli ke apotek luar dan biayanya mahal"
+    },
+    {
+        "deskripsi": "Kantor kelurahan Karya Jaya sering tutup sebelum jam kerja selesai. Kami datang jam 14.00, sudah tidak ada petugas.",
+        "hasil": "Kantor kelurahan Karya Jaya sering tutup sebelum jam kerja selesai Kami datang jam sudah tidak ada petugas"
+    },
+    {
+        "deskripsi": "Terminal bus di Handil Baru Darat kotor sekali, min. Sampah berserakan di mana-mana. Tidak ada petugas kebersihan yang terlihat.",
+        "hasil": "Terminal bus di Handil Baru Darat kotor sekali min Sampah berserakan di mana mana Tidak ada petugas kebersihan yang terlihat"
+    },
+    {
+        "deskripsi": "Fasilitas olahraga di taman Wonotirto banyak yang rusak. Besinya berkarat dan catnya mengelupas. Bahaya buat anak-anak.",
+        "hasil": "Fasilitas olahraga di taman Wonotirto banyak yang rusak Besinya berkarat dan catnya mengelupas Bahaya buat anak anak"
+    },
+    {
+        "deskripsi": "Petugas di loket pembayaran retribusi Muara Sembilang sering lambat. Mereka lebih banyak ngobrol sesama teman daripada melayani.",
+        "hasil": "Petugas di loket pembayaran retribusi Muara Sembilang sering lambat Mereka lebih banyak ngobrol sesama teman daripada melayani"
+    },
+    {
+        "deskripsi": "Mobil pengangkut sampah Sungai Seluang datangnya tidak menentu. Kadang pagi, kadang sore, kadang tidak datang sama sekali.",
+        "hasil": "Mobil pengangkut sampah Sungai Seluang datangnya tidak menentu Kadang pagi kadang sore kadang tidak datang sama sekali"
+    },
+    {
+        "deskripsi": "Layanan perizinan di Margomulyo sering meminta persyaratan yang tidak standar. Kami curiga ada pungli terselubung.",
+        "hasil": "Layanan perizinan di Margomulyo sering meminta persyaratan yang tidak standar Kami curiga ada pungli terselubung"
+    },
+    {
+        "deskripsi": "Pengurusan KTP elektronik di Selili sangat lambat, min. Sudah 6 bulan saya nunggu tanpa kejelasan.",
+        "hasil": "Pengurusan KTP elektronik di Selili sangat lambat min Sudah bulan saya nunggu tanpa kejelasan"
+    },
+    {
+        "deskripsi": "Dokter di Puskesmas Teluk Pemedas terkesan buru-buru saat memeriksa. Saya merasa tidak didengarkan keluhannya.",
+        "hasil": "Dokter di Puskesmas Teluk Pemedas terkesan buru buru saat memeriksa Saya merasa tidak didengarkan keluhannya"
+    },
+    {
+        "deskripsi": "Papan informasi pelayanan di kantor Karya Jaya tidak diperbarui. Informasi yang tertera sudah kadaluarsa.",
+        "hasil": "Papan informasi pelayanan di kantor Karya Jaya tidak diperbarui Informasi yang tertera sudah kadaluarsa"
+    },
+    {
+        "deskripsi": "Petugas di kantor BPJS Margomulyo sering memberikan informasi yang berbeda-beda. Kami jadi bingung harus ikut yang mana.",
+        "hasil": "Petugas di kantor BPJS Margomulyo sering memberikan informasi yang berbeda beda Kami jadi bingung harus ikut yang mana"
+    },
+    {
+        "deskripsi": "Toilet umum di area pasar Selili sering dikunci. Padahal kami butuh banget. Tidak ada keterangan kenapa dikunci.",
+        "hasil": "Toilet umum di area pasar Selili sering dikunci Padahal kami butuh banget Tidak ada keterangan kenapa dikunci"
+    },
+    {
+        "deskripsi": "Layanan ambulans di Teluk Pemedas sering telat karena sopirnya tidak standby. Ini masalah nyawa, min!",
+        "hasil": "Layanan ambulans di Teluk Pemedas sering telat karena sopirnya tidak standby Ini masalah nyawa min"
+    },
+    {
+        "deskripsi": "Petugas kebersihan di Karya Jaya sering lewat, tapi cuma menyapu di pinggir jalan utama. Gang-gang kecil tidak tersentuh.",
+        "hasil": "Petugas kebersihan di Karya Jaya sering lewat tapi cuma menyapu di pinggir jalan utama Gang gang kecil tidak tersentuh"
+    },
+    {
+        "deskripsi": "Staf di kantor kelurahan Margomulyo sering menunda-nunda penandatanganan berkas, katanya 'nunggu atasan datang' padahal sudah jam kerja.",
+        "hasil": "Staf di kantor kelurahan Margomulyo sering menunda nunda penandatanganan berkas katanya nunggu atasan datang padahal sudah jam kerja"
+    },
+    {
+        "deskripsi": "Antrian di kantor kecamatan Selili terlalu panjang karena hanya satu loket yang buka. Kami buang waktu seharian di sana.",
+        "hasil": "Antrian di kantor kecamatan Selili terlalu panjang karena hanya satu loket yang buka Kami buang waktu seharian di sana"
+    },
+    {
+        "deskripsi": "Petugas medis di Puskesmas Teluk Pemedas sering main HP saat pasien sedang konsultasi. Ini tidak profesional.",
+        "hasil": "Petugas medis di Puskesmas Teluk Pemedas sering main HP saat pasien sedang konsultasi Ini tidak profesional"
+    },
+    {
+        "deskripsi": "Pengurusan SKCK di Karya Jaya dipersulit, min. Diminta surat rekomendasi yang tidak pernah ada di daftar persyaratan resmi.",
+        "hasil": "Pengurusan SKCK di Karya Jaya dipersulit min Diminta surat rekomendasi yang tidak pernah ada di daftar persyaratan resmi"
+    },
+    {
+        "deskripsi": "Tempat sampah umum di Handil Baru Darat sudah meluber kemana-mana. Petugas kebersihan jarang mengangkutnya.",
+        "hasil": "Tempat sampah umum di Handil Baru Darat sudah meluber kemana mana Petugas kebersihan jarang mengangkutnya"
+    },
+    {
+        "deskripsi": "Fasilitas toilet di taman Wonotirto sudah rusak total. Pintu copot dan airnya mati. Mohon segera diperbaiki.",
+        "hasil": "Fasilitas toilet di taman Wonotirto sudah rusak total Pintu copot dan airnya mati Mohon segera diperbaiki"
+    },
+    {
+        "deskripsi": "Pengurusan izin keramaian di Muara Sembilang diminta biaya yang tidak ada dasar hukumnya. Ini pungli, min!",
+        "hasil": "Pengurusan izin keramaian di Muara Sembilang diminta biaya yang tidak ada dasar hukumnya Ini pungli min"
+    },
+    {
+        "deskripsi": "Saya telepon layanan pengaduan air bersih Sungai Seluang selalu dioper-oper ke bagian lain. Tidak ada yang mau bertanggung jawab.",
+        "hasil": "Saya telepon layanan pengaduan air bersih Sungai Seluang selalu dioper oper ke bagian lain Tidak ada yang mau bertanggung jawab"
+    },
+    {
+        "deskripsi": "Pengurusan surat keterangan usaha di Margomulyo dipersulit. Padahal ini usaha kecil, tapi birokrasinya ribet sekali.",
+        "hasil": "Pengurusan surat keterangan usaha di Margomulyo dipersulit Padahal ini usaha kecil tapi birokrasinya ribet sekali"
+    },
+    {
+        "deskripsi": "Petugas parkir liar di Selili sering mengancam warga yang tidak mau membayar tarif tinggi yang mereka tetapkan.",
+        "hasil": "Petugas parkir liar di Selili sering mengancam warga yang tidak mau membayar tarif tinggi yang mereka tetapkan"
+    },
+    {
+        "deskripsi": "Obat untuk anak-anak di Puskesmas Teluk Pemedas sering kosong. Anak saya jadi tidak bisa berobat maksimal.",
+        "hasil": "Obat untuk anak anak di Puskesmas Teluk Pemedas sering kosong Anak saya jadi tidak bisa berobat maksimal"
+    },
+    {
+        "deskripsi": "Petugas di kantor kelurahan Karya Jaya sering merokok di ruang tunggu. Kami yang bawa anak jadi terganggu.",
+        "hasil": "Petugas di kantor kelurahan Karya Jaya sering merokok di ruang tunggu Kami yang bawa anak jadi terganggu"
+    },
+    {
+        "deskripsi": "Bus kota di Handil Baru Darat sering berhenti di sembarang tempat. Bikin macet panjang. Mohon ditertibkan sopirnya.",
+        "hasil": "Bus kota di Handil Baru Darat sering berhenti di sembarang tempat Bikin macet panjang Mohon ditertibkan sopirnya"
+    },
+    {
+        "deskripsi": "Ayunan di taman Wonotirto sudah rusak. Besinya berkarat dan talinya putus. Bahaya kalau dipakai anak-anak.",
+        "hasil": "Ayunan di taman Wonotirto sudah rusak Besinya berkarat dan talinya putus Bahaya kalau dipakai anak anak"
+    },
+    {
+        "deskripsi": "Pelayanan di kantor perpajakan Muara Sembilang sangat tidak efisien. Petugasnya tidak tahu prosedur yang benar.",
+        "hasil": "Pelayanan di kantor perpajakan Muara Sembilang sangat tidak efisien Petugasnya tidak tahu prosedur yang benar"
+    },
+    {
+        "deskripsi": "Mobil tangki air bersih Sungai Seluang tidak pernah datang sesuai jadwal. Warga jadi bingung kapan harus menampung air.",
+        "hasil": "Mobil tangki air bersih Sungai Seluang tidak pernah datang sesuai jadwal Warga jadi bingung kapan harus menampung air"
+    },
+    {
+        "deskripsi": "Layanan cetak dokumen kependudukan di Margomulyo dibilang server error terus. Sudah 2 bulan saya tidak punya KTP.",
+        "hasil": "Layanan cetak dokumen kependudukan di Margomulyo dibilang server error terus Sudah bulan saya tidak punya KTP"
+    },
+    {
+        "deskripsi": "Saya dimintai uang tambahan saat mengurus surat pindah di Selili. Padahal harusnya gratis. Mohon ditindak tegas pungli ini.",
+        "hasil": "Saya dimintai uang tambahan saat mengurus surat pindah di Selili Padahal harusnya gratis Mohon ditindak tegas pungli ini"
+    },
+    {
+        "deskripsi": "Jam operasional Puskesmas Teluk Pemedas tidak sesuai. Jam 13.00 sudah tutup, padahal di papan tertulis sampai jam 15.00.",
+        "hasil": "Jam operasional Puskesmas Teluk Pemedas tidak sesuai Jam sudah tutup padahal di papan tertulis sampai jam"
+    },
+    {
+        "deskripsi": "Papan pengumuman di kantor Karya Jaya sudah kusam dan tulisannya tidak bisa dibaca. Mohon diganti yang baru.",
+        "hasil": "Papan pengumuman di kantor Karya Jaya sudah kusam dan tulisannya tidak bisa dibaca Mohon diganti yang baru"
+    },
+    {
+        "deskripsi": "Petugas di kelurahan Margomulyo sering tidak ada di meja saat jam pelayanan. Kami harus menunggu sampai setengah jam.",
+        "hasil": "Petugas di kelurahan Margomulyo sering tidak ada di meja saat jam pelayanan Kami harus menunggu sampai setengah jam"
+    },
+    {
+        "deskripsi": "Fasilitas umum di pasar Selili (toilet dan mushola) sangat kotor dan tidak terawat. Bau sekali.",
+        "hasil": "Fasilitas umum di pasar Selili toilet dan mushola sangat kotor dan tidak terawat Bau sekali"
+    },
+    {
+        "deskripsi": "Layanan mobil jenazah di Teluk Pemedas lambat, min. Alasannya bensin habis. Ini darurat, kok bisa kehabisan bensin?",
+        "hasil": "Layanan mobil jenazah di Teluk Pemedas lambat min Alasannya bensin habis Ini darurat kok bisa kehabisan bensin"
+    },
+    {
+        "deskripsi": "Petugas kebersihan di Karya Jaya sering membuang sampah sisa di saluran air. Bikin got mampet dan bau.",
+        "hasil": "Petugas kebersihan di Karya Jaya sering membuang sampah sisa di saluran air Bikin got mampet dan bau"
+    },
+    {
+        "deskripsi": "Pegawai kelurahan Margomulyo sering telat datang, min. Kami yang antri dari pagi jadi harus menunggu lama di luar kantor.",
+        "hasil": "Pegawai kelurahan Margomulyo sering telat datang min Kami yang antri dari pagi jadi harus menunggu lama di luar kantor"
+    },
+    {
+        "deskripsi": "Prosedur pengurusan KTP di kantor kecamatan Selili tidak jelas. Petugasnya memberikan informasi yang berbeda-beda.",
+        "hasil": "Prosedur pengurusan KTP di kantor kecamatan Selili tidak jelas Petugasnya memberikan informasi yang berbeda beda"
+    },
+    {
+        "deskripsi": "Dokter di Puskesmas Teluk Pemedas sering cuti mendadak. Pasien yang sudah antri jadi tidak bisa berobat.",
+        "hasil": "Dokter di Puskesmas Teluk Pemedas sering cuti mendadak Pasien yang sudah antri jadi tidak bisa berobat"
+    },
+    {
+        "deskripsi": "Pengurusan surat pindah di Karya Jaya dipersulit, min. Kami diminta membayar biaya administrasi yang tidak ada aturannya.",
+        "hasil": "Pengurusan surat pindah di Karya Jaya dipersulit min Kami diminta membayar biaya administrasi yang tidak ada aturannya"
+    },
+    {
+        "deskripsi": "Mobil pengangkut sampah di Handil Baru Darat sudah 3 hari tidak lewat. Sampah di depan rumah sudah menumpuk dan bau busuk.",
+        "hasil": "Mobil pengangkut sampah di Handil Baru Darat sudah hari tidak lewat Sampah di depan rumah sudah menumpuk dan bau busuk"
+    },
+    {
+        "deskripsi": "Fasilitas bermain anak di taman Wonotirto banyak yang rusak. Perlu perbaikan segera agar aman digunakan.",
+        "hasil": "Fasilitas bermain anak di taman Wonotirto banyak yang rusak Perlu perbaikan segera agar aman digunakan"
+    },
+    {
+        "deskripsi": "Antrian di kantor Samsat Muara Sembilang sangat panjang. Petugas di loket terlihat lambat bekerja dan sering istirahat lama.",
+        "hasil": "Antrian di kantor Samsat Muara Sembilang sangat panjang Petugas di loket terlihat lambat bekerja dan sering istirahat lama"
+    },
+    {
+        "deskripsi": "Layanan telepon PDAM Sungai Seluang selalu nada sibuk. Kami mau lapor air mati total tapi tidak bisa menghubungi.",
+        "hasil": "Layanan telepon PDAM Sungai Seluang selalu nada sibuk Kami mau lapor air mati total tapi tidak bisa menghubungi"
+    },
+    {
+        "deskripsi": "Pengurusan akta cerai di Margomulyo berbelit-belit. Petugasnya terkesan mengulur-ulur waktu.",
+        "hasil": "Pengurusan akta cerai di Margomulyo berbelit belit Petugasnya terkesan mengulur ulur waktu"
+    },
+    {
+        "deskripsi": "Petugas parkir resmi di Selili sering memberikan karcis bekas. Kami curiga ada manipulasi retribusi.",
+        "hasil": "Petugas parkir resmi di Selili sering memberikan karcis bekas Kami curiga ada manipulasi retribusi"
+    },
+    {
+        "deskripsi": "Obat generik di Puskesmas Teluk Pemedas sering diganti dengan obat paten, kami harus bayar lebih mahal.",
+        "hasil": "Obat generik di Puskesmas Teluk Pemedas sering diganti dengan obat paten kami harus bayar lebih mahal"
+    },
+    {
+        "deskripsi": "Kantor kelurahan Karya Jaya sering kosong di jam pelayanan. Kami datang jauh-jauh tapi tidak ada petugas yang melayani.",
+        "hasil": "Kantor kelurahan Karya Jaya sering kosong di jam pelayanan Kami datang jauh jauh tapi tidak ada petugas yang melayani"
+    },
+    {
+        "deskripsi": "Bus trans di Handil Baru Darat sering ngetem di luar halte. Mengganggu arus lalu lintas dan membuat macet.",
+        "hasil": "Bus trans di Handil Baru Darat sering ngetem di luar halte Mengganggu arus lalu lintas dan membuat macet"
+    },
+    {
+        "deskripsi": "Penerangan di jalan Wonotirto mati total, min. Lampu PJU sudah rusak dan tidak diganti. Rawan kecelakaan.",
+        "hasil": "Penerangan di jalan Wonotirto mati total min Lampu PJU sudah rusak dan tidak diganti Rawan kecelakaan"
+    },
+    {
+        "deskripsi": "Petugas di kantor Dukcapil Muara Sembilang sering tidak ramah. Mereka sering membentak warga yang bertanya.",
+        "hasil": "Petugas di kantor Dukcapil Muara Sembilang sering tidak ramah Mereka sering membentak warga yang bertanya"
+    },
+    {
+        "deskripsi": "Mobil penyemprot nyamuk (fogging) Sungai Seluang tidak pernah masuk ke gang-gang kecil. Hanya di jalan utama saja.",
+        "hasil": "Mobil penyemprot nyamuk fogging Sungai Seluang tidak pernah masuk ke gang gang kecil Hanya di jalan utama saja"
+    },
+    {
+        "deskripsi": "Layanan cetak dokumen kependudukan di Margomulyo sering dibilang blanko habis. Kami sudah menunggu hampir setahun.",
+        "hasil": "Layanan cetak dokumen kependudukan di Margomulyo sering dibilang blanko habis Kami sudah menunggu hampir setahun"
+    },
+    {
+        "deskripsi": "Petugas kebersihan di Selili sering buang sampah sisa di sungai dekat pemukiman. Mencemari lingkungan kami.",
+        "hasil": "Petugas kebersihan di Selili sering buang sampah sisa di sungai dekat pemukiman Mencemari lingkungan kami"
+    },
+    {
+        "deskripsi": "Staf administrasi di Puskesmas Teluk Pemedas terlalu lama memproses berkas BPJS. Bikin antrian makin panjang.",
+        "hasil": "Staf administrasi di Puskesmas Teluk Pemedas terlalu lama memproses berkas BPJS Bikin antrian makin panjang"
+    },
+    {
+        "deskripsi": "Papan informasi pelayanan di kantor Karya Jaya sudah rusak dan tidak terbaca. Kami tidak tahu syarat pengurusan apa pun.",
+        "hasil": "Papan informasi pelayanan di kantor Karya Jaya sudah rusak dan tidak terbaca Kami tidak tahu syarat pengurusan apa pun"
+    },
+    {
+        "deskripsi": "Pengurusan surat keterangan tidak mampu di Margomulyo diminta biaya yang tidak ada kuitansinya. Kami merasa diperas.",
+        "hasil": "Pengurusan surat keterangan tidak mampu di Margomulyo diminta biaya yang tidak ada kuitansinya Kami merasa diperas"
+    },
+    {
+        "deskripsi": "Toilet umum di terminal Selili kotor dan bau, min. Pintu banyak yang rusak. Tidak ada petugas kebersihan.",
+        "hasil": "Toilet umum di terminal Selili kotor dan bau min Pintu banyak yang rusak Tidak ada petugas kebersihan"
+    },
+    {
+        "deskripsi": "Pelayanan di Puskesmas Teluk Pemedas sangat lambat. Kami menunggu hampir 3 jam hanya untuk dipanggil.",
+        "hasil": "Pelayanan di Puskesmas Teluk Pemedas sangat lambat Kami menunggu hampir jam hanya untuk dipanggil"
+    },
+    {
+        "deskripsi": "Petugas kebersihan Karya Jaya sering membiarkan sampah di sudut-sudut jalan menumpuk. Mereka hanya fokus di jalan utama.",
+        "hasil": "Petugas kebersihan Karya Jaya sering membiarkan sampah di sudut sudut jalan menumpuk Mereka hanya fokus di jalan utama"
+    },
+    {
+        "deskripsi": "Staf di kelurahan Margomulyo sering minta berkas di luar persyaratan resmi. Kami curiga ada maksud tertentu.",
+        "hasil": "Staf di kelurahan Margomulyo sering minta berkas di luar persyaratan resmi Kami curiga ada maksud tertentu"
+    },
+    {
+        "deskripsi": "Pelayanan di kantor camat Selili sangat lambat. Mereka sering beralasan server down padahal petugasnya santai-santai.",
+        "hasil": "Pelayanan di kantor camat Selili sangat lambat Mereka sering beralasan server down padahal petugasnya santai santai"
+    },
+    {
+        "deskripsi": "Perawat di Puskesmas Teluk Pemedas ketus dan tidak informatif saat menjelaskan resep obat kepada pasien.",
+        "hasil": "Perawat di Puskesmas Teluk Pemedas ketus dan tidak informatif saat menjelaskan resep obat kepada pasien"
+    },
+    {
+        "deskripsi": "Pengurusan kartu identitas anak (KIA) di Karya Jaya sudah 3 bulan belum selesai. Kami hanya disuruh menunggu terus.",
+        "hasil": "Pengurusan kartu identitas anak KIA di Karya Jaya sudah bulan belum selesai Kami hanya disuruh menunggu terus"
+    },
+    {
+        "deskripsi": "Ada tumpukan limbah B3 (bahan berbahaya dan beracun) di pinggir hutan Margomulyo. Baunya menyengat dan merusak tanah.",
+        "hasil": "Ada tumpukan limbah B bahan berbahaya dan beracun di pinggir hutan Margomulyo Baunya menyengat dan merusak tanah"
+    },
+    {
+        "deskripsi": "Sungai di belakang pasar Selili penuh sampah. Airnya hitam dan mengeluarkan bau busuk. Mohon segera dinormalisasi.",
+        "hasil": "Sungai di belakang pasar Selili penuh sampah Airnya hitam dan mengeluarkan bau busuk Mohon segera dinormalisasi"
+    },
+    {
+        "deskripsi": "Pabrik tahu di Teluk Pemedas membuang limbah cairnya langsung ke parit warga. Menyebabkan gatal-gatal di kulit.",
+        "hasil": "Pabrik tahu di Teluk Pemedas membuang limbah cairnya langsung ke parit warga Menyebabkan gatal gatal di kulit"
+    },
+    {
+        "deskripsi": "Ada penebangan pohon secara liar di hutan kota Karya Jaya. Pelaku terlihat membawa beberapa batang kayu besar.",
+        "hasil": "Ada penebangan pohon secara liar di hutan kota Karya Jaya Pelaku terlihat membawa beberapa batang kayu besar"
+    },
+    {
+        "deskripsi": "Asap tebal dari pembakaran sampah di Handil Baru Darat sangat mengganggu pernapasan. Warga sering membakar sampah di ruang terbuka.",
+        "hasil": "Asap tebal dari pembakaran sampah di Handil Baru Darat sangat mengganggu pernapasan Warga sering membakar sampah di ruang terbuka"
+    },
+    {
+        "deskripsi": "Sampah rumah tangga di Wonotirto menumpuk di pinggir jalan karena petugas kebersihan jarang datang. Sudah bau menyengat.",
+        "hasil": "Sampah rumah tangga di Wonotirto menumpuk di pinggir jalan karena petugas kebersihan jarang datang Sudah bau menyengat"
+    },
+    {
+        "deskripsi": "Ada kapal tongkang membuang oli bekas di perairan Muara Sembilang. Mencemari laut dan mengancam biota laut.",
+        "hasil": "Ada kapal tongkang membuang oli bekas di perairan Muara Sembilang Mencemari laut dan mengancam biota laut"
+    },
+    {
+        "deskripsi": "Tandon air di Sungai Seluang sudah keruh dan banyak jentik nyamuk. Minta tolong dinas kesehatan untuk mengecek kualitas airnya.",
+        "hasil": "Tandon air di Sungai Seluang sudah keruh dan banyak jentik nyamuk Minta tolong dinas kesehatan untuk mengecek kualitas airnya"
+    },
+    {
+        "deskripsi": "Ada buaya kecil masuk ke parit warga di Margomulyo. Diduga karena ekosistem sungai rusak. Minta bantuan penangkapan hewan liar.",
+        "hasil": "Ada buaya kecil masuk ke parit warga di Margomulyo Diduga karena ekosistem sungai rusak Minta bantuan penangkapan hewan liar"
+    },
+    {
+        "deskripsi": "Warga di Selili sering membuang kasur dan perabotan bekas ke sungai. Membuat sungai tersumbat dan rawan banjir.",
+        "hasil": "Warga di Selili sering membuang kasur dan perabotan bekas ke sungai Membuat sungai tersumbat dan rawan banjir"
+    },
+    {
+        "deskripsi": "Debu dari proyek pembangunan di Teluk Pemedas parah sekali. Tidak ada penutup proyek yang memadai. Menyebabkan polusi udara.",
+        "hasil": "Debu dari proyek pembangunan di Teluk Pemedas parah sekali Tidak ada penutup proyek yang memadai Menyebabkan polusi udara"
+    },
+    {
+        "deskripsi": "Pohon peneduh di pinggir jalan Karya Jaya banyak yang kering dan mati. Mohon segera diganti dengan bibit baru.",
+        "hasil": "Pohon peneduh di pinggir jalan Karya Jaya banyak yang kering dan mati Mohon segera diganti dengan bibit baru"
+    },
+    {
+        "deskripsi": "Banyak tikus berkeliaran di Handil Baru Darat karena tumpukan sampah liar di lahan kosong. Mohon ada fogging massal.",
+        "hasil": "Banyak tikus berkeliaran di Handil Baru Darat karena tumpukan sampah liar di lahan kosong Mohon ada fogging massal"
+    },
+    {
+        "deskripsi": "Taman kota di Wonotirto tidak terawat, min. Rumput tinggi, banyak sampah, dan tanamannya layu semua.",
+        "hasil": "Taman kota di Wonotirto tidak terawat min Rumput tinggi banyak sampah dan tanamannya layu semua"
+    },
+    {
+        "deskripsi": "Limbah cair dari tempat pencucian mobil di Muara Sembilang langsung dibuang ke parit umum. Baunya menyengat.",
+        "hasil": "Limbah cair dari tempat pencucian mobil di Muara Sembilang langsung dibuang ke parit umum Baunya menyengat"
+    },
+    {
+        "deskripsi": "Ada tumpukan sampah medis (masker bekas, botol infus) di area hutan Sungai Seluang. Bahaya banget, min!",
+        "hasil": "Ada tumpukan sampah medis masker bekas botol infus di area hutan Sungai Seluang Bahaya banget min"
+    },
+    {
+        "deskripsi": "Pohon besar di Margomulyo sudah keropos dan rawan tumbang. Apalagi kalau hujan angin. Minta tolong dipangkas.",
+        "hasil": "Pohon besar di Margomulyo sudah keropos dan rawan tumbang Apalagi kalau hujan angin Minta tolong dipangkas"
+    },
+    {
+        "deskripsi": "Polusi suara dari tempat hiburan malam di Selili sangat keras. Mengganggu istirahat warga sampai dini hari.",
+        "hasil": "Polusi suara dari tempat hiburan malam di Selili sangat keras Mengganggu istirahat warga sampai dini hari"
+    },
+    {
+        "deskripsi": "Ada orang membakar lahan gambut di Teluk Pemedas. Asapnya tebal dan sangat mengganggu jarak pandang di jalan.",
+        "hasil": "Ada orang membakar lahan gambut di Teluk Pemedas Asapnya tebal dan sangat mengganggu jarak pandang di jalan"
+    },
+    {
+        "deskripsi": "Banyak pedagang kaki lima di Karya Jaya membuang sisa minyak goreng ke saluran air. Bikin mampet dan bau apek.",
+        "hasil": "Banyak pedagang kaki lima di Karya Jaya membuang sisa minyak goreng ke saluran air Bikin mampet dan bau apek"
+    },
+    {
+        "deskripsi": "Air sumur warga Margomulyo keruh dan berbau, diduga tercemar limbah septik tank yang bocor di dekat sana.",
+        "hasil": "Air sumur warga Margomulyo keruh dan berbau diduga tercemar limbah septik tank yang bocor di dekat sana"
+    },
+    {
+        "deskripsi": "Tumpukan sampah liar di Selili sudah sangat parah. Tumpukannya sudah setinggi orang dewasa. Mohon segera diangkut.",
+        "hasil": "Tumpukan sampah liar di Selili sudah sangat parah Tumpukannya sudah setinggi orang dewasa Mohon segera diangkut"
+    },
+    {
+        "deskripsi": "Ada pembuangan puing-puing proyek di lahan kosong Teluk Pemedas. Merusak estetika dan membuat lingkungan kotor.",
+        "hasil": "Ada pembuangan puing puing proyek di lahan kosong Teluk Pemedas Merusak estetika dan membuat lingkungan kotor"
+    },
+    {
+        "deskripsi": "Pohon di dekat tiang listrik Karya Jaya sudah sangat tinggi. Rantingnya menyentuh kabel. Bahaya kalau konslet saat hujan.",
+        "hasil": "Pohon di dekat tiang listrik Karya Jaya sudah sangat tinggi Rantingnya menyentuh kabel Bahaya kalau konslet saat hujan"
+    },
+    {
+        "deskripsi": "Limbah deterjen dari rumah warga di Margomulyo langsung dibuang ke parit umum. Air parit jadi berbusa dan berbau kimia.",
+        "hasil": "Limbah deterjen dari rumah warga di Margomulyo langsung dibuang ke parit umum Air parit jadi berbusa dan berbau kimia"
+    },
+    {
+        "deskripsi": "Tumpukan sampah di pinggir jalan raya Selili sudah meluber ke badan jalan. Mengganggu pengguna jalan dan bau busuk.",
+        "hasil": "Tumpukan sampah di pinggir jalan raya Selili sudah meluber ke badan jalan Mengganggu pengguna jalan dan bau busuk"
+    },
+    {
+        "deskripsi": "Ada tumpukan ban bekas yang dibiarkan menumpuk di lahan kosong Teluk Pemedas. Jadi sarang nyamuk DBD, min.",
+        "hasil": "Ada tumpukan ban bekas yang dibiarkan menumpuk di lahan kosong Teluk Pemedas Jadi sarang nyamuk DBD min"
+    },
+    {
+        "deskripsi": "Pohon peneduh di sekitar pasar Karya Jaya sering dipangkas terlalu ekstrem oleh oknum. Jadi gundul dan tidak teduh lagi.",
+        "hasil": "Pohon peneduh di sekitar pasar Karya Jaya sering dipangkas terlalu ekstrem oleh oknum Jadi gundul dan tidak teduh lagi"
+    },
+    {
+        "deskripsi": "Banyak warga Handil Baru Darat membakar ranting dan dedaunan di siang hari. Asapnya tebal dan bikin sesak napas.",
+        "hasil": "Banyak warga Handil Baru Darat membakar ranting dan dedaunan di siang hari Asapnya tebal dan bikin sesak napas"
+    },
+    {
+        "deskripsi": "Rumput dan semak di taman Wonotirto sudah sangat tinggi. Terlihat kotor dan rawan jadi sarang ular.",
+        "hasil": "Rumput dan semak di taman Wonotirto sudah sangat tinggi Terlihat kotor dan rawan jadi sarang ular"
+    },
+    {
+        "deskripsi": "Ada buangan lumpur hitam dari proyek pengerukan di perairan Muara Sembilang. Mencemari area budidaya ikan warga.",
+        "hasil": "Ada buangan lumpur hitam dari proyek pengerukan di perairan Muara Sembilang Mencemari area budidaya ikan warga"
+    },
+    {
+        "deskripsi": "Kali di Sungai Seluang warnanya hijau pekat dan berbuih. Diduga ada pabrik yang membuang limbahnya ke sana.",
+        "hasil": "Kali di Sungai Seluang warnanya hijau pekat dan berbuih Diduga ada pabrik yang membuang limbahnya ke sana"
+    },
+    {
+        "deskripsi": "Pohon di dekat rumah sakit Margomulyo sudah tua dan miring. Takut tumbang menimpa atap. Mohon segera dicek.",
+        "hasil": "Pohon di dekat rumah sakit Margomulyo sudah tua dan miring Takut tumbang menimpa atap Mohon segera dicek"
+    },
+    {
+        "deskripsi": "Banyak botol plastik dan kemasan dibuang di gorong-gorong Selili. Ini penyebab utama banjir di sana.",
+        "hasil": "Banyak botol plastik dan kemasan dibuang di gorong gorong Selili Ini penyebab utama banjir di sana"
+    },
+    {
+        "deskripsi": "Polusi suara dari tempat karaoke di Teluk Pemedas sangat mengganggu. Musiknya keras sampai tengah malam.",
+        "hasil": "Polusi suara dari tempat karaoke di Teluk Pemedas sangat mengganggu Musiknya keras sampai tengah malam"
+    },
+    {
+        "deskripsi": "Area Ruang Terbuka Hijau (RTH) di Karya Jaya dijadikan tempat parkir motor liar. Merusak tanaman dan fungsinya.",
+        "hasil": "Area Ruang Terbuka Hijau RTH di Karya Jaya dijadikan tempat parkir motor liar Merusak tanaman dan fungsinya"
+    },
+    {
+        "deskripsi": "Sampah medis (jarum suntik, perban) ditemukan dibuang sembarangan di lahan kosong Handil Baru Darat. Sangat berbahaya.",
+        "hasil": "Sampah medis jarum suntik perban ditemukan dibuang sembarangan di lahan kosong Handil Baru Darat Sangat berbahaya"
+    },
+    {
+        "deskripsi": "Kolam di taman Wonotirto airnya kotor dan berlumut. Menyebabkan bau tidak sedap di sekitar area taman.",
+        "hasil": "Kolam di taman Wonotirto airnya kotor dan berlumut Menyebabkan bau tidak sedap di sekitar area taman"
+    },
+    {
+        "deskripsi": "Banyak sampah restoran dibuang di dermaga Muara Sembilang. Mencemari laut dan mengundang banyak lalat.",
+        "hasil": "Banyak sampah restoran dibuang di dermaga Muara Sembilang Mencemari laut dan mengundang banyak lalat"
+    },
+    {
+        "deskripsi": "Ada penambangan pasir ilegal di bantaran sungai Seluang. Menyebabkan erosi dan mengancam permukiman di dekatnya.",
+        "hasil": "Ada penambangan pasir ilegal di bantaran sungai Seluang Menyebabkan erosi dan mengancam permukiman di dekatnya"
+    },
+    {
+        "deskripsi": "Limbah sisa cat dan tiner dibuang di got Margomulyo. Airnya jadi berwarna-warni dan berbau kimia keras.",
+        "hasil": "Limbah sisa cat dan tiner dibuang di got Margomulyo Airnya jadi berwarna warni dan berbau kimia keras"
+    },
+    {
+        "deskripsi": "Polusi udara dari knalpot mobil bekas di Selili sangat parah. Kendaraan yang lewat mengeluarkan asap hitam tebal.",
+        "hasil": "Polusi udara dari knalpot mobil bekas di Selili sangat parah Kendaraan yang lewat mengeluarkan asap hitam tebal"
+    },
+    {
+        "deskripsi": "Pembukaan lahan baru di Teluk Pemedas dilakukan dengan cara dibakar. Asapnya sangat mengganggu pernapasan warga.",
+        "hasil": "Pembukaan lahan baru di Teluk Pemedas dilakukan dengan cara dibakar Asapnya sangat mengganggu pernapasan warga"
+    },
+    {
+        "deskripsi": "Pohon di pinggir jalan Karya Jaya sudah tua dan banyak ranting kering. Bahaya kalau jatuh menimpa kendaraan.",
+        "hasil": "Pohon di pinggir jalan Karya Jaya sudah tua dan banyak ranting kering Bahaya kalau jatuh menimpa kendaraan"
+    },
+    {
+        "deskripsi": "Saluran air di Margomulyo penuh dengan eceng gondok yang tumbuh subur. Membuat air tidak mengalir dan jadi sarang nyamuk.",
+        "hasil": "Saluran air di Margomulyo penuh dengan eceng gondok yang tumbuh subur Membuat air tidak mengalir dan jadi sarang nyamuk"
+    },
+    {
+        "deskripsi": "Sampah plastik di Selili terbawa angin ke mana-mana. Tidak ada penutup bak sampah yang memadai di area itu.",
+        "hasil": "Sampah plastik di Selili terbawa angin ke mana mana Tidak ada penutup bak sampah yang memadai di area itu"
+    },
+    {
+        "deskripsi": "Ada galian tanah ilegal di Teluk Pemedas. Merusak struktur tanah dan bisa menyebabkan longsor saat hujan.",
+        "hasil": "Ada galian tanah ilegal di Teluk Pemedas Merusak struktur tanah dan bisa menyebabkan longsor saat hujan"
+    },
+    {
+        "deskripsi": "Hewan liar (kera) sering masuk ke pemukiman Karya Jaya karena habitatnya di hutan kota dirusak. Mohon ditertibkan.",
+        "hasil": "Hewan liar kera sering masuk ke pemukiman Karya Jaya karena habitatnya di hutan kota dirusak Mohon ditertibkan"
+    },
+    {
+        "deskripsi": "Ruang Terbuka Hijau (RTH) di Karya Jaya dijadikan tempat membuang sampah proyek bangunan. Tanamannya jadi mati semua.",
+        "hasil": "Ruang Terbuka Hijau RTH di Karya Jaya dijadikan tempat membuang sampah proyek bangunan Tanamannya jadi mati semua"
+    },
+    {
+        "deskripsi": "Banyak warga Handil Baru Darat membuang popok bekas dan sampah medis di saluran irigasi. Bikin air tercemar dan bau.",
+        "hasil": "Banyak warga Handil Baru Darat membuang popok bekas dan sampah medis di saluran irigasi Bikin air tercemar dan bau"
+    },
+    {
+        "deskripsi": "Taman kota di Wonotirto dipenuhi coretan vandalisme. Tidak terawat dan merusak keindahan lingkungan.",
+        "hasil": "Taman kota di Wonotirto dipenuhi coretan vandalisme Tidak terawat dan merusak keindahan lingkungan"
+    },
+    {
+        "deskripsi": "Ada kapal ikan membuang jaring bekas dan sampah plastik di perairan Muara Sembilang. Mencemari area tangkapan nelayan.",
+        "hasil": "Ada kapal ikan membuang jaring bekas dan sampah plastik di perairan Muara Sembilang Mencemari area tangkapan nelayan"
+    },
+    {
+        "deskripsi": "Air sungai Seluang yang dekat jembatan berwarna kemerahan. Diduga tercemar limbah pabrik tekstil di hulu.",
+        "hasil": "Air sungai Seluang yang dekat jembatan berwarna kemerahan Diduga tercemar limbah pabrik tekstil di hulu"
+    },
+    {
+        "deskripsi": "Pohon di pinggir jalan Margomulyo rawan tumbang. Sudah keropos di tengahnya. Minta tolong segera dipotong.",
+        "hasil": "Pohon di pinggir jalan Margomulyo rawan tumbang Sudah keropos di tengahnya Minta tolong segera dipotong"
+    },
+    {
+        "deskripsi": "Polusi suara dari bengkel las di Selili sangat keras. Mengganggu jam tidur bayi kami di malam hari.",
+        "hasil": "Polusi suara dari bengkel las di Selili sangat keras Mengganggu jam tidur bayi kami di malam hari"
+    },
+    {
+        "deskripsi": "Ada tumpukan sampah basah di depan rumah makan Teluk Pemedas. Bau busuknya menyebar ke seluruh lingkungan.",
+        "hasil": "Ada tumpukan sampah basah di depan rumah makan Teluk Pemedas Bau busuknya menyebar ke seluruh lingkungan"
+    },
+    {
+        "deskripsi": "Tanaman hias di median jalan Karya Jaya banyak yang mati kekeringan. Tidak ada petugas penyiram tanaman yang terlihat.",
+        "hasil": "Tanaman hias di median jalan Karya Jaya banyak yang mati kekeringan Tidak ada petugas penyiram tanaman yang terlihat"
+    },
+    {
+        "deskripsi": "Pipa air limbah di Handil Baru Darat bocor, min. Kotoran mencemari tanah dan menimbulkan bau yang menyengat.",
+        "hasil": "Pipa air limbah di Handil Baru Darat bocor min Kotoran mencemari tanah dan menimbulkan bau yang menyengat"
+    },
+    {
+        "deskripsi": "Kolam retensi air di Wonotirto penuh sampah. Airnya kotor dan menjadi sarang nyamuk yang parah.",
+        "hasil": "Kolam retensi air di Wonotirto penuh sampah Airnya kotor dan menjadi sarang nyamuk yang parah"
+    },
+    {
+        "deskripsi": "Ada pembuangan limbah konstruksi (semen, pasir) di pinggir hutan kota Muara Sembilang. Merusak ekosistem hutan.",
+        "hasil": "Ada pembuangan limbah konstruksi semen pasir di pinggir hutan kota Muara Sembilang Merusak ekosistem hutan"
+    },
+    {
+        "deskripsi": "Banyak pohon di sepanjang bantaran Sungai Seluang yang mati. Diduga karena tercemar limbah. Minta dicek penyebabnya.",
+        "hasil": "Banyak pohon di sepanjang bantaran Sungai Seluang yang mati Diduga karena tercemar limbah Minta dicek penyebabnya"
+    },
+    {
+        "deskripsi": "Warga di Margomulyo sering membakar sisa pakan ternak. Asapnya sangat bau dan mengganggu pernapasan warga sekitar.",
+        "hasil": "Warga di Margomulyo sering membakar sisa pakan ternak Asapnya sangat bau dan mengganggu pernapasan warga sekitar"
+    },
+    {
+        "deskripsi": "Sungai di Selili dipenuhi sampah botol plastik. Aliran air tersumbat dan menimbulkan genangan.",
+        "hasil": "Sungai di Selili dipenuhi sampah botol plastik Aliran air tersumbat dan menimbulkan genangan"
+    },
+    {
+        "deskripsi": "Air sumur di Margomulyo berbau besi. Diduga ada pencemaran dari pabrik kecil di dekat situ.",
+        "hasil": "Air sumur di Margomulyo berbau besi Diduga ada pencemaran dari pabrik kecil di dekat situ"
+    },
+    {
+        "deskripsi": "Polusi suara dari knalpot motor balap liar di Selili sangat bising. Mengganggu ketenangan malam warga.",
+        "hasil": "Polusi suara dari knalpot motor balap liar di Selili sangat bising Mengganggu ketenangan malam warga"
+    },
+    {
+        "deskripsi": "Ada tumpukan sampah sisa pasar Teluk Pemedas yang dibuang di lahan kosong. Sudah menumpuk tinggi dan bau.",
+        "hasil": "Ada tumpukan sampah sisa pasar Teluk Pemedas yang dibuang di lahan kosong Sudah menumpuk tinggi dan bau"
+    },
+    {
+        "deskripsi": "Pohon di dekat tiang listrik Karya Jaya sudah terlalu rimbun. Rantingnya sering menyentuh kabel listrik. Bahaya konslet.",
+        "hasil": "Pohon di dekat tiang listrik Karya Jaya sudah terlalu rimbun Rantingnya sering menyentuh kabel listrik Bahaya konslet"
+    },
+    {
+        "deskripsi": "Limbah pemotongan ayam di pasar Margomulyo dibuang sembarangan ke parit. Menyebabkan bau busuk dan mengundang tikus.",
+        "hasil": "Limbah pemotongan ayam di pasar Margomulyo dibuang sembarangan ke parit Menyebabkan bau busuk dan mengundang tikus"
+    },
+    {
+        "deskripsi": "TPA (Tempat Pembuangan Akhir) ilegal di pinggir Selili sudah meluas. Baunya sampai ke pemukiman warga.",
+        "hasil": "TPA Tempat Pembuangan Akhir ilegal di pinggir Selili sudah meluas Baunya sampai ke pemukiman warga"
+    },
+    {
+        "deskripsi": "Ada tumpukan sampah elektronik (e-waste) di lahan kosong Teluk Pemedas. Mengandung bahan berbahaya dan beracun.",
+        "hasil": "Ada tumpukan sampah elektronik e waste di lahan kosong Teluk Pemedas Mengandung bahan berbahaya dan beracun"
+    },
+    {
+        "deskripsi": "Tanaman peneduh di pinggir jalan Karya Jaya sering dirusak oleh oknum pedagang kaki lima agar dagangannya terlihat.",
+        "hasil": "Tanaman peneduh di pinggir jalan Karya Jaya sering dirusak oleh oknum pedagang kaki lima agar dagangannya terlihat"
+    },
+    {
+        "deskripsi": "Warga di Handil Baru Darat sering membakar jerami sisa panen. Asapnya sangat tebal dan mengganggu pengguna jalan tol.",
+        "hasil": "Warga di Handil Baru Darat sering membakar jerami sisa panen Asapnya sangat tebal dan mengganggu pengguna jalan tol"
+    },
+    {
+        "deskripsi": "Kolam di taman Wonotirto sudah kering dan dipenuhi lumut. Minta tolong segera dibersihkan dan diisi air lagi.",
+        "hasil": "Kolam di taman Wonotirto sudah kering dan dipenuhi lumut Minta tolong segera dibersihkan dan diisi air lagi"
+    },
+    {
+        "deskripsi": "Banyak pedagang di Muara Sembilang membuang sisa makanan dan minyak ke laut. Merusak ekosistem mangrove di dekatnya.",
+        "hasil": "Banyak pedagang di Muara Sembilang membuang sisa makanan dan minyak ke laut Merusak ekosistem mangrove di dekatnya"
+    },
+    {
+        "deskripsi": "Ada ikan mati mengambang di Sungai Seluang. Diduga karena keracunan limbah. Mohon segera dicek kadar polusi airnya.",
+        "hasil": "Ada ikan mati mengambang di Sungai Seluang Diduga karena keracunan limbah Mohon segera dicek kadar polusi airnya"
+    },
+    {
+        "deskripsi": "Pohon di dekat tugu Margomulyo sudah miring parah. Takut roboh menimpa monumen. Minta tolong diperkuat atau dipotong.",
+        "hasil": "Pohon di dekat tugu Margomulyo sudah miring parah Takut roboh menimpa monumen Minta tolong diperkuat atau dipotong"
+    },
+    {
+        "deskripsi": "Polusi suara dari klakson truk di Selili sangat mengganggu. Truk sering lewat di jam-jam istirahat warga.",
+        "hasil": "Polusi suara dari klakson truk di Selili sangat mengganggu Truk sering lewat di jam jam istirahat warga"
+    },
+    {
+        "deskripsi": "Ada tumpukan sampah rumah sakit (limbah infeksius) yang dibuang di area Teluk Pemedas. Sangat berbahaya, min!",
+        "hasil": "Ada tumpukan sampah rumah sakit limbah infeksius yang dibuang di area Teluk Pemedas Sangat berbahaya min"
+    },
+    {
+        "deskripsi": "Papan nama RTH (Ruang Terbuka Hijau) di Karya Jaya dicoret-coret vandalisme. Merusak fasilitas publik.",
+        "hasil": "Papan nama RTH Ruang Terbuka Hijau di Karya Jaya dicoret coret vandalisme Merusak fasilitas publik"
+    },
+    {
+        "deskripsi": "Banyak lalat dan tikus di Handil Baru Darat karena sampah dibiarkan menumpuk di TPS tanpa penanganan cepat.",
+        "hasil": "Banyak lalat dan tikus di Handil Baru Darat karena sampah dibiarkan menumpuk di TPS tanpa penanganan cepat"
+    },
+    {
+        "deskripsi": "Lahan kosong di Wonotirto dipenuhi semak belukar tinggi. Rawan jadi sarang penyakit dan hewan liar.",
+        "hasil": "Lahan kosong di Wonotirto dipenuhi semak belukar tinggi Rawan jadi sarang penyakit dan hewan liar"
+    },
+    {
+        "deskripsi": "Air sumur di Muara Sembilang sudah asin. Diduga intrusi air laut karena penebangan mangrove yang masif di pesisir.",
+        "hasil": "Air sumur di Muara Sembilang sudah asin Diduga intrusi air laut karena penebangan mangrove yang masif di pesisir"
+    },
+    {
+        "deskripsi": "Banyak galian C ilegal di sekitar hulu Sungai Seluang. Mengancam ekosistem dan membuat air sungai keruh.",
+        "hasil": "Banyak galian C ilegal di sekitar hulu Sungai Seluang Mengancam ekosistem dan membuat air sungai keruh"
+    },
+    {
+        "deskripsi": "Saluran air di Margomulyo penuh endapan lumpur hitam yang berbau. Mohon segera dikeruk dan dibersihkan.",
+        "hasil": "Saluran air di Margomulyo penuh endapan lumpur hitam yang berbau Mohon segera dikeruk dan dibersihkan"
+    },
+    {
+        "deskripsi": "Ada warga Selili yang membuang oli bekas ganti mesin ke parit. Air parit jadi berminyak dan tercemar.",
+        "hasil": "Ada warga Selili yang membuang oli bekas ganti mesin ke parit Air parit jadi berminyak dan tercemar"
+    },
+    {
+        "deskripsi": "Polusi udara dari asap pembakaran ban di Teluk Pemedas sangat tebal. Mohon segera dihentikan aktivitas ini.",
+        "hasil": "Polusi udara dari asap pembakaran ban di Teluk Pemedas sangat tebal Mohon segera dihentikan aktivitas ini"
+    },
+    {
+        "deskripsi": "Pohon di pinggir jalan tol Karya Jaya sudah sangat rimbun dan menghalangi pandangan pengemudi. Mohon dipangkas.",
+        "hasil": "Pohon di pinggir jalan tol Karya Jaya sudah sangat rimbun dan menghalangi pandangan pengemudi Mohon dipangkas"
+    },
+    {
+        "deskripsi": "Di Margomulyo, selokan penuh sampah dapur dan sisa makanan. Bikin got mampet dan bau busuk menyengat.",
+        "hasil": "Di Margomulyo selokan penuh sampah dapur dan sisa makanan Bikin got mampet dan bau busuk menyengat"
+    },
+    {
+        "deskripsi": "TPA di Selili sudah kelebihan kapasitas dan tidak ditutup. Lindi (air sampah) merembes ke lahan warga.",
+        "hasil": "TPA di Selili sudah kelebihan kapasitas dan tidak ditutup Lindi air sampah merembes ke lahan warga"
+    },
+    {
+        "deskripsi": "Air got di Teluk Pemedas berwarna biru. Diduga tercemar limbah pewarna pakaian dari industri rumahan.",
+        "hasil": "Air got di Teluk Pemedas berwarna biru Diduga tercemar limbah pewarna pakaian dari industri rumahan"
+    },
+    {
+        "deskripsi": "Ada penimbunan RTH di Karya Jaya untuk pembangunan warung. Mohon dihentikan aktivitas perusakan lingkungan ini.",
+        "hasil": "Ada penimbunan RTH di Karya Jaya untuk pembangunan warung Mohon dihentikan aktivitas perusakan lingkungan ini"
+    },
+    {
+        "deskripsi": "Ada pembuangan sisa bahan kimia dari tempat usaha laundry di parit Margomulyo. Airnya jadi berwarna ungu dan bau pemutih.",
+        "hasil": "Ada pembuangan sisa bahan kimia dari tempat usaha laundry di parit Margomulyo Airnya jadi berwarna ungu dan bau pemutih"
+    },
+    {
+        "deskripsi": "Sampah rumah tangga di Selili dibuang ke bawah jembatan. Tumpukannya sudah menggunung dan mengundang tikus.",
+        "hasil": "Sampah rumah tangga di Selili dibuang ke bawah jembatan Tumpukannya sudah menggunung dan mengundang tikus"
+    },
+    {
+        "deskripsi": "Pabrik batako di Teluk Pemedas mengeluarkan asap hitam tebal setiap pagi. Polusi udaranya sangat mengganggu warga.",
+        "hasil": "Pabrik batako di Teluk Pemedas mengeluarkan asap hitam tebal setiap pagi Polusi udaranya sangat mengganggu warga"
+    },
+    {
+        "deskripsi": "Banyak pohon peneduh di pinggir jalan Karya Jaya yang dicat dengan bahan kimia. Pohonnya jadi layu dan mati.",
+        "hasil": "Banyak pohon peneduh di pinggir jalan Karya Jaya yang dicat dengan bahan kimia Pohonnya jadi layu dan mati"
+    },
+    {
+        "deskripsi": "Asap pembakaran sampah di lahan kosong Handil Baru Darat sangat mengganggu. Hampir setiap sore ada yang membakar.",
+        "hasil": "Asap pembakaran sampah di lahan kosong Handil Baru Darat sangat mengganggu Hampir setiap sore ada yang membakar"
+    },
+    {
+        "deskripsi": "Fasilitas umum di taman Wonotirto (kursi dan meja) banyak yang rusak dan dicoret-coret vandalisme.",
+        "hasil": "Fasilitas umum di taman Wonotirto kursi dan meja banyak yang rusak dan dicoret coret vandalisme"
+    },
+    {
+        "deskripsi": "Ada penimbunan rawa secara ilegal di Muara Sembilang untuk perumahan. Merusak habitat alami di sana.",
+        "hasil": "Ada penimbunan rawa secara ilegal di Muara Sembilang untuk perumahan Merusak habitat alami di sana"
+    },
+    {
+        "deskripsi": "Air sungai di Sungai Seluang sudah dangkal sekali. Penuh dengan eceng gondok dan sampah plastik.",
+        "hasil": "Air sungai di Sungai Seluang sudah dangkal sekali Penuh dengan eceng gondok dan sampah plastik"
+    },
+    {
+        "deskripsi": "Pohon besar di dekat sekolah Margomulyo sudah tua dan batangnya berlubang. Takut tumbang saat hujan lebat.",
+        "hasil": "Pohon besar di dekat sekolah Margomulyo sudah tua dan batangnya berlubang Takut tumbang saat hujan lebat"
     }
 ]
