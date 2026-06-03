@@ -7,14 +7,14 @@ import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 
 const PIPELINE_STEPS = [
-  { key: "deskripsi",      label: "Teks Asli",            desc: "Input mentah dari pelapor" },
-  { key: "casefolded",     label: "Case Folding",          desc: "Semua huruf diubah ke huruf kecil" },
-  { key: "cleaned",        label: "Cleaning",              desc: "Karakter khusus & angka dihapus" },
-  { key: "normalized",     label: "Normalisasi",           desc: "Kata tidak baku diubah ke bentuk baku" },
-  { key: "tokenized",      label: "Tokenisasi",            desc: "Teks dipecah menjadi token kata" },
-  { key: "stop_removed",   label: "Stopword Removal",      desc: "Kata umum tidak bermakna dihapus" },
-  { key: "stemmed",        label: "Stemming",              desc: "Kata dikembalikan ke bentuk dasar" },
-  { key: "final_text",     label: "Hasil Akhir",           desc: "Teks siap diproses model ML" },
+  { key: "deskripsi",    label: "Teks Asli",          desc: "Input mentah dari pelapor" },
+  { key: "cleaned",      label: "Cleaning",            desc: "Karakter khusus, URL & angka dihapus" },
+  { key: "casefolded",   label: "Case Folding",        desc: "Semua huruf diubah ke huruf kecil" },
+  { key: "tokenized",    label: "Tokenisasi",          desc: "Teks dipecah menjadi token kata" },
+  { key: "normalized",   label: "Normalisasi",         desc: "Kata tidak baku diubah ke bentuk baku" },
+  { key: "stop_removed", label: "Stopword Removal",    desc: "Kata umum tidak bermakna dihapus" },
+  { key: "stemmed",      label: "Stemming",            desc: "Kata dikembalikan ke bentuk dasar (dari hasil stopword)" },
+  { key: "final_text",   label: "Hasil Akhir",         desc: "Teks siap diproses model ML" },
 ];
 
 const CATEGORY_COLOR = {
@@ -111,17 +111,21 @@ export default function DetailPengaduan({ onLogout }) {
               </div>
               <div>
                 <p className="text-gray-500">Akurasi Model</p>
-                <div className="flex items-center gap-2 mt-1">
-                  <div className="flex-1 bg-gray-200 rounded-full h-2">
-                    <div
-                      className="bg-green-500 h-2 rounded-full"
-                      style={{ width: `${(data.akurasi_model ?? 0) * 100}%` }}
-                    />
+                {data.akurasi_model != null ? (
+                  <div className="flex items-center gap-2 mt-1">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div
+                        className="bg-green-500 h-2 rounded-full"
+                        style={{ width: `${(data.akurasi_model ?? 0) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm font-semibold text-green-700">
+                      {((data.akurasi_model ?? 0) * 100).toFixed(1)}%
+                    </span>
                   </div>
-                  <span className="text-sm font-semibold text-green-700">
-                    {((data.akurasi_model ?? 0) * 100).toFixed(0)}%
-                  </span>
-                </div>
+                ) : (
+                  <p className="text-sm text-gray-400 italic mt-1">Belum tersedia — jalankan training model</p>
+                )}
               </div>
             </div>
 

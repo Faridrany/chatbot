@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "nama": "Budi Santoso",
+    "no_wa": "6281234567890@c.us",
+    "deskripsi": "Lampu jalan di depan gang saya sudah mati lebih dari seminggu. Tolong segera diperbaiki karena rawan kejahatan di malam hari.",
+    "timestamp": "2026-06-03 08:15:00"
+  },
+  {
+    "nama": "Siti Rahayu",
+    "no_wa": "6289876543210@c.us",
+    "deskripsi": "Sampah di TPS dekat pasar sudah menumpuk dan tidak diangkut sejak 3 hari lalu. Baunya sangat mengganggu warga sekitar.",
+    "timestamp": "2026-06-03 09:30:00"
+  },
+  {
+    "nama": "Ahmad Fauzi",
+    "no_wa": "6285712345678@c.us",
+    "deskripsi": "Jalan berlubang di depan SDN Samboja 1 sangat berbahaya untuk anak-anak sekolah. Sudah beberapa motor yang jatuh.",
+    "timestamp": "2026-06-03 10:00:00"
+  },
+  {
+    "nama": "Dewi Lestari",
+    "no_wa": "6287898765432@c.us",
+    "deskripsi": "Pelayanan di kantor kelurahan sangat lambat. Saya mengurus surat keterangan domisili sudah 3 hari belum selesai.",
+    "timestamp": "2026-06-03 11:20:00"
+  },
+  {
+    "nama": "Rudi Hermawan",
+    "no_wa": "6281345678901@c.us",
+    "deskripsi": "Ada warga yang membuang limbah pabrik tahu ke sungai kecil dekat permukiman kami. Air sungai jadi hitam dan berbau.",
+    "timestamp": "2026-06-03 13:45:00"
+  }
+]

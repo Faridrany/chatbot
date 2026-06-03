@@ -1,15 +1,14 @@
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, FileText, BarChart3, Download, Settings, LogOut, Users } from 'lucide-react';
+import { LayoutDashboard, FileText, BarChart3, Cpu, LogOut, Users } from 'lucide-react';
 
 export default function Sidebar({ onLogout }) {
   const location = useLocation();
 
   const menuItems = [
-    { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard' },
-    { icon: FileText, label: 'Data Pengaduan', path: '/data-pengaduan' },
-    { icon: BarChart3, label: 'Statistik', path: '/statistik' },
-    { icon: Download, label: 'Export Data', path: '/export' },
-    { icon: Settings, label: 'Pengaturan', path: '/pengaturan' },
+    { icon: LayoutDashboard, label: 'Dashboard',      path: '/dashboard' },
+    { icon: FileText,        label: 'Data Pengaduan', path: '/data-pengaduan' },
+    { icon: BarChart3,       label: 'Statistik',      path: '/statistik' },
+    { icon: Cpu,             label: 'Klasifikasi',    path: '/klasifikasi' },
   ];
 
   return (

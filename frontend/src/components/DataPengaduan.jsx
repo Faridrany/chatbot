@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
@@ -8,56 +8,67 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 
+const CATEGORY_COLOR = {
+  INFRASTRUKTUR: "bg-[#2E7D32] text-white",
+  LINGKUNGAN:    "bg-[#4CAF50] text-white",
+  KEAMANAN:      "bg-[#A5D6A7] text-gray-900",
+  PELAYANAN:     "bg-[#81C784] text-white",
+};
+
+const LIMIT = 10;
+
 export default function DataPengaduan({ onLogout }) {
   const navigate = useNavigate();
 
-  const [data, setData]                   = useState([]);
-  const [loading, setLoading]             = useState(true);
-  const [searchTerm, setSearchTerm]       = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("semua");
-  const [currentPage, setCurrentPage]     = useState(1);
+  const [items, setItems]         = useState([]);
+  const [total, setTotal]         = useState(0);
+  const [totalPages, setTotalPages] = useState(1);
+  const [loading, setLoading]     = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [searchTerm, setSearchTerm]   = useState("");
+  const [searchInput, setSearchInput] = useState(""); // input sementara sebelum debounce
+  const [filterKategori, setFilterKategori] = useState("semua");
 
-  const itemsPerPage = 8;
-
-  // ── Fetch dari dataset_berlabel.json via backend ──
-  useEffect(() => {
-    fetch("/api/dataset")
-      .then((res) => res.json())
-      .then((res) => { setData(res); setLoading(false); })
+  // Fetch dari backend — hanya ambil data yang dibutuhkan halaman ini
+  const fetchData = useCallback((page, search, kategori) => {
+    setLoading(true);
+    const params = new URLSearchParams({
+      page,
+      limit: LIMIT,
+      ...(search   && { search }),
+      ...(kategori !== "semua" && { kategori }),
+    });
+    fetch(`/api/pengaduan?${params}`)
+      .then((r) => r.json())
+      .then((res) => {
+        setItems(res.items ?? []);
+        setTotal(res.total ?? 0);
+        setTotalPages(res.totalPages ?? 1);
+        setLoading(false);
+      })
       .catch((err) => { console.error(err); setLoading(false); });
   }, []);
 
-  // ── Filter ──
-  const filteredData = useMemo(() => data.filter((item) => {
-    const matchSearch =
-      item.deskripsi?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      item.nama?.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchCategory =
-      selectedCategory === "semua" || item.kategori_prediksi === selectedCategory;
-    return matchSearch && matchCategory;
-  }), [data, searchTerm, selectedCategory]);
+  // Fetch saat halaman / filter berubah
+  useEffect(() => {
+    fetchData(currentPage, searchTerm, filterKategori);
+  }, [currentPage, searchTerm, filterKategori, fetchData]);
 
-  // ── Pagination ──
-  const totalPages    = Math.ceil(filteredData.length / itemsPerPage);
-  const startIndex    = (currentPage - 1) * itemsPerPage;
-  const paginatedData = useMemo(
-    () => filteredData.slice(startIndex, startIndex + itemsPerPage),
-    [filteredData, startIndex]
-  );
+  // Debounce search input — tunggu 400ms setelah user berhenti ketik
+  useEffect(() => {
+    const t = setTimeout(() => {
+      setSearchTerm(searchInput);
+      setCurrentPage(1);
+    }, 400);
+    return () => clearTimeout(t);
+  }, [searchInput]);
 
-  // Reset ke halaman 1 saat filter berubah
-  const handleSearch = (val) => { setSearchTerm(val); setCurrentPage(1); };
-  const handleCategory = (val) => { setSelectedCategory(val); setCurrentPage(1); };
-
-  const getCategoryColor = (kategori) => {
-    switch (kategori) {
-      case "INFRASTRUKTUR": return "bg-[#2E7D32] text-white";
-      case "LINGKUNGAN":    return "bg-[#4CAF50] text-white";
-      case "KEAMANAN":      return "bg-[#A5D6A7] text-gray-900";
-      case "PELAYANAN":     return "bg-[#81C784] text-white";
-      default:              return "bg-gray-200 text-gray-900";
-    }
+  const handleKategori = (val) => {
+    setFilterKategori(val);
+    setCurrentPage(1);
   };
+
+  const startIndex = (currentPage - 1) * LIMIT;
 
   return (
     <div className="flex min-h-screen bg-gray-50">
@@ -71,7 +82,7 @@ export default function DataPengaduan({ onLogout }) {
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-gray-800">Data Pengaduan</h2>
               <span className="text-sm text-gray-400">
-                {filteredData.length} dari {data.length} data
+                {total} data
               </span>
             </div>
 
@@ -79,11 +90,11 @@ export default function DataPengaduan({ onLogout }) {
             <div className="flex gap-3 mb-6">
               <Input
                 placeholder="Cari nama atau deskripsi..."
-                value={searchTerm}
-                onChange={(e) => handleSearch(e.target.value)}
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
                 className="flex-1"
               />
-              <Select value={selectedCategory} onValueChange={handleCategory}>
+              <Select value={filterKategori} onValueChange={handleKategori}>
                 <SelectTrigger className="w-48">
                   <Filter className="w-4 h-4 mr-2" />
                   <SelectValue placeholder="Kategori" />
@@ -101,7 +112,7 @@ export default function DataPengaduan({ onLogout }) {
             {/* Table */}
             {loading ? (
               <p className="text-gray-400 text-center py-10">Memuat data...</p>
-            ) : filteredData.length === 0 ? (
+            ) : items.length === 0 ? (
               <p className="text-gray-400 text-center py-10">Tidak ada data yang cocok.</p>
             ) : (
               <>
@@ -118,34 +129,31 @@ export default function DataPengaduan({ onLogout }) {
                       </tr>
                     </thead>
                     <tbody>
-                      {paginatedData.map((item, pageIdx) => {
-                        const globalIndex = item._id ?? data.indexOf(item);
-                        return (
-                          <tr key={globalIndex} className="border-t hover:bg-gray-50 transition-colors">
-                            <td className="p-3 text-gray-400">{startIndex + pageIdx + 1}</td>
-                            <td className="p-3 font-medium text-gray-800 whitespace-nowrap">{item.nama}</td>
-                            <td className="p-3 text-gray-500 whitespace-nowrap">{item.no_wa || "-"}</td>
-                            <td className="p-3 text-gray-700 max-w-xs">
-                              <p className="line-clamp-2">{item.deskripsi}</p>
-                            </td>
-                            <td className="p-3">
-                              <Badge className={getCategoryColor(item.kategori_prediksi)}>
-                                {item.kategori_prediksi}
-                              </Badge>
-                            </td>
-                            <td className="p-3">
-                              <Button
-                                size="sm"
-                                onClick={() => navigate(`/detail-pengaduan/${globalIndex}`)}
-                                className="bg-green-700 hover:bg-green-800 text-white"
-                              >
-                                <Eye className="w-4 h-4 mr-1" />
-                                Detail
-                              </Button>
-                            </td>
-                          </tr>
-                        );
-                      })}
+                      {items.map((item, idx) => (
+                        <tr key={item._id} className="border-t hover:bg-gray-50 transition-colors">
+                          <td className="p-3 text-gray-400">{startIndex + idx + 1}</td>
+                          <td className="p-3 font-medium text-gray-800 whitespace-nowrap">{item.nama || "-"}</td>
+                          <td className="p-3 text-gray-500 whitespace-nowrap">{item.no_wa || "-"}</td>
+                          <td className="p-3 text-gray-700 max-w-xs">
+                            <p className="line-clamp-2">{item.deskripsi}</p>
+                          </td>
+                          <td className="p-3">
+                            <Badge className={CATEGORY_COLOR[item.kategori_prediksi] ?? "bg-gray-200 text-gray-900"}>
+                              {item.kategori_prediksi || "-"}
+                            </Badge>
+                          </td>
+                          <td className="p-3">
+                            <Button
+                              size="sm"
+                              onClick={() => navigate(`/detail-pengaduan/${item._id}`)}
+                              className="bg-green-700 hover:bg-green-800 text-white"
+                            >
+                              <Eye className="w-4 h-4 mr-1" />
+                              Detail
+                            </Button>
+                          </td>
+                        </tr>
+                      ))}
                     </tbody>
                   </table>
                 </div>
@@ -153,26 +161,22 @@ export default function DataPengaduan({ onLogout }) {
                 {/* Pagination */}
                 <div className="flex items-center justify-between mt-4">
                   <p className="text-sm text-gray-400">
-                    Halaman {currentPage} dari {totalPages}
+                    Halaman {currentPage} dari {totalPages} &nbsp;·&nbsp; {total} total
                   </p>
                   <div className="flex gap-2">
                     <Button
-                      variant="outline"
-                      size="sm"
-                      disabled={currentPage === 1}
+                      variant="outline" size="sm"
+                      disabled={currentPage === 1 || loading}
                       onClick={() => setCurrentPage((p) => p - 1)}
                     >
-                      <ChevronLeft className="w-4 h-4" />
-                      Prev
+                      <ChevronLeft className="w-4 h-4" /> Prev
                     </Button>
                     <Button
-                      variant="outline"
-                      size="sm"
-                      disabled={currentPage === totalPages}
+                      variant="outline" size="sm"
+                      disabled={currentPage === totalPages || loading}
                       onClick={() => setCurrentPage((p) => p + 1)}
                     >
-                      Next
-                      <ChevronRight className="w-4 h-4" />
+                      Next <ChevronRight className="w-4 h-4" />
                     </Button>
                   </div>
                 </div>

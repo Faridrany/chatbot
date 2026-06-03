@@ -55,8 +55,8 @@ async function loadCache() {
   const normalize = (s) => s?.trim().replace(/\s+/g, " ") ?? "";
 
   const pipelineArrays = {
-    casefolded:   JSON.parse(casefoldedRaw),
     cleaned:      JSON.parse(cleanedRaw),
+    casefolded:   JSON.parse(casefoldedRaw),
     normalized:   JSON.parse(normalizedRaw),
     tokenized:    JSON.parse(tokenizedRaw),
     stop_removed: JSON.parse(stopRemovedRaw),
@@ -70,7 +70,9 @@ async function loadCache() {
       const desc = normalize(item.deskripsi);
       if (!desc) continue;
       if (!pipelineMap.has(desc)) pipelineMap.set(desc, {});
-      if (item[key] !== undefined) pipelineMap.get(desc)[key] = item[key];
+      // Support both new key name (e.g. "cleaned") and legacy "hasil" field
+      const val = item[key] !== undefined ? item[key] : item["hasil"];
+      if (val !== undefined) pipelineMap.get(desc)[key] = val;
     }
   }
 
@@ -83,12 +85,22 @@ async function loadCache() {
 function computeStats(pengaduan) {
   const kategoriCount = {};
   let latestTs = new Date(0);
+  let hasTimestamp = false;
 
   for (const item of pengaduan) {
-    const ts = new Date(item.timestamp);
-    if (ts > latestTs) latestTs = ts;
-    const cat = item.kategori_prediksi || "unknown";
+    // Support both field names: kategori_prediksi (processed) and Kategori/kategori (raw)
+    const cat = item.kategori_prediksi || item.Kategori || item.kategori || "Unknown";
     kategoriCount[cat] = (kategoriCount[cat] || 0) + 1;
+
+    // Support both timestamp and tanggal fields
+    const rawTs = item.timestamp || item.tanggal || item.created_at;
+    if (rawTs) {
+      const ts = new Date(rawTs);
+      if (!isNaN(ts) && ts > latestTs) {
+        latestTs = ts;
+        hasTimestamp = true;
+      }
+    }
   }
 
   const ms3Hari = 3 * 24 * 60 * 60 * 1000;
@@ -96,21 +108,41 @@ function computeStats(pengaduan) {
   let baru3Hari = 0, baru7Hari = 0;
   const weeklyData = [0, 0, 0, 0];
 
-  for (const item of pengaduan) {
-    const diff = latestTs - new Date(item.timestamp);
-    if (diff <= ms3Hari) baru3Hari++;
-    if (diff <= ms7Hari) baru7Hari++;
-    const diffDays = Math.floor(diff / (24 * 60 * 60 * 1000));
-    if      (diffDays < 7)  weeklyData[3]++;
-    else if (diffDays < 14) weeklyData[2]++;
-    else if (diffDays < 21) weeklyData[1]++;
-    else if (diffDays < 28) weeklyData[0]++;
+  if (hasTimestamp) {
+    for (const item of pengaduan) {
+      const rawTs = item.timestamp || item.tanggal || item.created_at;
+      if (!rawTs) continue;
+      const ts = new Date(rawTs);
+      if (isNaN(ts)) continue;
+      const diff = latestTs - ts;
+      if (diff <= ms3Hari) baru3Hari++;
+      if (diff <= ms7Hari) baru7Hari++;
+      const diffDays = Math.floor(diff / (24 * 60 * 60 * 1000));
+      if      (diffDays < 7)  weeklyData[3]++;
+      else if (diffDays < 14) weeklyData[2]++;
+      else if (diffDays < 21) weeklyData[1]++;
+      else if (diffDays < 28) weeklyData[0]++;
+    }
+  } else {
+    // No timestamp data — distribute evenly across 4 weeks for chart display
+    const perWeek = Math.floor(pengaduan.length / 4);
+    const remainder = pengaduan.length % 4;
+    for (let i = 0; i < 4; i++) {
+      weeklyData[i] = perWeek + (i === 3 ? remainder : 0);
+    }
   }
 
   const kategoriTerbanyak =
     Object.entries(kategoriCount).sort((a, b) => b[1] - a[1])[0]?.[0] || "-";
 
-  return { total: pengaduan.length, baru3Hari, baru7Hari, kategoriTerbanyak, kategori: kategoriCount, weeklyData };
+  return {
+    total: pengaduan.length,
+    baru3Hari,
+    baru7Hari,
+    kategoriTerbanyak,
+    kategori: kategoriCount,
+    weeklyData,
+  };
 }
 // Evaluasi model — baca langsung dari hasil_training.json (akurat dari training)
 app.get("/api/evaluasi", async (_req, res) => {
@@ -123,7 +155,40 @@ app.get("/api/evaluasi", async (_req, res) => {
 });
 
 app.get("/api/pengaduan", (_req, res) => {
-  res.json(cache.pengaduan);
+  const page     = Math.max(1, parseInt(_req.query.page  ?? "1", 10));
+  const limit    = Math.min(100, Math.max(1, parseInt(_req.query.limit ?? "10", 10)));
+  const search   = (_req.query.search ?? "").toLowerCase().trim();
+  const kategori = (_req.query.kategori ?? "").toUpperCase().trim();
+
+  // Normalize dulu seluruh data (sudah di-cache, O(n) cepat)
+  let result = cache.pengaduan.map((item, i) => ({
+    _id:               i,
+    nama:              item.nama              ?? "",
+    no_wa:             (item.no_wa ?? "").replace("@c.us", ""),
+    deskripsi:         item.deskripsi         ?? "",
+    kategori_prediksi: item.kategori_prediksi || item.Kategori || item.kategori || "-",
+    timestamp:         item.timestamp || item.tanggal || item.created_at || null,
+    akurasi_model:     item.akurasi_model     ?? null,
+  }));
+
+  // Filter di server
+  if (search) {
+    result = result.filter(
+      (item) =>
+        item.deskripsi.toLowerCase().includes(search) ||
+        item.nama.toLowerCase().includes(search)
+    );
+  }
+  if (kategori && kategori !== "SEMUA") {
+    result = result.filter((item) => item.kategori_prediksi === kategori);
+  }
+
+  const total      = result.length;
+  const totalPages = Math.max(1, Math.ceil(total / limit));
+  const start      = (page - 1) * limit;
+  const items      = result.slice(start, start + limit);
+
+  res.json({ items, total, page, totalPages, limit });
 });
 
 // Dataset berlabel — untuk halaman Data Pengaduan
@@ -155,11 +220,23 @@ app.get("/api/pengaduan/:id/processed", (req, res) => {
   const key = item.deskripsi?.trim().replace(/\s+/g, " ") ?? "";
   const pipelineData = cache.pipeline.get(key) ?? {};
 
+  // Gunakan akurasi dari data, atau fallback ke akurasi model global
+  const akurasi = item.akurasi_model
+    ?? (cache.training?.akurasi ?? null);
+
   res.json({
     ...item,
+    kategori_prediksi: item.kategori_prediksi || item.Kategori || item.kategori || "-",
+    timestamp:         item.timestamp || item.tanggal || item.created_at || "-",
+    akurasi_model:     akurasi,
     pipeline: {
-      ...pipelineData,
-      final_text: item.processed ?? "",
+      cleaned:      pipelineData.cleaned      ?? null,
+      casefolded:   pipelineData.casefolded   ?? null,
+      tokenized:    pipelineData.tokenized    ?? null,
+      normalized:   pipelineData.normalized   ?? null,
+      stop_removed: pipelineData.stop_removed ?? null,
+      stemmed:      pipelineData.stemmed      ?? null,
+      final_text:   item.processed || item.final_text || pipelineData.final_text || "",
     },
   });
 });
@@ -248,6 +325,119 @@ app.get("/api/statistik", (_req, res) => {
     console.error(err);
     res.status(500).json({ error: "Gagal hitung statistik: " + err.message });
   }
+});
+
+// ─────────────────────────────────────────────
+// KLASIFIKASI — data baru dari WhatsApp chatbot
+// ─────────────────────────────────────────────
+
+// GET data_baru.json (pengaduan masuk dari chatbot, belum diklasifikasi)
+app.get("/api/data-baru", async (_req, res) => {
+  try {
+    const raw = await fs.readFile(path.join(DATA_DIR, "raw/data_baru.json"), "utf-8");
+    const data = JSON.parse(raw);
+    const normalized = data.map((item) => ({
+      ...item,
+      no_wa: (item.no_wa ?? "").replace("@c.us", ""),
+    }));
+    res.json(normalized);
+  } catch {
+    res.json([]);
+  }
+});
+
+// GET hasil prediksi (sudah diklasifikasi)
+app.get("/api/hasil-prediksi", async (_req, res) => {
+  try {
+    const raw = await fs.readFile(path.join(DATA_DIR, "predictions/hasil_prediksi.json"), "utf-8");
+    res.json(JSON.parse(raw));
+  } catch {
+    res.json([]);
+  }
+});
+
+// POST /api/klasifikasi — jalankan python main.py untuk klasifikasi data baru
+app.post("/api/klasifikasi", async (_req, res) => {
+  try {
+    // Cek dulu ada data baru tidak
+    const rawBaru = await fs.readFile(path.join(DATA_DIR, "raw/data_baru.json"), "utf-8").catch(() => "[]");
+    const dataBaru = JSON.parse(rawBaru);
+    if (!dataBaru.length) {
+      return res.status(400).json({ success: false, error: "Tidak ada data baru untuk diklasifikasi." });
+    }
+
+    const pythonCmd  = process.platform === "win32" ? "python" : "python3";
+    const scriptPath = path.join(__dirname, "main.py");
+
+    const child = spawn(pythonCmd, [scriptPath], {
+      cwd: __dirname,
+      env: { ...process.env },
+    });
+
+    let stdout = "";
+    let stderr = "";
+    child.stdout.on("data", (d) => { stdout += d.toString(); });
+    child.stderr.on("data", (d) => { stderr += d.toString(); });
+
+    child.on("close", async (code) => {
+      if (code === 0) {
+        // Reload cache setelah klasifikasi selesai
+        try { await loadCache(); } catch (_) {}
+        const rawHasil = await fs.readFile(path.join(DATA_DIR, "predictions/hasil_prediksi.json"), "utf-8").catch(() => "[]");
+        const hasil = JSON.parse(rawHasil);
+        res.json({ success: true, jumlah: hasil.length, log: stdout });
+      } else {
+        res.status(500).json({ success: false, error: stderr || "Proses Python gagal.", log: stdout });
+      }
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// ─────────────────────────────────────────────
+// EXPORT EXCEL — trigger python export & download
+// ─────────────────────────────────────────────
+const { spawn } = require("child_process");
+const EXPORT_EXCEL_PATH = path.join(__dirname, "../data/export/preprocessing_result.xlsx");
+
+app.get("/api/export/preprocessing", async (_req, res) => {
+  try {
+    // Cek apakah file sudah ada (hasil training sebelumnya)
+    const fileExists = await fs.access(EXPORT_EXCEL_PATH).then(() => true).catch(() => false);
+    if (!fileExists) {
+      return res.status(404).json({
+        error: "File Excel belum tersedia. Jalankan python main.py --train terlebih dahulu."
+      });
+    }
+    res.download(EXPORT_EXCEL_PATH, "preprocessing_result.xlsx");
+  } catch (err) {
+    res.status(500).json({ error: "Gagal mengunduh file: " + err.message });
+  }
+});
+
+app.post("/api/export/preprocessing/generate", (_req, res) => {
+  const pythonCmd = process.platform === "win32" ? "python" : "python3";
+  const scriptPath = path.join(__dirname, "main.py");
+
+  const child = spawn(pythonCmd, [scriptPath, "--export"], {
+    cwd: __dirname,
+    env: { ...process.env },
+  });
+
+  let stdout = "";
+  let stderr = "";
+
+  child.stdout.on("data", (d) => { stdout += d.toString(); });
+  child.stderr.on("data", (d) => { stderr += d.toString(); });
+
+  child.on("close", (code) => {
+    if (code === 0) {
+      res.json({ success: true, message: "File Excel berhasil dibuat.", log: stdout });
+    } else {
+      res.status(500).json({ success: false, error: stderr || "Proses Python gagal.", log: stdout });
+    }
+  });
 });
 
 // ─────────────────────────────────────────────

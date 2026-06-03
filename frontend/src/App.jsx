@@ -6,8 +6,7 @@ import Dashboard from './components/Dashboard';
 import DataPengaduan from './components/DataPengaduan';
 import DetailPengaduan from './components/DetailPengaduan';
 import Statistik from './components/Statistik';
-import ExportData from './components/ExportData';
-import Pengaturan from './components/Pengaturan';
+import Klasifikasi from './components/Klasifikasi';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -34,13 +33,12 @@ function App() {
           path="/qr-code"
           element={auth(<QRCode onConnect={() => {}} />)}
         />
-        <Route path="/dashboard"            element={auth(<Dashboard onLogout={handleLogout} />)} />
+        <Route path="/dashboard"            element={auth(<Dashboard    onLogout={handleLogout} />)} />
         <Route path="/data-pengaduan"       element={auth(<DataPengaduan onLogout={handleLogout} />)} />
         <Route path="/detail-pengaduan/:id" element={auth(<DetailPengaduan onLogout={handleLogout} />)} />
-        <Route path="/statistik"            element={auth(<Statistik onLogout={handleLogout} />)} />
-        <Route path="/export"               element={auth(<ExportData onLogout={handleLogout} />)} />
-        <Route path="/pengaturan"           element={auth(<Pengaturan onLogout={handleLogout} />)} />
-        <Route path="/" element={<Navigate to="/login" replace />} />
+        <Route path="/statistik"            element={auth(<Statistik    onLogout={handleLogout} />)} />
+        <Route path="/klasifikasi"          element={auth(<Klasifikasi  onLogout={handleLogout} />)} />
+        <Route path="/"                     element={<Navigate to="/login" replace />} />
       </Routes>
     </Router>
   );
