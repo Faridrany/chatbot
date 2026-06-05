@@ -7,21 +7,21 @@ import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 
 const PIPELINE_STEPS = [
-  { key: "deskripsi",    label: "Teks Asli",          desc: "Input mentah dari pelapor" },
-  { key: "cleaned",      label: "Cleaning",            desc: "Karakter khusus, URL & angka dihapus" },
-  { key: "casefolded",   label: "Case Folding",        desc: "Semua huruf diubah ke huruf kecil" },
-  { key: "tokenized",    label: "Tokenisasi",          desc: "Teks dipecah menjadi token kata" },
-  { key: "normalized",   label: "Normalisasi",         desc: "Kata tidak baku diubah ke bentuk baku" },
-  { key: "stop_removed", label: "Stopword Removal",    desc: "Kata umum tidak bermakna dihapus" },
-  { key: "stemmed",      label: "Stemming",            desc: "Kata dikembalikan ke bentuk dasar (dari hasil stopword)" },
-  { key: "final_text",   label: "Hasil Akhir",         desc: "Teks siap diproses model ML" },
+  { key: "deskripsi", label: "Teks Asli", desc: "Input mentah dari pelapor" },
+  { key: "cleaned", label: "Cleaning", desc: "Karakter khusus, URL & angka dihapus" },
+  { key: "casefolded", label: "Case Folding", desc: "Semua huruf diubah ke huruf kecil" },
+  { key: "tokenized", label: "Tokenisasi", desc: "Teks dipecah menjadi token kata" },
+  { key: "normalized", label: "Normalisasi", desc: "Kata tidak baku diubah ke bentuk baku" },
+  { key: "stop_removed", label: "Stopword Removal", desc: "Kata umum tidak bermakna dihapus" },
+  { key: "stemmed", label: "Stemming", desc: "Kata dikembalikan ke bentuk dasar (dari hasil stopword)" },
+  { key: "final_text", label: "Hasil Akhir", desc: "Teks siap diproses model ML" },
 ];
 
 const CATEGORY_COLOR = {
   INFRASTRUKTUR: "bg-[#2E7D32] text-white",
-  LINGKUNGAN:    "bg-[#4CAF50] text-white",
-  KEAMANAN:      "bg-[#A5D6A7] text-gray-900",
-  PELAYANAN:     "bg-[#81C784] text-white",
+  LINGKUNGAN: "bg-[#4CAF50] text-white",
+  KEAMANAN: "bg-[#A5D6A7] text-gray-900",
+  PELAYANAN: "bg-[#81C784] text-white",
 };
 
 function renderValue(val) {
@@ -48,27 +48,33 @@ export default function DetailPengaduan({ onLogout }) {
   useEffect(() => {
     fetch(`/api/pengaduan/${id}/processed`)
       .then((res) => res.json())
-      .then((res) => { setData(res); setLoading(false); })
-      .catch((err) => { console.error(err); setLoading(false); });
+      .then((res) => {
+        setData(res);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setLoading(false);
+      });
   }, [id]);
 
   if (loading) return <div className="p-10 text-gray-500">Memuat data...</div>;
-  if (!data)   return <div className="p-10 text-red-500">Data tidak ditemukan.</div>;
+  if (!data) return <div className="p-10 text-red-500">Data tidak ditemukan.</div>;
 
   // Pipeline selalu ada — final_text dari field processed, sisanya dari file pipeline
   const pipelineSource = {
-    deskripsi:    data.deskripsi,
-    casefolded:   data.pipeline?.casefolded,
-    cleaned:      data.pipeline?.cleaned,
-    normalized:   data.pipeline?.normalized,
-    tokenized:    data.pipeline?.tokenized,
+    deskripsi: data.deskripsi,
+    casefolded: data.pipeline?.casefolded,
+    cleaned: data.pipeline?.cleaned,
+    normalized: data.pipeline?.normalized,
+    tokenized: data.pipeline?.tokenized,
     stop_removed: data.pipeline?.stop_removed,
-    stemmed:      data.pipeline?.stemmed,
-    final_text:   data.pipeline?.final_text ?? data.processed,
+    stemmed: data.pipeline?.stemmed,
+    final_text: data.pipeline?.final_text ?? data.processed,
   };
 
   const hasPipeline = PIPELINE_STEPS.some(
-    (s) => s.key !== "deskripsi" && s.key !== "final_text" && pipelineSource[s.key] != null
+    (s) => s.key !== "deskripsi" && s.key !== "final_text" && pipelineSource[s.key] != null,
   );
 
   return (
@@ -110,18 +116,13 @@ export default function DetailPengaduan({ onLogout }) {
                 </Badge>
               </div>
               <div>
-                <p className="text-gray-500">Akurasi Model</p>
-                {data.akurasi_model != null ? (
+                <p className="text-gray-500">Confidence Prediksi</p>
+                {data.confidence != null ? (
                   <div className="flex items-center gap-2 mt-1">
                     <div className="flex-1 bg-gray-200 rounded-full h-2">
-                      <div
-                        className="bg-green-500 h-2 rounded-full"
-                        style={{ width: `${(data.akurasi_model ?? 0) * 100}%` }}
-                      />
+                      <div className="bg-green-500 h-2 rounded-full" style={{ width: `${(data.confidence ?? 0) * 100}%` }} />
                     </div>
-                    <span className="text-sm font-semibold text-green-700">
-                      {((data.akurasi_model ?? 0) * 100).toFixed(1)}%
-                    </span>
+                    <span className="text-sm font-semibold text-green-700">{((data.confidence ?? 0) * 100).toFixed(1)}%</span>
                   </div>
                 ) : (
                   <p className="text-sm text-gray-400 italic mt-1">Belum tersedia — jalankan training model</p>
@@ -131,18 +132,14 @@ export default function DetailPengaduan({ onLogout }) {
 
             <div className="mt-4">
               <p className="text-gray-500 text-sm">Deskripsi Pengaduan</p>
-              <p className="mt-1 text-gray-800 bg-gray-50 p-3 rounded-lg border text-sm leading-relaxed">
-                {data.deskripsi}
-              </p>
+              <p className="mt-1 text-gray-800 bg-gray-50 p-3 rounded-lg border text-sm leading-relaxed">{data.deskripsi}</p>
             </div>
           </div>
 
           {/* Pipeline Preprocessing */}
           <div className="bg-white p-6 rounded-2xl shadow">
             <h2 className="text-lg font-bold text-gray-800 mb-1">Pipeline Preprocessing</h2>
-            <p className="text-sm text-gray-500 mb-6">
-              Tahapan transformasi teks sebelum diklasifikasikan oleh model.
-            </p>
+            <p className="text-sm text-gray-500 mb-6">Tahapan transformasi teks sebelum diklasifikasikan oleh model.</p>
 
             <div className="space-y-0">
               {PIPELINE_STEPS.map((step, i) => {
@@ -154,18 +151,18 @@ export default function DetailPengaduan({ onLogout }) {
                   <div key={step.key} className="flex gap-4">
                     {/* Connector line */}
                     <div className="flex flex-col items-center">
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${
-                        available
-                          ? isLast
-                            ? "bg-green-700 text-white"
-                            : "bg-green-500 text-white"
-                          : "bg-gray-200 text-gray-400"
-                      }`}>
+                      <div
+                        className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${
+                          available
+                            ? isLast
+                              ? "bg-green-700 text-white"
+                              : "bg-green-500 text-white"
+                            : "bg-gray-200 text-gray-400"
+                        }`}
+                      >
                         {i + 1}
                       </div>
-                      {!isLast && (
-                        <div className={`w-0.5 flex-1 my-1 ${available ? "bg-green-300" : "bg-gray-200"}`} />
-                      )}
+                      {!isLast && <div className={`w-0.5 flex-1 my-1 ${available ? "bg-green-300" : "bg-gray-200"}`} />}
                     </div>
 
                     {/* Content */}
@@ -174,18 +171,16 @@ export default function DetailPengaduan({ onLogout }) {
                         <span className={`font-semibold text-sm ${available ? "text-gray-800" : "text-gray-400"}`}>
                           {step.label}
                         </span>
-                        {!isLast && available && (
-                          <ChevronRight className="w-3 h-3 text-green-400" />
-                        )}
+                        {!isLast && available && <ChevronRight className="w-3 h-3 text-green-400" />}
                         <span className="text-xs text-gray-400">{step.desc}</span>
                       </div>
 
                       {available ? (
-                        <div className={`mt-1 p-3 rounded-lg border text-sm ${
-                          isLast
-                            ? "bg-green-50 border-green-200"
-                            : "bg-gray-50 border-gray-200"
-                        }`}>
+                        <div
+                          className={`mt-1 p-3 rounded-lg border text-sm ${
+                            isLast ? "bg-green-50 border-green-200" : "bg-gray-50 border-gray-200"
+                          }`}
+                        >
                           {renderValue(val)}
                         </div>
                       ) : (
@@ -201,7 +196,8 @@ export default function DetailPengaduan({ onLogout }) {
 
             {!hasPipeline && (
               <div className="mt-2 p-3 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-700">
-                ⚠️ Data tahapan pipeline (casefolding, cleaning, dll) tidak tersedia untuk pengaduan ini karena preprocessing dilakukan sebelum data ini masuk. Hanya teks asli dan hasil akhir yang ditampilkan.
+                ⚠️ Data tahapan pipeline (casefolding, cleaning, dll) tidak tersedia untuk pengaduan ini karena preprocessing
+                dilakukan sebelum data ini masuk. Hanya teks asli dan hasil akhir yang ditampilkan.
               </div>
             )}
           </div>

@@ -10,9 +10,9 @@ import { Badge } from "./ui/badge";
 
 const CATEGORY_COLOR = {
   INFRASTRUKTUR: "bg-[#2E7D32] text-white",
-  LINGKUNGAN:    "bg-[#4CAF50] text-white",
-  KEAMANAN:      "bg-[#A5D6A7] text-gray-900",
-  PELAYANAN:     "bg-[#81C784] text-white",
+  LINGKUNGAN: "bg-[#4CAF50] text-white",
+  KEAMANAN: "bg-[#A5D6A7] text-gray-900",
+  PELAYANAN: "bg-[#81C784] text-white",
 };
 
 const LIMIT = 10;
@@ -20,12 +20,12 @@ const LIMIT = 10;
 export default function DataPengaduan({ onLogout }) {
   const navigate = useNavigate();
 
-  const [items, setItems]         = useState([]);
-  const [total, setTotal]         = useState(0);
+  const [items, setItems] = useState([]);
+  const [total, setTotal] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
-  const [loading, setLoading]     = useState(true);
+  const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const [searchTerm, setSearchTerm]   = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const [searchInput, setSearchInput] = useState(""); // input sementara sebelum debounce
   const [filterKategori, setFilterKategori] = useState("semua");
 
@@ -35,7 +35,7 @@ export default function DataPengaduan({ onLogout }) {
     const params = new URLSearchParams({
       page,
       limit: LIMIT,
-      ...(search   && { search }),
+      ...(search && { search }),
       ...(kategori !== "semua" && { kategori }),
     });
     fetch(`/api/pengaduan?${params}`)
@@ -46,9 +46,11 @@ export default function DataPengaduan({ onLogout }) {
         setTotalPages(res.totalPages ?? 1);
         setLoading(false);
       })
-      .catch((err) => { console.error(err); setLoading(false); });
+      .catch((err) => {
+        console.error(err);
+        setLoading(false);
+      });
   }, []);
-
   // Fetch saat halaman / filter berubah
   useEffect(() => {
     fetchData(currentPage, searchTerm, filterKategori);
@@ -81,9 +83,7 @@ export default function DataPengaduan({ onLogout }) {
           <div className="bg-white rounded-2xl shadow-lg border p-6">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-gray-800">Data Pengaduan</h2>
-              <span className="text-sm text-gray-400">
-                {total} data
-              </span>
+              <span className="text-sm text-gray-400">{total} data</span>
             </div>
 
             {/* Filter */}
@@ -125,6 +125,7 @@ export default function DataPengaduan({ onLogout }) {
                         <th className="p-3 text-left font-semibold">No. WA</th>
                         <th className="p-3 text-left font-semibold">Deskripsi</th>
                         <th className="p-3 text-left font-semibold">Kategori</th>
+                        <th className="p-3 text-left font-semibold">Confidence</th>
                         <th className="p-3 text-left font-semibold">Aksi</th>
                       </tr>
                     </thead>
@@ -141,6 +142,23 @@ export default function DataPengaduan({ onLogout }) {
                             <Badge className={CATEGORY_COLOR[item.kategori_prediksi] ?? "bg-gray-200 text-gray-900"}>
                               {item.kategori_prediksi || "-"}
                             </Badge>
+                          </td>
+                          <td className="p-3 whitespace-nowrap">
+                            {item.confidence != null ? (
+                              <div className="flex items-center gap-2">
+                                <div className="w-16 bg-gray-200 rounded-full h-1.5">
+                                  <div
+                                    className="bg-green-500 h-1.5 rounded-full"
+                                    style={{ width: `${Math.round((item.confidence ?? 0) * 100)}%` }}
+                                  />
+                                </div>
+                                <span className="text-xs text-green-700 font-semibold">
+                                  {((item.confidence ?? 0) * 100).toFixed(0)}%
+                                </span>
+                              </div>
+                            ) : (
+                              <span className="text-xs text-gray-300">—</span>
+                            )}
                           </td>
                           <td className="p-3">
                             <Button
@@ -165,14 +183,16 @@ export default function DataPengaduan({ onLogout }) {
                   </p>
                   <div className="flex gap-2">
                     <Button
-                      variant="outline" size="sm"
+                      variant="outline"
+                      size="sm"
                       disabled={currentPage === 1 || loading}
                       onClick={() => setCurrentPage((p) => p - 1)}
                     >
                       <ChevronLeft className="w-4 h-4" /> Prev
                     </Button>
                     <Button
-                      variant="outline" size="sm"
+                      variant="outline"
+                      size="sm"
                       disabled={currentPage === totalPages || loading}
                       onClick={() => setCurrentPage((p) => p + 1)}
                     >

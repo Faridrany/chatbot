@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
-import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 
 const CATEGORY_COLORS = {
   INFRASTRUKTUR: "#2E7D32",
@@ -10,26 +10,46 @@ const CATEGORY_COLORS = {
   PELAYANAN: "#81C784",
 };
 
+const CAT_LABEL = {
+  INFRASTRUKTUR: "Infrastruktur",
+  LINGKUNGAN: "Lingkungan",
+  KEAMANAN: "Keamanan",
+  PELAYANAN: "Pelayanan",
+};
+
+function InfoCard({ label, value, sub, accent, small }) {
+  return (
+    <div className="bg-white p-5 rounded-2xl shadow border-l-4" style={{ borderColor: accent || "#2E7D32" }}>
+      <p className="text-xs text-gray-500 mb-1">{label}</p>
+      <p className={`font-bold text-gray-800 ${small ? "text-lg" : "text-3xl"}`}>{value}</p>
+      {sub && <p className="text-xs text-gray-400 mt-1">{sub}</p>}
+    </div>
+  );
+}
+
 export default function Dashboard({ onLogout }) {
   const [stats, setStats] = useState(null);
+  const [training, setTraining] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/stats")
-      .then((res) => res.json())
-      .then((data) => {
-        setStats(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Gagal fetch stats:", err);
-        setLoading(false);
-      });
+    Promise.all([
+      fetch("/api/stats")
+        .then((r) => r.json())
+        .catch(() => null),
+      fetch("/api/evaluasi")
+        .then((r) => r.json())
+        .catch(() => null),
+    ]).then(([s, t]) => {
+      setStats(s);
+      setTraining(t);
+      setLoading(false);
+    });
   }, []);
 
   const categoryData = stats
     ? Object.entries(stats.kategori).map(([name, value]) => ({
-        name: name.charAt(0) + name.slice(1).toLowerCase(),
+        name: CAT_LABEL[name] ?? name.charAt(0) + name.slice(1).toLowerCase(),
         value,
         color: CATEGORY_COLORS[name] || "#ccc",
       }))
@@ -44,40 +64,102 @@ export default function Dashboard({ onLogout }) {
       <div className="flex-1">
         <Header />
 
-        <main className="p-8">
+        <main className="p-8 space-y-8">
           {loading ? (
             <p className="text-gray-500">Memuat data...</p>
           ) : (
             <>
-              {/* Stats */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <div className="bg-white p-6 rounded-2xl shadow">
-                  <h3 className="text-sm text-gray-500 mb-1">Total Pengaduan</h3>
-                  <p className="text-3xl font-bold">{stats?.total ?? "-"}</p>
-                </div>
-                <div className="bg-white p-6 rounded-2xl shadow">
-                  <h3 className="text-sm text-gray-500 mb-1">Baru 3 Hari</h3>
-                  <p className="text-3xl font-bold">{stats?.baru3Hari ?? "-"}</p>
-                </div>
-                <div className="bg-white p-6 rounded-2xl shadow">
-                  <h3 className="text-sm text-gray-500 mb-1">Baru 7 Hari</h3>
-                  <p className="text-3xl font-bold">{stats?.baru7Hari ?? "-"}</p>
-                </div>
-                <div className="bg-white p-6 rounded-2xl shadow">
-                  <h3 className="text-sm text-gray-500 mb-1">Kategori Terbanyak</h3>
-                  <p className="text-lg font-semibold capitalize">
-                    {stats?.kategoriTerbanyak
-                        ? stats.kategoriTerbanyak.charAt(0) + stats.kategoriTerbanyak.slice(1).toLowerCase()
-                        : "-"}
-                  </p>
+              {/* ── Statistik Pengaduan ── */}
+              <div>
+                <h2 className="text-lg font-bold text-gray-700 mb-3">Ringkasan Pengaduan</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <InfoCard label="Total Pengaduan" value={stats?.total ?? "-"} sub="Semua data terdaftar" accent="#2E7D32" />
+                  <InfoCard
+                    label="Baru 3 Hari Terakhir"
+                    value={stats?.baru3Hari ?? "-"}
+                    sub="Berdasarkan timestamp"
+                    accent="#4CAF50"
+                  />
+                  <InfoCard
+                    label="Baru 7 Hari Terakhir"
+                    value={stats?.baru7Hari ?? "-"}
+                    sub="Berdasarkan timestamp"
+                    accent="#81C784"
+                  />
+                  <InfoCard
+                    label="Kategori Terbanyak"
+                    value={stats?.kategoriTerbanyak ? (CAT_LABEL[stats.kategoriTerbanyak] ?? stats.kategoriTerbanyak) : "-"}
+                    sub={stats?.kategoriTerbanyak ? `${stats.kategori[stats.kategoriTerbanyak] ?? 0} pengaduan` : ""}
+                    accent="#A5D6A7"
+                    small
+                  />
                 </div>
               </div>
 
-              {/* Charts */}
+              {/* ── Info Model ── */}
+              {training && (
+                <div>
+                  <h2 className="text-lg font-bold text-gray-700 mb-3">Performa Model</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <InfoCard
+                      label="Akurasi Model"
+                      value={`${((training.akurasi ?? 0) * 100).toFixed(1)}%`}
+                      sub="Random Forest overall"
+                      accent="#2E7D32"
+                    />
+                    <InfoCard
+                      label="Data Training / Test"
+                      value={`${training.data_train ?? "-"} / ${training.data_test ?? "-"}`}
+                      sub={`Total ${training.total_data ?? "-"} data`}
+                      accent="#4CAF50"
+                    />
+                    <InfoCard
+                      label="Jumlah Fitur TF-IDF"
+                      value={(training.fitur_tfidf ?? 0).toLocaleString()}
+                      sub="Setelah seleksi fitur"
+                      accent="#81C784"
+                    />
+                    <InfoCard
+                      label="Jumlah Estimator"
+                      value={training.estimators ?? 200}
+                      sub="Pohon keputusan (RF)"
+                      accent="#A5D6A7"
+                    />
+                  </div>
+
+                  {/* Per-kelas ringkasan */}
+                  {training.perClass && (
+                    <div className="mt-4 bg-white rounded-2xl shadow p-5">
+                      <h3 className="font-semibold text-gray-700 mb-3 text-sm">Akurasi per Kategori (dari data test)</h3>
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        {Object.entries(training.perClass).map(([cat, m]) => (
+                          <div
+                            key={cat}
+                            className="rounded-xl border p-3 text-center"
+                            style={{ borderColor: CATEGORY_COLORS[cat] ?? "#ccc" }}
+                          >
+                            <p className="text-xs font-semibold mb-1" style={{ color: CATEGORY_COLORS[cat] ?? "#555" }}>
+                              {CAT_LABEL[cat] ?? cat}
+                            </p>
+                            <p className="text-xl font-bold text-gray-800">{((m.f1 ?? 0) * 100).toFixed(0)}%</p>
+                            <p className="text-xs text-gray-400">F1-Score</p>
+                            <div className="flex justify-between text-xs text-gray-500 mt-1">
+                              <span>P: {((m.precision ?? 0) * 100).toFixed(0)}%</span>
+                              <span>R: {((m.recall ?? 0) * 100).toFixed(0)}%</span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* ── Charts ── */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div className="bg-white p-6 rounded-2xl shadow">
-                  <h3 className="font-semibold mb-4">Distribusi Kategori</h3>
-                  <ResponsiveContainer width="100%" height={300}>
+                  <h3 className="font-semibold mb-4 text-gray-800">Distribusi Kategori</h3>
+                  <ResponsiveContainer width="100%" height={280}>
                     <PieChart>
                       <Pie
                         data={categoryData}
@@ -85,8 +167,8 @@ export default function Dashboard({ onLogout }) {
                         nameKey="name"
                         label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
                       >
-                        {categoryData.map((entry, index) => (
-                          <Cell key={index} fill={entry.color} />
+                        {categoryData.map((entry, i) => (
+                          <Cell key={i} fill={entry.color} />
                         ))}
                       </Pie>
                       <Tooltip />
@@ -95,14 +177,14 @@ export default function Dashboard({ onLogout }) {
                 </div>
 
                 <div className="bg-white p-6 rounded-2xl shadow">
-                  <h3 className="font-semibold mb-4">Pengaduan per Minggu (4 Minggu Terakhir)</h3>
-                  <ResponsiveContainer width="100%" height={300}>
+                  <h3 className="font-semibold mb-4 text-gray-800">Pengaduan per Minggu (4 Minggu Terakhir)</h3>
+                  <ResponsiveContainer width="100%" height={280}>
                     <BarChart data={weeklyData}>
                       <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis dataKey="week" />
-                      <YAxis />
+                      <XAxis dataKey="week" tick={{ fontSize: 12 }} />
+                      <YAxis tick={{ fontSize: 12 }} />
                       <Tooltip />
-                      <Bar dataKey="jumlah" fill="#2E7D32" />
+                      <Bar dataKey="jumlah" fill="#2E7D32" radius={[4, 4, 0, 0]} />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>

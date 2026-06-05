@@ -12,6 +12,1204 @@
         "Kategori":"KEAMANAN"
     },
     {
+        "nama":"Andi Saputra",
+        "no_wa":"6285211100001@c.us",
+        "deskripsi":"Min, di sekitar pasar Margomulyo ada orang gak dikenal muter-muter lihat motor parkir dari tadi pagi. Warga curiga mau nyuri.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Rika Lestari",
+        "no_wa":"6285211100002@c.us",
+        "deskripsi":"Lampu jalan di gang belakang Selili mati sudah hampir seminggu. Malam jadi gelap banget dan bikin takut lewat.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Agus Setiawan",
+        "no_wa":"6285211100003@c.us",
+        "deskripsi":"Ada anak-anak muda balapan liar lagi di jalan Handil Baru Darat habis tengah malam. Suaranya berisik dan bahaya.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Maya Putri",
+        "no_wa":"6285211100004@c.us",
+        "deskripsi":"Saya lihat dua orang mabuk ribut-ribut di dekat lapangan Wonotirto. Warga sekitar jadi gak nyaman.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Dedi Kurniawan",
+        "no_wa":"6285211100005@c.us",
+        "deskripsi":"Ada ular lumayan besar masuk ke halaman rumah warga di Teluk Pemedas. Mohon segera ditangani.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Nina Maharani",
+        "no_wa":"6285211100006@c.us",
+        "deskripsi":"Jambret katanya baru aja beraksi dekat Sungai Seluang. Tetangga saya kehilangan tas waktu pulang kerja.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Arman",
+        "no_wa":"6285211100007@c.us",
+        "deskripsi":"Preman sering nongkrong depan ruko Muara Sembilang dan minta uang parkir seenaknya.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Wati",
+        "no_wa":"6285211100008@c.us",
+        "deskripsi":"Anjing liar di Karya Jaya makin banyak. Tadi pagi ada yang ngejar anak sekolah sampai nangis.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Fikri Ramadhan",
+        "no_wa":"6285211100009@c.us",
+        "deskripsi":"Pohon besar di pinggir jalan Margomulyo terlihat retak setelah hujan deras. Takut tumbang kena pengguna jalan.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Siska Melati",
+        "no_wa":"6285211100010@c.us",
+        "deskripsi":"Ada orang asing tidur di halte Selili beberapa hari ini. Warga mulai khawatir karena sering mengintip rumah.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Roni",
+        "no_wa":"6285211100011@c.us",
+        "deskripsi":"Motor teman saya hilang di parkiran warung Handil Baru Darat tadi malam. Mohon patroli ditingkatkan.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Vina",
+        "no_wa":"6285211100012@c.us",
+        "deskripsi":"Sekelompok remaja mabuk sambil teriak-teriak di Teluk Pemedas sampai dini hari. Ganggu warga banget.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Aldi Firmansyah",
+        "no_wa":"6285211100013@c.us",
+        "deskripsi":"Lampu PJU dekat jembatan Sungai Seluang mati total. Jalannya jadi rawan dan gelap.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Dewi Anggraini",
+        "no_wa":"6285211100014@c.us",
+        "deskripsi":"Ada dugaan pencurian ayam di Wonotirto. Beberapa warga kehilangan ternak dalam seminggu terakhir.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Yusuf",
+        "no_wa":"6285211100015@c.us",
+        "deskripsi":"Balapan liar di Muara Sembilang hampir nabrak pejalan kaki tadi malam. Bahaya banget kalau dibiarkan.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Lina Marlina",
+        "no_wa":"6285211100016@c.us",
+        "deskripsi":"Ada orang mencurigakan foto-foto rumah warga di Karya Jaya. Kami gak kenal siapa dia.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Beni",
+        "no_wa":"6285211100017@c.us",
+        "deskripsi":"Pos ronda di Margomulyo sering dipakai nongkrong sambil minum miras. Warga resah.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Rahma",
+        "no_wa":"6285211100018@c.us",
+        "deskripsi":"Anjing liar di Selili menggonggong dan mengejar orang yang lewat malam hari.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Tono",
+        "no_wa":"6285211100019@c.us",
+        "deskripsi":"Pohon besar dekat SD Handil Baru Darat miring ke jalan. Takut roboh kalau angin kencang.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Nur Aisyah",
+        "no_wa":"6285211100020@c.us",
+        "deskripsi":"Rumah kosong di Teluk Pemedas beberapa kali didatangi orang tidak dikenal malam-malam.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Rendi",
+        "no_wa":"6285211100021@c.us",
+        "deskripsi":"Tadi subuh ada maling masuk halaman warga di Sungai Seluang. Untung ketahuan sebelum sempat ambil barang.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Putri",
+        "no_wa":"6285211100022@c.us",
+        "deskripsi":"Lampu jalan di sekitar masjid Muara Sembilang mati semua. Jamaah jadi takut pulang malam.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Asep",
+        "no_wa":"6285211100023@c.us",
+        "deskripsi":"Ada tawuran antar remaja dekat lapangan Karya Jaya semalam. Situasinya cukup mencekam.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Mira",
+        "no_wa":"6285211100024@c.us",
+        "deskripsi":"Preman sering ganggu pedagang kaki lima di Margomulyo dan minta uang keamanan.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Farhan",
+        "no_wa":"6285211100025@c.us",
+        "deskripsi":"Ular masuk kandang ayam warga di Selili dan bikin panik satu RT.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Yuliana",
+        "no_wa":"6285211100026@c.us",
+        "deskripsi":"Balapan liar lagi di Wonotirto. Jalan sampai ditutup sendiri sama anak-anak motor.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Jefri",
+        "no_wa":"6285211100027@c.us",
+        "deskripsi":"Ada orang mencurigakan sering mengintip kendaraan warga di Handil Baru Darat.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Cici",
+        "no_wa":"6285211100028@c.us",
+        "deskripsi":"Anjing liar berkeliaran dekat TK Teluk Pemedas. Orang tua murid khawatir.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Rizal",
+        "no_wa":"6285211100029@c.us",
+        "deskripsi":"Pohon tua di Muara Sembilang cabangnya sudah banyak yang patah. Bahaya buat pengguna jalan.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Nadia",
+        "no_wa":"6285211100030@c.us",
+        "deskripsi":"Sekelompok pemuda mabuk bikin keributan dekat Sungai Seluang sampai hampir berkelahi.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Hafiz",
+        "no_wa":"6285211100031@c.us",
+        "deskripsi":"Motor warga hilang dari teras rumah di Karya Jaya dini hari tadi.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Sari",
+        "no_wa":"6285211100032@c.us",
+        "deskripsi":"Lampu jalan di Wonotirto redup semua. Banyak warga takut lewat sendirian malam hari.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Imam",
+        "no_wa":"6285211100033@c.us",
+        "deskripsi":"Ada kabar copet sering beraksi di sekitar pasar Selili. Mohon pengawasan ditingkatkan.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Mega",
+        "no_wa":"6285211100034@c.us",
+        "deskripsi":"Rumah tetangga hampir dibobol maling di Margomulyo. Kunci pagar ditemukan rusak.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Fauzan",
+        "no_wa":"6285211100035@c.us",
+        "deskripsi":"Preman mabuk bikin onar di warung Muara Sembilang dan mengancam pelanggan.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Rina",
+        "no_wa":"6285211100036@c.us",
+        "deskripsi":"Anjing liar sering masuk halaman rumah warga Handil Baru Darat dan mengejar anak kecil.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Bagus",
+        "no_wa":"6285211100037@c.us",
+        "deskripsi":"Balapan motor liar di Teluk Pemedas makin sering tiap malam minggu.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Lukman",
+        "no_wa":"6285211100038@c.us",
+        "deskripsi":"Ada orang tak dikenal duduk lama di depan rumah kosong Karya Jaya sambil memperhatikan sekitar.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Tiara",
+        "no_wa":"6285211100039@c.us",
+        "deskripsi":"Pohon besar dekat jalan utama Selili sudah condong ke arah jalan raya.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Riko",
+        "no_wa":"6285211100040@c.us",
+        "deskripsi":"Jambret mencoba merampas tas pengendara di Muara Sembilang tadi sore.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Novi",
+        "no_wa":"6285211100041@c.us",
+        "deskripsi":"Lampu jalan dekat lapangan Sungai Seluang mati semua sejak beberapa hari lalu.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Iqbal",
+        "no_wa":"6285211100042@c.us",
+        "deskripsi":"Remaja mabuk dan putar musik keras sampai tengah malam di Margomulyo.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Ayu",
+        "no_wa":"6285211100043@c.us",
+        "deskripsi":"Anjing liar di Wonotirto menggigit sandal anak saya saat pulang sekolah.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Wawan",
+        "no_wa":"6285211100044@c.us",
+        "deskripsi":"Ada dugaan pencuri kabel listrik beraksi di Handil Baru Darat malam tadi.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Nanda",
+        "no_wa":"6285211100045@c.us",
+        "deskripsi":"Sekelompok orang tidak dikenal nongkrong sampai subuh di Teluk Pemedas dan bikin warga was-was.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Dian",
+        "no_wa":"6285211100046@c.us",
+        "deskripsi":"Pohon tua dekat kantor kelurahan Muara Sembilang terlihat rapuh dan berisiko tumbang.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Reza",
+        "no_wa":"6285211100047@c.us",
+        "deskripsi":"Copet berkeliaran di sekitar pasar Karya Jaya. Sudah ada beberapa korban kehilangan dompet.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Yanti",
+        "no_wa":"6285211100048@c.us",
+        "deskripsi":"Lampu jalan di gang kecil Wonotirto mati total. Jalannya jadi serem kalau malam.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Arif",
+        "no_wa":"6285211100049@c.us",
+        "deskripsi":"Preman minta uang ke sopir truk yang parkir di Margomulyo. Kalau menolak langsung diancam.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Bella",
+        "no_wa":"6285211100050@c.us",
+        "deskripsi":"Ada ular besar terlihat di semak dekat Sungai Seluang. Warga takut karena dekat permukiman.",
+        "Kategori":"KEAMANAN"
+    },{
+        "nama":"Rafi Nugraha",
+        "no_wa":"6285212200001@c.us",
+        "deskripsi":"Min, ada orang gak dikenal keliling kompleks Margomulyo sambil foto-foto rumah warga. Kami jadi curiga.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Dewi Kartika",
+        "no_wa":"6285212200002@c.us",
+        "deskripsi":"Lampu jalan di gang belakang Wonotirto mati dari minggu lalu. Jalannya gelap dan bikin takut lewat malam.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Taufik Hidayat",
+        "no_wa":"6285212200003@c.us",
+        "deskripsi":"Balapan motor liar di Handil Baru Darat makin sering. Hampir tiap malam ada suara knalpot kencang.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Mila Sari",
+        "no_wa":"6285212200004@c.us",
+        "deskripsi":"Sekelompok pemuda mabuk bikin gaduh dekat lapangan Selili sampai dini hari.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Roni Wijaya",
+        "no_wa":"6285212200005@c.us",
+        "deskripsi":"Ada ular masuk ke dapur rumah warga di Teluk Pemedas. Warga panik dan takut.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Lina Astuti",
+        "no_wa":"6285212200006@c.us",
+        "deskripsi":"Jambret beraksi dekat pasar Muara Sembilang sore tadi. Korban kehilangan tas dan HP.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Agung Prakoso",
+        "no_wa":"6285212200007@c.us",
+        "deskripsi":"Ada preman sering minta uang ke pedagang kaki lima di Sungai Seluang.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Rina Marlina",
+        "no_wa":"6285212200008@c.us",
+        "deskripsi":"Anjing liar di Karya Jaya mengejar anak-anak yang pulang mengaji.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Bagas Saputra",
+        "no_wa":"6285212200009@c.us",
+        "deskripsi":"Pohon besar di pinggir jalan Selili terlihat hampir tumbang setelah hujan deras.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Fitriani",
+        "no_wa":"6285212200010@c.us",
+        "deskripsi":"Orang mencurigakan mondar-mandir depan rumah kosong di Wonotirto sejak pagi.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Andika",
+        "no_wa":"6285212200011@c.us",
+        "deskripsi":"Motor tetangga hilang saat diparkir di teras rumah daerah Margomulyo.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Salsa Putri",
+        "no_wa":"6285212200012@c.us",
+        "deskripsi":"Remaja mabuk sambil teriak-teriak di dekat jembatan Teluk Pemedas. Sangat mengganggu warga.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Ridho",
+        "no_wa":"6285212200013@c.us",
+        "deskripsi":"Lampu PJU di jalan utama Sungai Seluang mati total. Area jadi rawan tindak kejahatan.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Yuni",
+        "no_wa":"6285212200014@c.us",
+        "deskripsi":"Ada percobaan pembobolan rumah di Muara Sembilang tadi malam.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Arman Hakim",
+        "no_wa":"6285212200015@c.us",
+        "deskripsi":"Balapan liar di jalan Wonotirto hampir menyebabkan kecelakaan warga.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Citra Lestari",
+        "no_wa":"6285212200016@c.us",
+        "deskripsi":"Ada orang tidak dikenal sering duduk di depan sekolah Karya Jaya dan memperhatikan anak-anak.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Fauzi",
+        "no_wa":"6285212200017@c.us",
+        "deskripsi":"Pos ronda di Selili sering dijadikan tempat minum minuman keras oleh anak muda.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Novianti",
+        "no_wa":"6285212200018@c.us",
+        "deskripsi":"Anjing liar berkeliaran dekat pasar Handil Baru Darat dan membuat pembeli takut.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Joko Prasetyo",
+        "no_wa":"6285212200019@c.us",
+        "deskripsi":"Pohon dekat halte Margomulyo sudah miring dan berpotensi tumbang ke jalan.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Riska",
+        "no_wa":"6285212200020@c.us",
+        "deskripsi":"Rumah kosong di Teluk Pemedas sering dimasuki orang asing saat malam hari.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Budi Santoso",
+        "no_wa":"6285212200021@c.us",
+        "deskripsi":"Ada maling yang mencoba mencuri aki mobil warga di Sungai Seluang.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Wulan",
+        "no_wa":"6285212200022@c.us",
+        "deskripsi":"Lampu jalan dekat mushola Muara Sembilang mati dan bikin area sekitar gelap.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Yoga Saputra",
+        "no_wa":"6285212200023@c.us",
+        "deskripsi":"Tawuran antar remaja terjadi lagi di lapangan Karya Jaya tadi malam.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Dina Maharani",
+        "no_wa":"6285212200024@c.us",
+        "deskripsi":"Preman mengganggu pedagang dan meminta uang secara paksa di Margomulyo.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Hendra",
+        "no_wa":"6285212200025@c.us",
+        "deskripsi":"Ada ular besar ditemukan di dekat taman bermain anak di Selili.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Sinta Rahma",
+        "no_wa":"6285212200026@c.us",
+        "deskripsi":"Balapan motor liar di Muara Sembilang bikin warga susah tidur setiap malam minggu.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Galih",
+        "no_wa":"6285212200027@c.us",
+        "deskripsi":"Orang mencurigakan terlihat mengintai motor yang parkir di Handil Baru Darat.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Yuliana Putri",
+        "no_wa":"6285212200028@c.us",
+        "deskripsi":"Anjing liar agresif di Teluk Pemedas menyerang ayam peliharaan warga.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Rama",
+        "no_wa":"6285212200029@c.us",
+        "deskripsi":"Pohon tua dekat kantor RT Sungai Seluang mulai lapuk dan membahayakan.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Maya Anggraini",
+        "no_wa":"6285212200030@c.us",
+        "deskripsi":"Pemuda mabuk berkelahi di depan warung daerah Wonotirto tadi malam.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Teguh",
+        "no_wa":"6285212200031@c.us",
+        "deskripsi":"Ada pencurian helm di area parkir pasar Margomulyo hampir setiap minggu.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Lia Amelia",
+        "no_wa":"6285212200032@c.us",
+        "deskripsi":"Lampu jalan di gang kecil Selili mati sehingga warga takut pulang malam.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Fikri",
+        "no_wa":"6285212200033@c.us",
+        "deskripsi":"Copet berkeliaran saat pasar malam di Karya Jaya. Sudah ada beberapa korban.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Nurhayati",
+        "no_wa":"6285212200034@c.us",
+        "deskripsi":"Rumah tetangga hampir dibobol maling saat pemilik sedang keluar kota.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Rendy",
+        "no_wa":"6285212200035@c.us",
+        "deskripsi":"Preman mabuk membuat keributan di sekitar terminal Muara Sembilang.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Tika",
+        "no_wa":"6285212200036@c.us",
+        "deskripsi":"Anjing liar bergerombol di jalan Wonotirto dan mengejar pengendara motor.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Aldi",
+        "no_wa":"6285212200037@c.us",
+        "deskripsi":"Balapan liar dekat jembatan Handil Baru Darat sangat membahayakan pengguna jalan.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Reni",
+        "no_wa":"6285212200038@c.us",
+        "deskripsi":"Ada orang asing sering mengamati rumah-rumah warga di Selili pada malam hari.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Bambang",
+        "no_wa":"6285212200039@c.us",
+        "deskripsi":"Pohon besar dekat sekolah Margomulyo terlihat retak setelah diterpa angin.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Putri Ayu",
+        "no_wa":"6285212200040@c.us",
+        "deskripsi":"Jambret mencoba mengambil tas saya saat melintas di Sungai Seluang.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Ilham",
+        "no_wa":"6285212200041@c.us",
+        "deskripsi":"Lampu penerangan jalan di Muara Sembilang mati sejak beberapa hari lalu.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Desi",
+        "no_wa":"6285212200042@c.us",
+        "deskripsi":"Sekelompok remaja mabuk membuat gaduh dekat lapangan Teluk Pemedas.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Rizky",
+        "no_wa":"6285212200043@c.us",
+        "deskripsi":"Anjing liar di Karya Jaya hampir menggigit warga yang sedang jogging pagi.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Nina",
+        "no_wa":"6285212200044@c.us",
+        "deskripsi":"Ada dugaan pencurian kabel listrik di daerah Wonotirto tadi malam.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Fajar",
+        "no_wa":"6285212200045@c.us",
+        "deskripsi":"Orang mencurigakan berkeliaran di sekitar rumah kosong Margomulyo menjelang subuh.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Wahyuni",
+        "no_wa":"6285212200046@c.us",
+        "deskripsi":"Pohon tua dekat jalan utama Selili terlihat rapuh dan rawan tumbang.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Rehan",
+        "no_wa":"6285212200047@c.us",
+        "deskripsi":"Copet beraksi di pasar Muara Sembilang saat kondisi sedang ramai.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Sabrina",
+        "no_wa":"6285212200048@c.us",
+        "deskripsi":"Lampu jalan dekat perumahan Handil Baru Darat mati total sejak minggu lalu.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Doni",
+        "no_wa":"6285212200049@c.us",
+        "deskripsi":"Preman meminta uang parkir secara paksa kepada pengunjung warung di Sungai Seluang.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Aurel",
+        "no_wa":"6285212200050@c.us",
+        "deskripsi":"Ada ular kobra terlihat dekat saluran air di Teluk Pemedas. Warga sangat khawatir.",
+        "Kategori":"KEAMANAN"
+    },{
+        "nama":"Rizky Maulana",
+        "no_wa":"6287711100001@c.us",
+        "deskripsi":"Lampu jalan di gang belakang Margomulyo mati semua. Area jadi gelap dan warga takut pulang malam.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Nina Oktavia",
+        "no_wa":"6287711100002@c.us",
+        "deskripsi":"Ada orang tidak dikenal mondar-mandir di sekitar rumah kosong Selili sejak beberapa hari terakhir.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Dedi Prasetyo",
+        "no_wa":"6287711100003@c.us",
+        "deskripsi":"Balapan liar masih sering terjadi di jalan utama Wonotirto setiap malam Minggu.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Siti Rahma",
+        "no_wa":"6287711100004@c.us",
+        "deskripsi":"Sekelompok remaja sering nongkrong sambil minum minuman keras di Teluk Pemedas hingga larut malam.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Fauzan Akbar",
+        "no_wa":"6287711100005@c.us",
+        "deskripsi":"Anjing liar agresif berkeliaran di sekitar Muara Sembilang dan mengejar pengendara motor.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Wulan Sari",
+        "no_wa":"6287711100006@c.us",
+        "deskripsi":"Ada dugaan pencurian kabel listrik di Sungai Seluang karena beberapa tiang lampu mendadak mati.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Rama Saputra",
+        "no_wa":"6287711100007@c.us",
+        "deskripsi":"Preman sering meminta uang parkir secara paksa di area pasar Karya Jaya.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Lia Amelia",
+        "no_wa":"6287711100008@c.us",
+        "deskripsi":"Beberapa motor warga Margomulyo kehilangan spion pada malam hari.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Bagus Pratama",
+        "no_wa":"6287711100009@c.us",
+        "deskripsi":"Orang mencurigakan terlihat mengintip rumah-rumah warga di Selili saat subuh.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Anita Maharani",
+        "no_wa":"6287711100010@c.us",
+        "deskripsi":"Sering terjadi tawuran antar remaja di lapangan Wonotirto setiap akhir pekan.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Kevin Saputra",
+        "no_wa":"6287711100011@c.us",
+        "deskripsi":"Jalan menuju Teluk Pemedas sangat gelap karena lampu penerangan rusak semua.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Mira Oktaviani",
+        "no_wa":"6287711100012@c.us",
+        "deskripsi":"Ada kelompok pemuda yang sering mabuk dan membuat keributan di Muara Sembilang.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Dimas Nugraha",
+        "no_wa":"6287711100013@c.us",
+        "deskripsi":"Pencurian helm kembali terjadi di area parkir Sungai Seluang.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Nabila Putri",
+        "no_wa":"6287711100014@c.us",
+        "deskripsi":"Ular besar masuk ke halaman rumah warga di Karya Jaya dan membuat panik.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Rendi Kurniawan",
+        "no_wa":"6287711100015@c.us",
+        "deskripsi":"Diduga ada pelaku pencurian yang mengamati rumah kosong di Margomulyo.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Farhan Hakim",
+        "no_wa":"6287711100016@c.us",
+        "deskripsi":"Balapan motor dengan knalpot bising sering terjadi di Selili hingga tengah malam.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Salsa Ramadhani",
+        "no_wa":"6287711100017@c.us",
+        "deskripsi":"Remaja yang sedang mabuk merusak fasilitas umum di Wonotirto.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Agung Setiawan",
+        "no_wa":"6287711100018@c.us",
+        "deskripsi":"Beberapa warga Teluk Pemedas melaporkan kehilangan sandal dan barang di teras rumah.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Rina Kartika",
+        "no_wa":"6287711100019@c.us",
+        "deskripsi":"Ada orang tidak dikenal yang tidur di halte Muara Sembilang dan membuat warga khawatir.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Joko Prasetyo",
+        "no_wa":"6287711100020@c.us",
+        "deskripsi":"Copet beraksi saat pasar ramai di Sungai Seluang pagi tadi.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Bella Anggraini",
+        "no_wa":"6287711100021@c.us",
+        "deskripsi":"Anjing liar di Karya Jaya semakin banyak dan sering mengejar anak-anak.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Yusuf Maulana",
+        "no_wa":"6287711100022@c.us",
+        "deskripsi":"Lampu jalan di Margomulyo mati sejak lama sehingga rawan tindak kriminal.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Dewi Safitri",
+        "no_wa":"6287711100023@c.us",
+        "deskripsi":"Sekelompok pemuda sering membuat keributan di depan warung Selili.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Fikri Akbar",
+        "no_wa":"6287711100024@c.us",
+        "deskripsi":"Warga melihat orang mencurigakan membawa karung dan keluar dari rumah kosong di Wonotirto.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Tika Wulandari",
+        "no_wa":"6287711100025@c.us",
+        "deskripsi":"Ada laporan jambret yang beraksi di jalan utama Teluk Pemedas saat sore hari.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Arman Hidayat",
+        "no_wa":"6287711100026@c.us",
+        "deskripsi":"Preman sering mengintimidasi pedagang kecil di Muara Sembilang.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Putri Amelia",
+        "no_wa":"6287711100027@c.us",
+        "deskripsi":"Tawuran antar kelompok remaja kembali terjadi di Sungai Seluang.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Bayu Firmansyah",
+        "no_wa":"6287711100028@c.us",
+        "deskripsi":"Anjing liar menyerang ayam peliharaan warga di Karya Jaya.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Rossa Maharani",
+        "no_wa":"6287711100029@c.us",
+        "deskripsi":"Pagar rumah warga Margomulyo dirusak oleh orang tidak dikenal pada malam hari.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Galang Prakoso",
+        "no_wa":"6287711100030@c.us",
+        "deskripsi":"Motor tanpa plat nomor sering berkumpul di Selili dan membuat warga resah.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Lukman Hakim",
+        "no_wa":"6287711100031@c.us",
+        "deskripsi":"Ada dugaan percobaan pencurian di rumah kosong Wonotirto tadi malam.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Nadia Permata",
+        "no_wa":"6287711100032@c.us",
+        "deskripsi":"Lampu jalan menuju Teluk Pemedas tidak berfungsi dan kawasan menjadi sangat sepi.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Aldi Saputra",
+        "no_wa":"6287711100033@c.us",
+        "deskripsi":"Sekelompok pemuda mabuk membuat keributan di Muara Sembilang hingga dini hari.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Meli Kartika",
+        "no_wa":"6287711100034@c.us",
+        "deskripsi":"Pencurian tabung gas terjadi di Sungai Seluang dan pelaku belum ditemukan.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Reza Pratama",
+        "no_wa":"6287711100035@c.us",
+        "deskripsi":"Warga Karya Jaya menemukan ular kobra di dekat area bermain anak.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Cahya Ramadhan",
+        "no_wa":"6287711100036@c.us",
+        "deskripsi":"Ada orang asing memotret rumah-rumah warga di Margomulyo tanpa alasan jelas.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Indra Kesuma",
+        "no_wa":"6287711100037@c.us",
+        "deskripsi":"Balapan liar di Selili makin sering dan membahayakan pengguna jalan lainnya.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Novi Yanti",
+        "no_wa":"6287711100038@c.us",
+        "deskripsi":"Remaja yang sedang mabuk terlibat perkelahian di Wonotirto.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Bima Saputra",
+        "no_wa":"6287711100039@c.us",
+        "deskripsi":"Jambret merampas tas seorang ibu di Teluk Pemedas siang tadi.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Elsa Maharani",
+        "no_wa":"6287711100040@c.us",
+        "deskripsi":"Preman meminta uang keamanan kepada pedagang di Muara Sembilang.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Toni Hartono",
+        "no_wa":"6287711100041@c.us",
+        "deskripsi":"Copet beraksi di area pasar Sungai Seluang saat kondisi ramai pengunjung.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Vina Oktavia",
+        "no_wa":"6287711100042@c.us",
+        "deskripsi":"Anjing liar di Karya Jaya mengejar anak-anak yang pulang mengaji.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Daffa Ramadhan",
+        "no_wa":"6287711100043@c.us",
+        "deskripsi":"Rumah kosong di Margomulyo terlihat sering didatangi orang tidak dikenal pada malam hari.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Rudy Setiawan",
+        "no_wa":"6287711100044@c.us",
+        "deskripsi":"Kelompok motor berknalpot bising berkumpul di Selili hampir setiap malam.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Yuniar Sari",
+        "no_wa":"6287711100045@c.us",
+        "deskripsi":"Tawuran antar pemuda terjadi lagi di lapangan Wonotirto setelah pertandingan futsal.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Fajar Kustanto",
+        "no_wa":"6287711100046@c.us",
+        "deskripsi":"Lampu penerangan di Teluk Pemedas mati sehingga rawan terjadi aksi kriminal.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Gita Amelia",
+        "no_wa":"6287711100047@c.us",
+        "deskripsi":"Ada orang mencurigakan yang sering mengintai kendaraan warga di Muara Sembilang.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Hendra Wijaya",
+        "no_wa":"6287711100048@c.us",
+        "deskripsi":"Pencurian sepeda milik anak-anak terjadi di Sungai Seluang kemarin sore.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Jihan Pratiwi",
+        "no_wa":"6287711100049@c.us",
+        "deskripsi":"Anjing liar bergerombol di Karya Jaya dan membuat warga takut keluar pagi hari.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Maria Ulfa",
+        "no_wa":"6287711100050@c.us",
+        "deskripsi":"Warga Margomulyo meminta patroli malam ditingkatkan karena sering terjadi percobaan pencurian.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Ardiansyah Putra",
+        "no_wa":"6287822200001@c.us",
+        "deskripsi":"Kemarin malam ada orang tidak dikenal mencoba membuka pagar rumah warga di Margomulyo. Untung ketahuan sebelum masuk.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Novi Amelia",
+        "no_wa":"6287822200002@c.us",
+        "deskripsi":"Lampu jalan di gang Selili mati semua. Warga jadi takut lewat karena suasananya gelap banget.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Dian Pratama",
+        "no_wa":"6287822200003@c.us",
+        "deskripsi":"Balapan liar di jalan Wonotirto makin meresahkan. Suara knalpotnya sangat bising sampai tengah malam.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Rina Safitri",
+        "no_wa":"6287822200004@c.us",
+        "deskripsi":"Sekelompok anak muda mabuk-mabukan di taman Teluk Pemedas dan mengganggu warga sekitar.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Yusuf Kurniawan",
+        "no_wa":"6287822200005@c.us",
+        "deskripsi":"Ada anjing liar yang cukup galak di Muara Sembilang. Beberapa pengendara motor sudah dikejar.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Putri Maharani",
+        "no_wa":"6287822200006@c.us",
+        "deskripsi":"Motor tetangga di Sungai Seluang kehilangan aki saat diparkir di teras rumah.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Bima Saputra",
+        "no_wa":"6287822200007@c.us",
+        "deskripsi":"Preman sering nongkrong di depan pertokoan Karya Jaya dan meminta uang ke pedagang.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Salsa Ramadhani",
+        "no_wa":"6287822200008@c.us",
+        "deskripsi":"Ada orang mencurigakan yang bolak-balik melihat rumah kosong di Margomulyo sejak pagi.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Rendy Firmansyah",
+        "no_wa":"6287822200009@c.us",
+        "deskripsi":"Tawuran antar remaja terjadi di Selili setelah acara musik malam minggu.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Maya Kartika",
+        "no_wa":"6287822200010@c.us",
+        "deskripsi":"Lampu penerangan dekat jembatan Wonotirto mati sehingga area sangat rawan saat malam.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Fauzi Rahman",
+        "no_wa":"6287822200011@c.us",
+        "deskripsi":"Jambret mengambil tas pengendara motor di Teluk Pemedas lalu kabur ke arah jalan utama.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Lina Marlina",
+        "no_wa":"6287822200012@c.us",
+        "deskripsi":"Beberapa remaja sering pesta minuman keras di lapangan Muara Sembilang.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Galih Nugraha",
+        "no_wa":"6287822200013@c.us",
+        "deskripsi":"Warga Sungai Seluang melihat orang asing berkeliaran sambil memotret rumah-rumah penduduk.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Rani Oktavia",
+        "no_wa":"6287822200014@c.us",
+        "deskripsi":"Anjing liar di Karya Jaya menyerang ayam dan hewan peliharaan warga.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Kevin Maulana",
+        "no_wa":"6287822200015@c.us",
+        "deskripsi":"Ada percobaan pencurian motor di Margomulyo subuh tadi, pelaku berhasil kabur.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Nabila Putri",
+        "no_wa":"6287822200016@c.us",
+        "deskripsi":"Sekelompok pemuda sering membuat keributan dan balap motor di Selili.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Andika Prasetyo",
+        "no_wa":"6287822200017@c.us",
+        "deskripsi":"Ular besar terlihat masuk ke pekarangan rumah warga di Wonotirto.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Dewi Safira",
+        "no_wa":"6287822200018@c.us",
+        "deskripsi":"Copet beraksi saat pasar malam di Teluk Pemedas dan beberapa warga kehilangan dompet.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Rizal Akbar",
+        "no_wa":"6287822200019@c.us",
+        "deskripsi":"Preman mengganggu pengunjung warung kopi di Muara Sembilang dan meminta uang secara paksa.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Anita Wulandari",
+        "no_wa":"6287822200020@c.us",
+        "deskripsi":"Lampu jalan di Sungai Seluang mati sejak lama dan belum ada perbaikan.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Teguh Hidayat",
+        "no_wa":"6287822200021@c.us",
+        "deskripsi":"Rumah kosong di Karya Jaya diduga menjadi tempat berkumpul orang tidak dikenal pada malam hari.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Meli Anggraini",
+        "no_wa":"6287822200022@c.us",
+        "deskripsi":"Jambret mencoba mengambil ponsel warga saat melintas di Margomulyo.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Arman Hakim",
+        "no_wa":"6287822200023@c.us",
+        "deskripsi":"Balapan liar di Selili menyebabkan warga sulit beristirahat setiap akhir pekan.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Bella Kartika",
+        "no_wa":"6287822200024@c.us",
+        "deskripsi":"Ada kelompok remaja mabuk yang membuat keributan dekat sekolah Wonotirto.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Rudi Hartono",
+        "no_wa":"6287822200025@c.us",
+        "deskripsi":"Pencurian tabung gas kembali terjadi di Teluk Pemedas minggu ini.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Siti Rahmah",
+        "no_wa":"6287822200026@c.us",
+        "deskripsi":"Anjing liar bergerombol di Muara Sembilang dan membuat anak-anak takut bermain.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Farhan Akbar",
+        "no_wa":"6287822200027@c.us",
+        "deskripsi":"Ada orang mencurigakan mengamati kendaraan yang terparkir di Sungai Seluang.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Wulan Permata",
+        "no_wa":"6287822200028@c.us",
+        "deskripsi":"Preman sering meminta uang keamanan ke pedagang kaki lima di Karya Jaya.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Bagas Prakoso",
+        "no_wa":"6287822200029@c.us",
+        "deskripsi":"Lampu jalan di Margomulyo mati sehingga kawasan menjadi rawan tindak kejahatan.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Citra Amelia",
+        "no_wa":"6287822200030@c.us",
+        "deskripsi":"Sekelompok pemuda mabuk membuat gaduh di Selili hingga lewat tengah malam.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Fikri Saputra",
+        "no_wa":"6287822200031@c.us",
+        "deskripsi":"Motor warga Wonotirto hampir dicuri saat diparkir di depan rumah.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Nadia Putri",
+        "no_wa":"6287822200032@c.us",
+        "deskripsi":"Jalan menuju Teluk Pemedas sangat gelap karena beberapa lampu jalan rusak.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Aldi Kurniawan",
+        "no_wa":"6287822200033@c.us",
+        "deskripsi":"Tawuran antar kelompok remaja terjadi di Muara Sembilang tadi malam.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Rossa Maharani",
+        "no_wa":"6287822200034@c.us",
+        "deskripsi":"Warga Sungai Seluang menemukan ular kobra di dekat kandang ayam.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Daffa Ramadhan",
+        "no_wa":"6287822200035@c.us",
+        "deskripsi":"Ada orang asing yang sering mondar-mandir di sekitar rumah warga Karya Jaya.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Indra Wijaya",
+        "no_wa":"6287822200036@c.us",
+        "deskripsi":"Jambret kembali beraksi di Margomulyo saat jam pulang kerja.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Novi Yanti",
+        "no_wa":"6287822200037@c.us",
+        "deskripsi":"Kelompok motor berknalpot bising berkumpul di Selili hampir setiap malam.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Yoga Pratama",
+        "no_wa":"6287822200038@c.us",
+        "deskripsi":"Remaja mabuk merusak kursi taman di Wonotirto dan membuat warga resah.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Maria Ulfa",
+        "no_wa":"6287822200039@c.us",
+        "deskripsi":"Pencurian sepeda milik anak-anak terjadi di Teluk Pemedas sore kemarin.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Gilang Pramudya",
+        "no_wa":"6287822200040@c.us",
+        "deskripsi":"Preman mengancam pedagang kecil di Muara Sembilang yang menolak memberi uang.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Heni Rahmawati",
+        "no_wa":"6287822200041@c.us",
+        "deskripsi":"Lampu jalan di Sungai Seluang mati dan membuat warga takut melintas malam hari.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Jihan Pratiwi",
+        "no_wa":"6287822200042@c.us",
+        "deskripsi":"Anjing liar mengejar pengendara sepeda motor di Karya Jaya setiap pagi.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Kurniawan Adi",
+        "no_wa":"6287822200043@c.us",
+        "deskripsi":"Ada orang tidak dikenal mencoba masuk ke rumah kosong di Margomulyo.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Olga Dwiyanti",
+        "no_wa":"6287822200044@c.us",
+        "deskripsi":"Balapan motor liar di Selili menyebabkan warga khawatir terjadi kecelakaan.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Putra Damanik",
+        "no_wa":"6287822200045@c.us",
+        "deskripsi":"Sekelompok pemuda mabuk berkelahi di Wonotirto dan mengganggu ketertiban.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Santi Wulan",
+        "no_wa":"6287822200046@c.us",
+        "deskripsi":"Jambret mengambil dompet seorang warga di Teluk Pemedas saat pasar ramai.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Toni Setiawan",
+        "no_wa":"6287822200047@c.us",
+        "deskripsi":"Ada ular besar berkeliaran di sekitar permukiman Muara Sembilang.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Vina Oktavia",
+        "no_wa":"6287822200048@c.us",
+        "deskripsi":"Copet beraksi di acara warga Sungai Seluang dan beberapa orang kehilangan barang.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Yuniar Sari",
+        "no_wa":"6287822200049@c.us",
+        "deskripsi":"Preman sering memalak sopir angkutan yang melintas di Karya Jaya.",
+        "Kategori":"KEAMANAN"
+    },
+    {
+        "nama":"Fajar Kustanto",
+        "no_wa":"6287822200050@c.us",
+        "deskripsi":"Warga Margomulyo meminta patroli malam ditambah karena marak percobaan pencurian.",
+        "Kategori":"KEAMANAN"
+    },
+    {
         "nama":"Ridwan Hidayat",
         "no_wa":"628789012303@c.us",
         "deskripsi":"Ada anjing liar yang agresif sering berkeliaran di dekat sekolah Teluk Pemedas. Bahaya bagi anak-anak pulang sekolah.",
@@ -966,6 +2164,1206 @@
         "Kategori":"INFRASTRUKTUR"
     },
     {
+        "nama":"Andi Saputra",
+        "no_wa":"6285411100001@c.us",
+        "deskripsi":"Jalan berlubang cukup dalam di depan SD Margomulyo. Sudah beberapa pengendara motor hampir jatuh.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rina Marlina",
+        "no_wa":"6285411100002@c.us",
+        "deskripsi":"Lampu jalan di gang utama Selili mati sejak dua minggu lalu dan belum diperbaiki.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Fajar Nugroho",
+        "no_wa":"6285411100003@c.us",
+        "deskripsi":"Jembatan kayu penghubung warga di Wonotirto sudah lapuk dan berbahaya untuk dilalui.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Dewi Anggraini",
+        "no_wa":"6285411100004@c.us",
+        "deskripsi":"Trotoar di sekitar pasar Teluk Pemedas rusak dan banyak ubin yang terlepas.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rizky Pratama",
+        "no_wa":"6285411100005@c.us",
+        "deskripsi":"Aspal jalan di Muara Sembilang mengelupas dan menimbulkan banyak lubang.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Nina Amelia",
+        "no_wa":"6285411100006@c.us",
+        "deskripsi":"Drainase di Sungai Seluang tidak mampu menampung air hujan sehingga jalan sering tergenang.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Bagus Setiawan",
+        "no_wa":"6285411100007@c.us",
+        "deskripsi":"Pagar pembatas jembatan di Karya Jaya rusak dan membahayakan pengguna jalan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Maya Putri",
+        "no_wa":"6285411100008@c.us",
+        "deskripsi":"Banyak lampu penerangan jalan di Handil Baru Darat yang tidak berfungsi.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Agus Santoso",
+        "no_wa":"6285411100009@c.us",
+        "deskripsi":"Jalan cor di Margomulyo retak-retak dan mulai rusak di beberapa titik.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Wulan Sari",
+        "no_wa":"6285411100010@c.us",
+        "deskripsi":"Atap halte bus di Selili bocor saat hujan sehingga penumpang kehujanan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rama Prakoso",
+        "no_wa":"6285411100011@c.us",
+        "deskripsi":"Jembatan kecil menuju area pertanian Wonotirto mengalami keretakan pada bagian tengah.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Salsa Putri",
+        "no_wa":"6285411100012@c.us",
+        "deskripsi":"Trotoar di Teluk Pemedas tertutup akar pohon dan sulit dilalui pejalan kaki.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Yusuf Hidayat",
+        "no_wa":"6285411100013@c.us",
+        "deskripsi":"Saluran drainase di Muara Sembilang rusak sehingga air meluap ke badan jalan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Citra Lestari",
+        "no_wa":"6285411100014@c.us",
+        "deskripsi":"Beberapa tiang lampu jalan di Sungai Seluang terlihat miring dan perlu diperiksa.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Doni Saputra",
+        "no_wa":"6285411100015@c.us",
+        "deskripsi":"Permukaan jalan di Karya Jaya bergelombang dan membahayakan pengendara motor.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Anisa Rahma",
+        "no_wa":"6285411100016@c.us",
+        "deskripsi":"Bangku di taman kota rusak dan banyak papan kayunya yang patah.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rendi",
+        "no_wa":"6285411100017@c.us",
+        "deskripsi":"Jalan lingkungan di Margomulyo belum diaspal sehingga becek saat hujan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Tika Amelia",
+        "no_wa":"6285411100018@c.us",
+        "deskripsi":"Pintu saluran irigasi di Selili rusak dan tidak bisa ditutup dengan baik.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Hendra Wijaya",
+        "no_wa":"6285411100019@c.us",
+        "deskripsi":"Marka jalan di Wonotirto sudah pudar dan hampir tidak terlihat.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Bella",
+        "no_wa":"6285411100020@c.us",
+        "deskripsi":"Lampu lalu lintas di simpang Teluk Pemedas sering mati dan menyebabkan kemacetan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Arif Rahman",
+        "no_wa":"6285411100021@c.us",
+        "deskripsi":"Jalan menuju area perkebunan Muara Sembilang rusak parah dan sulit dilalui kendaraan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Novi",
+        "no_wa":"6285411100022@c.us",
+        "deskripsi":"Drainase di depan pertokoan Sungai Seluang amblas dan membahayakan pejalan kaki.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Jefri",
+        "no_wa":"6285411100023@c.us",
+        "deskripsi":"Jembatan penyeberangan warga di Karya Jaya mulai berkarat dan perlu perbaikan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Santi",
+        "no_wa":"6285411100024@c.us",
+        "deskripsi":"Atap balai warga bocor di banyak titik saat hujan deras.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rizal",
+        "no_wa":"6285411100025@c.us",
+        "deskripsi":"Jalan utama Margomulyo berlubang dan sering menyebabkan ban kendaraan pecah.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Meli",
+        "no_wa":"6285411100026@c.us",
+        "deskripsi":"Trotoar di Selili rusak dan tidak ramah bagi pengguna kursi roda.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Fikri",
+        "no_wa":"6285411100027@c.us",
+        "deskripsi":"Lampu taman di Wonotirto mati semua sehingga area menjadi gelap pada malam hari.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rina Oktavia",
+        "no_wa":"6285411100028@c.us",
+        "deskripsi":"Gorong-gorong di Teluk Pemedas rusak dan menyebabkan badan jalan amblas.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Kevin",
+        "no_wa":"6285411100029@c.us",
+        "deskripsi":"Jalan paving di Muara Sembilang banyak yang terangkat dan tidak rata.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Yuliana",
+        "no_wa":"6285411100030@c.us",
+        "deskripsi":"Tempat duduk di halte Sungai Seluang rusak dan tidak bisa digunakan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Galih",
+        "no_wa":"6285411100031@c.us",
+        "deskripsi":"Tiang listrik di Karya Jaya terlihat miring setelah hujan deras.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Ayu",
+        "no_wa":"6285411100032@c.us",
+        "deskripsi":"Jalan menuju sekolah di Margomulyo berlumpur karena belum dilakukan pengerasan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Dimas",
+        "no_wa":"6285411100033@c.us",
+        "deskripsi":"Pagar taman kota di Selili banyak yang patah dan hilang.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Sabrina",
+        "no_wa":"6285411100034@c.us",
+        "deskripsi":"Drainase di Wonotirto tersumbat karena konstruksinya rusak di beberapa titik.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Imam",
+        "no_wa":"6285411100035@c.us",
+        "deskripsi":"Jembatan penghubung antar RT di Teluk Pemedas sudah goyang saat dilalui.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Raka",
+        "no_wa":"6285411100036@c.us",
+        "deskripsi":"Lampu jalan di Muara Sembilang berkedip-kedip dan tidak memberikan penerangan maksimal.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Putri",
+        "no_wa":"6285411100037@c.us",
+        "deskripsi":"Bangunan pos ronda di Sungai Seluang mengalami kerusakan pada bagian atap.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Lukman",
+        "no_wa":"6285411100038@c.us",
+        "deskripsi":"Jalan beton di Karya Jaya pecah dan menimbulkan lubang cukup besar.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Nia",
+        "no_wa":"6285411100039@c.us",
+        "deskripsi":"Trotoar dekat pasar Margomulyo rusak dan membahayakan pejalan kaki lansia.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Teguh",
+        "no_wa":"6285411100040@c.us",
+        "deskripsi":"Drainase di Selili tidak memiliki penutup sehingga berisiko bagi pengguna jalan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Farhan",
+        "no_wa":"6285411100041@c.us",
+        "deskripsi":"Jalan lingkungan di Wonotirto mulai amblas setelah hujan beberapa hari terakhir.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rani",
+        "no_wa":"6285411100042@c.us",
+        "deskripsi":"Lampu penerangan di area taman Teluk Pemedas tidak menyala sama sekali.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Aldi",
+        "no_wa":"6285411100043@c.us",
+        "deskripsi":"Jembatan kecil di Muara Sembilang kehilangan beberapa papan lantainya.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Maya",
+        "no_wa":"6285411100044@c.us",
+        "deskripsi":"Halte angkutan umum di Sungai Seluang rusak akibat vandalisme.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Wahyudi",
+        "no_wa":"6285411100045@c.us",
+        "deskripsi":"Permukaan jalan di Karya Jaya retak memanjang dan semakin melebar.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rika",
+        "no_wa":"6285411100046@c.us",
+        "deskripsi":"Trotoar baru di Margomulyo sudah rusak padahal belum lama selesai dibangun.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Fauzi",
+        "no_wa":"6285411100047@c.us",
+        "deskripsi":"Saluran drainase di Selili ambruk dan menyebabkan sebagian jalan longsor.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Anwar",
+        "no_wa":"6285411100048@c.us",
+        "deskripsi":"Jalan menuju area pertanian Wonotirto rusak berat dan sulit dilalui kendaraan pengangkut hasil panen.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Cici",
+        "no_wa":"6285411100049@c.us",
+        "deskripsi":"Lampu jalan dekat sekolah Teluk Pemedas mati sehingga area menjadi gelap saat pagi buta.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rudi",
+        "no_wa":"6285411100050@c.us",
+        "deskripsi":"Gorong-gorong di Muara Sembilang tersumbat dan menyebabkan air melimpas ke permukiman.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Fahmi Ramadhan",
+        "no_wa":"6285512300001@c.us",
+        "deskripsi":"Jalan di depan kantor kelurahan Margomulyo banyak lubang kecil yang mulai membesar. Sudah beberapa motor hampir tergelincir.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Siti Aisyah",
+        "no_wa":"6285512300002@c.us",
+        "deskripsi":"Lampu jalan di RT 03 Selili mati total sejak minggu lalu dan belum ada perbaikan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rizal Maulana",
+        "no_wa":"6285512300003@c.us",
+        "deskripsi":"Jembatan beton menuju area persawahan Wonotirto mengalami retak di bagian pinggir.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Dewi Kartika",
+        "no_wa":"6285512300004@c.us",
+        "deskripsi":"Trotoar dekat puskesmas Teluk Pemedas rusak dan banyak bagian yang pecah.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Budi Santoso",
+        "no_wa":"6285512300005@c.us",
+        "deskripsi":"Drainase di Handil Baru Darat jebol sehingga air menggenangi jalan saat hujan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Nabila Putri",
+        "no_wa":"6285512300006@c.us",
+        "deskripsi":"Bangku taman di Muara Sembilang banyak yang rusak dan tidak bisa digunakan warga.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Andika Saputra",
+        "no_wa":"6285512300007@c.us",
+        "deskripsi":"Jalan paving di Sungai Seluang mulai bergelombang dan tidak nyaman dilalui.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Maya Lestari",
+        "no_wa":"6285512300008@c.us",
+        "deskripsi":"Lampu taman kota Karya Jaya tidak menyala sehingga area menjadi gelap saat malam.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Taufik Hidayat",
+        "no_wa":"6285512300009@c.us",
+        "deskripsi":"Gorong-gorong di Margomulyo amblas dan membuat badan jalan ikut turun.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rina Agustina",
+        "no_wa":"6285512300010@c.us",
+        "deskripsi":"Halte angkutan umum di Selili atapnya bocor dan banyak bagian yang berkarat.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Yoga Prasetyo",
+        "no_wa":"6285512300011@c.us",
+        "deskripsi":"Jalan menuju perkebunan Wonotirto rusak berat dan sulit dilewati mobil pickup.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Salsa Amelia",
+        "no_wa":"6285512300012@c.us",
+        "deskripsi":"Trotoar di sekitar pasar Teluk Pemedas dipenuhi lubang dan membahayakan pejalan kaki.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Kevin Saputra",
+        "no_wa":"6285512300013@c.us",
+        "deskripsi":"Tiang lampu jalan di Muara Sembilang terlihat miring setelah terkena angin kencang.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Aulia Rahman",
+        "no_wa":"6285512300014@c.us",
+        "deskripsi":"Jembatan kayu di Sungai Seluang sudah rapuh dan beberapa papan mulai lepas.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rudi Hartono",
+        "no_wa":"6285512300015@c.us",
+        "deskripsi":"Permukaan jalan di Karya Jaya retak memanjang hampir sepanjang 20 meter.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Lina Marlina",
+        "no_wa":"6285512300016@c.us",
+        "deskripsi":"Drainase dekat sekolah Margomulyo rusak dan tidak mampu mengalirkan air hujan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Farid Akbar",
+        "no_wa":"6285512300017@c.us",
+        "deskripsi":"Lampu penerangan jalan di Selili sering mati hidup sendiri pada malam hari.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Wulan Sari",
+        "no_wa":"6285512300018@c.us",
+        "deskripsi":"Pagar jembatan di Wonotirto hilang sebagian sehingga cukup berbahaya bagi pengguna jalan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Dimas Prakoso",
+        "no_wa":"6285512300019@c.us",
+        "deskripsi":"Jalan lingkungan Teluk Pemedas banyak kerikil lepas karena aspal mulai rusak.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Novi Yanti",
+        "no_wa":"6285512300020@c.us",
+        "deskripsi":"Bangunan pos ronda di Muara Sembilang mengalami kerusakan pada bagian dinding.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Raka Firmansyah",
+        "no_wa":"6285512300021@c.us",
+        "deskripsi":"Trotoar di Sungai Seluang tidak rata dan menyulitkan pengguna kursi roda.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Bella Kartika",
+        "no_wa":"6285512300022@c.us",
+        "deskripsi":"Lampu jalan di Karya Jaya tertutup ranting pohon sehingga penerangannya kurang maksimal.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Fauzan Hadi",
+        "no_wa":"6285512300023@c.us",
+        "deskripsi":"Jalan utama Margomulyo mulai amblas di tepi akibat erosi drainase.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Sabrina Putri",
+        "no_wa":"6285512300024@c.us",
+        "deskripsi":"Atap aula warga Selili bocor cukup parah saat hujan deras.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Yusuf Maulana",
+        "no_wa":"6285512300025@c.us",
+        "deskripsi":"Gorong-gorong di Wonotirto tersumbat karena konstruksinya sudah rusak.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Anita Sari",
+        "no_wa":"6285512300026@c.us",
+        "deskripsi":"Halte dekat pasar Teluk Pemedas sudah kusam dan banyak bagian yang patah.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Galih Ramadhan",
+        "no_wa":"6285512300027@c.us",
+        "deskripsi":"Jembatan kecil di Muara Sembilang bergoyang saat dilewati kendaraan roda dua.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Teguh Prasetyo",
+        "no_wa":"6285512300028@c.us",
+        "deskripsi":"Drainase di Sungai Seluang tidak memiliki penutup sehingga rawan kecelakaan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Ayu Lestari",
+        "no_wa":"6285512300029@c.us",
+        "deskripsi":"Lampu jalan di Karya Jaya mati setelah hujan deras semalam.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rian Saputra",
+        "no_wa":"6285512300030@c.us",
+        "deskripsi":"Permukaan jalan Margomulyo bergelombang dan membuat kendaraan sulit dikendalikan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Meli Anggraini",
+        "no_wa":"6285512300031@c.us",
+        "deskripsi":"Trotoar Selili rusak karena sering dilalui kendaraan bermotor.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Joko Susilo",
+        "no_wa":"6285512300032@c.us",
+        "deskripsi":"Tiang penerangan jalan di Wonotirto terlihat berkarat dan perlu diganti.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Nanda Permata",
+        "no_wa":"6285512300033@c.us",
+        "deskripsi":"Jalan menuju sekolah Teluk Pemedas masih berupa tanah dan sangat becek saat hujan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Arman Hakim",
+        "no_wa":"6285512300034@c.us",
+        "deskripsi":"Bangunan toilet umum di Muara Sembilang mengalami kerusakan pada pintu dan atap.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rika Amelia",
+        "no_wa":"6285512300035@c.us",
+        "deskripsi":"Jembatan penyeberangan di Sungai Seluang mulai retak di bagian lantainya.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Bagas Setiawan",
+        "no_wa":"6285512300036@c.us",
+        "deskripsi":"Drainase Karya Jaya ambruk di beberapa titik sehingga perlu perbaikan segera.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Dewi Sartika",
+        "no_wa":"6285512300037@c.us",
+        "deskripsi":"Lampu jalan Margomulyo redup sehingga penerangan tidak maksimal.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Hafiz Ramadhan",
+        "no_wa":"6285512300038@c.us",
+        "deskripsi":"Trotoar Selili banyak yang pecah akibat akar pohon besar.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Putra Damanik",
+        "no_wa":"6285512300039@c.us",
+        "deskripsi":"Jalan lingkungan Wonotirto rusak setelah sering dilalui kendaraan berat.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Cici Amelia",
+        "no_wa":"6285512300040@c.us",
+        "deskripsi":"Halte di Teluk Pemedas tidak memiliki lampu sehingga gelap saat malam hari.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Indra Kesuma",
+        "no_wa":"6285512300041@c.us",
+        "deskripsi":"Gorong-gorong Muara Sembilang pecah dan membuat jalan di atasnya retak.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Olga Dwiyanti",
+        "no_wa":"6285512300042@c.us",
+        "deskripsi":"Pagar taman Sungai Seluang banyak yang hilang dan perlu dipasang kembali.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Kurniawan Adi",
+        "no_wa":"6285512300043@c.us",
+        "deskripsi":"Lampu penerangan di area olahraga Karya Jaya tidak berfungsi sejak lama.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Maria Ulfa",
+        "no_wa":"6285512300044@c.us",
+        "deskripsi":"Jalan utama Margomulyo dipenuhi tambalan aspal yang sudah mulai rusak kembali.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Jihan Pratiwi",
+        "no_wa":"6285512300045@c.us",
+        "deskripsi":"Drainase Selili terlalu dangkal sehingga air mudah meluap ke permukiman.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Heni Rahmawati",
+        "no_wa":"6285512300046@c.us",
+        "deskripsi":"Jembatan kecil Wonotirto kehilangan baut pengaman di beberapa bagian.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Gilang Pramudya",
+        "no_wa":"6285512300047@c.us",
+        "deskripsi":"Trotoar Teluk Pemedas tertutup material bangunan dan rusak di beberapa titik.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Winda Ayu",
+        "no_wa":"6285512300048@c.us",
+        "deskripsi":"Tiang lampu di Muara Sembilang miring cukup parah dan dikhawatirkan roboh.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Eka Septiani",
+        "no_wa":"6285512300049@c.us",
+        "deskripsi":"Jalan paving Sungai Seluang banyak yang terangkat akibat akar pohon.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Fajar Kustanto",
+        "no_wa":"6285512300050@c.us",
+        "deskripsi":"Bangunan balai warga Karya Jaya mengalami keretakan pada beberapa dinding utama.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Ahmad Rizki",
+        "no_wa":"6285613400001@c.us",
+        "deskripsi":"Jalan di RT 05 Margomulyo banyak lubang kecil yang semakin melebar setiap kali hujan turun.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Siti Nurhaliza",
+        "no_wa":"6285613400002@c.us",
+        "deskripsi":"Lampu jalan dekat masjid Selili mati sudah hampir satu bulan dan belum ada perbaikan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Bambang Supriadi",
+        "no_wa":"6285613400003@c.us",
+        "deskripsi":"Jembatan penghubung antar RT di Wonotirto mulai retak pada bagian lantainya.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Dewi Anggraeni",
+        "no_wa":"6285613400004@c.us",
+        "deskripsi":"Trotoar depan pasar Teluk Pemedas pecah dan menyulitkan warga yang berjalan kaki.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rian Saputra",
+        "no_wa":"6285613400005@c.us",
+        "deskripsi":"Drainase di Muara Sembilang ambruk sehingga sebagian badan jalan ikut longsor.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Maya Lestari",
+        "no_wa":"6285613400006@c.us",
+        "deskripsi":"Bangku taman di Sungai Seluang banyak yang patah dan belum diganti.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Taufik Hidayat",
+        "no_wa":"6285613400007@c.us",
+        "deskripsi":"Jalan paving di Karya Jaya tidak rata dan sering membuat pengendara kehilangan keseimbangan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Anisa Rahma",
+        "no_wa":"6285613400008@c.us",
+        "deskripsi":"Lampu taman kota Margomulyo mati semua sejak minggu lalu.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Doni Prasetyo",
+        "no_wa":"6285613400009@c.us",
+        "deskripsi":"Gorong-gorong di Selili rusak sehingga air meluap ke jalan saat hujan deras.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Wulan Sari",
+        "no_wa":"6285613400010@c.us",
+        "deskripsi":"Atap halte di Wonotirto bocor cukup parah dan tidak nyaman digunakan warga.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Farhan Akbar",
+        "no_wa":"6285613400011@c.us",
+        "deskripsi":"Jalan menuju area kebun Teluk Pemedas rusak berat dan sulit dilalui kendaraan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Bella Kartika",
+        "no_wa":"6285613400012@c.us",
+        "deskripsi":"Trotoar dekat sekolah Muara Sembilang banyak yang ambles.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Galih Ramadhan",
+        "no_wa":"6285613400013@c.us",
+        "deskripsi":"Tiang lampu jalan di Sungai Seluang terlihat miring setelah hujan deras.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Lina Marlina",
+        "no_wa":"6285613400014@c.us",
+        "deskripsi":"Jembatan kayu menuju area pertanian Karya Jaya sudah lapuk dan perlu diganti.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Raka Firmansyah",
+        "no_wa":"6285613400015@c.us",
+        "deskripsi":"Permukaan jalan Margomulyo bergelombang dan cukup berbahaya saat malam hari.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Novi Yanti",
+        "no_wa":"6285613400016@c.us",
+        "deskripsi":"Drainase depan rumah warga di Selili pecah dan menimbulkan lubang besar.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Yoga Pratama",
+        "no_wa":"6285613400017@c.us",
+        "deskripsi":"Lampu penerangan jalan di Wonotirto sering padam meskipun cuaca normal.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Salsa Amelia",
+        "no_wa":"6285613400018@c.us",
+        "deskripsi":"Pagar pembatas jembatan di Teluk Pemedas hilang pada beberapa bagian.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Kevin Saputra",
+        "no_wa":"6285613400019@c.us",
+        "deskripsi":"Jalan lingkungan Muara Sembilang banyak retakan memanjang yang semakin membesar.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Ayu Lestari",
+        "no_wa":"6285613400020@c.us",
+        "deskripsi":"Bangunan pos ronda Sungai Seluang mengalami kerusakan pada atap dan dinding.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Fikri Ramadhan",
+        "no_wa":"6285613400021@c.us",
+        "deskripsi":"Trotoar Karya Jaya rusak akibat akar pohon yang tumbuh di bawahnya.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rina Oktavia",
+        "no_wa":"6285613400022@c.us",
+        "deskripsi":"Lampu jalan utama Margomulyo redup dan tidak cukup menerangi jalan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Teguh Prasetyo",
+        "no_wa":"6285613400023@c.us",
+        "deskripsi":"Jalan di Selili amblas di salah satu sisi setelah hujan beberapa hari.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Putri Maharani",
+        "no_wa":"6285613400024@c.us",
+        "deskripsi":"Halte bus di Wonotirto terlihat miring dan perlu diperiksa strukturnya.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Bagus Setiawan",
+        "no_wa":"6285613400025@c.us",
+        "deskripsi":"Drainase di Teluk Pemedas tidak memiliki penutup sehingga membahayakan pejalan kaki.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Dimas Prakoso",
+        "no_wa":"6285613400026@c.us",
+        "deskripsi":"Jembatan kecil Muara Sembilang bergetar cukup kuat saat dilewati motor.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Sabrina Putri",
+        "no_wa":"6285613400027@c.us",
+        "deskripsi":"Lampu taman di Sungai Seluang tidak pernah menyala sejak dipasang.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Arman Hakim",
+        "no_wa":"6285613400028@c.us",
+        "deskripsi":"Jalan beton Karya Jaya mulai pecah di beberapa titik dan perlu perbaikan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Nanda Permata",
+        "no_wa":"6285613400029@c.us",
+        "deskripsi":"Trotoar Margomulyo licin karena beberapa ubin sudah terlepas.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Hafiz Ramadhan",
+        "no_wa":"6285613400030@c.us",
+        "deskripsi":"Tiang penerangan di Selili berkarat cukup parah pada bagian bawah.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Olga Dwiyanti",
+        "no_wa":"6285613400031@c.us",
+        "deskripsi":"Jalan menuju area pertanian Wonotirto belum pernah diperbaiki dan kondisinya sangat rusak.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Joko Susilo",
+        "no_wa":"6285613400032@c.us",
+        "deskripsi":"Drainase Teluk Pemedas tersumbat karena konstruksinya mulai runtuh.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rizal Hidayat",
+        "no_wa":"6285613400033@c.us",
+        "deskripsi":"Lampu jalan di Muara Sembilang berkedip-kedip dan tidak stabil.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Maria Ulfa",
+        "no_wa":"6285613400034@c.us",
+        "deskripsi":"Jembatan Sungai Seluang kehilangan beberapa baut pengaman pada bagian pagar.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Winda Ayu",
+        "no_wa":"6285613400035@c.us",
+        "deskripsi":"Jalan paving Karya Jaya terangkat akibat akar pohon besar.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Kurniawan Adi",
+        "no_wa":"6285613400036@c.us",
+        "deskripsi":"Bangunan aula warga Margomulyo mengalami keretakan pada beberapa dinding.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Jihan Pratiwi",
+        "no_wa":"6285613400037@c.us",
+        "deskripsi":"Trotoar Selili banyak yang pecah sehingga membahayakan lansia.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Heni Rahmawati",
+        "no_wa":"6285613400038@c.us",
+        "deskripsi":"Lampu jalan Wonotirto tertutup ranting pohon sehingga penerangan kurang maksimal.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Gilang Pramudya",
+        "no_wa":"6285613400039@c.us",
+        "deskripsi":"Jalan utama Teluk Pemedas dipenuhi tambalan aspal yang mulai rusak kembali.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Eka Septiani",
+        "no_wa":"6285613400040@c.us",
+        "deskripsi":"Drainase Muara Sembilang terlalu dangkal sehingga air mudah meluap.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Fajar Kustanto",
+        "no_wa":"6285613400041@c.us",
+        "deskripsi":"Pagar taman Sungai Seluang rusak akibat usia dan belum diperbaiki.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Indra Kesuma",
+        "no_wa":"6285613400042@c.us",
+        "deskripsi":"Lampu area olahraga Karya Jaya tidak menyala sehingga warga kesulitan beraktivitas malam.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Mamik",
+        "no_wa":"6285613400043@c.us",
+        "deskripsi":"Jalan Margomulyo mulai retak di tengah dan terlihat semakin melebar.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rudy Hartono",
+        "no_wa":"6285613400044@c.us",
+        "deskripsi":"Drainase Selili ambruk setelah hujan deras dan menyebabkan jalan ikut rusak.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Santi Wulan",
+        "no_wa":"6285613400045@c.us",
+        "deskripsi":"Jembatan Wonotirto sudah goyang ketika dilewati lebih dari dua motor.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Pak Budi",
+        "no_wa":"6285613400046@c.us",
+        "deskripsi":"Lampu jalan Teluk Pemedas mati total dari ujung gang sampai jalan utama.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Ibu Lina",
+        "no_wa":"6285613400047@c.us",
+        "deskripsi":"Trotoar dekat pasar Muara Sembilang rusak dan sering membuat orang tersandung.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Mas Dika",
+        "no_wa":"6285613400048@c.us",
+        "deskripsi":"Jalan Sungai Seluang banyak lubang dan tergenang sehingga tidak terlihat pengendara.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Yoga Nugraha",
+        "no_wa":"6285613400049@c.us",
+        "deskripsi":"Drainase Karya Jaya pecah di beberapa titik dan membutuhkan perbaikan segera.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rani Amelia",
+        "no_wa":"6285613400050@c.us",
+        "deskripsi":"Balai warga Margomulyo mengalami kebocoran pada bagian atap saat hujan deras.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Aldi Pranata",
+        "no_wa":"6285724500001@c.us",
+        "deskripsi":"Jalan beton di RT 02 Margomulyo retak cukup panjang dan mulai mengelupas di beberapa bagian.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Nur Aini",
+        "no_wa":"6285724500002@c.us",
+        "deskripsi":"Lampu jalan dekat lapangan Selili mati sejak dua minggu lalu dan area jadi gelap gulita.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rahmat Hidayat",
+        "no_wa":"6285724500003@c.us",
+        "deskripsi":"Jembatan kecil menuju kebun warga Wonotirto sudah mulai miring dan perlu dicek.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Yulia Sari",
+        "no_wa":"6285724500004@c.us",
+        "deskripsi":"Trotoar depan pertokoan Teluk Pemedas rusak dan banyak ubin yang terangkat.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Beni Saputra",
+        "no_wa":"6285724500005@c.us",
+        "deskripsi":"Drainase di Muara Sembilang pecah sehingga air meluap ke jalan saat hujan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Cici Ramadhani",
+        "no_wa":"6285724500006@c.us",
+        "deskripsi":"Bangku taman di Sungai Seluang banyak yang lapuk dan tidak aman digunakan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Darmawan",
+        "no_wa":"6285724500007@c.us",
+        "deskripsi":"Jalan lingkungan Karya Jaya berlubang cukup dalam dan sering membuat ban motor selip.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Lia Amelia",
+        "no_wa":"6285724500008@c.us",
+        "deskripsi":"Lampu penerangan taman Margomulyo tidak menyala sejak bulan lalu.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Robby Kurniawan",
+        "no_wa":"6285724500009@c.us",
+        "deskripsi":"Gorong-gorong di Selili amblas sehingga membuat sebagian badan jalan turun.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Mira Oktaviani",
+        "no_wa":"6285724500010@c.us",
+        "deskripsi":"Atap halte Wonotirto bocor dan membuat penumpang kehujanan saat menunggu.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rian Firmansyah",
+        "no_wa":"6285724500011@c.us",
+        "deskripsi":"Jalan menuju area pertanian Teluk Pemedas rusak berat dan sulit dilalui kendaraan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Siska Lestari",
+        "no_wa":"6285724500012@c.us",
+        "deskripsi":"Trotoar dekat sekolah Muara Sembilang banyak yang pecah dan berlubang.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Fauzan Ardiansyah",
+        "no_wa":"6285724500013@c.us",
+        "deskripsi":"Tiang lampu jalan di Sungai Seluang terlihat miring setelah tertabrak kendaraan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Nina Maharani",
+        "no_wa":"6285724500014@c.us",
+        "deskripsi":"Jembatan kayu Karya Jaya sudah rapuh dan mengeluarkan bunyi saat dilalui.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Agung Saputra",
+        "no_wa":"6285724500015@c.us",
+        "deskripsi":"Permukaan jalan Margomulyo tidak rata dan banyak gelombang yang membahayakan pengendara.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Dewi Puspita",
+        "no_wa":"6285724500016@c.us",
+        "deskripsi":"Drainase depan rumah warga Selili ambruk dan meninggalkan lubang besar.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Iqbal Maulana",
+        "no_wa":"6285724500017@c.us",
+        "deskripsi":"Lampu jalan di Wonotirto sering mati saat malam sehingga jalan sangat gelap.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rika Andini",
+        "no_wa":"6285724500018@c.us",
+        "deskripsi":"Pagar pengaman jembatan Teluk Pemedas rusak akibat usia dan belum diperbaiki.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Hendra Kurnia",
+        "no_wa":"6285724500019@c.us",
+        "deskripsi":"Jalan lingkungan Muara Sembilang banyak retakan dan mulai amblas di pinggir.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Novianti",
+        "no_wa":"6285724500020@c.us",
+        "deskripsi":"Bangunan pos ronda Sungai Seluang bocor saat hujan deras.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Yusuf Pratama",
+        "no_wa":"6285724500021@c.us",
+        "deskripsi":"Trotoar Karya Jaya rusak dan tertutup akar pohon yang mencuat ke atas.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Anita Rahma",
+        "no_wa":"6285724500022@c.us",
+        "deskripsi":"Lampu jalan utama Margomulyo redup sehingga jarak pandang pengendara berkurang.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rendi Saputra",
+        "no_wa":"6285724500023@c.us",
+        "deskripsi":"Jalan Selili mulai amblas di dekat saluran drainase yang rusak.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Tika Wulandari",
+        "no_wa":"6285724500024@c.us",
+        "deskripsi":"Halte warga di Wonotirto terlihat miring dan perlu renovasi.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Bagas Prakoso",
+        "no_wa":"6285724500025@c.us",
+        "deskripsi":"Drainase Teluk Pemedas tidak memiliki penutup dan cukup berbahaya bagi pejalan kaki.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Putri Amelia",
+        "no_wa":"6285724500026@c.us",
+        "deskripsi":"Jembatan kecil Muara Sembilang mengalami keretakan pada bagian sambungan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rizal Fadillah",
+        "no_wa":"6285724500027@c.us",
+        "deskripsi":"Lampu taman Sungai Seluang tidak pernah menyala sejak dipasang.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Santi Marlina",
+        "no_wa":"6285724500028@c.us",
+        "deskripsi":"Jalan beton Karya Jaya mulai pecah dan berlubang di beberapa titik.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Andika Nugraha",
+        "no_wa":"6285724500029@c.us",
+        "deskripsi":"Trotoar Margomulyo licin karena banyak paving yang terlepas.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Meli Yuliana",
+        "no_wa":"6285724500030@c.us",
+        "deskripsi":"Tiang penerangan jalan Selili berkarat dan terlihat rapuh.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Fikri Akbar",
+        "no_wa":"6285724500031@c.us",
+        "deskripsi":"Jalan menuju kebun di Wonotirto rusak dan berlumpur setelah hujan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rani Kartika",
+        "no_wa":"6285724500032@c.us",
+        "deskripsi":"Drainase Teluk Pemedas tersumbat karena konstruksi dindingnya runtuh.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Jefri Wijaya",
+        "no_wa":"6285724500033@c.us",
+        "deskripsi":"Lampu jalan Muara Sembilang sering berkedip dan tidak stabil.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Nadia Putri",
+        "no_wa":"6285724500034@c.us",
+        "deskripsi":"Jembatan Sungai Seluang kehilangan beberapa papan lantai di bagian tengah.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Ardi Pranata",
+        "no_wa":"6285724500035@c.us",
+        "deskripsi":"Jalan paving Karya Jaya banyak yang terangkat akibat akar pohon besar.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Lukman Hakim",
+        "no_wa":"6285724500036@c.us",
+        "deskripsi":"Bangunan aula warga Margomulyo mengalami retak pada bagian dinding depan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Cahya Permata",
+        "no_wa":"6285724500037@c.us",
+        "deskripsi":"Trotoar Selili rusak dan membahayakan warga lanjut usia yang melintas.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Reza Pratama",
+        "no_wa":"6285724500038@c.us",
+        "deskripsi":"Lampu jalan Wonotirto tertutup pohon sehingga penerangannya tidak maksimal.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Winda Lestari",
+        "no_wa":"6285724500039@c.us",
+        "deskripsi":"Jalan utama Teluk Pemedas dipenuhi tambalan aspal yang sudah mulai rusak lagi.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Dian Safitri",
+        "no_wa":"6285724500040@c.us",
+        "deskripsi":"Drainase Muara Sembilang terlalu dangkal sehingga air sering meluap.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Bima Saputra",
+        "no_wa":"6285724500041@c.us",
+        "deskripsi":"Pagar taman Sungai Seluang banyak yang lepas dan perlu diperbaiki.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rossa Amelia",
+        "no_wa":"6285724500042@c.us",
+        "deskripsi":"Lampu lapangan olahraga Karya Jaya mati sehingga aktivitas malam terganggu.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Toni Hartono",
+        "no_wa":"6285724500043@c.us",
+        "deskripsi":"Jalan Margomulyo mengalami retak memanjang hampir sepanjang 15 meter.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Nabila Zahra",
+        "no_wa":"6285724500044@c.us",
+        "deskripsi":"Drainase Selili rusak dan menyebabkan genangan di permukiman sekitar.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Asep Kurniawan",
+        "no_wa":"6285724500045@c.us",
+        "deskripsi":"Jembatan Wonotirto bergoyang cukup kuat saat dilalui kendaraan roda dua.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Vina Oktavia",
+        "no_wa":"6285724500046@c.us",
+        "deskripsi":"Lampu jalan Teluk Pemedas mati total di sepanjang gang utama.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Daffa Ramadhan",
+        "no_wa":"6285724500047@c.us",
+        "deskripsi":"Trotoar dekat pasar Muara Sembilang rusak dan membuat warga sering tersandung.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Rudy Setiawan",
+        "no_wa":"6285724500048@c.us",
+        "deskripsi":"Jalan Sungai Seluang berlubang dan tertutup genangan sehingga sulit terlihat.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Elsa Maharani",
+        "no_wa":"6285724500049@c.us",
+        "deskripsi":"Drainase Karya Jaya pecah dan membutuhkan perbaikan segera sebelum musim hujan.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
+        "nama":"Feri Hidayat",
+        "no_wa":"6285724500050@c.us",
+        "deskripsi":"Balai warga Margomulyo mengalami kebocoran di beberapa titik atap.",
+        "Kategori":"INFRASTRUKTUR"
+    },
+    {
         "nama":"Cindy O.",
         "no_wa":"6285710100006@c.us",
         "deskripsi":"Jalan di Karya Jaya di depan gerbang perumahan banyak lubang kecil yang mulai membesar. Rawan kecelakaan di malam hari.",
@@ -1662,6 +4060,1206 @@
         "Kategori":"PELAYANAN"
     },
     {
+        "nama":"Andi Pratama",
+        "no_wa":"6285213300001@c.us",
+        "deskripsi":"Min, saya sudah urus surat domisili dari minggu lalu tapi sampai sekarang belum ada kabar. Mohon dibantu dicek.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Siti Rahma",
+        "no_wa":"6285213300002@c.us",
+        "deskripsi":"Pelayanan di kantor kecamatan hari ini cukup lama. Saya antre hampir dua jam untuk legalisir dokumen.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Budi Santoso",
+        "no_wa":"6285213300003@c.us",
+        "deskripsi":"Saya ingin membuat surat keterangan usaha, tapi kurang jelas informasi persyaratannya.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Nina Amelia",
+        "no_wa":"6285213300004@c.us",
+        "deskripsi":"Petugas loket tidak berada di tempat saat jam pelayanan. Warga jadi menunggu cukup lama.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Rian Saputra",
+        "no_wa":"6285213300005@c.us",
+        "deskripsi":"Mohon informasi jadwal pelayanan pembuatan KTP karena saya belum menemukan pengumumannya.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Lina Marlina",
+        "no_wa":"6285213300006@c.us",
+        "deskripsi":"Saya mengurus surat pindah penduduk tetapi prosesnya cukup lambat. Mohon ditindaklanjuti.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Yoga Prasetyo",
+        "no_wa":"6285213300007@c.us",
+        "deskripsi":"Website pelayanan kecamatan tidak bisa diakses sejak kemarin sehingga saya kesulitan mengajukan permohonan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Dewi Anggraini",
+        "no_wa":"6285213300008@c.us",
+        "deskripsi":"Saya sudah menyerahkan berkas legalisir KK namun belum ada informasi kapan bisa diambil.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Fajar Nugroho",
+        "no_wa":"6285213300009@c.us",
+        "deskripsi":"Nomor antrean pelayanan sangat penuh hari ini. Mohon ada penambahan loket pelayanan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Maya Putri",
+        "no_wa":"6285213300010@c.us",
+        "deskripsi":"Saya ingin mengurus surat pengantar nikah tetapi kurang memahami prosedurnya.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Ridwan Hakim",
+        "no_wa":"6285213300011@c.us",
+        "deskripsi":"Petugas pelayanan sangat membantu dan ramah saat saya mengurus dokumen kependudukan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Rika Lestari",
+        "no_wa":"6285213300012@c.us",
+        "deskripsi":"Sudah tiga hari saya mencoba menghubungi nomor pelayanan namun belum ada respons.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Aldi Firmansyah",
+        "no_wa":"6285213300013@c.us",
+        "deskripsi":"Mohon informasi status pengajuan surat keterangan domisili atas nama saya.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Salsa Putri",
+        "no_wa":"6285213300014@c.us",
+        "deskripsi":"Pelayanan administrasi hari ini berjalan lambat karena sistem komputer sering error.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Rudi Hartono",
+        "no_wa":"6285213300015@c.us",
+        "deskripsi":"Saya kesulitan mendapatkan informasi syarat pembuatan kartu keluarga baru.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Novianti",
+        "no_wa":"6285213300016@c.us",
+        "deskripsi":"Ruang tunggu pelayanan cukup panas dan kursi yang tersedia tidak mencukupi.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Hendra Wijaya",
+        "no_wa":"6285213300017@c.us",
+        "deskripsi":"Pengajuan surat kehilangan yang saya ajukan belum diproses sejak minggu lalu.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Citra Ayu",
+        "no_wa":"6285213300018@c.us",
+        "deskripsi":"Mohon adanya pelayanan online yang lebih mudah karena tidak semua warga bisa datang langsung.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Bagus Saputra",
+        "no_wa":"6285213300019@c.us",
+        "deskripsi":"Petugas loket memberikan informasi yang berbeda-beda terkait persyaratan dokumen.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Nurhayati",
+        "no_wa":"6285213300020@c.us",
+        "deskripsi":"Saya ingin menanyakan jadwal pelayanan khusus untuk warga lanjut usia.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Arif Rahman",
+        "no_wa":"6285213300021@c.us",
+        "deskripsi":"Proses legalisir ijazah membutuhkan waktu lebih lama dari yang diinformasikan sebelumnya.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Yuliana",
+        "no_wa":"6285213300022@c.us",
+        "deskripsi":"Saya sudah mengunggah berkas secara online tetapi statusnya belum berubah sampai sekarang.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Rama Prakoso",
+        "no_wa":"6285213300023@c.us",
+        "deskripsi":"Mohon penambahan petugas saat jam sibuk karena antrean sangat panjang.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Wulan Sari",
+        "no_wa":"6285213300024@c.us",
+        "deskripsi":"Petugas sangat sopan dan membantu saat menjelaskan prosedur pengurusan surat usaha.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Teguh",
+        "no_wa":"6285213300025@c.us",
+        "deskripsi":"Mesin pencetak nomor antrean tidak berfungsi sehingga warga kebingungan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Mira",
+        "no_wa":"6285213300026@c.us",
+        "deskripsi":"Saya ingin mengurus perubahan data KK tetapi belum tahu dokumen apa saja yang harus dibawa.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Doni Saputra",
+        "no_wa":"6285213300027@c.us",
+        "deskripsi":"Pengajuan surat rekomendasi yang saya ajukan belum mendapatkan persetujuan sampai saat ini.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Lukman Hakim",
+        "no_wa":"6285213300028@c.us",
+        "deskripsi":"Aplikasi pelayanan online sering logout sendiri saat digunakan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Putri Maharani",
+        "no_wa":"6285213300029@c.us",
+        "deskripsi":"Saya harus bolak-balik karena ada persyaratan tambahan yang tidak diinformasikan sebelumnya.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Fikri Ramadhan",
+        "no_wa":"6285213300030@c.us",
+        "deskripsi":"Mohon informasi apakah pengambilan dokumen bisa diwakilkan oleh anggota keluarga.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Reni Anggraini",
+        "no_wa":"6285213300031@c.us",
+        "deskripsi":"Pelayanan hari ini cukup cepat dan teratur. Terima kasih kepada petugas yang bertugas.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Agus Setiawan",
+        "no_wa":"6285213300032@c.us",
+        "deskripsi":"Saya belum menerima SMS pemberitahuan terkait dokumen yang sudah selesai diproses.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Dina Lestari",
+        "no_wa":"6285213300033@c.us",
+        "deskripsi":"Petunjuk alur pelayanan di kantor kurang jelas sehingga warga sering salah antre.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Ilham",
+        "no_wa":"6285213300034@c.us",
+        "deskripsi":"Mohon update status pengajuan surat keterangan belum menikah yang saya ajukan minggu lalu.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Ayu Wulandari",
+        "no_wa":"6285213300035@c.us",
+        "deskripsi":"Saya mengalami kesulitan mengunggah dokumen pada portal pelayanan online.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Rizky",
+        "no_wa":"6285213300036@c.us",
+        "deskripsi":"Antrean pelayanan administrasi kependudukan sangat panjang sejak pagi.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Bella",
+        "no_wa":"6285213300037@c.us",
+        "deskripsi":"Mohon ada papan informasi yang lebih lengkap mengenai jenis-jenis layanan yang tersedia.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Fauzan",
+        "no_wa":"6285213300038@c.us",
+        "deskripsi":"Saya sudah mengajukan surat keterangan usaha tetapi belum mendapatkan nomor registrasi.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Nanda",
+        "no_wa":"6285213300039@c.us",
+        "deskripsi":"Petugas pelayanan datang terlambat sehingga antrean warga menumpuk.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Reza",
+        "no_wa":"6285213300040@c.us",
+        "deskripsi":"Mohon dibuatkan layanan konsultasi melalui WhatsApp agar warga lebih mudah bertanya.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Tika",
+        "no_wa":"6285213300041@c.us",
+        "deskripsi":"Saya belum menerima hasil pengajuan surat domisili padahal sudah lebih dari lima hari kerja.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Rendy",
+        "no_wa":"6285213300042@c.us",
+        "deskripsi":"Server pelayanan online sering lambat saat jam kerja sehingga proses pengajuan terhambat.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Yusuf",
+        "no_wa":"6285213300043@c.us",
+        "deskripsi":"Mohon informasi biaya resmi untuk legalisir dokumen agar tidak terjadi kesalahpahaman.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Meli",
+        "no_wa":"6285213300044@c.us",
+        "deskripsi":"Petugas sangat komunikatif dalam menjelaskan prosedur pengurusan surat pindah.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Jefri",
+        "no_wa":"6285213300045@c.us",
+        "deskripsi":"Saya salah mengisi data pengajuan online dan ingin mengetahui cara memperbaikinya.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Nia",
+        "no_wa":"6285213300046@c.us",
+        "deskripsi":"Ruang pelayanan terlihat penuh dan kurang nyaman saat banyak warga datang bersamaan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Raka",
+        "no_wa":"6285213300047@c.us",
+        "deskripsi":"Mohon percepatan proses verifikasi berkas karena sudah menunggu cukup lama.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Sabrina",
+        "no_wa":"6285213300048@c.us",
+        "deskripsi":"Informasi jam operasional pelayanan di media sosial berbeda dengan yang ada di kantor.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Dimas",
+        "no_wa":"6285213300049@c.us",
+        "deskripsi":"Saya ingin mengetahui apakah pengajuan surat bisa dilakukan sepenuhnya secara online.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Anisa Putri",
+        "no_wa":"6285213300050@c.us",
+        "deskripsi":"Terima kasih, dokumen yang saya urus selesai lebih cepat dari perkiraan dan pelayanannya sangat baik.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Farhan Akbar",
+        "no_wa":"6285224400001@c.us",
+        "deskripsi":"Min, saya sudah ajukan surat keterangan domisili dari awal minggu tapi statusnya masih belum berubah.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Nabila Putri",
+        "no_wa":"6285224400002@c.us",
+        "deskripsi":"Informasi syarat pembuatan surat usaha di website kurang lengkap. Mohon diperbarui.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Dani Prasetyo",
+        "no_wa":"6285224400003@c.us",
+        "deskripsi":"Saya antre cukup lama untuk mengurus legalisir dokumen karena hanya satu loket yang buka.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Rina Oktavia",
+        "no_wa":"6285224400004@c.us",
+        "deskripsi":"Petugas pelayanan sangat membantu menjelaskan proses pengurusan KK baru. Terima kasih.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Bambang Setiawan",
+        "no_wa":"6285224400005@c.us",
+        "deskripsi":"Nomor WhatsApp pelayanan sulit dihubungi sejak kemarin. Saya ingin menanyakan status berkas.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Mira Anggraini",
+        "no_wa":"6285224400006@c.us",
+        "deskripsi":"Mohon informasi apakah pengambilan dokumen bisa dilakukan di luar jam kerja.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Yoga Saputra",
+        "no_wa":"6285224400007@c.us",
+        "deskripsi":"Aplikasi pelayanan online sering gagal saat unggah berkas pendukung.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Cici Amelia",
+        "no_wa":"6285224400008@c.us",
+        "deskripsi":"Saya harus datang dua kali karena ada persyaratan tambahan yang sebelumnya tidak dijelaskan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Ardiansyah",
+        "no_wa":"6285224400009@c.us",
+        "deskripsi":"Mohon ada papan petunjuk yang lebih jelas agar warga tidak bingung saat antre.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Siska Rahma",
+        "no_wa":"6285224400010@c.us",
+        "deskripsi":"Proses verifikasi surat pindah penduduk terasa cukup lama dibanding informasi yang diberikan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Rizal Hidayat",
+        "no_wa":"6285224400011@c.us",
+        "deskripsi":"Terima kasih kepada petugas yang ramah dan cepat membantu pengurusan administrasi saya.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Dewi Lestari",
+        "no_wa":"6285224400012@c.us",
+        "deskripsi":"Ruang tunggu pelayanan penuh dan kursi yang tersedia tidak cukup untuk warga.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Andika",
+        "no_wa":"6285224400013@c.us",
+        "deskripsi":"Saya ingin mengetahui apakah surat keterangan usaha sudah selesai diproses.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Lukman Hakim",
+        "no_wa":"6285224400014@c.us",
+        "deskripsi":"Pelayanan cukup baik, namun antrean pada pagi hari sangat panjang.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Putri Maharani",
+        "no_wa":"6285224400015@c.us",
+        "deskripsi":"Website pelayanan tidak bisa dibuka sejak tadi pagi sehingga saya tidak dapat mengajukan permohonan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Fauzan",
+        "no_wa":"6285224400016@c.us",
+        "deskripsi":"Mohon informasi terkait jadwal pelayanan khusus pada hari Sabtu.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Yuliana",
+        "no_wa":"6285224400017@c.us",
+        "deskripsi":"Saya belum menerima notifikasi terkait hasil pengajuan surat yang sudah disetujui.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Rama Prakoso",
+        "no_wa":"6285224400018@c.us",
+        "deskripsi":"Petugas loket sedang tidak berada di tempat saat jam pelayanan berlangsung.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Novi",
+        "no_wa":"6285224400019@c.us",
+        "deskripsi":"Mohon ditambahkan layanan konsultasi online untuk memudahkan warga bertanya.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Agus Setiawan",
+        "no_wa":"6285224400020@c.us",
+        "deskripsi":"Saya kesulitan mencari informasi biaya administrasi yang berlaku saat ini.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Anita",
+        "no_wa":"6285224400021@c.us",
+        "deskripsi":"Pengajuan legalisir dokumen saya sudah seminggu tetapi belum ada kabar.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Bagus",
+        "no_wa":"6285224400022@c.us",
+        "deskripsi":"Sistem antrean elektronik sempat mati sehingga pelayanan menjadi terhambat.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Lina Marlina",
+        "no_wa":"6285224400023@c.us",
+        "deskripsi":"Saya ingin mengetahui prosedur pengurusan surat keterangan belum menikah.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Teguh",
+        "no_wa":"6285224400024@c.us",
+        "deskripsi":"Pelayanan berjalan cepat hari ini dan petugas sangat responsif membantu warga.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Sabrina",
+        "no_wa":"6285224400025@c.us",
+        "deskripsi":"Mohon update status berkas saya karena sudah lebih dari lima hari kerja.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Doni",
+        "no_wa":"6285224400026@c.us",
+        "deskripsi":"Petugas memberikan informasi yang berbeda mengenai syarat dokumen yang diperlukan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Wulan",
+        "no_wa":"6285224400027@c.us",
+        "deskripsi":"Aplikasi pelayanan online sering loading lama dan sulit digunakan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Reza",
+        "no_wa":"6285224400028@c.us",
+        "deskripsi":"Saya ingin mengubah data pada pengajuan online tetapi tidak menemukan menu edit.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Ayu",
+        "no_wa":"6285224400029@c.us",
+        "deskripsi":"Mohon ada penambahan loket karena jumlah warga yang mengurus dokumen cukup banyak.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Jefri",
+        "no_wa":"6285224400030@c.us",
+        "deskripsi":"Surat yang saya ajukan sudah selesai tetapi belum ada pemberitahuan untuk pengambilan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Nia Ramadhani",
+        "no_wa":"6285224400031@c.us",
+        "deskripsi":"Petugas sangat sabar menjelaskan alur pelayanan kepada warga yang baru pertama kali mengurus dokumen.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Rendi",
+        "no_wa":"6285224400032@c.us",
+        "deskripsi":"Saya kesulitan login ke portal pelayanan karena selalu muncul pesan error.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Hafiz",
+        "no_wa":"6285224400033@c.us",
+        "deskripsi":"Mohon informasi apakah pengurusan surat bisa diwakilkan oleh anggota keluarga.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Dina Sari",
+        "no_wa":"6285224400034@c.us",
+        "deskripsi":"Pelayanan administrasi berjalan lambat karena jaringan internet sering terputus.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Arif",
+        "no_wa":"6285224400035@c.us",
+        "deskripsi":"Saya sudah mengunggah semua berkas tetapi status masih menunggu verifikasi.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Meli",
+        "no_wa":"6285224400036@c.us",
+        "deskripsi":"Mohon dibuatkan panduan pengurusan dokumen yang lebih mudah dipahami warga.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Raka",
+        "no_wa":"6285224400037@c.us",
+        "deskripsi":"Petugas datang terlambat sehingga pelayanan baru dimulai setelah jam operasional.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Tika",
+        "no_wa":"6285224400038@c.us",
+        "deskripsi":"Saya ingin menanyakan apakah ada layanan prioritas untuk lansia.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Fikri",
+        "no_wa":"6285224400039@c.us",
+        "deskripsi":"Pengajuan surat rekomendasi saya belum mendapatkan persetujuan hingga sekarang.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Bella",
+        "no_wa":"6285224400040@c.us",
+        "deskripsi":"Ruang pelayanan cukup bersih, tetapi pendingin ruangan tidak berfungsi dengan baik.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Yusuf",
+        "no_wa":"6285224400041@c.us",
+        "deskripsi":"Mohon ada informasi yang lebih jelas terkait estimasi waktu penyelesaian dokumen.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Nanda",
+        "no_wa":"6285224400042@c.us",
+        "deskripsi":"Saya salah memasukkan data pengajuan dan ingin melakukan perubahan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Riko",
+        "no_wa":"6285224400043@c.us",
+        "deskripsi":"Antrean pengambilan dokumen sangat panjang meskipun berkas sudah selesai diproses.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Santi",
+        "no_wa":"6285224400044@c.us",
+        "deskripsi":"Petugas pelayanan membantu saya melengkapi berkas yang kurang dengan sangat baik.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Imam",
+        "no_wa":"6285224400045@c.us",
+        "deskripsi":"Mohon pengecekan karena nomor registrasi pengajuan saya tidak ditemukan di sistem.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Maya",
+        "no_wa":"6285224400046@c.us",
+        "deskripsi":"Saya harus menunggu lama karena printer pelayanan sedang mengalami gangguan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Galih",
+        "no_wa":"6285224400047@c.us",
+        "deskripsi":"Website pelayanan sudah membaik, tetapi proses unggah dokumen masih cukup lambat.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Rina",
+        "no_wa":"6285224400048@c.us",
+        "deskripsi":"Mohon adanya pemberitahuan otomatis saat dokumen selesai diproses.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Kevin",
+        "no_wa":"6285224400049@c.us",
+        "deskripsi":"Pelayanan hari ini sangat cepat dibanding kunjungan saya sebelumnya.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Aurel",
+        "no_wa":"6285224400050@c.us",
+        "deskripsi":"Saya ingin mengetahui cara mengajukan surat secara online tanpa harus datang ke kantor.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Rizky Pratama",
+        "no_wa":"6285214500001@c.us",
+        "deskripsi":"Saya sudah mengurus surat keterangan domisili sejak minggu lalu, tapi sampai sekarang belum ada kabar kelanjutannya.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Nina Amelia",
+        "no_wa":"6285214500002@c.us",
+        "deskripsi":"Pelayanan di loket administrasi hari ini cukup lambat karena hanya ada satu petugas yang melayani warga.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Doni Saputra",
+        "no_wa":"6285214500003@c.us",
+        "deskripsi":"Saya ingin mengurus surat pengantar tetapi petugas tidak berada di tempat pada jam pelayanan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Wulan Sari",
+        "no_wa":"6285214500004@c.us",
+        "deskripsi":"Nomor antrean pelayanan sangat panjang dan warga harus menunggu berjam-jam.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Arif Hidayat",
+        "no_wa":"6285214500005@c.us",
+        "deskripsi":"Informasi persyaratan pembuatan surat usaha berbeda antara papan informasi dan petugas.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Maya Kartika",
+        "no_wa":"6285214500006@c.us",
+        "deskripsi":"Saya sudah menyerahkan berkas lengkap namun diminta melengkapi dokumen lain yang sebelumnya tidak diinformasikan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Bagas Nugraha",
+        "no_wa":"6285214500007@c.us",
+        "deskripsi":"Ruang tunggu pelayanan sangat penuh dan kursi yang tersedia tidak mencukupi.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Lina Marlina",
+        "no_wa":"6285214500008@c.us",
+        "deskripsi":"Petugas pelayanan datang terlambat sehingga proses administrasi baru dimulai lebih siang.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Fauzan Akbar",
+        "no_wa":"6285214500009@c.us",
+        "deskripsi":"Saya kesulitan mendapatkan informasi mengenai prosedur pembuatan surat pindah.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Anita Rahma",
+        "no_wa":"6285214500010@c.us",
+        "deskripsi":"Website pelayanan sering tidak bisa diakses saat digunakan untuk pengajuan dokumen.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Rendi Firmansyah",
+        "no_wa":"6285214500011@c.us",
+        "deskripsi":"Pengambilan dokumen yang dijanjikan selesai hari ini ternyata masih tertunda.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Dewi Safitri",
+        "no_wa":"6285214500012@c.us",
+        "deskripsi":"Petunjuk alur pelayanan kurang jelas sehingga warga banyak yang kebingungan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Kevin Alexander",
+        "no_wa":"6285214500013@c.us",
+        "deskripsi":"Saya sudah antre sejak pagi tetapi nomor antrean bergerak sangat lambat.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Rina Oktavia",
+        "no_wa":"6285214500014@c.us",
+        "deskripsi":"Petugas meminta saya datang kembali besok karena sistem pelayanan sedang bermasalah.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Yoga Pratama",
+        "no_wa":"6285214500015@c.us",
+        "deskripsi":"Informasi jam operasional yang tertera tidak sesuai dengan kondisi di lapangan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Bella Kartika",
+        "no_wa":"6285214500016@c.us",
+        "deskripsi":"Saya menghubungi nomor layanan beberapa kali tetapi tidak ada respons.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Galang Prakoso",
+        "no_wa":"6285214500017@c.us",
+        "deskripsi":"Proses legalisasi dokumen memakan waktu lebih lama dari yang diinformasikan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Putri Amelia",
+        "no_wa":"6285214500018@c.us",
+        "deskripsi":"Pelayanan cukup ramah tetapi jumlah petugas kurang sehingga antrean panjang.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Bima Saputra",
+        "no_wa":"6285214500019@c.us",
+        "deskripsi":"Saya kesulitan mengurus surat karena formulir yang dibutuhkan sedang tidak tersedia.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Maria Ulfa",
+        "no_wa":"6285214500020@c.us",
+        "deskripsi":"Berkas saya sudah masuk sejak lama namun status pengajuannya belum berubah.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Joko Susilo",
+        "no_wa":"6285214500021@c.us",
+        "deskripsi":"Loket pelayanan tutup lebih awal sehingga banyak warga belum sempat dilayani.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Heni Rahmawati",
+        "no_wa":"6285214500022@c.us",
+        "deskripsi":"Petugas tidak memberikan penjelasan yang cukup terkait persyaratan administrasi.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Kurniawan Adi",
+        "no_wa":"6285214500023@c.us",
+        "deskripsi":"Saya harus bolak-balik karena ada perubahan syarat yang tidak diumumkan sebelumnya.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Olga Dwiyanti",
+        "no_wa":"6285214500024@c.us",
+        "deskripsi":"Pelayanan online tidak dapat digunakan karena halaman pengajuan terus mengalami error.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Putra Damanik",
+        "no_wa":"6285214500025@c.us",
+        "deskripsi":"Ruang tunggu terasa panas karena pendingin ruangan tidak berfungsi.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Santi Wulan",
+        "no_wa":"6285214500026@c.us",
+        "deskripsi":"Petugas pelayanan cukup membantu tetapi proses verifikasi data terlalu lama.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Toni Setiawan",
+        "no_wa":"6285214500027@c.us",
+        "deskripsi":"Saya tidak mendapatkan informasi kapan dokumen yang diajukan bisa diambil.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Vina Oktavia",
+        "no_wa":"6285214500028@c.us",
+        "deskripsi":"Nomor layanan yang tertera di papan informasi ternyata sudah tidak aktif.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Yuniar Sari",
+        "no_wa":"6285214500029@c.us",
+        "deskripsi":"Antrean pelayanan membludak karena sistem antrean elektronik tidak berjalan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Fajar Kustanto",
+        "no_wa":"6285214500030@c.us",
+        "deskripsi":"Saya sudah melengkapi semua syarat namun proses pengurusan masih tertunda.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Gita Amelia",
+        "no_wa":"6285214500031@c.us",
+        "deskripsi":"Petugas loket tidak berada di tempat saat jam pelayanan berlangsung.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Hendra Wijaya",
+        "no_wa":"6285214500032@c.us",
+        "deskripsi":"Saya mengalami kesulitan saat mengakses sistem pengajuan online karena sering logout sendiri.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Jihan Pratiwi",
+        "no_wa":"6285214500033@c.us",
+        "deskripsi":"Informasi biaya administrasi kurang jelas sehingga warga sering bertanya ulang.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Lia Febrianti",
+        "no_wa":"6285214500034@c.us",
+        "deskripsi":"Pengajuan surat keterangan usaha saya belum diproses meskipun berkas sudah lengkap.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Irfan Maulana",
+        "no_wa":"6285214500035@c.us",
+        "deskripsi":"Petugas meminta warga menunggu karena jaringan internet kantor sedang bermasalah.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Rina Destiana",
+        "no_wa":"6285214500036@c.us",
+        "deskripsi":"Saya sudah datang sesuai jadwal tetapi pelayanan belum dibuka.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Pak Budi",
+        "no_wa":"6285214500037@c.us",
+        "deskripsi":"Mau urus surat pengantar pensiun tapi harus bolak-balik karena informasi syarat berubah terus.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Ibu Lina",
+        "no_wa":"6285214500038@c.us",
+        "deskripsi":"Saya antre dari pagi, eh ternyata sistem komputer sedang gangguan dan pelayanan tertunda.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Mas Dika",
+        "no_wa":"6285214500039@c.us",
+        "deskripsi":"Website pengajuan surat sering loading lama dan akhirnya gagal saat submit data.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Mpok Nur",
+        "no_wa":"6285214500040@c.us",
+        "deskripsi":"Petugasnya ramah, tapi proses pencetakan dokumen terlalu lama sehingga warga menunggu lama.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Bang Udin",
+        "no_wa":"6285214500041@c.us",
+        "deskripsi":"Saya bingung alur pengurusan surat karena tidak ada petunjuk yang jelas di lokasi pelayanan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Rudi Hartono",
+        "no_wa":"6285214500042@c.us",
+        "deskripsi":"Pengajuan surat kehilangan saya belum selesai meskipun sudah lewat dari jadwal yang dijanjikan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Mamik",
+        "no_wa":"6285214500043@c.us",
+        "deskripsi":"Kursi ruang tunggu kurang banyak sehingga banyak warga harus berdiri cukup lama.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Andri Saputra",
+        "no_wa":"6285214500044@c.us",
+        "deskripsi":"Petugas menyarankan menggunakan layanan online, tetapi sistemnya sering tidak bisa dibuka.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Siska Ramadhani",
+        "no_wa":"6285214500045@c.us",
+        "deskripsi":"Saya sudah menghubungi layanan WhatsApp resmi namun belum mendapatkan balasan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Teguh Pratama",
+        "no_wa":"6285214500046@c.us",
+        "deskripsi":"Pengurusan dokumen keluarga membutuhkan waktu lebih lama dari standar yang diumumkan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Cici Lestari",
+        "no_wa":"6285214500047@c.us",
+        "deskripsi":"Nomor antrean digital tidak berfungsi sehingga petugas memanggil secara manual.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Robby Kurniawan",
+        "no_wa":"6285214500048@c.us",
+        "deskripsi":"Banyak warga kebingungan karena papan informasi persyaratan sudah tidak diperbarui.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Darmawan",
+        "no_wa":"6285214500049@c.us",
+        "deskripsi":"Saya harus datang dua kali karena berkas yang sudah diterima ternyata dinyatakan kurang lengkap.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Yulia Sari",
+        "no_wa":"6285214500050@c.us",
+        "deskripsi":"Mohon ada percepatan pelayanan administrasi karena banyak pengajuan warga yang masih menunggu proses.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Ahmad Fauzi",
+        "no_wa":"6285316700001@c.us",
+        "deskripsi":"Saya sudah mengajukan surat keterangan usaha sejak beberapa hari lalu tetapi belum ada informasi kapan selesai.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Rina Marlina",
+        "no_wa":"6285316700002@c.us",
+        "deskripsi":"Petugas loket datang terlambat sehingga warga yang sudah antre sejak pagi harus menunggu lama.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Bagus Saputra",
+        "no_wa":"6285316700003@c.us",
+        "deskripsi":"Website pelayanan online tidak bisa diakses saat saya ingin mengunggah berkas.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Novi Rahma",
+        "no_wa":"6285316700004@c.us",
+        "deskripsi":"Informasi syarat pembuatan surat domisili kurang jelas dan berbeda dengan yang dijelaskan petugas.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Doni Prasetyo",
+        "no_wa":"6285316700005@c.us",
+        "deskripsi":"Saya sudah menyerahkan dokumen lengkap namun masih diminta melengkapi berkas tambahan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Yuni Kartika",
+        "no_wa":"6285316700006@c.us",
+        "deskripsi":"Nomor antrean berjalan sangat lambat karena hanya satu loket yang dibuka.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Rizal Akbar",
+        "no_wa":"6285316700007@c.us",
+        "deskripsi":"Petugas pelayanan sedang rapat sehingga warga tidak bisa mengurus administrasi sementara waktu.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Lina Safitri",
+        "no_wa":"6285316700008@c.us",
+        "deskripsi":"Saya kesulitan mendapatkan informasi terkait prosedur pembuatan surat pindah.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Farhan Nugraha",
+        "no_wa":"6285316700009@c.us",
+        "deskripsi":"Dokumen yang dijanjikan selesai hari ini ternyata masih dalam proses verifikasi.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Maya Lestari",
+        "no_wa":"6285316700010@c.us",
+        "deskripsi":"Papan informasi pelayanan sudah usang dan sulit dibaca oleh warga.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Arman Hakim",
+        "no_wa":"6285316700011@c.us",
+        "deskripsi":"Saya harus datang kembali karena sistem komputer pelayanan mengalami gangguan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Dewi Oktavia",
+        "no_wa":"6285316700012@c.us",
+        "deskripsi":"Ruang tunggu pelayanan terlalu sempit saat jumlah warga yang datang sedang ramai.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Kevin Pratama",
+        "no_wa":"6285316700013@c.us",
+        "deskripsi":"Saya sudah menghubungi nomor layanan tetapi belum mendapatkan jawaban hingga sekarang.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Anita Wulandari",
+        "no_wa":"6285316700014@c.us",
+        "deskripsi":"Pelayanan administrasi berjalan lambat karena jaringan internet kantor sering terputus.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Yoga Saputra",
+        "no_wa":"6285316700015@c.us",
+        "deskripsi":"Petugas meminta saya menunggu beberapa hari lagi tanpa memberikan kepastian waktu selesai.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Bella Amelia",
+        "no_wa":"6285316700016@c.us",
+        "deskripsi":"Saya bingung dengan alur pengajuan dokumen karena tidak ada petunjuk yang jelas.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Galang Prakoso",
+        "no_wa":"6285316700017@c.us",
+        "deskripsi":"Pengambilan dokumen tertunda karena pejabat yang harus menandatangani sedang tidak berada di tempat.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Putri Maharani",
+        "no_wa":"6285316700018@c.us",
+        "deskripsi":"Saya sudah mengunggah berkas secara online tetapi status pengajuan tidak berubah.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Bima Kurniawan",
+        "no_wa":"6285316700019@c.us",
+        "deskripsi":"Banyak warga mengeluh karena antrean pelayanan tidak sesuai urutan nomor yang diberikan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Maria Ulfa",
+        "no_wa":"6285316700020@c.us",
+        "deskripsi":"Jam pelayanan yang tertera tidak sesuai dengan kondisi sebenarnya di kantor.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Joko Susilo",
+        "no_wa":"6285316700021@c.us",
+        "deskripsi":"Saya harus bolak-balik karena ada perubahan persyaratan yang tidak diumumkan sebelumnya.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Heni Rahmawati",
+        "no_wa":"6285316700022@c.us",
+        "deskripsi":"Petugas kurang memberikan penjelasan mengenai dokumen yang harus dilengkapi.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Kurniawan Adi",
+        "no_wa":"6285316700023@c.us",
+        "deskripsi":"Sistem antrean elektronik mati sehingga proses pelayanan dilakukan secara manual.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Olga Dwiyanti",
+        "no_wa":"6285316700024@c.us",
+        "deskripsi":"Website pelayanan sering error saat proses pengiriman formulir.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Putra Damanik",
+        "no_wa":"6285316700025@c.us",
+        "deskripsi":"Saya sudah datang sesuai jadwal tetapi petugas yang menangani belum hadir.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Santi Wulan",
+        "no_wa":"6285316700026@c.us",
+        "deskripsi":"Pelayanan cukup baik namun waktu verifikasi dokumen terlalu lama.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Toni Setiawan",
+        "no_wa":"6285316700027@c.us",
+        "deskripsi":"Saya tidak mendapatkan notifikasi saat dokumen yang diajukan sudah selesai diproses.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Vina Oktavia",
+        "no_wa":"6285316700028@c.us",
+        "deskripsi":"Nomor kontak pelayanan yang tertera di brosur ternyata sudah tidak aktif.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Yuniar Sari",
+        "no_wa":"6285316700029@c.us",
+        "deskripsi":"Antrean sangat panjang karena sebagian loket pelayanan tidak dibuka.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Fajar Kustanto",
+        "no_wa":"6285316700030@c.us",
+        "deskripsi":"Saya menunggu lebih dari satu jam hanya untuk proses pengecekan berkas.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Gita Amelia",
+        "no_wa":"6285316700031@c.us",
+        "deskripsi":"Petugas loket sedang istirahat cukup lama sehingga pelayanan terhenti sementara.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Hendra Wijaya",
+        "no_wa":"6285316700032@c.us",
+        "deskripsi":"Sistem pengajuan online sering keluar sendiri saat sedang diisi.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Jihan Pratiwi",
+        "no_wa":"6285316700033@c.us",
+        "deskripsi":"Informasi biaya administrasi tidak dicantumkan dengan jelas di ruang pelayanan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Lia Febrianti",
+        "no_wa":"6285316700034@c.us",
+        "deskripsi":"Surat yang saya urus belum selesai meskipun sudah melewati estimasi waktu pengerjaan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Irfan Maulana",
+        "no_wa":"6285316700035@c.us",
+        "deskripsi":"Petugas menyarankan datang kembali minggu depan karena proses sedang menumpuk.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Rina Destiana",
+        "no_wa":"6285316700036@c.us",
+        "deskripsi":"Saya mengalami kesulitan saat registrasi akun pada sistem pelayanan online.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Pak Budi",
+        "no_wa":"6285316700037@c.us",
+        "deskripsi":"Mau urus surat waris, tapi petugas yang biasa menangani sedang cuti dan belum ada penggantinya.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Ibu Lina",
+        "no_wa":"6285316700038@c.us",
+        "deskripsi":"Saya antre dari pagi, ternyata printer kantor rusak sehingga dokumen belum bisa dicetak.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Mas Dika",
+        "no_wa":"6285316700039@c.us",
+        "deskripsi":"Pengajuan online gagal terus padahal koneksi internet saya normal.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Mpok Nur",
+        "no_wa":"6285316700040@c.us",
+        "deskripsi":"Pelayanan ramah, tapi proses validasi data terlalu lama dan membuat antrean menumpuk.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Bang Udin",
+        "no_wa":"6285316700041@c.us",
+        "deskripsi":"Banyak warga kebingungan karena tidak ada petugas yang memberikan arahan di ruang pelayanan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Rudi Hartono",
+        "no_wa":"6285316700042@c.us",
+        "deskripsi":"Pengurusan surat kehilangan belum selesai meskipun sudah melewati jadwal yang ditentukan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Mamik",
+        "no_wa":"6285316700043@c.us",
+        "deskripsi":"Ruang tunggu penuh sesak dan banyak warga harus berdiri selama menunggu giliran.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Andri Saputra",
+        "no_wa":"6285316700044@c.us",
+        "deskripsi":"Petugas meminta menggunakan layanan online, namun server sedang tidak bisa diakses.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Siska Ramadhani",
+        "no_wa":"6285316700045@c.us",
+        "deskripsi":"Pesan yang saya kirim ke layanan WhatsApp belum dibalas sejak kemarin.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Teguh Pratama",
+        "no_wa":"6285316700046@c.us",
+        "deskripsi":"Pengurusan kartu keluarga membutuhkan waktu lebih lama dari yang dijanjikan.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Cici Lestari",
+        "no_wa":"6285316700047@c.us",
+        "deskripsi":"Mesin antrean digital mati sehingga petugas memanggil warga secara manual.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Robby Kurniawan",
+        "no_wa":"6285316700048@c.us",
+        "deskripsi":"Papan pengumuman persyaratan belum diperbarui sehingga banyak informasi yang sudah tidak sesuai.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Darmawan",
+        "no_wa":"6285316700049@c.us",
+        "deskripsi":"Berkas saya dinyatakan kurang lengkap setelah sebelumnya diterima tanpa masalah.",
+        "Kategori":"PELAYANAN"
+    },
+    {
+        "nama":"Yulia Sari",
+        "no_wa":"6285316700050@c.us",
+        "deskripsi":"Mohon ada penambahan petugas pelayanan karena jumlah warga yang datang semakin banyak setiap hari.",
+        "Kategori":"PELAYANAN"
+    },
+    {
         "nama":"Irma H.",
         "no_wa":"6285755544006@c.us",
         "deskripsi":"Fasilitas bermain anak di taman Wonotirto banyak yang rusak. Perlu perbaikan segera agar aman digunakan.",
@@ -1905,6 +5503,1206 @@
         "nama":"Siska S.",
         "no_wa":"6285878955018@c.us",
         "deskripsi":"Polusi suara dari tempat hiburan malam di Selili sangat keras. Mengganggu istirahat warga sampai dini hari.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Andi Saputra",
+        "no_wa":"6285311100001@c.us",
+        "deskripsi":"Sampah menumpuk di pinggir jalan Margomulyo sudah beberapa hari belum diangkut. Baunya mulai mengganggu warga.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rina Marlina",
+        "no_wa":"6285311100002@c.us",
+        "deskripsi":"Selokan di depan rumah kami di Selili tersumbat sampah sehingga air meluap saat hujan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Fajar Nugroho",
+        "no_wa":"6285311100003@c.us",
+        "deskripsi":"Banyak rumput liar tumbuh tinggi di area lapangan Wonotirto dan terlihat tidak terawat.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Dewi Anggraini",
+        "no_wa":"6285311100004@c.us",
+        "deskripsi":"Ada warga yang sering membakar sampah plastik di Teluk Pemedas sehingga asapnya masuk ke rumah-rumah.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rizky Pratama",
+        "no_wa":"6285311100005@c.us",
+        "deskripsi":"Tumpukan sampah di dekat pasar Muara Sembilang semakin banyak dan mulai mengundang lalat.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Nina Amelia",
+        "no_wa":"6285311100006@c.us",
+        "deskripsi":"Parit di Sungai Seluang dipenuhi lumpur sehingga aliran air tidak lancar.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Bagus Setiawan",
+        "no_wa":"6285311100007@c.us",
+        "deskripsi":"Banyak sampah berserakan di taman Karya Jaya setelah acara kemarin malam.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Maya Putri",
+        "no_wa":"6285311100008@c.us",
+        "deskripsi":"Drainase di Handil Baru Darat tersumbat dan menyebabkan genangan air setiap kali hujan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Agus Santoso",
+        "no_wa":"6285311100009@c.us",
+        "deskripsi":"Tempat pembuangan sampah sementara di Margomulyo sudah penuh dan meluber ke jalan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Wulan Sari",
+        "no_wa":"6285311100010@c.us",
+        "deskripsi":"Ada bau tidak sedap dari saluran air di Selili yang sudah berlangsung beberapa hari.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rama Prakoso",
+        "no_wa":"6285311100011@c.us",
+        "deskripsi":"Pohon di taman Wonotirto banyak yang kering dan perlu perawatan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Salsa Putri",
+        "no_wa":"6285311100012@c.us",
+        "deskripsi":"Sungai di Teluk Pemedas terlihat dipenuhi sampah plastik yang terbawa arus.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Yusuf Hidayat",
+        "no_wa":"6285311100013@c.us",
+        "deskripsi":"Rumput di pinggir jalan Muara Sembilang sudah sangat tinggi dan menutupi sebagian trotoar.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Citra Lestari",
+        "no_wa":"6285311100014@c.us",
+        "deskripsi":"Ada warga membuang limbah cair ke selokan sehingga air berubah warna dan berbau.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Doni Saputra",
+        "no_wa":"6285311100015@c.us",
+        "deskripsi":"Tempat sampah umum di Sungai Seluang rusak sehingga sampah mudah berserakan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Anisa Rahma",
+        "no_wa":"6285311100016@c.us",
+        "deskripsi":"Banyak nyamuk berkembang biak karena genangan air di area kosong dekat rumah warga.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rendi",
+        "no_wa":"6285311100017@c.us",
+        "deskripsi":"Selokan di Karya Jaya penuh sampah rumah tangga dan menyebabkan bau menyengat.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Tika Amelia",
+        "no_wa":"6285311100018@c.us",
+        "deskripsi":"Sampah dedaunan menumpuk di sekitar taman Margomulyo dan belum dibersihkan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Hendra Wijaya",
+        "no_wa":"6285311100019@c.us",
+        "deskripsi":"Drainase di Selili tidak berfungsi dengan baik sehingga jalan sering tergenang.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Bella",
+        "no_wa":"6285311100020@c.us",
+        "deskripsi":"Ada pencemaran sungai akibat sampah rumah tangga yang dibuang sembarangan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Arif Rahman",
+        "no_wa":"6285311100021@c.us",
+        "deskripsi":"Tempat pembuangan sampah liar muncul di pinggir jalan Wonotirto.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Novi",
+        "no_wa":"6285311100022@c.us",
+        "deskripsi":"Parit di Teluk Pemedas tersumbat ranting dan sampah plastik.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Jefri",
+        "no_wa":"6285311100023@c.us",
+        "deskripsi":"Rumput liar di area pemakaman Muara Sembilang sudah sangat tinggi dan perlu dibersihkan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Santi",
+        "no_wa":"6285311100024@c.us",
+        "deskripsi":"Bau sampah dari TPS sementara sangat menyengat terutama saat siang hari.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rizal",
+        "no_wa":"6285311100025@c.us",
+        "deskripsi":"Banyak sampah plastik mengambang di saluran air Sungai Seluang.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Meli",
+        "no_wa":"6285311100026@c.us",
+        "deskripsi":"Ada warga yang membuang sampah ke sungai setiap malam.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Fikri",
+        "no_wa":"6285311100027@c.us",
+        "deskripsi":"Area taman bermain anak di Karya Jaya dipenuhi sampah makanan dan botol plastik.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rina Oktavia",
+        "no_wa":"6285311100028@c.us",
+        "deskripsi":"Genangan air di pinggir jalan Margomulyo menjadi sarang nyamuk.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Kevin",
+        "no_wa":"6285311100029@c.us",
+        "deskripsi":"Tempat sampah umum di Selili hilang sehingga warga bingung membuang sampah.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Yuliana",
+        "no_wa":"6285311100030@c.us",
+        "deskripsi":"Sungai kecil di Wonotirto terlihat keruh dan dipenuhi sampah rumah tangga.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Galih",
+        "no_wa":"6285311100031@c.us",
+        "deskripsi":"Rumput liar di sepanjang jalan Teluk Pemedas sudah menutupi rambu jalan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Ayu",
+        "no_wa":"6285311100032@c.us",
+        "deskripsi":"Banyak daun kering menumpuk di selokan dan menghambat aliran air.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Dimas",
+        "no_wa":"6285311100033@c.us",
+        "deskripsi":"TPS di Muara Sembilang sudah overload dan perlu pengangkutan segera.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Sabrina",
+        "no_wa":"6285311100034@c.us",
+        "deskripsi":"Ada bau limbah yang cukup kuat dari area belakang pasar.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Imam",
+        "no_wa":"6285311100035@c.us",
+        "deskripsi":"Saluran drainase di Sungai Seluang tertutup sedimen dan lumpur.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Raka",
+        "no_wa":"6285311100036@c.us",
+        "deskripsi":"Sampah di taman kota Karya Jaya tidak dibersihkan setelah akhir pekan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Putri",
+        "no_wa":"6285311100037@c.us",
+        "deskripsi":"Ada warga membakar sampah setiap sore dan asapnya mengganggu pernapasan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Lukman",
+        "no_wa":"6285311100038@c.us",
+        "deskripsi":"Parit di Margomulyo dipenuhi eceng gondok sehingga aliran air terganggu.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Nia",
+        "no_wa":"6285311100039@c.us",
+        "deskripsi":"Banyak sampah berserakan di area pasar setelah aktivitas jual beli selesai.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Teguh",
+        "no_wa":"6285311100040@c.us",
+        "deskripsi":"Selokan dekat sekolah di Selili mengeluarkan bau tidak sedap.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Farhan",
+        "no_wa":"6285311100041@c.us",
+        "deskripsi":"Area kosong di Wonotirto dijadikan tempat pembuangan sampah liar oleh oknum warga.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rani",
+        "no_wa":"6285311100042@c.us",
+        "deskripsi":"Sungai di Teluk Pemedas dipenuhi sampah plastik dan botol bekas.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Aldi",
+        "no_wa":"6285311100043@c.us",
+        "deskripsi":"Drainase di Muara Sembilang tersumbat sehingga air meluap ke jalan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Maya",
+        "no_wa":"6285311100044@c.us",
+        "deskripsi":"Tempat sampah umum rusak dan tutupnya hilang sehingga sampah mudah tercecer.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Wahyudi",
+        "no_wa":"6285311100045@c.us",
+        "deskripsi":"Rumput liar di pinggir jalan Sungai Seluang sudah sangat tinggi dan perlu dipangkas.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rika",
+        "no_wa":"6285311100046@c.us",
+        "deskripsi":"Ada genangan air yang tidak kunjung surut dan berpotensi menjadi sarang nyamuk.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Fauzi",
+        "no_wa":"6285311100047@c.us",
+        "deskripsi":"Sampah rumah tangga dibuang sembarangan ke parit di sekitar permukiman.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Anwar",
+        "no_wa":"6285311100048@c.us",
+        "deskripsi":"Banyak ranting pohon berserakan setelah hujan dan belum dibersihkan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Cici",
+        "no_wa":"6285311100049@c.us",
+        "deskripsi":"Saluran air di dekat rumah saya mampet dan menyebabkan bau yang cukup mengganggu.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rudi",
+        "no_wa":"6285311100050@c.us",
+        "deskripsi":"Tumpukan sampah di pinggir sungai semakin banyak dan mencemari lingkungan sekitar.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Ahmad Fauzi",
+        "no_wa":"6285322200001@c.us",
+        "deskripsi":"Min, sampah di belakang pasar Selili sudah menumpuk tinggi dan belum diangkut beberapa hari.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Dina Permata",
+        "no_wa":"6285322200002@c.us",
+        "deskripsi":"Selokan di depan rumah warga Margomulyo penuh sampah plastik dan airnya jadi tidak mengalir.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rendi Saputra",
+        "no_wa":"6285322200003@c.us",
+        "deskripsi":"Ada yang sering membuang sampah sembarangan di lahan kosong dekat perumahan Wonotirto.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Yuni Kartika",
+        "no_wa":"6285322200004@c.us",
+        "deskripsi":"Rumput liar di taman Teluk Pemedas sudah tinggi dan terlihat tidak terawat.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Bambang Hermawan",
+        "no_wa":"6285322200005@c.us",
+        "deskripsi":"Parit di Muara Sembilang dipenuhi lumpur sehingga sering meluap saat hujan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Sari Wulandari",
+        "no_wa":"6285322200006@c.us",
+        "deskripsi":"Ada bau menyengat dari tumpukan sampah dekat pasar yang sangat mengganggu warga sekitar.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Fikri Ramadhan",
+        "no_wa":"6285322200007@c.us",
+        "deskripsi":"Sungai di Sungai Seluang dipenuhi sampah botol plastik dan kantong kresek.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Lina Marlina",
+        "no_wa":"6285322200008@c.us",
+        "deskripsi":"Warga masih sering membakar sampah di area permukiman sehingga asap masuk ke rumah-rumah.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rizky Hidayat",
+        "no_wa":"6285322200009@c.us",
+        "deskripsi":"Tempat sampah umum di Karya Jaya rusak dan sampah jadi berserakan ke jalan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Novi Anggraini",
+        "no_wa":"6285322200010@c.us",
+        "deskripsi":"Banyak genangan air di sekitar lapangan Handil Baru Darat yang berpotensi jadi sarang nyamuk.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Agus Pratama",
+        "no_wa":"6285322200011@c.us",
+        "deskripsi":"Saluran drainase di Margomulyo tersumbat sampah rumah tangga.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Putri Amelia",
+        "no_wa":"6285322200012@c.us",
+        "deskripsi":"Sampah dedaunan di taman kota sudah lama tidak dibersihkan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Tono Saputra",
+        "no_wa":"6285322200013@c.us",
+        "deskripsi":"Banyak sampah mengapung di parit sekitar Teluk Pemedas setelah hujan deras.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Maya Sari",
+        "no_wa":"6285322200014@c.us",
+        "deskripsi":"TPS di Wonotirto sudah penuh dan sampah meluber sampai ke badan jalan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Arif Nugroho",
+        "no_wa":"6285322200015@c.us",
+        "deskripsi":"Ada limbah cair berwarna hitam masuk ke saluran air di Muara Sembilang.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Bella Rahma",
+        "no_wa":"6285322200016@c.us",
+        "deskripsi":"Rumput liar di sekitar makam umum Selili sudah sangat tinggi.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Joko Santoso",
+        "no_wa":"6285322200017@c.us",
+        "deskripsi":"Selokan dekat sekolah dasar mampet dan mengeluarkan bau tidak sedap.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Siska Wati",
+        "no_wa":"6285322200018@c.us",
+        "deskripsi":"Warga membuang sampah ke sungai saat malam hari sehingga sungai makin kotor.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Dedi Kurniawan",
+        "no_wa":"6285322200019@c.us",
+        "deskripsi":"Tumpukan ranting dan daun bekas pemangkasan pohon belum diangkut sejak minggu lalu.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rina Oktaviani",
+        "no_wa":"6285322200020@c.us",
+        "deskripsi":"Banyak lalat di sekitar TPS karena sampah organik tidak segera diangkut.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Kevin Alexander",
+        "no_wa":"6285322200021@c.us",
+        "deskripsi":"Parit di Handil Baru Darat dipenuhi eceng gondok sehingga air tidak mengalir lancar.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Nia Maharani",
+        "no_wa":"6285322200022@c.us",
+        "deskripsi":"Area taman bermain anak dipenuhi sampah makanan dan botol minuman.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rama Wijaya",
+        "no_wa":"6285322200023@c.us",
+        "deskripsi":"Bau limbah dari saluran air dekat pasar sangat menyengat terutama sore hari.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Lukman Hakim",
+        "no_wa":"6285322200024@c.us",
+        "deskripsi":"Drainase di Sungai Seluang tertutup tanah dan sedimentasi sehingga sering banjir kecil.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Ayu Lestari",
+        "no_wa":"6285322200025@c.us",
+        "deskripsi":"Ada sampah elektronik dibuang sembarangan di lahan kosong dekat permukiman.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Farhan Akbar",
+        "no_wa":"6285322200026@c.us",
+        "deskripsi":"Sungai kecil di Karya Jaya berubah keruh dan berbau tidak seperti biasanya.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Tika Amelia",
+        "no_wa":"6285322200027@c.us",
+        "deskripsi":"Banyak daun kering menumpuk di saluran air dan menyebabkan penyumbatan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Reza Pratama",
+        "no_wa":"6285322200028@c.us",
+        "deskripsi":"Sampah plastik berserakan di sepanjang jalan menuju Teluk Pemedas.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Anisa Putri",
+        "no_wa":"6285322200029@c.us",
+        "deskripsi":"Ada warga yang membuang limbah ternak ke parit sehingga menimbulkan bau.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Hendra Saputra",
+        "no_wa":"6285322200030@c.us",
+        "deskripsi":"TPS liar muncul di pinggir jalan utama Margomulyo dan makin hari makin besar.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Dewi Sartika",
+        "no_wa":"6285322200031@c.us",
+        "deskripsi":"Rumput di median jalan sudah tinggi dan mengganggu pandangan pengendara.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Riko Firmansyah",
+        "no_wa":"6285322200032@c.us",
+        "deskripsi":"Banyak sampah rumah tangga terbawa arus dan menumpuk di bawah jembatan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Santi Marlina",
+        "no_wa":"6285322200033@c.us",
+        "deskripsi":"Tempat sampah di taman kota sudah penuh sejak beberapa hari lalu.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Yusuf Hidayat",
+        "no_wa":"6285322200034@c.us",
+        "deskripsi":"Ada kebocoran saluran limbah yang menyebabkan bau menyengat di sekitar permukiman.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Meli Anggraini",
+        "no_wa":"6285322200035@c.us",
+        "deskripsi":"Selokan di depan pertokoan penuh sampah kemasan makanan dan minuman.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Galih Ramadhan",
+        "no_wa":"6285322200036@c.us",
+        "deskripsi":"Sampah di area pasar tidak dibersihkan setelah aktivitas jual beli selesai.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rani Putri",
+        "no_wa":"6285322200037@c.us",
+        "deskripsi":"Banyak nyamuk di sekitar perumahan akibat genangan air yang tidak kunjung surut.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Fauzan",
+        "no_wa":"6285322200038@c.us",
+        "deskripsi":"Parit di Wonotirto penuh sampah plastik dan botol bekas.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Dimas Prakoso",
+        "no_wa":"6285322200039@c.us",
+        "deskripsi":"Area kosong dekat sungai dijadikan tempat pembuangan sampah oleh oknum warga.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Sabrina",
+        "no_wa":"6285322200040@c.us",
+        "deskripsi":"Tumpukan sampah organik di pasar mulai membusuk dan mengganggu aktivitas warga.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Imam Syahputra",
+        "no_wa":"6285322200041@c.us",
+        "deskripsi":"Saluran air di dekat sekolah tersumbat dan menyebabkan genangan saat hujan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Nanda",
+        "no_wa":"6285322200042@c.us",
+        "deskripsi":"Banyak sampah berserakan setelah acara warga dan belum ada pembersihan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Arman Hakim",
+        "no_wa":"6285322200043@c.us",
+        "deskripsi":"Sungai terlihat dipenuhi sampah styrofoam dan plastik sekali pakai.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rika Amelia",
+        "no_wa":"6285322200044@c.us",
+        "deskripsi":"Drainase di sekitar permukiman tertutup sampah sehingga air meluap ke jalan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Bagas Setiawan",
+        "no_wa":"6285322200045@c.us",
+        "deskripsi":"Banyak pohon kering di taman lingkungan yang belum diganti atau dirawat.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Wulan Kartika",
+        "no_wa":"6285322200046@c.us",
+        "deskripsi":"TPS sementara mengeluarkan bau menyengat karena sampah tidak diangkut tepat waktu.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Andika Saputra",
+        "no_wa":"6285322200047@c.us",
+        "deskripsi":"Parit dekat rumah dipenuhi lumpur dan perlu dilakukan pengerukan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Novi Rahma",
+        "no_wa":"6285322200048@c.us",
+        "deskripsi":"Ada warga yang membakar sampah hampir setiap hari sehingga udara jadi tidak nyaman.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Teguh Prasetyo",
+        "no_wa":"6285322200049@c.us",
+        "deskripsi":"Sampah rumah tangga menumpuk di pinggir jalan dan mengganggu pemandangan lingkungan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Aurelia",
+        "no_wa":"6285322200050@c.us",
+        "deskripsi":"Saluran drainase di sekitar pasar tersumbat dan menyebabkan genangan air kotor.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Andi Saputra",
+        "no_wa":"6288112200001@c.us",
+        "deskripsi":"Sampah rumah tangga menumpuk di pinggir jalan Margomulyo sudah hampir seminggu dan mulai mengeluarkan bau.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Nina Oktavia",
+        "no_wa":"6288112200002@c.us",
+        "deskripsi":"Parit di Selili penuh sampah plastik sehingga aliran air tidak lancar saat hujan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Dedi Prasetyo",
+        "no_wa":"6288112200003@c.us",
+        "deskripsi":"Ada warga yang membakar sampah setiap sore di Wonotirto dan asapnya masuk ke rumah-rumah sekitar.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rina Maharani",
+        "no_wa":"6288112200004@c.us",
+        "deskripsi":"Tumpukan sampah liar muncul di lahan kosong Teluk Pemedas dan semakin banyak setiap hari.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Yusuf Kurniawan",
+        "no_wa":"6288112200005@c.us",
+        "deskripsi":"Drainase Muara Sembilang dipenuhi sampah daun dan plastik sehingga air menggenang.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Putri Amelia",
+        "no_wa":"6288112200006@c.us",
+        "deskripsi":"Banyak nyamuk di Sungai Seluang karena selokan kotor dan airnya tidak mengalir.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Bagus Pratama",
+        "no_wa":"6288112200007@c.us",
+        "deskripsi":"Rumput liar di area taman Karya Jaya sudah sangat tinggi dan terlihat tidak terawat.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Salsa Ramadhani",
+        "no_wa":"6288112200008@c.us",
+        "deskripsi":"Ada bau menyengat dari tumpukan sampah dekat pasar Margomulyo yang mengganggu warga.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rendy Firmansyah",
+        "no_wa":"6288112200009@c.us",
+        "deskripsi":"Saluran air di Selili dipenuhi lumpur sehingga sering meluap saat hujan deras.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Maya Kartika",
+        "no_wa":"6288112200010@c.us",
+        "deskripsi":"Banyak sampah plastik berserakan di sekitar lapangan Wonotirto setelah acara warga.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Fauzi Rahman",
+        "no_wa":"6288112200011@c.us",
+        "deskripsi":"Sungai kecil di Teluk Pemedas terlihat keruh dan dipenuhi sampah rumah tangga.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Lina Marlina",
+        "no_wa":"6288112200012@c.us",
+        "deskripsi":"Warga membuang limbah cucian langsung ke parit Muara Sembilang sehingga menimbulkan bau.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Galih Nugraha",
+        "no_wa":"6288112200013@c.us",
+        "deskripsi":"Tumpukan ranting dan daun kering di Sungai Seluang belum dibersihkan sejak lama.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rani Oktavia",
+        "no_wa":"6288112200014@c.us",
+        "deskripsi":"Tempat sampah umum di Karya Jaya sudah penuh dan sampah meluber ke jalan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Kevin Maulana",
+        "no_wa":"6288112200015@c.us",
+        "deskripsi":"Banyak lalat di sekitar TPS Margomulyo karena sampah tidak segera diangkut.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Nabila Putri",
+        "no_wa":"6288112200016@c.us",
+        "deskripsi":"Selokan di Selili dipenuhi gulma sehingga air sulit mengalir.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Andika Prasetyo",
+        "no_wa":"6288112200017@c.us",
+        "deskripsi":"Ada yang membuang sampah sembarangan di lahan kosong Wonotirto hampir setiap malam.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Dewi Safira",
+        "no_wa":"6288112200018@c.us",
+        "deskripsi":"Bau limbah dari saluran air Teluk Pemedas cukup menyengat terutama saat siang hari.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rizal Akbar",
+        "no_wa":"6288112200019@c.us",
+        "deskripsi":"Parit di Muara Sembilang tertutup sampah kemasan sehingga menyebabkan genangan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Anita Wulandari",
+        "no_wa":"6288112200020@c.us",
+        "deskripsi":"Banyak sampah makanan berserakan di area taman Sungai Seluang.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Teguh Hidayat",
+        "no_wa":"6288112200021@c.us",
+        "deskripsi":"Rumput liar tumbuh sangat tinggi di sekitar lapangan Karya Jaya dan menjadi sarang ular.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Meli Anggraini",
+        "no_wa":"6288112200022@c.us",
+        "deskripsi":"Tempat pembuangan sampah sementara di Margomulyo sudah melebihi kapasitas.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Arman Hakim",
+        "no_wa":"6288112200023@c.us",
+        "deskripsi":"Banyak warga mengeluh karena selokan Selili mengeluarkan bau tidak sedap.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Bella Kartika",
+        "no_wa":"6288112200024@c.us",
+        "deskripsi":"Sampah plastik menumpuk di sekitar sungai Wonotirto setelah hujan deras.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rudi Hartono",
+        "no_wa":"6288112200025@c.us",
+        "deskripsi":"Ada pembakaran sampah di Teluk Pemedas yang menyebabkan asap tebal setiap pagi.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Siti Rahmah",
+        "no_wa":"6288112200026@c.us",
+        "deskripsi":"Parit Muara Sembilang dipenuhi sampah daun sehingga aliran air tersumbat.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Farhan Akbar",
+        "no_wa":"6288112200027@c.us",
+        "deskripsi":"Taman Sungai Seluang terlihat kotor karena banyak sampah bekas makanan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Wulan Permata",
+        "no_wa":"6288112200028@c.us",
+        "deskripsi":"Ada limbah cair dibuang ke saluran air di Karya Jaya dan menyebabkan bau menyengat.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Bagas Prakoso",
+        "no_wa":"6288112200029@c.us",
+        "deskripsi":"TPS di Margomulyo dipenuhi sampah yang belum diangkut selama beberapa hari.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Citra Amelia",
+        "no_wa":"6288112200030@c.us",
+        "deskripsi":"Selokan di Selili menjadi tempat berkembang biak nyamuk karena air tergenang.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Fikri Saputra",
+        "no_wa":"6288112200031@c.us",
+        "deskripsi":"Banyak sampah berserakan di area wisata kecil Wonotirto setelah akhir pekan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Nadia Putri",
+        "no_wa":"6288112200032@c.us",
+        "deskripsi":"Tumpukan sampah liar di Teluk Pemedas semakin besar dan belum dibersihkan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Aldi Kurniawan",
+        "no_wa":"6288112200033@c.us",
+        "deskripsi":"Parit Muara Sembilang dipenuhi plastik bekas sehingga aliran air sangat lambat.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rossa Maharani",
+        "no_wa":"6288112200034@c.us",
+        "deskripsi":"Bau sampah dari area Sungai Seluang tercium hingga ke permukiman warga.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Daffa Ramadhan",
+        "no_wa":"6288112200035@c.us",
+        "deskripsi":"Rumput liar di Karya Jaya menutupi sebagian trotoar dan jalan setapak.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Indra Wijaya",
+        "no_wa":"6288112200036@c.us",
+        "deskripsi":"Tempat sampah umum di Margomulyo rusak dan sampah mudah berceceran.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Novi Yanti",
+        "no_wa":"6288112200037@c.us",
+        "deskripsi":"Ada warga yang membuang sampah ke selokan Selili sehingga menyebabkan penyumbatan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Yoga Pratama",
+        "no_wa":"6288112200038@c.us",
+        "deskripsi":"Banyak botol plastik mengapung di sungai dekat Wonotirto.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Maria Ulfa",
+        "no_wa":"6288112200039@c.us",
+        "deskripsi":"Area Teluk Pemedas terlihat kumuh karena sampah tidak dibersihkan setelah acara pasar malam.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Gilang Pramudya",
+        "no_wa":"6288112200040@c.us",
+        "deskripsi":"Drainase Muara Sembilang penuh lumpur dan perlu segera dikeruk.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Heni Rahmawati",
+        "no_wa":"6288112200041@c.us",
+        "deskripsi":"Banyak lalat dan bau tidak sedap dari TPS Sungai Seluang.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Jihan Pratiwi",
+        "no_wa":"6288112200042@c.us",
+        "deskripsi":"Taman Karya Jaya dipenuhi sampah bekas jajanan yang tidak dibuang pada tempatnya.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Kurniawan Adi",
+        "no_wa":"6288112200043@c.us",
+        "deskripsi":"Parit di Margomulyo tersumbat oleh sampah rumah tangga dan air meluap saat hujan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Olga Dwiyanti",
+        "no_wa":"6288112200044@c.us",
+        "deskripsi":"Pembakaran sampah di Selili menghasilkan asap pekat yang mengganggu pernapasan warga.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Putra Damanik",
+        "no_wa":"6288112200045@c.us",
+        "deskripsi":"Banyak sampah organik menumpuk di Wonotirto dan mulai membusuk.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Santi Wulan",
+        "no_wa":"6288112200046@c.us",
+        "deskripsi":"Saluran air Teluk Pemedas mengeluarkan bau tidak sedap akibat limbah rumah tangga.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Toni Setiawan",
+        "no_wa":"6288112200047@c.us",
+        "deskripsi":"Sampah plastik berserakan di sepanjang jalan Muara Sembilang setelah hujan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Vina Oktavia",
+        "no_wa":"6288112200048@c.us",
+        "deskripsi":"Area sungai di Sungai Seluang dipenuhi sampah kemasan makanan dan minuman.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Yuniar Sari",
+        "no_wa":"6288112200049@c.us",
+        "deskripsi":"Rumput liar dan semak belukar di Karya Jaya sudah menutupi sebagian saluran air.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Fajar Kustanto",
+        "no_wa":"6288112200050@c.us",
+        "deskripsi":"Warga Margomulyo berharap ada pembersihan lingkungan karena sampah mulai menumpuk di beberapa titik.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Raka Firmansyah",
+        "no_wa":"6288123300001@c.us",
+        "deskripsi":"Banyak sampah plastik menumpuk di pinggir jalan menuju Margomulyo dan belum diangkut beberapa hari.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Nisa Amelia",
+        "no_wa":"6288123300002@c.us",
+        "deskripsi":"Parit di Selili dipenuhi sampah botol minuman sehingga air sering meluap saat hujan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Doni Saputra",
+        "no_wa":"6288123300003@c.us",
+        "deskripsi":"Ada warga yang rutin membakar sampah di Wonotirto setiap pagi dan asapnya masuk ke rumah sekitar.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Yuni Kartika",
+        "no_wa":"6288123300004@c.us",
+        "deskripsi":"Tumpukan sampah liar di Teluk Pemedas makin besar dan mulai mengundang banyak lalat.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Bagus Hidayat",
+        "no_wa":"6288123300005@c.us",
+        "deskripsi":"Drainase Muara Sembilang tertutup lumpur sehingga air hujan sulit mengalir.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Lina Safitri",
+        "no_wa":"6288123300006@c.us",
+        "deskripsi":"Selokan di Sungai Seluang mengeluarkan bau tidak sedap terutama saat siang hari.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rizky Akbar",
+        "no_wa":"6288123300007@c.us",
+        "deskripsi":"Rumput liar di taman Karya Jaya sudah setinggi pinggang dan belum dipangkas.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Maya Lestari",
+        "no_wa":"6288123300008@c.us",
+        "deskripsi":"TPS di Margomulyo penuh dan sampah mulai berserakan ke badan jalan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Farhan Nugraha",
+        "no_wa":"6288123300009@c.us",
+        "deskripsi":"Parit Selili dipenuhi eceng gondok dan sampah sehingga aliran air terhambat.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Anita Wulandari",
+        "no_wa":"6288123300010@c.us",
+        "deskripsi":"Banyak sampah bekas acara warga masih berserakan di lapangan Wonotirto.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Arman Hakim",
+        "no_wa":"6288123300011@c.us",
+        "deskripsi":"Air sungai kecil di Teluk Pemedas terlihat keruh dan dipenuhi sampah plastik.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Dewi Rahmah",
+        "no_wa":"6288123300012@c.us",
+        "deskripsi":"Ada limbah rumah tangga dibuang langsung ke saluran air Muara Sembilang.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Kevin Maulana",
+        "no_wa":"6288123300013@c.us",
+        "deskripsi":"Tumpukan daun dan ranting kering di Sungai Seluang belum dibersihkan sejak lama.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Nadia Permata",
+        "no_wa":"6288123300014@c.us",
+        "deskripsi":"Tempat sampah umum di Karya Jaya rusak sehingga sampah sering tercecer.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rudi Hartono",
+        "no_wa":"6288123300015@c.us",
+        "deskripsi":"Banyak lalat di sekitar TPS Margomulyo karena sampah tidak segera diangkut.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Siti Marlina",
+        "no_wa":"6288123300016@c.us",
+        "deskripsi":"Saluran air di Selili penuh gulma dan mulai menjadi sarang nyamuk.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Galang Prakoso",
+        "no_wa":"6288123300017@c.us",
+        "deskripsi":"Masih ada warga yang membuang sampah ke lahan kosong di Wonotirto.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Putri Amelia",
+        "no_wa":"6288123300018@c.us",
+        "deskripsi":"Bau dari saluran drainase Teluk Pemedas sangat menyengat saat sore hari.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Daffa Ramadhan",
+        "no_wa":"6288123300019@c.us",
+        "deskripsi":"Parit Muara Sembilang tersumbat sampah rumah tangga dan menyebabkan genangan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rina Oktavia",
+        "no_wa":"6288123300020@c.us",
+        "deskripsi":"Banyak sampah makanan berserakan di area taman Sungai Seluang setelah akhir pekan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Teguh Pratama",
+        "no_wa":"6288123300021@c.us",
+        "deskripsi":"Semak belukar di Karya Jaya tumbuh terlalu lebat dan mulai menutupi jalan setapak.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Bella Kartika",
+        "no_wa":"6288123300022@c.us",
+        "deskripsi":"TPS sementara di Margomulyo sudah penuh dan menimbulkan bau tidak sedap.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Yoga Saputra",
+        "no_wa":"6288123300023@c.us",
+        "deskripsi":"Selokan Selili dipenuhi sampah plastik kemasan dan sulit dibersihkan sendiri oleh warga.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Meli Anggraini",
+        "no_wa":"6288123300024@c.us",
+        "deskripsi":"Sampah plastik mengapung di sungai dekat Wonotirto setelah hujan deras.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Fikri Akbar",
+        "no_wa":"6288123300025@c.us",
+        "deskripsi":"Ada pembakaran sampah di Teluk Pemedas hampir setiap malam dan asapnya cukup mengganggu.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Novi Yanti",
+        "no_wa":"6288123300026@c.us",
+        "deskripsi":"Parit Muara Sembilang tertutup sampah daun sehingga air meluber ke jalan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Indra Wijaya",
+        "no_wa":"6288123300027@c.us",
+        "deskripsi":"Taman Sungai Seluang terlihat kotor karena banyak sampah minuman yang dibuang sembarangan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Wulan Sari",
+        "no_wa":"6288123300028@c.us",
+        "deskripsi":"Limbah cair dari salah satu usaha di Karya Jaya mengalir ke selokan umum.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Bima Saputra",
+        "no_wa":"6288123300029@c.us",
+        "deskripsi":"Tumpukan sampah di Margomulyo belum diangkut lebih dari lima hari.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Maria Ulfa",
+        "no_wa":"6288123300030@c.us",
+        "deskripsi":"Genangan air di Selili menjadi tempat berkembang biaknya nyamuk.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Joko Susilo",
+        "no_wa":"6288123300031@c.us",
+        "deskripsi":"Banyak sampah bekas makanan di area wisata kecil Wonotirto setelah libur panjang.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Heni Rahmawati",
+        "no_wa":"6288123300032@c.us",
+        "deskripsi":"Lahan kosong di Teluk Pemedas dijadikan tempat pembuangan sampah liar.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Kurniawan Adi",
+        "no_wa":"6288123300033@c.us",
+        "deskripsi":"Parit Muara Sembilang penuh sampah plastik dan menghambat aliran air.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Olga Dwiyanti",
+        "no_wa":"6288123300034@c.us",
+        "deskripsi":"Bau sampah dari Sungai Seluang mulai tercium hingga ke area permukiman.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Putra Damanik",
+        "no_wa":"6288123300035@c.us",
+        "deskripsi":"Rumput liar di Karya Jaya menutupi sebagian saluran drainase.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Santi Wulan",
+        "no_wa":"6288123300036@c.us",
+        "deskripsi":"Tempat sampah umum di Margomulyo sudah rusak dan tidak memiliki penutup.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Toni Setiawan",
+        "no_wa":"6288123300037@c.us",
+        "deskripsi":"Masih ada warga yang membuang sampah ke selokan di Selili.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Vina Oktavia",
+        "no_wa":"6288123300038@c.us",
+        "deskripsi":"Botol dan kemasan plastik banyak mengapung di sungai sekitar Wonotirto.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Yuniar Sari",
+        "no_wa":"6288123300039@c.us",
+        "deskripsi":"Area Teluk Pemedas terlihat kotor karena sampah pasar belum dibersihkan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Fajar Kustanto",
+        "no_wa":"6288123300040@c.us",
+        "deskripsi":"Drainase Muara Sembilang perlu dikeruk karena sudah dipenuhi endapan lumpur.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Gita Amelia",
+        "no_wa":"6288123300041@c.us",
+        "deskripsi":"TPS di Sungai Seluang mengeluarkan bau menyengat saat cuaca panas.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Hendra Wijaya",
+        "no_wa":"6288123300042@c.us",
+        "deskripsi":"Taman Karya Jaya dipenuhi sampah kemasan makanan setelah acara komunitas.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Jihan Pratiwi",
+        "no_wa":"6288123300043@c.us",
+        "deskripsi":"Parit Margomulyo tersumbat sehingga air hujan menggenangi jalan lingkungan.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Kevin Alexander",
+        "no_wa":"6288123300044@c.us",
+        "deskripsi":"Pembakaran sampah di Selili menghasilkan asap yang cukup pekat dan mengganggu.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Lia Febrianti",
+        "no_wa":"6288123300045@c.us",
+        "deskripsi":"Sampah organik di Wonotirto mulai membusuk dan mengundang banyak lalat.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Irfan Maulana",
+        "no_wa":"6288123300046@c.us",
+        "deskripsi":"Saluran air Teluk Pemedas dipenuhi limbah rumah tangga dan menimbulkan bau.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Rina Destiana",
+        "no_wa":"6288123300047@c.us",
+        "deskripsi":"Sampah plastik berserakan di sepanjang jalan Muara Sembilang setelah hujan deras.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Eka Septiani",
+        "no_wa":"6288123300048@c.us",
+        "deskripsi":"Area bantaran sungai di Sungai Seluang dipenuhi sampah kemasan minuman.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Pak Budi",
+        "no_wa":"6288123300049@c.us",
+        "deskripsi":"Semak liar di Karya Jaya sudah menutupi sebagian jalan kecil menuju kebun warga.",
+        "Kategori":"LINGKUNGAN"
+    },
+    {
+        "nama":"Ibu Lina",
+        "no_wa":"6288123300050@c.us",
+        "deskripsi":"Warga berharap ada kegiatan gotong royong karena banyak titik di Margomulyo yang mulai dipenuhi sampah.",
         "Kategori":"LINGKUNGAN"
     },
     {
