@@ -401,65 +401,10 @@ def export_preprocessing_to_excel(data, final_data, output_path=None):
     return output_path
 
 # =====================================================
-# 5b. AUTO BACKUP
-# =====================================================
-BACKUP_PENGADUAN_PATH  = os.path.join(DATA_DIR, "backup_pengaduan.json")
-DATA_KATEGORIAL_PATH   = os.path.join(DATA_DIR, "data_kategorial.json")
-PENGADUAN_LABEL_PATH   = os.path.join(DATA_DIR, "pengaduan_label.json")
-
-def auto_backup():
-    """
-    Backup otomatis sebelum training:
-    - backup_pengaduan.json  ← salinan final_processed.json
-    - data_kategorial.json   ← ringkasan jumlah per kategori
-    - pengaduan_label.json   ← salinan dataset_berlabel.json (sumber kebenaran)
-    """
-    print("[*] Membuat backup otomatis...")
-
-    # 1. backup_pengaduan.json — salin final_processed.json (jika sudah ada)
-    if os.path.exists(FINAL_PROCESSED_PATH):
-        data_final = load_json(FINAL_PROCESSED_PATH)
-        save_json(data_final, BACKUP_PENGADUAN_PATH)
-        print(f"    [OK] backup_pengaduan.json ({len(data_final)} entri)")
-    else:
-        save_json([], BACKUP_PENGADUAN_PATH)
-        print("    [!] final_processed.json belum ada → backup_pengaduan.json kosong")
-
-    # 2. data_kategorial.json — ringkasan distribusi kategori dari dataset berlabel
-    if os.path.exists(DATASET_BERLABEL_PATH):
-        dataset = load_json(DATASET_BERLABEL_PATH)
-        distribusi = {}
-        for item in dataset:
-            cat = item.get("Kategori") or item.get("kategori") or "Unknown"
-            distribusi[cat] = distribusi.get(cat, 0) + 1
-        kategorial = [
-            {"kategori": cat, "jumlah": jml, "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
-            for cat, jml in sorted(distribusi.items())
-        ]
-        save_json(kategorial, DATA_KATEGORIAL_PATH)
-        print(f"    [OK] data_kategorial.json ({len(kategorial)} kategori)")
-    else:
-        save_json([], DATA_KATEGORIAL_PATH)
-
-    # 3. pengaduan_label.json — salin dataset_berlabel.json
-    if os.path.exists(DATASET_BERLABEL_PATH):
-        dataset = load_json(DATASET_BERLABEL_PATH)
-        save_json(dataset, PENGADUAN_LABEL_PATH)
-        print(f"    [OK] pengaduan_label.json ({len(dataset)} entri)")
-    else:
-        save_json([], PENGADUAN_LABEL_PATH)
-
-    print("[OK] Backup selesai.")
-
-
-# =====================================================
 # 6. TRAINING
 # =====================================================
 def train_model():
     print("[*] Memulai proses pelatihan model...")
-
-    # Auto backup sebelum training
-    auto_backup()
 
     data = load_json(DATASET_BERLABEL_PATH)
     print(f"[*] Jumlah data latih: {len(data)}")

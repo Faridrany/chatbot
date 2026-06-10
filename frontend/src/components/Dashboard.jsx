@@ -29,27 +29,16 @@ function InfoCard({ label, value, sub, accent, small }) {
 
 export default function Dashboard({ onLogout }) {
   const [stats, setStats] = useState(null);
-  const [training, setTraining] = useState(null);
-  const [trainingStats, setTrainingStats] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    Promise.all([
-      fetch("/api/stats")
-        .then((r) => r.json())
-        .catch(() => null),
-      fetch("/api/evaluasi")
-        .then((r) => r.json())
-        .catch(() => null),
-      fetch("/api/stats/training")
-        .then((r) => r.json())
-        .catch(() => null),
-    ]).then(([s, t, ts]) => {
-      setStats(s);
-      setTraining(t);
-      setTrainingStats(ts);
-      setLoading(false);
-    });
+    fetch("/api/stats")
+      .then((r) => r.json())
+      .then((s) => {
+        setStats(s);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
   }, []);
 
   const categoryData = stats
@@ -74,42 +63,6 @@ export default function Dashboard({ onLogout }) {
             <p className="text-gray-500">Memuat data...</p>
           ) : (
             <>
-              {/* ── Indikator Utama ── */}
-              <div>
-                <h2 className="text-lg font-bold text-gray-700 mb-3">Indikator Sistem</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                  <InfoCard
-                    label="Total Data Latih"
-                    value={trainingStats?.totalDataLatih ?? "-"}
-                    sub="Sumber: dataset_berlabel.json"
-                    accent="#2E7D32"
-                  />
-                  <InfoCard
-                    label="Total Pengaduan"
-                    value={stats?.totalPengaduan ?? "-"}
-                    sub="Sumber: final_processed.json"
-                    accent="#4CAF50"
-                  />
-                  <InfoCard
-                    label="Data Baru Hari Ini"
-                    value={stats?.totalBaru ?? 0}
-                    sub="Berdasarkan timestamp hari ini"
-                    accent="#81C784"
-                  />
-                  <InfoCard
-                    label="Distribusi Prediksi"
-                    value={stats?.kategoriTerbanyak ? (CAT_LABEL[stats.kategoriTerbanyak] ?? stats.kategoriTerbanyak) : "-"}
-                    sub={
-                      stats?.kategori && stats.kategoriTerbanyak
-                        ? `Terbanyak: ${stats.kategori[stats.kategoriTerbanyak] ?? 0} pengaduan`
-                        : "Berdasarkan kategori_prediksi"
-                    }
-                    accent="#A5D6A7"
-                    small
-                  />
-                </div>
-              </div>
-
               {/* ── Statistik Pengaduan ── */}
               <div>
                 <h2 className="text-lg font-bold text-gray-700 mb-3">Ringkasan Pengaduan</h2>
@@ -136,91 +89,6 @@ export default function Dashboard({ onLogout }) {
                   />
                 </div>
               </div>
-
-              {/* ── Info Model ── */}
-              {training && (
-                <div>
-                  <h2 className="text-lg font-bold text-gray-700 mb-3">Performa Model</h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <InfoCard
-                      label="Akurasi Model"
-                      value={`${((training.akurasi ?? 0) * 100).toFixed(1)}%`}
-                      sub="Data test (80:20 split)"
-                      accent="#2E7D32"
-                    />
-                    <InfoCard
-                      label="F1-Score (Weighted)"
-                      value={`${((training.f1_score ?? 0) * 100).toFixed(1)}%`}
-                      sub="Harmonic mean P & R"
-                      accent="#4CAF50"
-                    />
-                    <InfoCard
-                      label="Cross Validation 5-Fold"
-                      value={`${((training.cv_mean ?? 0) * 100).toFixed(1)}%`}
-                      sub={`± ${((training.cv_std ?? 0) * 100).toFixed(1)}% std`}
-                      accent="#81C784"
-                    />
-                    <InfoCard
-                      label="OOB Score"
-                      value={`${((training.oob_score ?? 0) * 100).toFixed(1)}%`}
-                      sub="Out-of-bag estimate"
-                      accent="#A5D6A7"
-                    />
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
-                    <InfoCard
-                      label="Data Training / Test"
-                      value={`${training.data_train ?? "-"} / ${training.data_test ?? "-"}`}
-                      sub={`Total ${training.total_data ?? "-"} data`}
-                      accent="#2E7D32"
-                    />
-                    <InfoCard
-                      label="Fitur TF-IDF (Bigram)"
-                      value={(training.fitur_tfidf ?? 0).toLocaleString()}
-                      sub={`Dipilih: ${(training.fitur_selected ?? 0).toLocaleString()} fitur`}
-                      accent="#4CAF50"
-                    />
-                    <InfoCard
-                      label="Estimator (Pohon)"
-                      value={training.estimators ?? 500}
-                      sub="Random Forest n_estimators"
-                      accent="#81C784"
-                    />
-                    <InfoCard
-                      label="N-gram Range"
-                      value={training.ngram_range ? `(${training.ngram_range.join(", ")})` : "(1, 2)"}
-                      sub="Unigram + Bigram"
-                      accent="#A5D6A7"
-                    />
-                  </div>
-
-                  {/* Per-kelas ringkasan */}
-                  {training.perClass && (
-                    <div className="mt-4 bg-white rounded-2xl shadow p-5">
-                      <h3 className="font-semibold text-gray-700 mb-3 text-sm">Akurasi per Kategori (dari data test)</h3>
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                        {Object.entries(training.perClass).map(([cat, m]) => (
-                          <div
-                            key={cat}
-                            className="rounded-xl border p-3 text-center"
-                            style={{ borderColor: CATEGORY_COLORS[cat] ?? "#ccc" }}
-                          >
-                            <p className="text-xs font-semibold mb-1" style={{ color: CATEGORY_COLORS[cat] ?? "#555" }}>
-                              {CAT_LABEL[cat] ?? cat}
-                            </p>
-                            <p className="text-xl font-bold text-gray-800">{((m.f1 ?? 0) * 100).toFixed(0)}%</p>
-                            <p className="text-xs text-gray-400">F1-Score</p>
-                            <div className="flex justify-between text-xs text-gray-500 mt-1">
-                              <span>P: {((m.precision ?? 0) * 100).toFixed(0)}%</span>
-                              <span>R: {((m.recall ?? 0) * 100).toFixed(0)}%</span>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              )}
 
               {/* ── Charts ── */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

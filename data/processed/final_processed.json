@@ -11998,5 +11998,55 @@
         "kategori_prediksi": "INFRASTRUKTUR",
         "confidence": 0.3687,
         "timestamp": "-"
+    },
+    {
+        "nama": "Budi Santoso",
+        "no_wa": "6281234567890",
+        "deskripsi": "Lampu jalan di depan gang saya sudah mati lebih dari seminggu. Tolong segera diperbaiki karena rawan kejahatan di malam hari.",
+        "processed": "lampu jalan depan gang sudah mati lebih minggu segera baik rawan jahat malam hari",
+        "label_asli": "-",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "confidence": 0.437,
+        "timestamp": "2026-06-10 08:15:00"
+    },
+    {
+        "nama": "Siti Rahayu",
+        "no_wa": "6289876543210",
+        "deskripsi": "Sampah di TPS dekat pasar sudah menumpuk dan tidak diangkut sejak 3 hari lalu. Baunya sangat mengganggu warga sekitar.",
+        "processed": "sampah tps dekat pasar tumpuk tidak angkut sejak hari lalu bau sangat ganggu warga",
+        "label_asli": "-",
+        "kategori_prediksi": "LINGKUNGAN",
+        "confidence": 0.6898,
+        "timestamp": "2026-06-10 09:30:00"
+    },
+    {
+        "nama": "Ahmad Fauzi",
+        "no_wa": "6285712345678",
+        "deskripsi": "Jalan berlubang di depan SDN Samboja 1 sangat berbahaya untuk anak-anak sekolah. Sudah beberapa motor yang jatuh.",
+        "processed": "jalan lubang depan sdn samboja sangat bahaya anak anak sekolah beberapa motor jatuh",
+        "label_asli": "-",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "confidence": 0.6199,
+        "timestamp": "2026-06-10 10:00:00"
+    },
+    {
+        "nama": "Rina Wijaya",
+        "no_wa": "6287654321098",
+        "deskripsi": "Ada sekelompok remaja yang sering berkumpul dan berisik di depan toko saya sampai larut malam. Warga merasa tidak aman.",
+        "processed": "kelompok remaja sering kumpul berisik depan toko sampai larut malam warga rasa aman",
+        "label_asli": "-",
+        "kategori_prediksi": "KEAMANAN",
+        "confidence": 0.7893,
+        "timestamp": "2026-06-10 11:20:00"
+    },
+    {
+        "nama": "Dedi Kurniawan",
+        "no_wa": "6282345678901",
+        "deskripsi": "Pelayanan di kantor kelurahan sangat lambat. Saya sudah menunggu 3 jam untuk urusan KTP tapi masih belum dilayani.",
+        "processed": "layan kantor lurah sangat lambat sudah tunggu jam urus ktp masih layan",
+        "label_asli": "-",
+        "kategori_prediksi": "PELAYANAN",
+        "confidence": 0.9319,
+        "timestamp": "2026-06-10 13:45:00"
     }
 ]
