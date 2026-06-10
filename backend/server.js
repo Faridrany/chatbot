@@ -24,25 +24,28 @@ const PROCESSED_DIR = path.join(DATA_DIR, "processed");
 const cache = {
   pengaduan: null,        // final_processed.json  (~500KB, array 1200 item)
   training: null,        // hasil_training.json   (~2KB)
-  stats: null,        // hasil komputasi stats
+  stats: null,            // hasil komputasi stats (dari final_processed.json)
+  statsTraining: null,    // statistik data latih (dari dataset_berlabel.json)
   pipelineMap: null,      // lazy-loaded saat pertama kali dibutuhkan
   pipelineLoading: false, // guard agar tidak double-load
 };
 
-// ── Baca hanya 2 file kecil/menengah saat startup ──
+// ── Baca hanya file kecil/menengah saat startup ──
 async function loadCache() {
   console.log("⏳ Loading core data into memory...");
 
-  const [pengaduanRaw, trainingRaw] = await Promise.all([
+  const [pengaduanRaw, trainingRaw, berlabelRaw] = await Promise.all([
     fs.readFile(path.join(PROCESSED_DIR, "final_processed.json"), "utf-8"),
     fs.readFile(path.join(DATA_DIR, "hasil_training.json"), "utf-8").catch(() => "{}"),
+    fs.readFile(path.join(DATA_DIR, "raw/dataset_berlabel.json"), "utf-8").catch(() => "[]"),
   ]);
 
-  cache.pengaduan = JSON.parse(pengaduanRaw);
-  cache.training = JSON.parse(trainingRaw);
-  cache.stats = computeStats(cache.pengaduan);
+  cache.pengaduan    = JSON.parse(pengaduanRaw);
+  cache.training     = JSON.parse(trainingRaw);
+  cache.stats        = computeStats(cache.pengaduan);
+  cache.statsTraining = computeTrainingStats(JSON.parse(berlabelRaw));
 
-  console.log(`✅ Cache loaded: ${cache.pengaduan.length} pengaduan`);
+  console.log(`✅ Cache loaded: ${cache.pengaduan.length} pengaduan, ${cache.statsTraining.totalDataLatih} data latih`);
 }
 
 // ── Lazy load pipeline Map (hanya sekali, saat pertama kali diperlukan) ──
@@ -107,19 +110,43 @@ async function getPipelineMap() {
 // ─────────────────────────────────────────────
 // STATS
 // ─────────────────────────────────────────────
+
+/** Statistik data latih — sumber: dataset_berlabel.json */
+function computeTrainingStats(dataset) {
+  const distribusi = {};
+  for (const item of dataset) {
+    const cat = item.Kategori || item.kategori || "Unknown";
+    distribusi[cat] = (distribusi[cat] || 0) + 1;
+  }
+  return {
+    totalDataLatih: dataset.length,
+    distribusiLatih: distribusi,
+  };
+}
+
+/** Statistik pengaduan masuk — sumber: final_processed.json */
 function computeStats(pengaduan) {
   const kategoriCount = {};
   let latestTs = new Date(0);
   let hasTs = false;
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  let totalHariIni = 0;
 
   for (const item of pengaduan) {
     const cat = item.kategori_prediksi || item.Kategori || item.kategori || "Unknown";
     kategoriCount[cat] = (kategoriCount[cat] || 0) + 1;
 
     const rawTs = item.timestamp || item.tanggal || item.created_at;
-    if (rawTs) {
+    if (rawTs && rawTs !== "-") {
       const ts = new Date(rawTs);
-      if (!isNaN(ts) && ts > latestTs) { latestTs = ts; hasTs = true; }
+      if (!isNaN(ts)) {
+        if (ts > latestTs) { latestTs = ts; hasTs = true; }
+        const tsDay = new Date(ts);
+        tsDay.setHours(0, 0, 0, 0);
+        if (tsDay.getTime() === today.getTime()) totalHariIni++;
+      }
     }
   }
 
@@ -131,7 +158,7 @@ function computeStats(pengaduan) {
   if (hasTs) {
     for (const item of pengaduan) {
       const rawTs = item.timestamp || item.tanggal || item.created_at;
-      if (!rawTs) continue;
+      if (!rawTs || rawTs === "-") continue;
       const ts = new Date(rawTs);
       if (isNaN(ts)) continue;
       const diff = latestTs - ts;
@@ -152,7 +179,16 @@ function computeStats(pengaduan) {
   const kategoriTerbanyak =
     Object.entries(kategoriCount).sort((a, b) => b[1] - a[1])[0]?.[0] || "-";
 
-  return { total: pengaduan.length, baru3Hari: baru3, baru7Hari: baru7, kategoriTerbanyak, kategori: kategoriCount, weeklyData: weekly };
+  return {
+    total: pengaduan.length,
+    totalPengaduan: pengaduan.length,
+    totalBaru: totalHariIni,
+    baru3Hari: baru3,
+    baru7Hari: baru7,
+    kategoriTerbanyak,
+    kategori: kategoriCount,
+    weeklyData: weekly,
+  };
 }
 
 // ─────────────────────────────────────────────
@@ -169,9 +205,17 @@ app.get("/api/evaluasi", async (_req, res) => {
   }
 });
 
-// Stats dashboard
+// Stats dashboard — sumber: final_processed.json
 app.get("/api/stats", (_req, res) => {
-  res.json(cache.stats);
+  res.json({
+    ...cache.stats,
+    totalDataLatih: cache.statsTraining?.totalDataLatih ?? 0,
+  });
+});
+
+// Stats data latih — sumber: dataset_berlabel.json
+app.get("/api/stats/training", (_req, res) => {
+  res.json(cache.statsTraining ?? { totalDataLatih: 0, distribusiLatih: {} });
 });
 
 // List pengaduan dengan paginasi + filter

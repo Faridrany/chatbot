@@ -30,6 +30,7 @@ function InfoCard({ label, value, sub, accent, small }) {
 export default function Dashboard({ onLogout }) {
   const [stats, setStats] = useState(null);
   const [training, setTraining] = useState(null);
+  const [trainingStats, setTrainingStats] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -40,9 +41,13 @@ export default function Dashboard({ onLogout }) {
       fetch("/api/evaluasi")
         .then((r) => r.json())
         .catch(() => null),
-    ]).then(([s, t]) => {
+      fetch("/api/stats/training")
+        .then((r) => r.json())
+        .catch(() => null),
+    ]).then(([s, t, ts]) => {
       setStats(s);
       setTraining(t);
+      setTrainingStats(ts);
       setLoading(false);
     });
   }, []);
@@ -69,6 +74,42 @@ export default function Dashboard({ onLogout }) {
             <p className="text-gray-500">Memuat data...</p>
           ) : (
             <>
+              {/* ── Indikator Utama ── */}
+              <div>
+                <h2 className="text-lg font-bold text-gray-700 mb-3">Indikator Sistem</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <InfoCard
+                    label="Total Data Latih"
+                    value={trainingStats?.totalDataLatih ?? "-"}
+                    sub="Sumber: dataset_berlabel.json"
+                    accent="#2E7D32"
+                  />
+                  <InfoCard
+                    label="Total Pengaduan"
+                    value={stats?.totalPengaduan ?? "-"}
+                    sub="Sumber: final_processed.json"
+                    accent="#4CAF50"
+                  />
+                  <InfoCard
+                    label="Data Baru Hari Ini"
+                    value={stats?.totalBaru ?? 0}
+                    sub="Berdasarkan timestamp hari ini"
+                    accent="#81C784"
+                  />
+                  <InfoCard
+                    label="Distribusi Prediksi"
+                    value={stats?.kategoriTerbanyak ? (CAT_LABEL[stats.kategoriTerbanyak] ?? stats.kategoriTerbanyak) : "-"}
+                    sub={
+                      stats?.kategori && stats.kategoriTerbanyak
+                        ? `Terbanyak: ${stats.kategori[stats.kategoriTerbanyak] ?? 0} pengaduan`
+                        : "Berdasarkan kategori_prediksi"
+                    }
+                    accent="#A5D6A7"
+                    small
+                  />
+                </div>
+              </div>
+
               {/* ── Statistik Pengaduan ── */}
               <div>
                 <h2 className="text-lg font-bold text-gray-700 mb-3">Ringkasan Pengaduan</h2>

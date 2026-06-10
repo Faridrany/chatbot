@@ -183,7 +183,9 @@ def preprocess_pipeline(data, save_files=True, append_files=False):
         save_json(load_or_empty(NORMALIZED_PATH)      + normalized_data,   NORMALIZED_PATH)
         save_json(load_or_empty(STOP_REMOVED_PATH)    + stop_removed_data, STOP_REMOVED_PATH)
         save_json(load_or_empty(STEMMED_PATH)         + stemmed_data,      STEMMED_PATH)
-        save_json(load_or_empty(FINAL_PROCESSED_PATH) + final_data,        FINAL_PROCESSED_PATH)
+        # CATATAN: FINAL_PROCESSED_PATH TIDAK ditulis di sini.
+        # Format final yang benar (dengan confidence, label_asli, kategori_prediksi)
+        # ditulis oleh train_model() dan predict_new_data() secara langsung.
 
     print("[OK] Preprocessing selesai.")
     return final_data
@@ -624,8 +626,17 @@ def train_model():
 # =====================================================
 # 7. PREDIKSI DATA BARU
 # =====================================================
+def _make_dedup_key(item):
+    """Buat kunci unik dari kombinasi no_wa + deskripsi + timestamp."""
+    return (
+        str(item.get("no_wa", "")).strip(),
+        str(item.get("deskripsi", "")).strip(),
+        str(item.get("timestamp", "")).strip(),
+    )
+
+
 def predict_new_data():
-    print("[*] Memproses prediksi data baru...")
+    print("[ ] Memproses data baru...")
 
     if not os.path.exists(DATA_BARU_PATH):
         save_json([], HASIL_PREDIKSI_PATH)
@@ -639,10 +650,15 @@ def predict_new_data():
         print("[*] data_baru.json kosong")
         return
 
-    print(f"[*] Jumlah data baru: {len(data_baru)}")
+    print(f"[*] Jumlah data baru ditemukan: {len(data_baru)}")
 
+    # ── 1. Preprocessing + append ke history ──────────────────
+    print(f"[ ] Menambahkan {len(data_baru)} data ke preprocessing history...")
     data_preprocessed = preprocess_pipeline(data_baru, save_files=True, append_files=True)
+    print(f"[OK] Preprocessing history diperbarui.")
 
+    # ── 2. Klasifikasi ─────────────────────────────────────────
+    print("[ ] Melakukan klasifikasi...")
     model         = joblib.load(MODEL_PATH)
     vectorizer    = joblib.load(VECTORIZER_PATH)
     selector      = joblib.load(SELECTOR_PATH)
@@ -657,20 +673,58 @@ def predict_new_data():
     probabilities     = model.predict_proba(X_selected)
     confidence_scores = probabilities.max(axis=1)
 
-    hasil = []
+    # Bangun list hasil prediksi baru (format lengkap)
+    hasil_baru = []
     for i, item in enumerate(data_baru):
-        hasil.append({
+        hasil_baru.append({
             "nama"              : item.get("nama", ""),
-            "no_wa"             : item.get("no_wa", ""),
+            "no_wa"             : str(item.get("no_wa", "")).replace("@c.us", ""),
             "deskripsi"         : item.get("deskripsi", ""),
             "processed"         : data_preprocessed[i].get("final_text", ""),
+            "label_asli"        : "-",
             "kategori_prediksi" : predicted_labels[i],
             "confidence"        : round(float(confidence_scores[i]), 4),
             "timestamp"         : item.get("timestamp", datetime.now().strftime("%Y-%m-%d %H:%M:%S")),
         })
 
-    save_json(hasil, HASIL_PREDIKSI_PATH)
-    print(f"[OK] {len(hasil)} data prediksi disimpan ke: {HASIL_PREDIKSI_PATH}")
+    # Simpan ke hasil_prediksi.json (sesi ini saja, tidak di-append)
+    save_json(hasil_baru, HASIL_PREDIKSI_PATH)
+    print(f"[OK] {len(hasil_baru)} hasil prediksi disimpan ke: {HASIL_PREDIKSI_PATH}")
+
+    # ── 3. Append ke final_processed.json (dengan dedup) ──────
+    print(f"[ ] Menambahkan {len(hasil_baru)} data ke final_processed.json...")
+
+    existing_final = []
+    if os.path.exists(FINAL_PROCESSED_PATH):
+        existing_final = load_json(FINAL_PROCESSED_PATH)
+
+    # Bangun set kunci dari data yang sudah ada
+    existing_keys = {_make_dedup_key(rec) for rec in existing_final}
+
+    ditambahkan = 0
+    diskip      = 0
+    for rec in hasil_baru:
+        key = _make_dedup_key(rec)
+        if key in existing_keys:
+            diskip += 1
+        else:
+            existing_final.append(rec)
+            existing_keys.add(key)
+            ditambahkan += 1
+
+    save_json(existing_final, FINAL_PROCESSED_PATH)
+
+    if diskip > 0:
+        print(f"[*] {diskip} data duplikat dilewati.")
+    print(f"[ ] Menambahkan {ditambahkan} data ke final_processed.json")
+
+    total_pengaduan = len(existing_final)
+    print(f"[*] Total pengaduan saat ini: {total_pengaduan}")
+    print("[OK] Sinkronisasi selesai")
+
+    # ── 4. Kosongkan data_baru.json agar tidak diklasifikasi ulang ──
+    save_json([], DATA_BARU_PATH)
+    print("[OK] data_baru.json dikosongkan.")
 
 # =====================================================
 # 8. MAIN
@@ -700,8 +754,6 @@ if __name__ == "__main__":
         predict_new_data()
     else:
         print("[OK] Model sudah tersedia.")
-        print("[*] Update pipeline dari dataset_berlabel...")
-        preprocess_pipeline(load_json(DATASET_BERLABEL_PATH), save_files=True, append_files=False)
         predict_new_data()
 
     print("[OK] Program selesai dijalankan.")

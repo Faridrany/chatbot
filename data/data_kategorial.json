@@ -1,1 +1,22 @@
-[]
+[
+    {
+        "kategori": "INFRASTRUKTUR",
+        "jumlah": 300,
+        "timestamp": "2026-06-10 13:28:25"
+    },
+    {
+        "kategori": "KEAMANAN",
+        "jumlah": 300,
+        "timestamp": "2026-06-10 13:28:25"
+    },
+    {
+        "kategori": "LINGKUNGAN",
+        "jumlah": 300,
+        "timestamp": "2026-06-10 13:28:25"
+    },
+    {
+        "kategori": "PELAYANAN",
+        "jumlah": 300,
+        "timestamp": "2026-06-10 13:28:25"
+    }
+]
