@@ -6,13 +6,13 @@ import json
 import joblib
 import pandas as pd
 from datetime import datetime
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.feature_selection import SelectFromModel
+from sklearn.feature_selection import SelectKBest, chi2
 from sklearn.metrics import (
     accuracy_score, precision_score, recall_score,
-    classification_report, confusion_matrix
+    f1_score, classification_report, confusion_matrix
 )
 from sklearn.preprocessing import LabelEncoder
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
@@ -57,7 +57,7 @@ MODEL_PATH            = os.path.join(MODEL_DIR,     "random_forest_model.pkl")
 VECTORIZER_PATH       = os.path.join(MODEL_DIR,     "tfidf_vectorizer.pkl")
 SELECTOR_PATH         = os.path.join(MODEL_DIR,     "feature_selector.pkl")
 LABEL_ENCODER_PATH    = os.path.join(MODEL_DIR,     "label_encoder.pkl")
-TFIDF_FEATURES_PATH   = os.path.join(FEATURE_DIR,  "tfidf_features.pkl")
+TFIDF_FEATURES_PATH   = os.path.join(FEATURE_DIR,  "tfidf_features.pkl")  # legacy, tidak digunakan
 HASIL_PREDIKSI_PATH   = os.path.join(PREDICTION_DIR,"hasil_prediksi.json")
 EXPORT_EXCEL_PATH     = os.path.join(EXPORT_DIR,    "preprocessing_result.xlsx")
 
@@ -480,15 +480,20 @@ def train_model():
     label_encoder = LabelEncoder()
     y_encoded     = label_encoder.fit_transform(y)
 
-    vectorizer = TfidfVectorizer()
-    X_tfidf    = vectorizer.fit_transform(X_text)
+    # TF-IDF dengan bigram dan pembatasan fitur
+    vectorizer = TfidfVectorizer(
+        max_features=5000,
+        min_df=2,
+        max_df=0.95,
+        ngram_range=(1, 2),
+    )
+    X_tfidf = vectorizer.fit_transform(X_text)
     print(f"Shape TF-IDF                : {X_tfidf.shape}")
-    joblib.dump(X_tfidf, TFIDF_FEATURES_PATH)
+    # TIDAK disimpan ke disk — matriks TF-IDF tidak diperlukan saat inferensi
 
-    selector_model = RandomForestClassifier(n_estimators=100, random_state=42)
-    selector_model.fit(X_tfidf, y_encoded)
-    selector   = SelectFromModel(selector_model, threshold=0.001, prefit=True)
-    X_selected = selector.transform(X_tfidf)
+    # Seleksi fitur dengan SelectKBest + chi2 (lebih cepat & hemat RAM)
+    selector   = SelectKBest(score_func=chi2, k=min(1000, X_tfidf.shape[1]))
+    X_selected = selector.fit_transform(X_tfidf, y_encoded)
     print(f"Shape setelah seleksi fitur : {X_selected.shape}")
 
     print(f"\nJumlah data awal  : {len(df)}")
@@ -496,12 +501,21 @@ def train_model():
     print(f"Jumlah label      : {len(y)}")
 
     X_train, X_test, y_train, y_test = train_test_split(
-        X_selected, y_encoded, test_size=0.3, random_state=42, stratify=y_encoded
+        X_selected, y_encoded, test_size=0.2, random_state=42, stratify=y_encoded
     )
     print(f"Train             : {len(y_train)}")
     print(f"Test              : {len(y_test)}")
 
-    model = RandomForestClassifier(n_estimators=200, random_state=42)
+    model = RandomForestClassifier(
+        n_estimators=500,
+        max_depth=30,
+        min_samples_split=5,
+        min_samples_leaf=2,
+        class_weight="balanced",
+        n_jobs=-1,
+        random_state=42,
+        oob_score=True,
+    )
     model.fit(X_train, y_train)
 
     y_pred = model.predict(X_test)
@@ -512,11 +526,22 @@ def train_model():
     acc  = accuracy_score(y_test, y_pred)
     prec = precision_score(y_test, y_pred, average="weighted")
     rec  = recall_score(y_test, y_pred, average="weighted")
-    print("Accuracy :", acc)
-    print("Precision:", prec)
-    print("Recall   :", rec)
+    f1   = f1_score(y_test, y_pred, average="weighted")
+    print(f"Accuracy  : {acc}")
+    print(f"Precision : {prec}")
+    print(f"Recall    : {rec}")
+    print(f"F1-Score  : {f1}")
+    print(f"OOB Score : {model.oob_score_}")
     print("\nClassification Report:\n", classification_report(y_test, y_pred))
     print("\nConfusion Matrix:\n", confusion_matrix(y_test, y_pred))
+
+    # Cross Validation 5-fold
+    print("\n[*] Menjalankan Cross Validation 5-fold (n_jobs=-1)...")
+    cv_scores = cross_val_score(
+        model, X_selected, y_encoded, cv=5, scoring="accuracy", n_jobs=-1
+    )
+    print(f"CV Scores : {cv_scores}")
+    print(f"CV Mean   : {cv_scores.mean():.4f}  ±  {cv_scores.std():.4f}")
 
     joblib.dump(model,         MODEL_PATH)
     joblib.dump(vectorizer,    VECTORIZER_PATH)
@@ -555,13 +580,19 @@ def train_model():
         "akurasi"      : round(acc,  4),
         "presisi"      : round(prec, 4),
         "recall"       : round(rec,  4),
+        "f1_score"     : round(f1,   4),
+        "oob_score"    : round(float(model.oob_score_), 4),
+        "cv_mean"      : round(float(cv_scores.mean()), 4),
+        "cv_std"       : round(float(cv_scores.std()),  4),
         "total_data"   : len(df),
         "data_train"   : len(y_train),
         "data_test"    : len(y_test),
         "jumlah_kelas" : int(y.nunique()),
         "kelas"        : sorted(y.unique().tolist()),
         "fitur_tfidf"  : int(X_tfidf.shape[1]),
-        "estimators"   : 200,
+        "fitur_selected": int(X_selected.shape[1]),
+        "estimators"   : 500,
+        "ngram_range"  : [1, 2],
         "perClass"     : per_class,
         "confusionMatrix": cm_dict,
     }

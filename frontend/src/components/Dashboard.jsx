@@ -104,25 +104,51 @@ export default function Dashboard({ onLogout }) {
                     <InfoCard
                       label="Akurasi Model"
                       value={`${((training.akurasi ?? 0) * 100).toFixed(1)}%`}
-                      sub="Random Forest overall"
+                      sub="Data test (80:20 split)"
                       accent="#2E7D32"
                     />
+                    <InfoCard
+                      label="F1-Score (Weighted)"
+                      value={`${((training.f1_score ?? 0) * 100).toFixed(1)}%`}
+                      sub="Harmonic mean P & R"
+                      accent="#4CAF50"
+                    />
+                    <InfoCard
+                      label="Cross Validation 5-Fold"
+                      value={`${((training.cv_mean ?? 0) * 100).toFixed(1)}%`}
+                      sub={`± ${((training.cv_std ?? 0) * 100).toFixed(1)}% std`}
+                      accent="#81C784"
+                    />
+                    <InfoCard
+                      label="OOB Score"
+                      value={`${((training.oob_score ?? 0) * 100).toFixed(1)}%`}
+                      sub="Out-of-bag estimate"
+                      accent="#A5D6A7"
+                    />
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
                     <InfoCard
                       label="Data Training / Test"
                       value={`${training.data_train ?? "-"} / ${training.data_test ?? "-"}`}
                       sub={`Total ${training.total_data ?? "-"} data`}
+                      accent="#2E7D32"
+                    />
+                    <InfoCard
+                      label="Fitur TF-IDF (Bigram)"
+                      value={(training.fitur_tfidf ?? 0).toLocaleString()}
+                      sub={`Dipilih: ${(training.fitur_selected ?? 0).toLocaleString()} fitur`}
                       accent="#4CAF50"
                     />
                     <InfoCard
-                      label="Jumlah Fitur TF-IDF"
-                      value={(training.fitur_tfidf ?? 0).toLocaleString()}
-                      sub="Setelah seleksi fitur"
+                      label="Estimator (Pohon)"
+                      value={training.estimators ?? 500}
+                      sub="Random Forest n_estimators"
                       accent="#81C784"
                     />
                     <InfoCard
-                      label="Jumlah Estimator"
-                      value={training.estimators ?? 200}
-                      sub="Pohon keputusan (RF)"
+                      label="N-gram Range"
+                      value={training.ngram_range ? `(${training.ngram_range.join(", ")})` : "(1, 2)"}
+                      sub="Unigram + Bigram"
                       accent="#A5D6A7"
                     />
                   </div>
