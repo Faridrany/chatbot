@@ -18728,37 +18728,30 @@
         ]
     },
     {
-        "deskripsi": "Lampu jalan di depan gang saya sudah mati lebih dari seminggu. Tolong segera diperbaiki karena rawan kejahatan di malam hari.",
+        "deskripsi": "Lampu jalan di depan rumah saya sudah mati selama 3 hari. Tolong diperbaiki segera karena rawan pencurian.",
         "stemmed": [
             "lampu",
             "jalan",
             "depan",
-            "gang",
+            "rumah",
             "sudah",
             "mati",
-            "lebih",
-            "minggu",
-            "segera",
+            "lama",
+            "hari",
             "baik",
+            "segera",
             "rawan",
-            "jahat",
-            "malam",
-            "hari"
+            "curi"
         ]
     },
     {
-        "deskripsi": "Sampah di TPS dekat pasar sudah menumpuk dan tidak diangkut sejak 3 hari lalu. Baunya sangat mengganggu warga sekitar.",
+        "deskripsi": "Ada sampah menumpuk di TPS dekat pasar. Baunya sangat mengganggu warga sekitar.",
         "stemmed": [
             "sampah",
+            "tumpuk",
             "tps",
             "dekat",
             "pasar",
-            "tumpuk",
-            "tidak",
-            "angkut",
-            "sejak",
-            "hari",
-            "lalu",
             "bau",
             "sangat",
             "ganggu",
@@ -18766,56 +18759,80 @@
         ]
     },
     {
-        "deskripsi": "Jalan berlubang di depan SDN Samboja 1 sangat berbahaya untuk anak-anak sekolah. Sudah beberapa motor yang jatuh.",
+        "deskripsi": "Jalan rusak berlubang di depan sekolah. Berbahaya untuk anak-anak yang berangkat sekolah.",
         "stemmed": [
             "jalan",
+            "rusak",
             "lubang",
             "depan",
-            "sdn",
-            "samboja",
-            "sangat",
+            "sekolah",
             "bahaya",
             "anak",
             "anak",
-            "sekolah",
-            "beberapa",
-            "motor",
-            "jatuh"
+            "berangkat",
+            "sekolah"
         ]
     },
     {
-        "deskripsi": "Ada sekelompok remaja yang sering berkumpul dan berisik di depan toko saya sampai larut malam. Warga merasa tidak aman.",
+        "deskripsi": "Pengurusan KTP di kantor kelurahan sangat lama. Sudah 2 minggu belum jadi.",
         "stemmed": [
-            "kelompok",
-            "remaja",
-            "sering",
-            "kumpul",
-            "berisik",
-            "depan",
-            "toko",
-            "sampai",
-            "larut",
-            "malam",
-            "warga",
-            "rasa",
-            "aman"
-        ]
-    },
-    {
-        "deskripsi": "Pelayanan di kantor kelurahan sangat lambat. Saya sudah menunggu 3 jam untuk urusan KTP tapi masih belum dilayani.",
-        "stemmed": [
-            "layan",
+            "urus",
+            "ktp",
             "kantor",
             "lurah",
             "sangat",
+            "lama",
+            "minggu",
+            "jadi"
+        ]
+    },
+    {
+        "deskripsi": "Ada maling motor di kompleks kami malam ini. Mohon patroli keamanan ditingkatkan.",
+        "stemmed": [
+            "maling",
+            "motor",
+            "kompleks",
+            "malam",
+            "mohon",
+            "patroli",
+            "aman",
+            "tingkat"
+        ]
+    },
+    {
+        "deskripsi": "Saluran air tersumbat sehingga air menggenang dan banyak nyamuk.",
+        "stemmed": [
+            "salur",
+            "air",
+            "sumbat",
+            "air",
+            "genang",
+            "banyak",
+            "nyamuk"
+        ]
+    },
+    {
+        "deskripsi": "Jembatan penyeberangan rusak dan tidak aman untuk digunakan.",
+        "stemmed": [
+            "jembatan",
+            "seberang",
+            "rusak",
+            "tidak",
+            "aman",
+            "guna"
+        ]
+    },
+    {
+        "deskripsi": "Pelayanan administrasi di kantor kecamatan sangat lambat dan tidak ramah.",
+        "stemmed": [
+            "layan",
+            "administrasi",
+            "kantor",
+            "camat",
+            "sangat",
             "lambat",
-            "sudah",
-            "tunggu",
-            "jam",
-            "urus",
-            "ktp",
-            "masih",
-            "layan"
+            "tidak",
+            "ramah"
         ]
     }
 ]

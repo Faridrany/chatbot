@@ -34,18 +34,18 @@ const cache = {
 async function loadCache() {
   console.log("⏳ Loading core data into memory...");
 
-  const [pengaduanRaw, trainingRaw, berlabelRaw] = await Promise.all([
+  const [finalProcessedRaw, trainingRaw, berlabelRaw] = await Promise.all([
     fs.readFile(path.join(PROCESSED_DIR, "final_processed.json"), "utf-8"),
     fs.readFile(path.join(DATA_DIR, "hasil_training.json"), "utf-8").catch(() => "{}"),
     fs.readFile(path.join(DATA_DIR, "raw/dataset_berlabel.json"), "utf-8").catch(() => "[]"),
   ]);
 
-  cache.pengaduan    = JSON.parse(pengaduanRaw);
-  cache.training     = JSON.parse(trainingRaw);
-  cache.stats        = computeStats(cache.pengaduan);
+  cache.pengaduan = JSON.parse(finalProcessedRaw);
+  cache.training = JSON.parse(trainingRaw);
+  cache.stats = computeStats(cache.pengaduan);
   cache.statsTraining = computeTrainingStats(JSON.parse(berlabelRaw));
 
-  console.log(`✅ Cache loaded: ${cache.pengaduan.length} pengaduan, ${cache.statsTraining.totalDataLatih} data latih`);
+  console.log(`✅ Cache loaded: ${cache.pengaduan.length} pengaduan (training + klasifikasi), ${cache.statsTraining.totalDataLatih} data latih`);
 }
 
 // ── Lazy load pipeline Map (hanya sekali, saat pertama kali diperlukan) ──
@@ -233,6 +233,7 @@ app.get("/api/pengaduan", (_req, res) => {
     kategori_prediksi: item.kategori_prediksi || item.Kategori || item.kategori || "-",
     timestamp: item.timestamp || item.tanggal || item.created_at || null,
     confidence: item.confidence ?? item.akurasi_model ?? null,
+    status: item.status ?? "Menunggu",
   }));
 
   if (search) {
@@ -260,6 +261,50 @@ app.get("/api/pengaduan/:id", (req, res) => {
   res.json(item);
 });
 
+// ── HAPUS pengaduan ──
+app.delete("/api/pengaduan/:id", async (req, res) => {
+  const idx = parseInt(req.params.id);
+  if (isNaN(idx) || idx < 0 || idx >= cache.pengaduan.length) {
+    return res.status(404).json({ error: "Data tidak ditemukan" });
+  }
+  cache.pengaduan.splice(idx, 1);
+  // Simpan kembali ke final_processed.json
+  await fs.writeFile(
+    path.join(PROCESSED_DIR, "final_processed.json"),
+    JSON.stringify(cache.pengaduan, null, 4),
+    "utf-8"
+  );
+  // Recompute stats
+  cache.stats = computeStats(cache.pengaduan);
+  // Reset pipeline cache
+  cache.pipelineMap = null;
+  res.json({ success: true, total: cache.pengaduan.length });
+});
+
+// ── UPDATE STATUS pengaduan ──
+app.patch("/api/pengaduan/:id/status", async (req, res) => {
+  const idx = parseInt(req.params.id);
+  const { status } = req.body;
+  const VALID = ["Menunggu", "Diproses", "Selesai"];
+
+  if (isNaN(idx) || idx < 0 || idx >= cache.pengaduan.length) {
+    return res.status(404).json({ error: "Data tidak ditemukan" });
+  }
+  if (!VALID.includes(status)) {
+    return res.status(400).json({ error: `Status tidak valid. Pilihan: ${VALID.join(", ")}` });
+  }
+
+  cache.pengaduan[idx].status = status;
+  await fs.writeFile(
+    path.join(PROCESSED_DIR, "final_processed.json"),
+    JSON.stringify(cache.pengaduan, null, 4),
+    "utf-8"
+  );
+  // Reset pipeline cache
+  cache.pipelineMap = null;
+  res.json({ success: true, status });
+});
+
 // Detail pengaduan + pipeline (lazy load pipeline map)
 app.get("/api/pengaduan/:id/processed", async (req, res) => {
   const item = cache.pengaduan[parseInt(req.params.id)];
@@ -277,6 +322,7 @@ app.get("/api/pengaduan/:id/processed", async (req, res) => {
     kategori_prediksi: item.kategori_prediksi || item.Kategori || item.kategori || "-",
     timestamp: item.timestamp || item.tanggal || item.created_at || "-",
     confidence,
+    proba_all: item.proba_all ?? null,
     pipeline: {
       cleaned: pipelineData.cleaned ?? null,
       casefolded: pipelineData.casefolded ?? null,

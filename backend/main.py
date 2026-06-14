@@ -548,10 +548,17 @@ def train_model():
 
     # Simpan prediksi seluruh 400 data untuk frontend (halaman Data Pengaduan)
     all_pred   = model.predict(X_selected)
-    all_proba  = model.predict_proba(X_selected).max(axis=1)
+    all_proba  = model.predict_proba(X_selected)  # Full probability matrix
     hasil_semua = []
     data_list   = df.to_dict("records")
+    categories  = label_encoder.classes_.tolist()
+    
     for i, row in enumerate(data_list):
+        # Build full probability dict for all categories
+        proba_all = {}
+        for j, cat in enumerate(categories):
+            proba_all[cat] = round(float(all_proba[i, j]), 4)
+        
         hasil_semua.append({
             "nama"              : row.get("nama", ""),
             "no_wa"             : str(row.get("no_wa", "")).replace("@c.us", ""),
@@ -559,7 +566,8 @@ def train_model():
             "processed"         : row.get("final_text", ""),
             "label_asli"        : label_encoder.inverse_transform([y_encoded[i]])[0],
             "kategori_prediksi" : label_encoder.inverse_transform([all_pred[i]])[0],
-            "confidence"        : round(float(all_proba[i]), 4),
+            "confidence"        : round(float(all_proba[i].max()), 4),
+            "proba_all"         : proba_all,
             "timestamp"         : row.get("timestamp", "-"),
         })
     save_json(hasil_semua, FINAL_PROCESSED_PATH)
@@ -617,10 +625,16 @@ def predict_new_data():
     predicted_labels  = label_encoder.inverse_transform(predictions)
     probabilities     = model.predict_proba(X_selected)
     confidence_scores = probabilities.max(axis=1)
+    categories        = label_encoder.classes_.tolist()
 
     # Bangun list hasil prediksi baru (format lengkap)
     hasil_baru = []
     for i, item in enumerate(data_baru):
+        # Build full probability dict for all categories
+        proba_all = {}
+        for j, cat in enumerate(categories):
+            proba_all[cat] = round(float(probabilities[i, j]), 4)
+        
         hasil_baru.append({
             "nama"              : item.get("nama", ""),
             "no_wa"             : str(item.get("no_wa", "")).replace("@c.us", ""),
@@ -629,6 +643,7 @@ def predict_new_data():
             "label_asli"        : "-",
             "kategori_prediksi" : predicted_labels[i],
             "confidence"        : round(float(confidence_scores[i]), 4),
+            "proba_all"         : proba_all,
             "timestamp"         : item.get("timestamp", datetime.now().strftime("%Y-%m-%d %H:%M:%S")),
         })
 

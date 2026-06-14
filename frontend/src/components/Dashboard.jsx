@@ -55,7 +55,8 @@ export default function Dashboard({ onLogout }) {
     <div className="flex min-h-screen bg-gray-50">
       <Sidebar onLogout={onLogout} />
 
-      <div className="flex-1">
+      {/* Main content with left margin for fixed sidebar */}
+      <div className="flex-1 ml-64">
         <Header />
 
         <main className="p-8 space-y-8">

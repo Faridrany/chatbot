@@ -72,7 +72,7 @@ export default function Statistik({ onLogout }) {
     return (
       <div className="flex min-h-screen bg-gray-50">
         <Sidebar onLogout={onLogout} />
-        <div className="flex-1">
+        <div className="flex-1 ml-64">
           <Header />
           <main className="p-8 text-gray-500">Memuat statistik model...</main>
         </div>
@@ -83,7 +83,7 @@ export default function Statistik({ onLogout }) {
     return (
       <div className="flex min-h-screen bg-gray-50">
         <Sidebar onLogout={onLogout} />
-        <div className="flex-1">
+        <div className="flex-1 ml-64">
           <Header />
           <main className="p-8 text-red-500">Gagal memuat data: {error}</main>
         </div>
@@ -144,7 +144,7 @@ export default function Statistik({ onLogout }) {
     <div className="flex min-h-screen bg-gray-50">
       <Sidebar onLogout={onLogout} />
 
-      <div className="flex-1">
+      <div className="flex-1 ml-64">
         <Header />
 
         <main className="p-8 space-y-8">

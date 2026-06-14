@@ -1,18 +1,18 @@
-import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, FileText, BarChart3, Cpu, LogOut, Users } from 'lucide-react';
+import { Link, useLocation } from "react-router-dom";
+import { LayoutDashboard, FileText, BarChart3, Cpu, LogOut, Users } from "lucide-react";
 
 export default function Sidebar({ onLogout }) {
   const location = useLocation();
 
   const menuItems = [
-    { icon: LayoutDashboard, label: 'Dashboard',      path: '/dashboard' },
-    { icon: FileText,        label: 'Data Pengaduan', path: '/data-pengaduan' },
-    { icon: BarChart3,       label: 'Statistik',      path: '/statistik' },
-    { icon: Cpu,             label: 'Klasifikasi',    path: '/klasifikasi' },
+    { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard" },
+    { icon: FileText, label: "Data Pengaduan", path: "/data-pengaduan" },
+    { icon: BarChart3, label: "Statistik", path: "/statistik" },
+    { icon: Cpu, label: "Klasifikasi", path: "/klasifikasi" },
   ];
 
   return (
-    <div className="w-64 bg-[#2E7D32] min-h-screen flex flex-col shadow-xl">
+    <div className="w-64 bg-[#2E7D32] min-h-screen flex flex-col shadow-xl fixed left-0 top-0 bottom-0 z-50 overflow-y-auto">
       {/* Logo Header */}
       <div className="p-6 border-b border-green-700">
         <div className="flex items-center gap-3">
@@ -20,7 +20,7 @@ export default function Sidebar({ onLogout }) {
             <Users className="w-6 h-6 text-[#2E7D32]" />
           </div>
           <div>
-            <h2 className="text-white">Samboja</h2>
+            <h2 className="text-white font-bold">Samboja</h2>
             <p className="text-xs text-green-200">Sistem Pengaduan</p>
           </div>
         </div>
@@ -32,15 +32,15 @@ export default function Sidebar({ onLogout }) {
           {menuItems.map((item) => {
             const Icon = item.icon;
             const isActive = location.pathname === item.path;
-            
+
             return (
               <li key={item.path}>
                 <Link
                   to={item.path}
                   className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${
                     isActive
-                      ? 'bg-white text-[#2E7D32] shadow-lg'
-                      : 'text-green-100 hover:bg-green-700 hover:text-white'
+                      ? "bg-white text-[#2E7D32] shadow-lg font-semibold"
+                      : "text-green-100 hover:bg-green-700 hover:text-white"
                   }`}
                 >
                   <Icon className="w-5 h-5" />

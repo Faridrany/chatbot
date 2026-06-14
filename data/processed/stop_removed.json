@@ -18728,37 +18728,30 @@
         ]
     },
     {
-        "deskripsi": "Lampu jalan di depan gang saya sudah mati lebih dari seminggu. Tolong segera diperbaiki karena rawan kejahatan di malam hari.",
+        "deskripsi": "Lampu jalan di depan rumah saya sudah mati selama 3 hari. Tolong diperbaiki segera karena rawan pencurian.",
         "stop_removed": [
             "lampu",
             "jalan",
             "depan",
-            "gang",
+            "rumah",
             "sudah",
             "mati",
-            "lebih",
-            "seminggu",
-            "segera",
+            "selama",
+            "hari",
             "diperbaiki",
+            "segera",
             "rawan",
-            "kejahatan",
-            "malam",
-            "hari"
+            "pencurian"
         ]
     },
     {
-        "deskripsi": "Sampah di TPS dekat pasar sudah menumpuk dan tidak diangkut sejak 3 hari lalu. Baunya sangat mengganggu warga sekitar.",
+        "deskripsi": "Ada sampah menumpuk di TPS dekat pasar. Baunya sangat mengganggu warga sekitar.",
         "stop_removed": [
             "sampah",
+            "menumpuk",
             "tps",
             "dekat",
             "pasar",
-            "menumpuk",
-            "tidak",
-            "diangkut",
-            "sejak",
-            "hari",
-            "lalu",
             "baunya",
             "sangat",
             "mengganggu",
@@ -18766,56 +18759,80 @@
         ]
     },
     {
-        "deskripsi": "Jalan berlubang di depan SDN Samboja 1 sangat berbahaya untuk anak-anak sekolah. Sudah beberapa motor yang jatuh.",
+        "deskripsi": "Jalan rusak berlubang di depan sekolah. Berbahaya untuk anak-anak yang berangkat sekolah.",
         "stop_removed": [
             "jalan",
+            "rusak",
             "berlubang",
             "depan",
-            "sdn",
-            "samboja",
-            "sangat",
+            "sekolah",
             "berbahaya",
             "anak",
             "anak",
-            "sekolah",
-            "beberapa",
-            "motor",
-            "jatuh"
+            "berangkat",
+            "sekolah"
         ]
     },
     {
-        "deskripsi": "Ada sekelompok remaja yang sering berkumpul dan berisik di depan toko saya sampai larut malam. Warga merasa tidak aman.",
+        "deskripsi": "Pengurusan KTP di kantor kelurahan sangat lama. Sudah 2 minggu belum jadi.",
         "stop_removed": [
-            "sekelompok",
-            "remaja",
-            "sering",
-            "berkumpul",
-            "berisik",
-            "depan",
-            "toko",
-            "sampai",
-            "larut",
-            "malam",
-            "warga",
-            "merasa",
-            "aman"
-        ]
-    },
-    {
-        "deskripsi": "Pelayanan di kantor kelurahan sangat lambat. Saya sudah menunggu 3 jam untuk urusan KTP tapi masih belum dilayani.",
-        "stop_removed": [
-            "pelayanan",
+            "pengurusan",
+            "ktp",
             "kantor",
             "kelurahan",
             "sangat",
+            "lama",
+            "minggu",
+            "jadi"
+        ]
+    },
+    {
+        "deskripsi": "Ada maling motor di kompleks kami malam ini. Mohon patroli keamanan ditingkatkan.",
+        "stop_removed": [
+            "maling",
+            "motor",
+            "kompleks",
+            "malam",
+            "mohon",
+            "patroli",
+            "keamanan",
+            "ditingkatkan"
+        ]
+    },
+    {
+        "deskripsi": "Saluran air tersumbat sehingga air menggenang dan banyak nyamuk.",
+        "stop_removed": [
+            "saluran",
+            "air",
+            "tersumbat",
+            "air",
+            "menggenang",
+            "banyak",
+            "nyamuk"
+        ]
+    },
+    {
+        "deskripsi": "Jembatan penyeberangan rusak dan tidak aman untuk digunakan.",
+        "stop_removed": [
+            "jembatan",
+            "penyeberangan",
+            "rusak",
+            "tidak",
+            "aman",
+            "digunakan"
+        ]
+    },
+    {
+        "deskripsi": "Pelayanan administrasi di kantor kecamatan sangat lambat dan tidak ramah.",
+        "stop_removed": [
+            "pelayanan",
+            "administrasi",
+            "kantor",
+            "kecamatan",
+            "sangat",
             "lambat",
-            "sudah",
-            "menunggu",
-            "jam",
-            "urusan",
-            "ktp",
-            "masih",
-            "dilayani"
+            "tidak",
+            "ramah"
         ]
     }
 ]

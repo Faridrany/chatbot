@@ -8,14 +8,14 @@ import { Button } from "./ui/button";
 const ITEMS_PER_PAGE = 10;
 
 export default function Klasifikasi({ onLogout }) {
-  const [dataBaru, setDataBaru]                         = useState([]);
-  const [loading, setLoading]                           = useState(true);
-  const [classifying, setClassifying]                   = useState(false);
-  const [classifyStatus, setClassifyStatus]             = useState(null); // "success" | "error" | null
-  const [classifyMsg, setClassifyMsg]                   = useState("");
-  const [jumlahDiklasifikasi, setJumlahDiklasifikasi]   = useState(0);
-  const [searchTerm, setSearchTerm]                     = useState("");
-  const [currentPage, setCurrentPage]                   = useState(1);
+  const [dataBaru, setDataBaru] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [classifying, setClassifying] = useState(false);
+  const [classifyStatus, setClassifyStatus] = useState(null); // "success" | "error" | null
+  const [classifyMsg, setClassifyMsg] = useState("");
+  const [jumlahDiklasifikasi, setJumlahDiklasifikasi] = useState(0);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
 
   // ── Fetch hanya data_baru.json ──
   const fetchData = () => {
@@ -29,22 +29,30 @@ export default function Klasifikasi({ onLogout }) {
       .catch(() => setLoading(false));
   };
 
-  useEffect(() => { fetchData(); }, []);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   // ── Filter pencarian ──
-  const filteredData = useMemo(() =>
-    dataBaru.filter((item) =>
-      item.deskripsi?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      item.nama?.toLowerCase().includes(searchTerm.toLowerCase())
-    ),
-  [dataBaru, searchTerm]);
+  const filteredData = useMemo(
+    () =>
+      dataBaru.filter(
+        (item) =>
+          item.deskripsi?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          item.nama?.toLowerCase().includes(searchTerm.toLowerCase()),
+      ),
+    [dataBaru, searchTerm],
+  );
 
   // ── Pagination ──
-  const totalPages    = Math.max(1, Math.ceil(filteredData.length / ITEMS_PER_PAGE));
-  const startIndex    = (currentPage - 1) * ITEMS_PER_PAGE;
+  const totalPages = Math.max(1, Math.ceil(filteredData.length / ITEMS_PER_PAGE));
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const paginatedData = filteredData.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
-  const handleSearch = (val) => { setSearchTerm(val); setCurrentPage(1); };
+  const handleSearch = (val) => {
+    setSearchTerm(val);
+    setCurrentPage(1);
+  };
 
   // ── Klasifikasi: kirim ke backend → hasil append ke final_processed.json ──
   const handleKlasifikasi = async () => {
@@ -59,16 +67,14 @@ export default function Klasifikasi({ onLogout }) {
     setClassifyMsg("");
 
     try {
-      const res  = await fetch("/api/klasifikasi", { method: "POST" });
+      const res = await fetch("/api/klasifikasi", { method: "POST" });
       const json = await res.json();
 
       if (res.ok && json.success) {
         const jml = json.jumlah ?? dataBaru.length;
         setJumlahDiklasifikasi(jml);
         setClassifyStatus("success");
-        setClassifyMsg(
-          `${jml} pengaduan berhasil diklasifikasi dan ditambahkan ke Data Pengaduan.`
-        );
+        setClassifyMsg(`${jml} pengaduan berhasil diklasifikasi dan ditambahkan ke Data Pengaduan.`);
         fetchData(); // refresh data_baru
       } else {
         setClassifyStatus("error");
@@ -86,7 +92,7 @@ export default function Klasifikasi({ onLogout }) {
     <div className="flex min-h-screen bg-gray-50">
       <Sidebar onLogout={onLogout} />
 
-      <div className="flex-1">
+      <div className="flex-1 ml-64">
         <Header />
 
         <main className="p-8">
@@ -103,9 +109,7 @@ export default function Klasifikasi({ onLogout }) {
               disabled={classifying || dataBaru.length === 0}
               className="bg-[#2E7D32] hover:bg-green-800 text-white gap-2 px-5"
             >
-              {classifying
-                ? <RefreshCw className="w-4 h-4 animate-spin" />
-                : <Cpu className="w-4 h-4" />}
+              {classifying ? <RefreshCw className="w-4 h-4 animate-spin" /> : <Cpu className="w-4 h-4" />}
               {classifying ? "Mengklasifikasi..." : "Klasifikasi Sekarang"}
             </Button>
           </div>
@@ -145,16 +149,10 @@ export default function Klasifikasi({ onLogout }) {
             <div className="flex items-center justify-between mb-5">
               <div>
                 <h3 className="font-semibold text-gray-700">Daftar Pengaduan Baru</h3>
-                <p className="text-xs text-gray-400 mt-0.5">
-                  Sumber: data_baru.json — belum diklasifikasi
-                </p>
+                <p className="text-xs text-gray-400 mt-0.5">Sumber: data_baru.json — belum diklasifikasi</p>
               </div>
               <div className="flex items-center gap-2">
-                <button
-                  onClick={fetchData}
-                  className="text-gray-400 hover:text-green-700 transition-colors"
-                  title="Refresh"
-                >
+                <button onClick={fetchData} className="text-gray-400 hover:text-green-700 transition-colors" title="Refresh">
                   <RefreshCw className="w-4 h-4" />
                 </button>
                 <span className="text-sm text-gray-400">
@@ -201,18 +199,12 @@ export default function Klasifikasi({ onLogout }) {
                       {paginatedData.map((item, idx) => (
                         <tr key={idx} className="border-t hover:bg-gray-50 transition-colors">
                           <td className="p-3 text-gray-400">{startIndex + idx + 1}</td>
-                          <td className="p-3 font-medium text-gray-800 whitespace-nowrap">
-                            {item.nama || "-"}
-                          </td>
-                          <td className="p-3 text-gray-500 whitespace-nowrap">
-                            {(item.no_wa || "-").replace("@c.us", "")}
-                          </td>
+                          <td className="p-3 font-medium text-gray-800 whitespace-nowrap">{item.nama || "-"}</td>
+                          <td className="p-3 text-gray-500 whitespace-nowrap">{(item.no_wa || "-").replace("@c.us", "")}</td>
                           <td className="p-3 text-gray-700 max-w-sm">
                             <p className="line-clamp-2">{item.deskripsi}</p>
                           </td>
-                          <td className="p-3 text-gray-400 whitespace-nowrap text-xs">
-                            {item.timestamp || "-"}
-                          </td>
+                          <td className="p-3 text-gray-400 whitespace-nowrap text-xs">{item.timestamp || "-"}</td>
                           <td className="p-3">
                             <span className="inline-flex items-center gap-1 text-xs text-yellow-700 bg-yellow-50 border border-yellow-200 px-2 py-1 rounded-full">
                               <Clock className="w-3 h-3" />
