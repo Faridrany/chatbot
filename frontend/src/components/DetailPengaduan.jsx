@@ -135,19 +135,6 @@ export default function DetailPengaduan({ onLogout }) {
                   {statusSaved && <span className="text-xs text-green-600 font-semibold">✓ Tersimpan</span>}
                 </div>
               </div>
-              <div>
-                <p className="text-gray-500">Confidence Prediksi</p>
-                {data.confidence != null ? (
-                  <div className="flex items-center gap-2 mt-1">
-                    <div className="flex-1 bg-gray-200 rounded-full h-2">
-                      <div className="bg-green-500 h-2 rounded-full" style={{ width: `${(data.confidence ?? 0) * 100}%` }} />
-                    </div>
-                    <span className="text-sm font-semibold text-green-700">{((data.confidence ?? 0) * 100).toFixed(1)}%</span>
-                  </div>
-                ) : (
-                  <p className="text-sm text-gray-400 italic mt-1">Belum tersedia — jalankan training model</p>
-                )}
-              </div>
             </div>
 
             <div className="mt-4">
@@ -156,10 +143,10 @@ export default function DetailPengaduan({ onLogout }) {
             </div>
           </div>
 
-          {/* Confidence Breakdown for All Categories */}
+          {/* Probability Breakdown for All Categories */}
           {data.proba_all && (
             <div className="bg-white p-6 rounded-2xl shadow mb-6">
-              <h2 className="text-lg font-bold text-gray-800 mb-1">Rincian Confidence Semua Kategori</h2>
+              <h2 className="text-lg font-bold text-gray-800 mb-1">Rincian Probabilitas Semua Kategori</h2>
               <p className="text-sm text-gray-500 mb-4">
                 Skor probabilitas prediksi untuk setiap kategori. Kategori dengan skor tertinggi dipilih sebagai hasil
                 klasifikasi.
@@ -196,8 +183,7 @@ export default function DetailPengaduan({ onLogout }) {
 
               <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg text-xs text-blue-700">
                 <strong>Catatan:</strong> Model memilih kategori <strong>{data.kategori_prediksi}</strong> karena memiliki
-                confidence score tertinggi ({((data.confidence ?? 0) * 100).toFixed(1)}%). Skor ini menunjukkan tingkat keyakinan
-                model, bukan akurasi absolut.
+                probabilitas tertinggi. Skor ini menunjukkan tingkat keyakinan model dalam prediksi.
               </div>
             </div>
           )}

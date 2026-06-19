@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { LayoutDashboard, FileText, BarChart3, Cpu, LogOut, Users } from "lucide-react";
+import { LayoutDashboard, FileText, BarChart3, Cpu, LogOut, Users, FlaskConical, TreeDeciduous, Activity } from "lucide-react";
 
 export default function Sidebar({ onLogout }) {
   const location = useLocation();
@@ -8,6 +8,9 @@ export default function Sidebar({ onLogout }) {
     { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard" },
     { icon: FileText, label: "Data Pengaduan", path: "/data-pengaduan" },
     { icon: BarChart3, label: "Statistik", path: "/statistik" },
+    { icon: FlaskConical, label: "Detail TF-IDF", path: "/tfidf" },
+    { icon: TreeDeciduous, label: "Detail Random Forest", path: "/random-forest" },
+    { icon: Activity, label: "Evaluasi Model", path: "/evaluasi-model" },
     { icon: Cpu, label: "Klasifikasi", path: "/klasifikasi" },
   ];
 

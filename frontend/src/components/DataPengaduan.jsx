@@ -23,18 +23,6 @@ const STATUS_STYLE = {
 
 const LIMIT = 10;
 
-function ConfidenceBadge({ value }) {
-  if (value == null) return <span className="text-gray-300 text-xs">—</span>;
-  const pct = (value * 100).toFixed(1);
-  const cls =
-    value >= 0.75
-      ? "bg-green-50 text-green-700 border-green-200"
-      : value >= 0.5
-        ? "bg-yellow-50 text-yellow-700 border-yellow-200"
-        : "bg-red-50 text-red-600 border-red-200";
-  return <span className={`inline-block text-xs font-semibold px-2 py-0.5 rounded-full border ${cls}`}>{pct}%</span>;
-}
-
 export default function DataPengaduan({ onLogout }) {
   const navigate = useNavigate();
 
@@ -199,7 +187,6 @@ export default function DataPengaduan({ onLogout }) {
                         <th className="p-3 text-left font-semibold">Nama</th>
                         <th className="p-3 text-left font-semibold">Deskripsi</th>
                         <th className="p-3 text-left font-semibold">Kategori</th>
-                        <th className="p-3 text-left font-semibold">Confidence</th>
                         <th className="p-3 text-left font-semibold">Status</th>
                         <th className="p-3 text-left font-semibold">Aksi</th>
                       </tr>
@@ -216,9 +203,6 @@ export default function DataPengaduan({ onLogout }) {
                             <Badge className={CATEGORY_COLOR[item.kategori_prediksi] ?? "bg-gray-200 text-gray-900"}>
                               {item.kategori_prediksi || "-"}
                             </Badge>
-                          </td>
-                          <td className="p-3">
-                            <ConfidenceBadge value={item.confidence} />
                           </td>
                           <td className="p-3">
                             <span

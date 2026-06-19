@@ -439,6 +439,69 @@ app.post("/api/klasifikasi", async (_req, res) => {
 });
 
 // ─────────────────────────────────────────────
+// TF-IDF DATA
+// ─────────────────────────────────────────────
+
+// Ringkasan + semua terms (dengan paginasi server-side)
+app.get("/api/tfidf", async (req, res) => {
+  try {
+    const page = Math.max(1, parseInt(req.query.page ?? "1", 10));
+    const limit = Math.min(200, Math.max(1, parseInt(req.query.limit ?? "50", 10)));
+    const search = (req.query.search ?? "").toLowerCase().trim();
+    const status = (req.query.status ?? "semua").toLowerCase(); // "terpilih" | "eliminasi" | "semua"
+    const ngram = (req.query.ngram ?? "semua").toLowerCase(); // "unigram" | "bigram" | "semua"
+
+    const rawTerms = await fs.readFile(path.join(DATA_DIR, "tfidf_terms.json"), "utf-8")
+      .catch(() => "[]");
+    const training = cache.training;
+
+    let terms = JSON.parse(rawTerms);
+
+    // Filter
+    if (search) terms = terms.filter(t => t.term.includes(search));
+    if (status !== "semua") {
+      const wantSelected = status === "terpilih";
+      terms = terms.filter(t => t.selected === wantSelected);
+    }
+    if (ngram !== "semua") terms = terms.filter(t => t.ngram === ngram);
+
+    const total = terms.length;
+    const totalPages = Math.max(1, Math.ceil(total / limit));
+    const items = terms.slice((page - 1) * limit, page * limit);
+
+    res.json({
+      summary: {
+        fitur_tfidf: training.fitur_tfidf ?? 2612,
+        fitur_selected: training.fitur_selected ?? 1000,
+        ngram_range: training.ngram_range ?? [1, 2],
+        total_data: training.total_data ?? 1200,
+        data_train: training.data_train ?? 960,
+        data_test: training.data_test ?? 240,
+        total_unigram: JSON.parse(rawTerms).filter(t => t.ngram === "unigram").length,
+        total_bigram: JSON.parse(rawTerms).filter(t => t.ngram === "bigram").length,
+      },
+      items,
+      total,
+      page,
+      totalPages,
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Sample dokumen ter-vektorisasi
+app.get("/api/tfidf/samples", async (_req, res) => {
+  try {
+    const raw = await fs.readFile(path.join(DATA_DIR, "tfidf_sample_docs.json"), "utf-8")
+      .catch(() => "[]");
+    res.json(JSON.parse(raw));
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// ─────────────────────────────────────────────
 // EXPORT EXCEL
 // ─────────────────────────────────────────────
 const EXPORT_EXCEL_PATH = path.join(__dirname, "../data/export/preprocessing_result.xlsx");

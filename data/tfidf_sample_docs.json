@@ -1,0 +1,483 @@
+[
+    {
+        "nama": "Fahri Abdillah",
+        "deskripsi": "Lampu PJU di sekitar Jembatan Merah Margomulyo mati total. Sangat rawan jambret setelah pukul 10 malam.",
+        "processed": "lampu terang jalan umum sekitar jembatan merah margomulyo mati total sangat rawan jambret pukul malam",
+        "label_asli": "KEAMANAN",
+        "kategori": "KEAMANAN",
+        "terms": [
+            [
+                "merah",
+                0.304598
+            ],
+            [
+                "rawan jambret",
+                0.304598
+            ],
+            [
+                "sangat rawan",
+                0.294461
+            ],
+            [
+                "margomulyo mati",
+                0.279174
+            ],
+            [
+                "jalan umum",
+                0.254687
+            ],
+            [
+                "mati total",
+                0.23381
+            ],
+            [
+                "jambret",
+                0.23148
+            ],
+            [
+                "terang jalan",
+                0.22513
+            ],
+            [
+                "total",
+                0.214599
+            ],
+            [
+                "sekitar",
+                0.210127
+            ],
+            [
+                "lampu terang",
+                0.210127
+            ],
+            [
+                "jembatan",
+                0.202319
+            ],
+            [
+                "umum",
+                0.197773
+            ],
+            [
+                "rawan",
+                0.189852
+            ],
+            [
+                "terang",
+                0.183109
+            ],
+            [
+                "sangat",
+                0.169649
+            ],
+            [
+                "mati",
+                0.167934
+            ],
+            [
+                "lampu",
+                0.163148
+            ],
+            [
+                "malam",
+                0.158361
+            ],
+            [
+                "margomulyo",
+                0.14055
+            ],
+            [
+                "jalan",
+                0.116552
+            ]
+        ]
+    },
+    {
+        "nama": "Sinta Wulan",
+        "deskripsi": "Sekelompok pemuda mabuk dan main gitar keras-keras di pos ronda Selili. Warga takut dan terganggu.",
+        "processed": "kelompok pemuda mabuk main gitar keras keras pos ronda lil warga takut ganggu",
+        "label_asli": "KEAMANAN",
+        "kategori": "KEAMANAN",
+        "terms": [
+            [
+                "keras",
+                0.453599
+            ],
+            [
+                "keras pos",
+                0.294611
+            ],
+            [
+                "ronda lil",
+                0.294611
+            ],
+            [
+                "pemuda mabuk",
+                0.248323
+            ],
+            [
+                "ronda",
+                0.243883
+            ],
+            [
+                "pos ronda",
+                0.243883
+            ],
+            [
+                "pos",
+                0.239868
+            ],
+            [
+                "kelompok pemuda",
+                0.239868
+            ],
+            [
+                "pemuda",
+                0.232829
+            ],
+            [
+                "main",
+                0.229707
+            ],
+            [
+                "warga takut",
+                0.219118
+            ],
+            [
+                "kelompok",
+                0.199023
+            ],
+            [
+                "mabuk",
+                0.197595
+            ],
+            [
+                "ganggu",
+                0.176923
+            ],
+            [
+                "takut",
+                0.169818
+            ],
+            [
+                "lil",
+                0.133296
+            ],
+            [
+                "warga",
+                0.115808
+            ]
+        ]
+    },
+    {
+        "nama": "Andi Saputra",
+        "deskripsi": "Min, di sekitar pasar Margomulyo ada orang gak dikenal muter-muter lihat motor parkir dari tadi pagi. Warga curiga mau nyuri.",
+        "processed": "min sekitar pasar margomulyo orang gak kenal muter muter lihat motor parkir tadi pagi warga curiga mau nyuri",
+        "label_asli": "KEAMANAN",
+        "kategori": "KEAMANAN",
+        "terms": [
+            [
+                "orang gak",
+                0.295783
+            ],
+            [
+                "gak kenal",
+                0.283613
+            ],
+            [
+                "motor parkir",
+                0.283613
+            ],
+            [
+                "tadi pagi",
+                0.283613
+            ],
+            [
+                "pasar margomulyo",
+                0.266462
+            ],
+            [
+                "sekitar pasar",
+                0.254292
+            ],
+            [
+                "mau",
+                0.237141
+            ],
+            [
+                "kenal",
+                0.224972
+            ],
+            [
+                "curiga",
+                0.211501
+            ],
+            [
+                "gak",
+                0.20962
+            ],
+            [
+                "parkir",
+                0.204434
+            ],
+            [
+                "tadi",
+                0.204434
+            ],
+            [
+                "pagi",
+                0.202837
+            ],
+            [
+                "sekitar",
+                0.195651
+            ],
+            [
+                "pasar",
+                0.184147
+            ],
+            [
+                "lihat",
+                0.17274
+            ],
+            [
+                "orang",
+                0.171978
+            ],
+            [
+                "motor",
+                0.163148
+            ],
+            [
+                "min",
+                0.162539
+            ],
+            [
+                "margomulyo",
+                0.130867
+            ],
+            [
+                "warga",
+                0.116268
+            ]
+        ]
+    },
+    {
+        "nama": "Rika Lestari",
+        "deskripsi": "Lampu jalan di gang belakang Selili mati sudah hampir seminggu. Malam jadi gelap banget dan bikin takut lewat.",
+        "processed": "lampu jalan gang belakang lil mati hampir minggu malam jadi gelap banget bikin takut lewat",
+        "label_asli": "KEAMANAN",
+        "kategori": "INFRASTRUKTUR",
+        "terms": [
+            [
+                "mati hampir",
+                0.265138
+            ],
+            [
+                "gang belakang",
+                0.25423
+            ],
+            [
+                "hampir minggu",
+                0.25423
+            ],
+            [
+                "bikin takut",
+                0.25423
+            ],
+            [
+                "takut lewat",
+                0.245768
+            ],
+            [
+                "malam jadi",
+                0.238855
+            ],
+            [
+                "belakang",
+                0.23301
+            ],
+            [
+                "jalan gang",
+                0.227946
+            ],
+            [
+                "jadi gelap",
+                0.22348
+            ],
+            [
+                "gelap banget",
+                0.22348
+            ],
+            [
+                "lil mati",
+                0.212572
+            ],
+            [
+                "gang",
+                0.20411
+            ],
+            [
+                "minggu",
+                0.177827
+            ],
+            [
+                "lewat",
+                0.176584
+            ],
+            [
+                "gelap",
+                0.174213
+            ],
+            [
+                "hampir",
+                0.169875
+            ],
+            [
+                "bikin",
+                0.169875
+            ],
+            [
+                "lampu jalan",
+                0.166919
+            ],
+            [
+                "banget",
+                0.162453
+            ],
+            [
+                "takut",
+                0.15283
+            ],
+            [
+                "mati",
+                0.140165
+            ],
+            [
+                "lampu",
+                0.136169
+            ],
+            [
+                "malam",
+                0.132174
+            ],
+            [
+                "jadi",
+                0.131797
+            ],
+            [
+                "lil",
+                0.119961
+            ],
+            [
+                "jalan",
+                0.097279
+            ]
+        ]
+    },
+    {
+        "nama": "Agus Setiawan",
+        "deskripsi": "Ada anak-anak muda balapan liar lagi di jalan Handil Baru Darat habis tengah malam. Suaranya berisik dan bahaya.",
+        "processed": "anak anak muda balap liar di jalan handil baru darat habis tengah malam suara berisik bahaya",
+        "label_asli": "KEAMANAN",
+        "kategori": "KEAMANAN",
+        "terms": [
+            [
+                "anak",
+                0.325759
+            ],
+            [
+                "liar di",
+                0.263043
+            ],
+            [
+                "di jalan",
+                0.252221
+            ],
+            [
+                "jalan handil",
+                0.252221
+            ],
+            [
+                "malam suara",
+                0.252221
+            ],
+            [
+                "muda",
+                0.236968
+            ],
+            [
+                "habis",
+                0.236968
+            ],
+            [
+                "anak muda",
+                0.236968
+            ],
+            [
+                "tengah malam",
+                0.231169
+            ],
+            [
+                "suara",
+                0.207881
+            ],
+            [
+                "balap liar",
+                0.202498
+            ],
+            [
+                "tengah",
+                0.197789
+            ],
+            [
+                "di",
+                0.195639
+            ],
+            [
+                "balap",
+                0.186418
+            ],
+            [
+                "anak anak",
+                0.183281
+            ],
+            [
+                "handil",
+                0.152942
+            ],
+            [
+                "darat",
+                0.152942
+            ],
+            [
+                "handil baru",
+                0.152942
+            ],
+            [
+                "baru darat",
+                0.152942
+            ],
+            [
+                "bahaya",
+                0.151622
+            ],
+            [
+                "baru",
+                0.142969
+            ],
+            [
+                "liar",
+                0.135939
+            ],
+            [
+                "malam",
+                0.13113
+            ],
+            [
+                "jalan",
+                0.09651
+            ]
+        ]
+    }
+]

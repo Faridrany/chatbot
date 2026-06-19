@@ -573,6 +573,63 @@ def train_model():
     save_json(hasil_semua, FINAL_PROCESSED_PATH)
     print(f"[OK] {len(hasil_semua)} data prediksi disimpan ke: final_processed.json")
 
+    # ── Export TF-IDF term data untuk halaman TF-IDF ──────────────
+    print("[*] Menyimpan data TF-IDF terms...")
+    feature_names   = vectorizer.get_feature_names_out()        # semua term sebelum seleksi
+    selected_mask   = selector.get_support()                    # bool array 2612 -> 1000 True
+    chi2_scores     = selector.scores_                          # chi2 score tiap term
+
+    # Hitung rata-rata TF-IDF per term dari X_tfidf (full matrix, semua 1200 dok)
+    tfidf_mean      = X_tfidf.mean(axis=0).A1                  # shape (2612,)
+
+    tfidf_terms = []
+    for idx, term in enumerate(feature_names):
+        ngram_type = "bigram" if " " in term else "unigram"
+        tfidf_terms.append({
+            "term"       : term,
+            "ngram"      : ngram_type,
+            "tfidf_mean" : round(float(tfidf_mean[idx]), 6),
+            "chi2_score" : round(float(chi2_scores[idx]), 4),
+            "selected"   : bool(selected_mask[idx]),
+        })
+
+    # Urutkan: terpilih dulu, lalu chi2 score turun
+    tfidf_terms.sort(key=lambda x: (-int(x["selected"]), -x["chi2_score"]))
+
+    # Simpan top 3000 (agar file tidak terlalu besar)
+    save_json(tfidf_terms[:3000], os.path.join(DATA_DIR, "tfidf_terms.json"))
+    print(f"[OK] {len(tfidf_terms[:3000])} TF-IDF terms disimpan ke: tfidf_terms.json")
+
+    # ── Simpan beberapa sample dokumen ter-vektorisasi ────────────
+    print("[*] Menyimpan sample dokumen TF-IDF...")
+    sample_indices  = [0, 1, 2, 3, 4]            # ambil 5 dokumen pertama
+    sample_fn_names = feature_names               # semua term sebelum seleksi
+    doc_samples     = []
+
+    for si in sample_indices:
+        if si >= len(hasil_semua):
+            break
+        row       = hasil_semua[si]
+        tfidf_row = X_tfidf[si]                  # sparse row untuk dokumen ini
+
+        # Ambil term yang nilainya > 0 untuk dokumen ini
+        _, term_indices  = tfidf_row.nonzero()
+        term_scores      = [(sample_fn_names[ti], round(float(tfidf_row[0, ti]), 6))
+                            for ti in term_indices]
+        term_scores.sort(key=lambda x: -x[1])    # urut bobot terbesar dulu
+
+        doc_samples.append({
+            "nama"       : row.get("nama", ""),
+            "deskripsi"  : row.get("deskripsi", ""),
+            "processed"  : row.get("processed", ""),
+            "label_asli" : row.get("label_asli", "-"),
+            "kategori"   : row.get("kategori_prediksi", "-"),
+            "terms"      : term_scores[:30],     # top-30 term per dokumen
+        })
+
+    save_json(doc_samples, os.path.join(DATA_DIR, "tfidf_sample_docs.json"))
+    print(f"[OK] {len(doc_samples)} sample dokumen disimpan ke: tfidf_sample_docs.json")
+
     # Export hasil preprocessing ke Excel
     export_preprocessing_to_excel(load_json(DATASET_BERLABEL_PATH), hasil_semua)
 
