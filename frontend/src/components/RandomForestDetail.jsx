@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
-import { TreeDeciduous, GitBranch, Shuffle, Target, Filter, Info, ChevronDown, ChevronUp } from "lucide-react";
+import { TreeDeciduous, GitBranch, Shuffle, Target, Filter, Info, ChevronDown, ChevronUp, Search, ChevronLeft, ChevronRight } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
+import { Input } from "./ui/input";
 
-// ─── Stat Card ───────────────────────────────────────────────────────────────
 function StatCard({ label, value, sub, accent, icon: Icon }) {
   return (
     <div className="bg-white rounded-2xl shadow p-5 border-l-4" style={{ borderColor: accent || "#2E7D32" }}>
@@ -25,661 +25,510 @@ function StatCard({ label, value, sub, accent, icon: Icon }) {
   );
 }
 
-// ─── MOCK DATA ───────────────────────────────────────────────────────────────
-const MODEL_CONFIG = {
-  n_estimators: 20,
-  max_depth: null,
-  min_samples_split: 2,
-  min_samples_leaf: 1,
-  max_features: "sqrt",
-  bootstrap: true,
-  random_state: 42,
-  total_training_data: 960,
-  total_features: 1000,
-  features_per_split: 31, // √1000 ≈ 31
+const CATEGORY_COLORS = {
+  INFRASTRUKTUR: "#2E7D32",
+  KEAMANAN: "#1976D2",
+  LINGKUNGAN: "#388E3C",
+  PELAYANAN: "#F57C00",
 };
 
-// Bootstrap samples untuk setiap pohon
-const BOOTSTRAP_DETAILS = Array.from({ length: 20 }, (_, i) => ({
-  tree_id: i + 1,
-  bootstrap_size: 960,
-  unique_samples: 960 - Math.floor(960 * 0.368), // ~632 unique
-  duplicate_samples: Math.floor(960 * 0.368), // ~328 duplicates
-  oob_samples: Math.floor(960 * 0.368), // ~328 OOB
-  samples_per_class: {
-    INFRASTRUKTUR: 235 + Math.floor(Math.random() * 10),
-    KEAMANAN: 235 + Math.floor(Math.random() * 10),
-    LINGKUNGAN: 235 + Math.floor(Math.random() * 10),
-    PELAYANAN: 235 + Math.floor(Math.random() * 10),
-  },
-  max_depth_reached: 16 + Math.floor(Math.random() * 5),
-  total_nodes: 130 + Math.floor(Math.random() * 30),
-  leaf_nodes: 65 + Math.floor(Math.random() * 15),
-}));
-
-// Contoh detail splitting untuk Node Root dari Tree #1
-const SPLIT_EXAMPLE = {
-  tree_id: 1,
-  node_info: {
-    node_id: 0,
-    depth: 0,
-    samples: 960,
-    samples_per_class: { INFRASTRUKTUR: 238, KEAMANAN: 241, LINGKUNGAN: 242, PELAYANAN: 239 },
-  },
-  impurity_before: {
-    gini: 0.75,
-    entropy: 1.3863,
-    calculation: "Gini = 1 - Σ(pi²) = 1 - (0.248² + 0.251² + 0.252² + 0.249²) = 0.7500",
-  },
-  feature_selection: {
-    total_features: 1000,
-    random_subset: 31, // √1000
-    candidate_features: ["sampah", "penuh sampah", "bau", "buang", "layan", "urus", "lampu jalan"],
-  },
-  best_split: {
-    feature: "sampah",
-    threshold: 0.015,
-    gini_left: 0.7012,
-    gini_right: 0.4287,
-    gini_decrease: 0.0832,
-    information_gain: 0.0832,
-  },
-  competing_splits: [
-    { feature: "penuh sampah", threshold: 0.012, gini_decrease: 0.0754 },
-    { feature: "bau", threshold: 0.008, gini_decrease: 0.0621 },
-    { feature: "buang", threshold: 0.009, gini_decrease: 0.0589 },
-  ],
-  left_child: {
-    node_id: 1,
-    samples: 672,
-    samples_per_class: { INFRASTRUKTUR: 195, KEAMANAN: 218, LINGKUNGAN: 61, PELAYANAN: 198 },
-    gini: 0.7012,
-    dominant_class: "KEAMANAN",
-    is_leaf: false,
-  },
-  right_child: {
-    node_id: 2,
-    samples: 288,
-    samples_per_class: { INFRASTRUKTUR: 43, KEAMANAN: 23, LINGKUNGAN: 181, PELAYANAN: 41 },
-    gini: 0.4287,
-    dominant_class: "LINGKUNGAN",
-    is_leaf: false,
-  },
-};
-
-// Prediksi sampel dengan detail setiap pohon
-const SAMPLE_PREDICTION = {
-  input: "Lampu jalan di gang Mawar sudah mati seminggu, gelap sekali malam hari.",
-  processed: "lampu jalan gang mawar mati minggu gelap malam hari",
-  tfidf_vector: {
-    "lampu jalan": 0.2891,
-    jalan: 0.1823,
-    lampu: 0.1645,
-    mati: 0.1432,
-    gelap: 0.1289,
-    malam: 0.1156,
-    hari: 0.0876,
-    gang: 0.0654,
-  },
-  tree_predictions: [
-    { tree: 1, prediction: "INFRASTRUKTUR", leaf_purity: 0.89, path_length: 12, samples_in_leaf: 45 },
-    { tree: 2, prediction: "INFRASTRUKTUR", leaf_purity: 0.92, path_length: 10, samples_in_leaf: 52 },
-    { tree: 3, prediction: "INFRASTRUKTUR", leaf_purity: 0.87, path_length: 11, samples_in_leaf: 38 },
-    { tree: 4, prediction: "INFRASTRUKTUR", leaf_purity: 0.91, path_length: 9, samples_in_leaf: 47 },
-    { tree: 5, prediction: "KEAMANAN", leaf_purity: 0.65, path_length: 14, samples_in_leaf: 23 },
-    { tree: 6, prediction: "INFRASTRUKTUR", leaf_purity: 0.88, path_length: 10, samples_in_leaf: 41 },
-    { tree: 7, prediction: "INFRASTRUKTUR", leaf_purity: 0.93, path_length: 11, samples_in_leaf: 49 },
-    { tree: 8, prediction: "INFRASTRUKTUR", leaf_purity: 0.9, path_length: 12, samples_in_leaf: 44 },
-    { tree: 9, prediction: "INFRASTRUKTUR", leaf_purity: 0.86, path_length: 13, samples_in_leaf: 37 },
-    { tree: 10, prediction: "INFRASTRUKTUR", leaf_purity: 0.94, path_length: 9, samples_in_leaf: 51 },
-    { tree: 11, prediction: "INFRASTRUKTUR", leaf_purity: 0.89, path_length: 11, samples_in_leaf: 43 },
-    { tree: 12, prediction: "KEAMANAN", leaf_purity: 0.62, path_length: 15, samples_in_leaf: 21 },
-    { tree: 13, prediction: "INFRASTRUKTUR", leaf_purity: 0.91, path_length: 10, samples_in_leaf: 46 },
-    { tree: 14, prediction: "INFRASTRUKTUR", leaf_purity: 0.88, path_length: 12, samples_in_leaf: 42 },
-    { tree: 15, prediction: "INFRASTRUKTUR", leaf_purity: 0.92, path_length: 10, samples_in_leaf: 48 },
-    { tree: 16, prediction: "INFRASTRUKTUR", leaf_purity: 0.87, path_length: 11, samples_in_leaf: 39 },
-    { tree: 17, prediction: "INFRASTRUKTUR", leaf_purity: 0.9, path_length: 11, samples_in_leaf: 45 },
-    { tree: 18, prediction: "LINGKUNGAN", leaf_purity: 0.58, path_length: 14, samples_in_leaf: 26 },
-    { tree: 19, prediction: "INFRASTRUKTUR", leaf_purity: 0.89, path_length: 12, samples_in_leaf: 44 },
-    { tree: 20, prediction: "INFRASTRUKTUR", leaf_purity: 0.93, path_length: 9, samples_in_leaf: 50 },
-  ],
-  final_votes: { INFRASTRUKTUR: 17, KEAMANAN: 2, LINGKUNGAN: 1, PELAYANAN: 0 },
-};
+const PAGE_SIZE = 10;
 
 export default function RandomForestDetail({ onLogout }) {
-  const [expandedTree, setExpandedTree] = useState(null);
+  const [training, setTraining] = useState(null);
+  const [pengaduanList, setPengaduanList] = useState([]);
+  const [totalPengaduan, setTotalPengaduan] = useState(0);
+  const [totalPages, setTotalPages] = useState(1);
+  const [page, setPage] = useState(1);
+  const [searchInput, setSearchInput] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [loadingList, setLoadingList] = useState(true);
+  const [expandedKode, setExpandedKode] = useState(null);
+  const [rfCache, setRfCache] = useState({});       // keyed by kode_pengaduan
+  const [rfLoading, setRfLoading] = useState({});
   const [showSplitDetail, setShowSplitDetail] = useState(false);
 
-  const categoryColors = {
-    INFRASTRUKTUR: "#2E7D32",
-    KEAMANAN: "#1976D2",
-    LINGKUNGAN: "#388E3C",
-    PELAYANAN: "#F57C00",
+  // Load training metadata once
+  useEffect(() => {
+    fetch("/api/evaluasi")
+      .then(r => r.ok ? r.json() : {})
+      .then(setTraining)
+      .catch(() => {});
+  }, []);
+
+  // Load pengaduan list (paginated)
+  const fetchList = useCallback((p, search) => {
+    setLoadingList(true);
+    const params = new URLSearchParams({ page: p, limit: PAGE_SIZE, ...(search && { search }) });
+    fetch(`/api/pengaduan?${params}`)
+      .then(r => r.json())
+      .then(res => {
+        setPengaduanList(res.items ?? []);
+        setTotalPengaduan(res.total ?? 0);
+        setTotalPages(res.totalPages ?? 1);
+        setLoadingList(false);
+      })
+      .catch(() => setLoadingList(false));
+  }, []);
+
+  useEffect(() => { fetchList(page, searchTerm); }, [page, searchTerm, fetchList]);
+
+  useEffect(() => {
+    const t = setTimeout(() => { setSearchTerm(searchInput); setPage(1); }, 400);
+    return () => clearTimeout(t);
+  }, [searchInput]);
+
+  // Lazy-load RF stage data for one pengaduan
+  const fetchRF = useCallback((kode) => {
+    if (!kode || rfCache[kode] !== undefined) return;
+    setRfLoading(prev => ({ ...prev, [kode]: true }));
+    fetch(`/api/stages/random_forest/${kode}`)
+      .then(r => r.ok ? r.json() : null)
+      .then(data => setRfCache(prev => ({ ...prev, [kode]: data })))
+      .catch(() => setRfCache(prev => ({ ...prev, [kode]: null })))
+      .finally(() => setRfLoading(prev => ({ ...prev, [kode]: false })));
+  }, [rfCache]);
+
+  const handleToggle = (item) => {
+    const kode = item.kode_pengaduan;
+    const isOpen = expandedKode === kode;
+    setExpandedKode(isOpen ? null : kode);
+    if (!isOpen) fetchRF(kode);
   };
+
+  const nEstimators = training?.estimators ?? 500;
+  const totalFeatures = training?.fitur_selected ?? 1000;
+  const featuresPerSplit = Math.round(Math.sqrt(totalFeatures));
 
   return (
     <div className="flex min-h-screen bg-gray-50">
       <Sidebar onLogout={onLogout} />
-
       <div className="flex-1 ml-64">
         <Header />
-
         <main className="p-8 space-y-8">
-          {/* ── Judul ── */}
+
+          {/* Judul */}
           <div>
             <h1 className="text-2xl font-bold text-gray-800">Detail Proses Random Forest Classifier</h1>
             <p className="text-sm text-gray-500 mt-1">
-              Analisis mendalam proses training dan prediksi menggunakan {MODEL_CONFIG.n_estimators} pohon keputusan
+              Analisis mendalam proses training dan prediksi menggunakan {nEstimators} pohon keputusan
             </p>
           </div>
 
-          {/* ── Konfigurasi Model ── */}
+          {/* Konfigurasi Model */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <StatCard
-              label="Jumlah Pohon (Estimator)"
-              value={MODEL_CONFIG.n_estimators}
-              sub="Decision trees dalam ensemble"
-              accent="#2E7D32"
-              icon={TreeDeciduous}
-            />
-            <StatCard
-              label="Data Training"
-              value={MODEL_CONFIG.total_training_data}
-              sub="Sampel untuk melatih model"
-              accent="#4CAF50"
-              icon={Shuffle}
-            />
-            <StatCard
-              label="Total Fitur TF-IDF"
-              value={MODEL_CONFIG.total_features}
-              sub="Dari proses SelectKBest"
-              accent="#81C784"
-              icon={Filter}
-            />
-            <StatCard
-              label="Fitur per Split"
-              value={MODEL_CONFIG.features_per_split}
-              sub={`√${MODEL_CONFIG.total_features} fitur random`}
-              accent="#A5D6A7"
-              icon={GitBranch}
-            />
+            <StatCard label="Jumlah Pohon (Estimator)" value={nEstimators}
+              sub="Decision trees dalam ensemble" accent="#2E7D32" icon={TreeDeciduous} />
+            <StatCard label="Data Training" value={(training?.data_train ?? 960).toLocaleString()}
+              sub="Sampel untuk melatih model" accent="#4CAF50" icon={Shuffle} />
+            <StatCard label="Total Fitur TF-IDF" value={(totalFeatures).toLocaleString()}
+              sub="Dari proses SelectKBest" accent="#81C784" icon={Filter} />
+            <StatCard label="Fitur per Split" value={featuresPerSplit}
+              sub={`√${totalFeatures} fitur random`} accent="#A5D6A7" icon={GitBranch} />
           </div>
 
-          {/* ── Step 1: Bootstrap Sampling ── */}
+          {/* Step 1: Bootstrap Sampling (Konseptual) */}
           <div className="bg-white rounded-2xl shadow p-6">
             <h2 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
               <Shuffle className="w-5 h-5 text-green-700" />
-              Step 1: Bootstrap Sampling — Membuat {MODEL_CONFIG.n_estimators} Dataset Berbeda
+              Step 1: Bootstrap Sampling
             </h2>
-            <div className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
-              <p className="text-sm text-blue-800 flex items-start gap-2">
-                <Info className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>
-                  Setiap pohon dilatih dengan <strong>random sample dengan replacement</strong> dari{" "}
-                  {MODEL_CONFIG.total_training_data} data training. Rata-rata ~63.2% data unique, ~36.8% duplikat. Sisanya
-                  (~36.8%) menjadi <strong>Out-of-Bag (OOB)</strong> samples untuk validasi.
-                </span>
-              </p>
+            <div className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-lg text-sm text-blue-800 flex items-start gap-2">
+              <Info className="w-4 h-4 mt-0.5 flex-shrink-0" />
+              <span>
+                Setiap pohon dilatih dengan <strong>random sample dengan replacement</strong> dari{" "}
+                {training?.data_train ?? 960} data training. Rata-rata ~63.2% data unique, ~36.8% duplikat.
+                Sisanya (~36.8%) menjadi <strong>Out-of-Bag (OOB)</strong> samples.
+                OOB Score hasil training: <strong>{training ? `${(training.oob_score * 100).toFixed(2)}%` : "—"}</strong>.
+              </span>
             </div>
-
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead className="bg-green-100 text-green-900">
-                  <tr>
-                    <th className="p-3 text-left font-semibold">Tree ID</th>
-                    <th className="p-3 text-center font-semibold">Bootstrap Size</th>
-                    <th className="p-3 text-center font-semibold">Unique Samples</th>
-                    <th className="p-3 text-center font-semibold">Duplicate Samples</th>
-                    <th className="p-3 text-center font-semibold">OOB Samples</th>
-                    <th className="p-3 text-center font-semibold">Nodes Built</th>
-                    <th className="p-3 text-center font-semibold">Max Depth</th>
-                    <th className="p-3 text-center font-semibold"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {BOOTSTRAP_DETAILS.map((tree) => (
-                    <tr key={tree.tree_id} className="border-t hover:bg-gray-50 transition-colors">
-                      <td className="p-3 font-semibold text-gray-800">
-                        <div className="flex items-center gap-2">
-                          <TreeDeciduous className="w-4 h-4 text-green-600" />
-                          Tree #{tree.tree_id}
-                        </div>
-                      </td>
-                      <td className="p-3 text-center text-gray-700">{tree.bootstrap_size}</td>
-                      <td className="p-3 text-center">
-                        <Badge className="bg-green-600 text-white">{tree.unique_samples}</Badge>
-                      </td>
-                      <td className="p-3 text-center">
-                        <Badge variant="outline" className="text-gray-600">
-                          {tree.duplicate_samples}
-                        </Badge>
-                      </td>
-                      <td className="p-3 text-center">
-                        <Badge className="bg-blue-600 text-white">{tree.oob_samples}</Badge>
-                      </td>
-                      <td className="p-3 text-center text-gray-700">{tree.total_nodes}</td>
-                      <td className="p-3 text-center text-gray-700">{tree.max_depth_reached}</td>
-                      <td className="p-3 text-center">
-                        <Button
-                          size="sm"
-                          variant="outline"
-                          onClick={() => setExpandedTree(expandedTree === tree.tree_id ? null : tree.tree_id)}
-                        >
-                          {expandedTree === tree.tree_id ? (
-                            <ChevronUp className="w-4 h-4" />
-                          ) : (
-                            <ChevronDown className="w-4 h-4" />
-                          )}
-                        </Button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            {expandedTree && (
-              <div className="mt-4 p-4 bg-gray-50 border rounded-xl">
-                <h3 className="font-bold text-gray-800 mb-3">Detail Bootstrap Tree #{expandedTree}</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-                  {Object.entries(BOOTSTRAP_DETAILS[expandedTree - 1].samples_per_class).map(([cls, count]) => (
-                    <div key={cls} className="p-3 bg-white rounded-lg border">
-                      <p className="text-xs text-gray-500 mb-1">{cls}</p>
-                      <p className="text-lg font-bold" style={{ color: categoryColors[cls] }}>
-                        {count} sampel
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* ── Step 2: Node Splitting & Impurity ── */}
-          <div className="bg-white rounded-2xl shadow p-6">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="font-bold text-gray-800 flex items-center gap-2">
-                <GitBranch className="w-5 h-5 text-green-700" />
-                Step 2: Node Splitting & Impurity Calculation (Gini Index)
-              </h2>
-              <Button
-                size="sm"
-                variant={showSplitDetail ? "default" : "outline"}
-                onClick={() => setShowSplitDetail(!showSplitDetail)}
-                className={showSplitDetail ? "bg-green-700" : ""}
-              >
-                {showSplitDetail ? "Sembunyikan Detail" : "Tampilkan Detail Splitting"}
-              </Button>
-            </div>
-
-            <div className="mb-4 p-3 bg-purple-50 border border-purple-200 rounded-lg">
-              <p className="text-sm text-purple-800 flex items-start gap-2">
-                <Info className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>
-                  Setiap node memilih{" "}
-                  <strong>
-                    √{MODEL_CONFIG.total_features} = {MODEL_CONFIG.features_per_split} fitur random
-                  </strong>{" "}
-                  dari {MODEL_CONFIG.total_features} fitur total. Fitur terbaik dipilih berdasarkan{" "}
-                  <strong>Gini Impurity Decrease</strong> terbesar untuk split node tersebut.
-                </span>
-              </p>
-            </div>
-
-            {showSplitDetail && (
-              <div className="space-y-4">
-                {/* Node Information */}
-                <div className="p-4 bg-gradient-to-r from-gray-50 to-gray-100 border-l-4 border-gray-600 rounded-xl">
-                  <h3 className="font-bold text-gray-800 mb-3">Contoh: Tree #1 - Root Node (Depth 0)</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm mb-4">
-                    <div>
-                      <p className="text-xs text-gray-500">Total Samples</p>
-                      <p className="text-lg font-bold text-gray-800">{SPLIT_EXAMPLE.node_info.samples}</p>
-                    </div>
-                    {Object.entries(SPLIT_EXAMPLE.node_info.samples_per_class).map(([cls, count]) => (
-                      <div key={cls}>
-                        <p className="text-xs text-gray-500">{cls}</p>
-                        <p className="text-lg font-bold" style={{ color: categoryColors[cls] }}>
-                          {count}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="p-3 bg-white rounded-lg border">
-                    <p className="text-xs text-gray-500 mb-2">📊 Gini Impurity (Sebelum Split)</p>
-                    <p className="text-2xl font-bold text-red-600">{SPLIT_EXAMPLE.impurity_before.gini.toFixed(4)}</p>
-                    <p className="text-xs text-gray-600 mt-2 font-mono">{SPLIT_EXAMPLE.impurity_before.calculation}</p>
-                    <p className="text-xs text-gray-500 mt-2">
-                      Semakin tinggi Gini, semakin tidak pure node tersebut (campuran kelas). Target: split untuk menurunkan Gini.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Feature Selection */}
-                <div className="p-4 bg-blue-50 border border-blue-200 rounded-xl">
-                  <h3 className="font-bold text-blue-800 mb-3">Random Feature Subset Selection</h3>
-                  <p className="text-sm text-blue-700 mb-3">
-                    Dari {SPLIT_EXAMPLE.feature_selection.total_features} fitur, hanya{" "}
-                    <strong>{SPLIT_EXAMPLE.feature_selection.random_subset} fitur random</strong> yang dipertimbangkan:
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {SPLIT_EXAMPLE.feature_selection.candidate_features.map((feat, idx) => (
-                      <Badge key={idx} className={idx === 0 ? "bg-green-600 text-white" : "bg-blue-600 text-white"}>
-                        {feat} {idx === 0 && "✓"}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Best Split */}
-                <div className="p-4 bg-green-50 border-2 border-green-300 rounded-xl">
-                  <h3 className="font-bold text-green-800 mb-3">✓ Best Split Selected</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <p className="text-sm text-gray-700 mb-2">
-                        <strong>Split Feature:</strong>{" "}
-                        <span className="font-mono text-green-700">{SPLIT_EXAMPLE.best_split.feature}</span>
-                      </p>
-                      <p className="text-sm text-gray-700 mb-2">
-                        <strong>Threshold:</strong>{" "}
-                        <span className="font-mono">{SPLIT_EXAMPLE.best_split.threshold.toFixed(4)}</span>
-                      </p>
-                      <p className="text-sm text-gray-700">
-                        <strong>Gini Decrease:</strong>{" "}
-                        <span className="font-bold text-green-700">{SPLIT_EXAMPLE.best_split.gini_decrease.toFixed(4)}</span>
-                      </p>
-                    </div>
-                    <div className="space-y-2">
-                      <p className="text-xs font-semibold text-gray-500">Competing Features (runner-up):</p>
-                      {SPLIT_EXAMPLE.competing_splits.map((split, idx) => (
-                        <div key={idx} className="flex items-center gap-2 text-xs">
-                          <span className="text-gray-600">{idx + 2}.</span>
-                          <span className="font-mono text-gray-700">{split.feature}</span>
-                          <div className="flex-1 bg-gray-200 rounded-full h-1">
-                            <div
-                              className="h-1 rounded-full bg-gray-400"
-                              style={{ width: `${(split.gini_decrease / SPLIT_EXAMPLE.best_split.gini_decrease) * 100}%` }}
-                            />
-                          </div>
-                          <span className="text-gray-600">{split.gini_decrease.toFixed(4)}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Split Result */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {/* Left Child */}
-                  <div className="p-4 bg-orange-50 border-l-4 border-orange-400 rounded-xl">
-                    <h4 className="font-bold text-orange-800 mb-3">← Left Child (sampah ≤ 0.0150)</h4>
-                    <div className="space-y-2 text-sm">
-                      <div className="flex justify-between">
-                        <span className="text-gray-600">Samples:</span>
-                        <span className="font-bold">{SPLIT_EXAMPLE.left_child.samples}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600">Gini:</span>
-                        <span className="font-bold text-orange-600">{SPLIT_EXAMPLE.left_child.gini.toFixed(4)}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600">Dominant:</span>
-                        <Badge className="bg-orange-600 text-white">{SPLIT_EXAMPLE.left_child.dominant_class}</Badge>
-                      </div>
-                      <div className="mt-3 space-y-1">
-                        {Object.entries(SPLIT_EXAMPLE.left_child.samples_per_class).map(([cls, count]) => (
-                          <div key={cls} className="flex items-center gap-2">
-                            <span className="text-xs text-gray-600 w-32">{cls}</span>
-                            <div className="flex-1 bg-gray-200 rounded-full h-1.5">
-                              <div
-                                className="h-1.5 rounded-full"
-                                style={{
-                                  width: `${(count / SPLIT_EXAMPLE.left_child.samples) * 100}%`,
-                                  backgroundColor: categoryColors[cls],
-                                }}
-                              />
-                            </div>
-                            <span className="text-xs font-bold w-8 text-right">{count}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Right Child */}
-                  <div className="p-4 bg-green-50 border-l-4 border-green-600 rounded-xl">
-                    <h4 className="font-bold text-green-800 mb-3">→ Right Child (sampah &gt; 0.0150)</h4>
-                    <div className="space-y-2 text-sm">
-                      <div className="flex justify-between">
-                        <span className="text-gray-600">Samples:</span>
-                        <span className="font-bold">{SPLIT_EXAMPLE.right_child.samples}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600">Gini:</span>
-                        <span className="font-bold text-green-600">{SPLIT_EXAMPLE.right_child.gini.toFixed(4)}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600">Dominant:</span>
-                        <Badge className="bg-green-600 text-white">{SPLIT_EXAMPLE.right_child.dominant_class}</Badge>
-                      </div>
-                      <div className="mt-3 space-y-1">
-                        {Object.entries(SPLIT_EXAMPLE.right_child.samples_per_class).map(([cls, count]) => (
-                          <div key={cls} className="flex items-center gap-2">
-                            <span className="text-xs text-gray-600 w-32">{cls}</span>
-                            <div className="flex-1 bg-gray-200 rounded-full h-1.5">
-                              <div
-                                className="h-1.5 rounded-full"
-                                style={{
-                                  width: `${(count / SPLIT_EXAMPLE.right_child.samples) * 100}%`,
-                                  backgroundColor: categoryColors[cls],
-                                }}
-                              />
-                            </div>
-                            <span className="text-xs font-bold w-8 text-right">{count}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="p-3 bg-yellow-50 border border-yellow-300 rounded-lg text-sm text-yellow-800">
-                  <strong>Hasil Split:</strong> Gini menurun dari 0.7500 → Left: 0.7012, Right: 0.4287. Right child lebih pure
-                  (didominasi LINGKUNGAN 62.8%). Proses ini berulang untuk setiap child node hingga mencapai stopping criteria.
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* ── Step 3: Prediction & Voting ── */}
-          <div className="bg-white rounded-2xl shadow p-6">
-            <h2 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
-              <Target className="w-5 h-5 text-green-700" />
-              Step 3: Prediksi Sampel Baru dengan {MODEL_CONFIG.n_estimators} Pohon
-            </h2>
-
-            {/* Input */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              <div className="p-4 bg-gray-50 border rounded-xl">
-                <p className="text-xs font-semibold text-gray-500 mb-2">① Teks Input Asli</p>
-                <p className="text-sm text-gray-800 leading-relaxed">{SAMPLE_PREDICTION.input}</p>
-              </div>
-              <div className="p-4 bg-green-50 border border-green-200 rounded-xl">
-                <p className="text-xs font-semibold text-green-700 mb-2">② Hasil Preprocessing</p>
-                <p className="text-sm text-gray-700 font-mono leading-relaxed">{SAMPLE_PREDICTION.processed}</p>
-              </div>
-            </div>
-
-            {/* TF-IDF Vector */}
-            <div className="p-4 bg-blue-50 border border-blue-200 rounded-xl mb-6">
-              <p className="text-xs font-semibold text-blue-700 mb-3">③ Vektor TF-IDF (Nilai Fitur)</p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                {Object.entries(SAMPLE_PREDICTION.tfidf_vector).map(([term, value]) => (
-                  <div key={term} className="p-2 bg-white rounded border text-xs">
-                    <p className="font-mono font-semibold text-gray-700 truncate">{term}</p>
-                    <div className="flex items-center gap-2 mt-1">
-                      <div className="flex-1 bg-gray-200 rounded-full h-1">
-                        <div className="h-1 rounded-full bg-blue-500" style={{ width: `${value * 100}%` }} />
-                      </div>
-                      <span className="font-bold text-blue-700">{value.toFixed(4)}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Voting dari setiap pohon */}
-            <div className="p-4 bg-purple-50 border border-purple-200 rounded-xl mb-6">
-              <p className="text-xs font-semibold text-purple-700 mb-3">
-                ④ Voting dari {MODEL_CONFIG.n_estimators} Pohon Keputusan
-              </p>
-              <div className="overflow-x-auto">
-                <table className="w-full text-xs">
-                  <thead className="bg-purple-100 text-purple-900">
-                    <tr>
-                      <th className="p-2 text-left">Tree</th>
-                      <th className="p-2 text-left">Prediksi</th>
-                      <th className="p-2 text-center">Leaf Purity</th>
-                      <th className="p-2 text-center">Path Length</th>
-                      <th className="p-2 text-center">Samples in Leaf</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {SAMPLE_PREDICTION.tree_predictions.map((pred) => (
-                      <tr key={pred.tree} className="border-t hover:bg-white transition-colors">
-                        <td className="p-2">
-                          <TreeDeciduous className="w-3 h-3 inline mr-1 text-purple-600" />#{pred.tree}
-                        </td>
-                        <td className="p-2">
-                          <Badge
-                            className="text-xs"
-                            style={{
-                              backgroundColor: categoryColors[pred.prediction],
-                              color: "white",
-                            }}
-                          >
-                            {pred.prediction}
-                          </Badge>
-                        </td>
-                        <td className="p-2 text-center">
-                          <div className="flex items-center justify-center gap-1">
-                            <div className="w-12 bg-gray-200 rounded-full h-1">
-                              <div className="h-1 rounded-full bg-purple-500" style={{ width: `${pred.leaf_purity * 100}%` }} />
-                            </div>
-                            <span className="font-bold text-purple-700">{(pred.leaf_purity * 100).toFixed(0)}%</span>
-                          </div>
-                        </td>
-                        <td className="p-2 text-center text-gray-700">{pred.path_length} nodes</td>
-                        <td className="p-2 text-center text-gray-700">{pred.samples_in_leaf}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            {/* Hasil Final Voting */}
-            <div className="p-5 bg-gradient-to-r from-green-50 to-green-100 border-2 border-green-300 rounded-xl">
-              <p className="text-xs font-semibold text-green-700 mb-3">⑤ HASIL AKHIR — Majority Voting</p>
-              <div className="space-y-3 mb-4">
-                {Object.entries(SAMPLE_PREDICTION.final_votes)
-                  .sort(([, a], [, b]) => b - a)
-                  .map(([cls, votes], idx) => (
-                    <div key={cls}>
-                      <div className="flex items-center justify-between mb-1">
-                        <div className="flex items-center gap-2">
-                          <span className="font-semibold text-gray-700">{cls}</span>
-                        </div>
-                        <span className="font-bold text-gray-800">
-                          {votes} / {MODEL_CONFIG.n_estimators} pohon ({((votes / MODEL_CONFIG.n_estimators) * 100).toFixed(1)}%)
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="flex-1 bg-gray-200 rounded-full h-3">
-                          <div
-                            className={`h-3 rounded-full transition-all duration-500 ${
-                              idx === 0 ? "bg-gradient-to-r from-green-500 to-green-600" : "bg-gray-400"
-                            }`}
-                            style={{ width: `${(votes / MODEL_CONFIG.n_estimators) * 100}%` }}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-              </div>
-              <div className="p-4 bg-white rounded-lg border-2 border-green-500">
-                <p className="text-sm text-gray-600 mb-1">Prediksi Final:</p>
-                <p className="text-3xl font-bold text-green-800">
-                  {Object.entries(SAMPLE_PREDICTION.final_votes).sort(([, a], [, b]) => b - a)[0][0]}
-                </p>
-                <p className="text-sm text-gray-600 mt-2">
-                  Dipilih oleh{" "}
-                  <strong>{Object.entries(SAMPLE_PREDICTION.final_votes).sort(([, a], [, b]) => b - a)[0][1]}</strong> dari{" "}
-                  {MODEL_CONFIG.n_estimators} pohon keputusan
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* ── Penjelasan Konsep ── */}
-          <div className="bg-white rounded-2xl shadow p-6">
-            <h2 className="font-bold text-gray-800 mb-4">Konsep Penting dalam Random Forest</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm">
               {[
-                {
-                  title: "Bootstrap Sampling",
-                  desc: `Random sampling dengan replacement dari ${MODEL_CONFIG.total_training_data} data. Setiap pohon melihat subset data berbeda, menciptakan diversity. Data yang tidak terpilih (~36.8%) menjadi OOB samples untuk validasi internal.`,
-                  color: "#2E7D32",
-                },
-                {
-                  title: "Random Feature Selection",
-                  desc: `Setiap node split hanya mempertimbangkan √${MODEL_CONFIG.total_features} = ${MODEL_CONFIG.features_per_split} fitur random. Ini mencegah pohon menjadi terlalu mirip (decorrelation) dan mengurangi overfitting.`,
-                  color: "#4CAF50",
-                },
-                {
-                  title: "Gini Impurity",
-                  desc: `Metrik untuk mengukur ketidakmurnian node. Gini = 0 (pure, satu kelas), Gini = 0.75 (sangat campur). Split dipilih untuk memaksimalkan penurunan Gini. Formula: Gini = 1 - Σ(pi²)`,
-                  color: "#81C784",
-                },
-                {
-                  title: "Majority Voting",
-                  desc: `Setiap pohon memberikan 1 vote untuk kelas prediksinya. Kelas dengan vote terbanyak menang. Ensemble voting ini lebih robust daripada prediksi single tree dan mengurangi variance.`,
-                  color: "#A5D6A7",
-                },
-                {
-                  title: "Out-of-Bag (OOB) Validation",
-                  desc: `Sampel yang tidak masuk bootstrap (~36.8%) digunakan untuk validasi tree tersebut. OOB score adalah akurasi agregat dari semua OOB predictions, tanpa perlu data validation terpisah.`,
-                  color: "#1976D2",
-                },
-                {
-                  title: "Leaf Purity",
-                  desc: `Persentase kelas dominan di leaf node. Leaf dengan purity 90% berarti 90% sampel training di leaf tersebut adalah satu kelas. Semakin tinggi purity, semakin confident prediksi.`,
-                  color: "#F57C00",
-                },
-              ].map((concept, idx) => (
-                <div key={idx} className="p-4 rounded-xl border-l-4 bg-gray-50" style={{ borderColor: concept.color }}>
-                  <h3 className="font-semibold text-gray-800 mb-2">{concept.title}</h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">{concept.desc}</p>
+                { label: "Total Data Training", value: (training?.data_train ?? 960).toLocaleString(), color: "#2E7D32" },
+                { label: "Rata-rata Unique/Bootstrap", value: `~${Math.round((training?.data_train ?? 960) * 0.632).toLocaleString()}`, color: "#4CAF50" },
+                { label: "Rata-rata OOB/Pohon", value: `~${Math.round((training?.data_train ?? 960) * 0.368).toLocaleString()}`, color: "#1976D2" },
+                { label: "OOB Score Keseluruhan", value: training ? `${(training.oob_score * 100).toFixed(2)}%` : "—", color: "#F57C00" },
+              ].map(({ label, value, color }) => (
+                <div key={label} className="p-4 bg-gray-50 rounded-xl border-l-4" style={{ borderLeftColor: color }}>
+                  <p className="text-xs text-gray-500 mb-1">{label}</p>
+                  <p className="text-2xl font-bold" style={{ color }}>{value}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* ── Catatan Evaluasi ── */}
-          <div className="p-5 bg-yellow-50 border border-yellow-300 rounded-xl">
-            <div className="flex items-start gap-3">
-              <Info className="w-5 h-5 text-yellow-700 flex-shrink-0 mt-0.5" />
-              <div>
-                <h3 className="font-bold text-yellow-800 mb-2">Catatan: Evaluasi Model</h3>
-                <p className="text-sm text-yellow-800 leading-relaxed">
-                  Halaman ini fokus pada <strong>proses training dan prediksi</strong> Random Forest secara detail. Untuk metrik
-                  evaluasi model seperti{" "}
-                  <strong>Accuracy, Precision, Recall, F1-Score, Confusion Matrix, Cross-Validation, dan OOB Score</strong>,
-                  silakan lihat di halaman <strong>Statistik</strong> atau dashboard evaluasi model (akan ditambahkan).
-                </p>
+          {/* Step 2: Gini Impurity (Konseptual) */}
+          <div className="bg-white rounded-2xl shadow p-6">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="font-bold text-gray-800 flex items-center gap-2">
+                <GitBranch className="w-5 h-5 text-green-700" />
+                Step 2: Node Splitting & Gini Impurity
+              </h2>
+              <Button size="sm" variant={showSplitDetail ? "default" : "outline"}
+                onClick={() => setShowSplitDetail(v => !v)}
+                className={showSplitDetail ? "bg-green-700" : ""}>
+                {showSplitDetail ? "Sembunyikan" : "Tampilkan Contoh Splitting"}
+              </Button>
+            </div>
+            <div className="mb-4 p-3 bg-purple-50 border border-purple-200 rounded-lg text-sm text-purple-800 flex items-start gap-2">
+              <Info className="w-4 h-4 mt-0.5 flex-shrink-0" />
+              <span>
+                Setiap node memilih <strong>√{totalFeatures} = {featuresPerSplit} fitur random</strong> dari {totalFeatures} fitur total.
+                Fitur terbaik dipilih berdasarkan <strong>Gini Impurity Decrease</strong> terbesar.
+                Formula: <code className="bg-white px-1 rounded">Gini = 1 - Σ(pᵢ²)</code>
+              </span>
+            </div>
+            {showSplitDetail && (
+              <div className="space-y-4">
+                <div className="p-4 bg-gray-50 border-l-4 border-gray-500 rounded-xl">
+                  <h3 className="font-bold text-gray-800 mb-3">Contoh: Root Node (Depth 0) — 4 kelas seimbang</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-5 gap-3 text-sm mb-4">
+                    <div className="p-3 bg-white rounded-lg border text-center">
+                      <p className="text-xs text-gray-500">Total Samples</p>
+                      <p className="text-xl font-bold text-gray-800">{training?.data_train ?? 960}</p>
+                    </div>
+                    {["INFRASTRUKTUR","KEAMANAN","LINGKUNGAN","PELAYANAN"].map(cls => (
+                      <div key={cls} className="p-3 bg-white rounded-lg border text-center">
+                        <p className="text-xs text-gray-500">{cls}</p>
+                        <p className="text-xl font-bold" style={{ color: CATEGORY_COLORS[cls] }}>
+                          ~{Math.round((training?.data_train ?? 960) / 4)}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="p-3 bg-white rounded-lg border">
+                    <p className="text-xs text-gray-500 mb-1">Gini Impurity (Sebelum Split) — 4 kelas seimbang</p>
+                    <p className="text-2xl font-bold text-red-600">0.7500</p>
+                    <p className="text-xs font-mono text-gray-600 mt-2">
+                      Gini = 1 - (0.25² + 0.25² + 0.25² + 0.25²) = 1 - 0.25 = 0.7500
+                    </p>
+                    <p className="text-xs text-gray-500 mt-1">
+                      Gini = 0.75 → node sangat tidak pure (campur 4 kelas). Tujuan split: turunkan Gini anak-node.
+                    </p>
+                  </div>
+                </div>
+                <div className="p-3 bg-yellow-50 border border-yellow-300 rounded-lg text-sm text-yellow-800">
+                  <strong>Catatan:</strong> Detail split per node tidak disimpan (terlalu besar untuk 500 pohon × ribuan node).
+                  Yang tersimpan adalah <strong>feature importance</strong> sebagai agregat kontribusi setiap fitur di semua pohon.
+                  Lihat detail per pengaduan di tabel bawah.
+                </div>
               </div>
+            )}
+          </div>
+
+          {/* Step 3: Prediksi & Voting per Pengaduan (DATA REAL) */}
+          <div className="bg-white rounded-2xl shadow p-6">
+            <h2 className="font-bold text-gray-800 mb-2 flex items-center gap-2">
+              <Target className="w-5 h-5 text-green-700" />
+              Step 3: Prediksi & Majority Voting — Data Real
+            </h2>
+            <p className="text-sm text-gray-500 mb-4">
+              Klik "Lihat Detail RF" pada baris pengaduan untuk melihat TF-IDF vektor, voting {nEstimators} pohon,
+              probabilitas per kelas, dan kontribusi fitur terpenting.
+            </p>
+
+            {/* Search */}
+            <div className="relative mb-4 max-w-sm">
+              <Search className="absolute left-3 top-2.5 w-4 h-4 text-gray-400" />
+              <Input placeholder="Cari deskripsi / nama…"
+                value={searchInput} onChange={e => setSearchInput(e.target.value)} className="pl-9" />
+            </div>
+
+            {loadingList ? (
+              <p className="text-center text-gray-400 py-8">Memuat data…</p>
+            ) : (
+              <>
+                <div className="space-y-4">
+                  {pengaduanList.map((item, idx) => {
+                    const kode = item.kode_pengaduan;
+                    const isOpen = expandedKode === kode;
+                    const rfData = rfCache[kode];
+                    const isLoadingRF = rfLoading[kode];
+                    const rank = (page - 1) * PAGE_SIZE + idx + 1;
+
+                    return (
+                      <div key={kode} className="border rounded-xl bg-white overflow-hidden">
+                        {/* Row header */}
+                        <div className="flex items-center justify-between p-4">
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-2 mb-1 flex-wrap">
+                              <span className="text-xs font-mono text-gray-400">#{rank}</span>
+                              <span className="text-xs font-bold bg-gray-100 px-2 py-0.5 rounded text-gray-600">{kode}</span>
+                              <span className="font-semibold text-gray-800 text-sm">{item.nama}</span>
+                              <Badge className="text-xs" style={{
+                                backgroundColor: CATEGORY_COLORS[item.kategori_prediksi] ?? "#888",
+                                color: "white"
+                              }}>
+                                {item.kategori_prediksi}
+                              </Badge>
+                              <span className="text-xs text-gray-400">
+                                conf: {item.confidence != null ? `${(item.confidence * 100).toFixed(1)}%` : "—"}
+                              </span>
+                            </div>
+                            <p className="text-xs text-gray-500 truncate max-w-xl">{item.deskripsi}</p>
+                          </div>
+                          <Button size="sm" variant="outline" onClick={() => handleToggle(item)}
+                            className="ml-3 flex-shrink-0 flex items-center gap-1.5">
+                            {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                            {isOpen ? "Tutup" : "Lihat Detail RF"}
+                          </Button>
+                        </div>
+
+                        {/* Expanded RF detail */}
+                        {isOpen && (
+                          <div className="border-t bg-gray-50 p-5 space-y-5">
+                            {isLoadingRF ? (
+                              <p className="text-sm text-gray-400">Memuat data Random Forest…</p>
+                            ) : !rfData ? (
+                              <p className="text-sm text-red-400">Data RF tidak tersedia untuk pengaduan ini.</p>
+                            ) : (() => {
+                              const treeVotes = rfData.tree_votes_sample ?? {};
+                              const probaAll = rfData.proba_all ?? {};
+                              const fiImportance = rfData.feature_importance_kontribusi ?? {};
+                              const voteCounts = Object.values(treeVotes).reduce((acc, v) => {
+                                acc[v] = (acc[v] || 0) + 1; return acc;
+                              }, {});
+                              const totalVotesSample = Object.keys(treeVotes).length;
+                              const fiEntries = Object.entries(fiImportance)
+                                .sort((a, b) => (b[1].importance * b[1].tfidf) - (a[1].importance * a[1].tfidf));
+                              const maxFI = fiEntries.length > 0
+                                ? fiEntries[0][1].importance * fiEntries[0][1].tfidf : 1;
+
+                              return (
+                                <>
+                                  {/* ① Deskripsi & Processed */}
+                                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <div className="p-3 bg-white border rounded-xl">
+                                      <p className="text-xs font-semibold text-gray-500 mb-2">① Teks Asli</p>
+                                      <p className="text-sm text-gray-800 leading-relaxed">{item.deskripsi}</p>
+                                    </div>
+                                    <div className="p-3 bg-green-50 border border-green-200 rounded-xl">
+                                      <p className="text-xs font-semibold text-green-700 mb-2">② Hasil Preprocessing</p>
+                                      <p className="text-sm font-mono text-gray-700 leading-relaxed">{item.processed}</p>
+                                    </div>
+                                  </div>
+
+                                  {/* ② Probabilitas per kelas */}
+                                  <div className="p-4 bg-blue-50 border border-blue-200 rounded-xl">
+                                    <p className="text-xs font-semibold text-blue-700 mb-3">
+                                      ③ Probabilitas per Kelas (dari {nEstimators} pohon)
+                                    </p>
+                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                                      {Object.entries(probaAll)
+                                        .sort((a, b) => b[1] - a[1])
+                                        .map(([cls, prob]) => {
+                                          const isWinner = cls === rfData.prediction;
+                                          return (
+                                            <div key={cls} className={`p-3 rounded-lg border text-center ${
+                                              isWinner ? "bg-white border-green-500 ring-2 ring-green-400" : "bg-white"}`}>
+                                              <p className="text-xs font-semibold mb-1" style={{ color: CATEGORY_COLORS[cls] }}>{cls}</p>
+                                              <p className="text-xl font-bold text-gray-800">{(prob * 100).toFixed(1)}%</p>
+                                              <div className="mt-1 w-full bg-gray-200 rounded-full h-1.5">
+                                                <div className="h-1.5 rounded-full"
+                                                  style={{ width: `${prob * 100}%`, backgroundColor: CATEGORY_COLORS[cls] }} />
+                                              </div>
+                                              {isWinner && <p className="text-[10px] text-green-600 font-bold mt-1">✓ PREDIKSI</p>}
+                                            </div>
+                                          );
+                                        })}
+                                    </div>
+                                  </div>
+
+                                  {/* ③ Tree votes sample (10 pohon pertama) */}
+                                  {totalVotesSample > 0 && (
+                                    <div className="p-4 bg-purple-50 border border-purple-200 rounded-xl">
+                                      <p className="text-xs font-semibold text-purple-700 mb-3">
+                                        ④ Voting Sample ({totalVotesSample} dari {nEstimators} pohon)
+                                      </p>
+                                      <div className="grid grid-cols-5 md:grid-cols-10 gap-2 mb-4">
+                                        {Object.entries(treeVotes).map(([treeKey, vote]) => (
+                                          <div key={treeKey} className="p-2 bg-white rounded-lg border text-center text-xs">
+                                            <TreeDeciduous className="w-3 h-3 mx-auto mb-1"
+                                              style={{ color: CATEGORY_COLORS[vote] }} />
+                                            <p className="text-gray-400 text-[10px]">{treeKey.replace("tree_", "#")}</p>
+                                            <p className="font-bold text-[10px] truncate"
+                                              style={{ color: CATEGORY_COLORS[vote] }}>
+                                              {vote.slice(0, 4)}
+                                            </p>
+                                          </div>
+                                        ))}
+                                      </div>
+                                      {/* Vote tally */}
+                                      <div className="space-y-2">
+                                        {Object.entries(voteCounts)
+                                          .sort((a, b) => b[1] - a[1])
+                                          .map(([cls, cnt]) => (
+                                            <div key={cls} className="flex items-center gap-3">
+                                              <span className="text-xs font-semibold w-28" style={{ color: CATEGORY_COLORS[cls] }}>
+                                                {cls}
+                                              </span>
+                                              <div className="flex-1 bg-gray-200 rounded-full h-3">
+                                                <div className="h-3 rounded-full"
+                                                  style={{
+                                                    width: `${(cnt / totalVotesSample) * 100}%`,
+                                                    backgroundColor: CATEGORY_COLORS[cls]
+                                                  }} />
+                                              </div>
+                                              <span className="text-xs font-bold text-gray-700 w-16 text-right">
+                                                {cnt}/{totalVotesSample} ({((cnt / totalVotesSample) * 100).toFixed(0)}%)
+                                              </span>
+                                            </div>
+                                          ))}
+                                      </div>
+                                      <p className="text-xs text-gray-400 mt-2 italic">
+                                        Menampilkan {totalVotesSample} pohon pertama dari {nEstimators} total. Probabilitas final
+                                        dihitung dari semua {nEstimators} pohon.
+                                      </p>
+                                    </div>
+                                  )}
+
+                                  {/* ④ Feature importance kontribusi */}
+                                  {fiEntries.length > 0 && (
+                                    <div>
+                                      <p className="text-xs font-semibold text-gray-700 mb-3">
+                                        ⑤ Feature Importance × TF-IDF (Kontribusi Term untuk Dokumen Ini)
+                                      </p>
+                                      <div className="overflow-x-auto rounded-xl border">
+                                        <table className="w-full text-xs">
+                                          <thead className="bg-green-50 text-green-800">
+                                            <tr>
+                                              <th className="p-2 text-left w-8">#</th>
+                                              <th className="p-2 text-left">Term</th>
+                                              <th className="p-2 text-left w-44">Importance (Global)</th>
+                                              <th className="p-2 text-left w-44">TF-IDF (Dokumen)</th>
+                                              <th className="p-2 text-left w-44">Kontribusi (I×T)</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            {fiEntries.slice(0, 20).map(([term, vals], ti) => {
+                                              const contrib = vals.importance * vals.tfidf;
+                                              const pct = maxFI > 0 ? Math.min(100, (contrib / maxFI) * 100) : 0;
+                                              return (
+                                                <tr key={term} className={`border-t ${ti < 3 ? "bg-green-50/40" : "hover:bg-gray-50"}`}>
+                                                  <td className="p-2 text-gray-400">{ti + 1}</td>
+                                                  <td className="p-2 font-mono text-gray-800">
+                                                    {term}
+                                                    {ti < 3 && <span className="ml-1 text-[10px] text-green-600 font-bold">TOP</span>}
+                                                  </td>
+                                                  <td className="p-2 tabular-nums text-gray-600">{vals.importance.toFixed(6)}</td>
+                                                  <td className="p-2 tabular-nums text-gray-600">{vals.tfidf.toFixed(6)}</td>
+                                                  <td className="p-2">
+                                                    <div className="flex items-center gap-2">
+                                                      <div className="flex-1 bg-gray-100 rounded-full h-3">
+                                                        <div className="h-3 rounded-full bg-gradient-to-r from-green-500 to-green-600"
+                                                          style={{ width: `${pct}%` }} />
+                                                      </div>
+                                                      <span className="font-bold text-green-700 w-16 text-right">
+                                                        {contrib.toFixed(6)}
+                                                      </span>
+                                                    </div>
+                                                  </td>
+                                                </tr>
+                                              );
+                                            })}
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                      <p className="text-xs text-gray-400 mt-2 italic">
+                                        Kontribusi = Feature Importance (global dari model) × TF-IDF (bobot term dalam dokumen ini).
+                                        Menampilkan top 20 term.
+                                      </p>
+                                    </div>
+                                  )}
+
+                                  {/* Final result */}
+                                  <div className="p-4 bg-gradient-to-r from-green-50 to-green-100 border-2 border-green-300 rounded-xl flex items-center justify-between">
+                                    <div>
+                                      <p className="text-xs text-gray-500">Prediksi Final (Majority Voting)</p>
+                                      <p className="text-2xl font-bold" style={{ color: CATEGORY_COLORS[rfData.prediction] }}>
+                                        {rfData.prediction}
+                                      </p>
+                                      <p className="text-xs text-gray-500 mt-1">
+                                        Confidence: <strong>{(rfData.confidence * 100).toFixed(2)}%</strong>
+                                      </p>
+                                    </div>
+                                    {item.label_asli && item.label_asli !== "-" && (
+                                      <div className="text-right">
+                                        <p className="text-xs text-gray-500">Label Asli</p>
+                                        <Badge className="text-sm" style={{
+                                          backgroundColor: CATEGORY_COLORS[item.label_asli] ?? "#888",
+                                          color: "white"
+                                        }}>
+                                          {item.label_asli}
+                                        </Badge>
+                                        <p className="text-xs mt-1 font-semibold">
+                                          {rfData.prediction === item.label_asli
+                                            ? <span className="text-green-600">✓ Benar</span>
+                                            : <span className="text-red-500">✗ Salah</span>}
+                                        </p>
+                                      </div>
+                                    )}
+                                  </div>
+                                </>
+                              );
+                            })()}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Pagination */}
+                <div className="flex items-center justify-between mt-6 pt-4 border-t">
+                  <p className="text-sm text-gray-400">
+                    Halaman {page} dari {totalPages} · {totalPengaduan.toLocaleString()} pengaduan
+                  </p>
+                  <div className="flex gap-2">
+                    <Button variant="outline" size="sm" disabled={page === 1 || loadingList}
+                      onClick={() => setPage(p => p - 1)}>
+                      <ChevronLeft className="w-4 h-4" /> Prev
+                    </Button>
+                    {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+                      const p = Math.max(1, Math.min(page - 2, totalPages - 4)) + i;
+                      return (
+                        <Button key={p} size="sm"
+                          variant={p === page ? "default" : "outline"}
+                          className={p === page ? "bg-green-700 text-white" : ""}
+                          onClick={() => setPage(p)}>{p}</Button>
+                      );
+                    })}
+                    <Button variant="outline" size="sm" disabled={page === totalPages || loadingList}
+                      onClick={() => setPage(p => p + 1)}>
+                      Next <ChevronRight className="w-4 h-4" />
+                    </Button>
+                  </div>
+                </div>
+              </>
+            )}
+          </div>
+
+          {/* Konsep Penting */}
+          <div className="bg-white rounded-2xl shadow p-6">
+            <h2 className="font-bold text-gray-800 mb-4">Konsep Penting dalam Random Forest</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                { title: "Bootstrap Sampling", color: "#2E7D32",
+                  desc: `Setiap pohon dilatih dari random sample with replacement (${training?.data_train ?? 960} data). ~63.2% unique, ~36.8% OOB untuk validasi internal.` },
+                { title: "Random Feature Selection", color: "#4CAF50",
+                  desc: `Setiap node split hanya mempertimbangkan √${totalFeatures} = ${featuresPerSplit} fitur random. Ini mencegah pohon terlalu mirip (decorrelation) dan mengurangi overfitting.` },
+                { title: "Gini Impurity", color: "#81C784",
+                  desc: `Gini = 0 (pure), Gini = 0.75 (4 kelas seimbang = sangat campur). Split dipilih untuk memaksimalkan penurunan Gini. Formula: Gini = 1 − Σ(pᵢ²)` },
+                { title: "Majority Voting", color: "#A5D6A7",
+                  desc: `Dari ${nEstimators} pohon, masing-masing memberi 1 vote. Kelas dengan vote terbanyak menang. Probabilitas = proporsi vote per kelas.` },
+                { title: "OOB Score", color: "#1976D2",
+                  desc: `OOB Score model ini: ${training ? (training.oob_score * 100).toFixed(2) + "%" : "—"}. Setiap pohon divalidasi dengan ~36.8% data yang tidak masuk bootstrap-nya.` },
+                { title: "Feature Importance", color: "#F57C00",
+                  desc: `Diukur dari total penurunan Gini yang dikontribusikan setiap fitur di semua pohon. Digabung dengan TF-IDF untuk menunjukkan kontribusi term per dokumen.` },
+              ].map((c, i) => (
+                <div key={i} className="p-4 rounded-xl border-l-4 bg-gray-50" style={{ borderColor: c.color }}>
+                  <h3 className="font-semibold text-gray-800 mb-2">{c.title}</h3>
+                  <p className="text-xs text-gray-600 leading-relaxed">{c.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
+
         </main>
       </div>
     </div>

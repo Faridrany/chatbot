@@ -1,11 +1,11 @@
 {
-    "akurasi": 0.9167,
-    "presisi": 0.9247,
-    "recall": 0.9167,
-    "f1_score": 0.9179,
-    "oob_score": 0.8833,
-    "cv_mean": 0.875,
-    "cv_std": 0.0671,
+    "akurasi": 0.9125,
+    "presisi": 0.9237,
+    "recall": 0.9125,
+    "f1_score": 0.9142,
+    "oob_score": 0.8865,
+    "cv_mean": 0.8783,
+    "cv_std": 0.0649,
     "total_data": 1200,
     "data_train": 960,
     "data_test": 240,
@@ -25,22 +25,22 @@
     ],
     "perClass": {
         "INFRASTRUKTUR": {
-            "precision": 0.8056,
+            "precision": 0.7838,
             "recall": 0.9667,
-            "f1": 0.8788,
+            "f1": 0.8657,
             "support": 60,
             "tp": 58,
-            "fp": 14,
+            "fp": 16,
             "fn": 2
         },
         "KEAMANAN": {
-            "precision": 0.963,
-            "recall": 0.8667,
-            "f1": 0.9123,
+            "precision": 0.9808,
+            "recall": 0.85,
+            "f1": 0.9107,
             "support": 60,
-            "tp": 52,
-            "fp": 2,
-            "fn": 8
+            "tp": 51,
+            "fp": 1,
+            "fn": 9
         },
         "LINGKUNGAN": {
             "precision": 0.9483,
@@ -69,14 +69,14 @@
             "PELAYANAN": 0
         },
         "KEAMANAN": {
-            "INFRASTRUKTUR": 7,
-            "KEAMANAN": 52,
+            "INFRASTRUKTUR": 8,
+            "KEAMANAN": 51,
             "LINGKUNGAN": 0,
             "PELAYANAN": 1
         },
         "LINGKUNGAN": {
-            "INFRASTRUKTUR": 3,
-            "KEAMANAN": 2,
+            "INFRASTRUKTUR": 4,
+            "KEAMANAN": 1,
             "LINGKUNGAN": 55,
             "PELAYANAN": 0
         },

@@ -227,10 +227,13 @@ app.get("/api/pengaduan", (_req, res) => {
 
   let result = cache.pengaduan.map((item, i) => ({
     _id: i,
+    kode_pengaduan: item.kode_pengaduan ?? `PGD-${String(i + 1).padStart(4, "0")}`,
     nama: item.nama ?? "",
     no_wa: (item.no_wa ?? "").replace("@c.us", ""),
     deskripsi: item.deskripsi ?? "",
+    processed: item.processed ?? item.final_text ?? "",
     kategori_prediksi: item.kategori_prediksi || item.Kategori || item.kategori || "-",
+    label_asli: item.label_asli ?? "-",
     timestamp: item.timestamp || item.tanggal || item.created_at || null,
     confidence: item.confidence ?? item.akurasi_model ?? null,
     status: item.status ?? "Menunggu",
@@ -439,10 +442,213 @@ app.post("/api/klasifikasi", async (_req, res) => {
 });
 
 // ─────────────────────────────────────────────
-// TF-IDF DATA
+// STAGE FILES — normalized lookup by kode_pengaduan
+// ─────────────────────────────────────────────
+const STAGES_DIR = path.join(DATA_DIR, "stages");
+
+// Helper: lazy-load a stage file (keyed by kode_pengaduan)
+const stageCache = {};
+async function loadStage(name) {
+  if (stageCache[name]) return stageCache[name];
+  try {
+    const raw = await fs.readFile(path.join(STAGES_DIR, `${name}.json`), "utf-8");
+    stageCache[name] = JSON.parse(raw);
+    return stageCache[name];
+  } catch {
+    return {};
+  }
+}
+
+// GET /api/stages/:kode — ambil semua stage detail satu pengaduan
+app.get("/api/stages/:kode", async (req, res) => {
+  const kode = req.params.kode;
+  const include = (req.query.include ?? "tfidf,filtering,seleksi_fitur,random_forest,tokenisasi")
+    .split(",").map(s => s.trim());
+
+  const result = {};
+  await Promise.all(include.map(async (stage) => {
+    const data = await loadStage(stage);
+    result[stage] = data[kode] ?? null;
+  }));
+
+  res.json(result);
+});
+
+// GET /api/stages/tfidf/:kode — TF-IDF terms untuk satu pengaduan
+app.get("/api/stages/tfidf/:kode", async (req, res) => {
+  const data = await loadStage("tfidf");
+  const entry = data[req.params.kode];
+  if (!entry) return res.status(404).json({ error: "Kode pengaduan tidak ditemukan" });
+  res.json(entry);
+});
+
+// GET /api/stages/tokenisasi/:kode
+app.get("/api/stages/tokenisasi/:kode", async (req, res) => {
+  const data = await loadStage("tokenisasi");
+  const entry = data[req.params.kode];
+  if (!entry) return res.status(404).json({ error: "Kode pengaduan tidak ditemukan" });
+  res.json(entry);
+});
+
+// GET /api/stages/filtering/:kode
+app.get("/api/stages/filtering/:kode", async (req, res) => {
+  const data = await loadStage("filtering");
+  const entry = data[req.params.kode];
+  if (!entry) return res.status(404).json({ error: "Kode pengaduan tidak ditemukan" });
+  res.json(entry);
+});
+
+// GET /api/stages/seleksi_fitur/:kode
+app.get("/api/stages/seleksi_fitur/:kode", async (req, res) => {
+  const data = await loadStage("seleksi_fitur");
+  const entry = data[req.params.kode];
+  if (!entry) return res.status(404).json({ error: "Kode pengaduan tidak ditemukan" });
+  res.json(entry);
+});
+
+// GET /api/stages/random_forest/:kode
+app.get("/api/stages/random_forest/:kode", async (req, res) => {
+  const data = await loadStage("random_forest");
+  const entry = data[req.params.kode];
+  if (!entry) return res.status(404).json({ error: "Kode pengaduan tidak ditemukan" });
+  res.json(entry);
+});
+
+
+
+// ─────────────────────────────────────────────
+// BOOTSTRAP SAMPLING — data nyata per pohon
 // ─────────────────────────────────────────────
 
-// Ringkasan + semua terms (dengan paginasi server-side)
+// Cache bootstrap: hanya load per-tree saat diminta (on-demand)
+const bootstrapCache = {
+  summary: null,      // ringkasan semua 20 pohon (kecil, ~5KB)
+  lookup: null,       // kode_pengaduan → nama/deskripsi/kategori
+  trees: {},          // tree_N → data detail (lazy per pohon)
+};
+
+// Load summary & lookup sekali saja
+async function getBootstrapSummary() {
+  if (bootstrapCache.summary) return bootstrapCache.summary;
+  try {
+    const raw = await fs.readFile(path.join(STAGES_DIR, "bootstrap.json"), "utf-8");
+    const data = JSON.parse(raw);
+    // Simpan versi ringkasan (tanpa array sampel & oob — bisa besar)
+    const summary = {};
+    for (const [key, val] of Object.entries(data)) {
+      summary[key] = {
+        total_sampel: val.total_sampel,
+        unique_sampel: val.unique_sampel,
+        duplikat: val.duplikat,
+        oob_count: val.oob_count,
+        class_distribution: val.class_distribution,
+        oob_class_distribution: val.oob_class_distribution,
+      };
+    }
+    bootstrapCache.summary = summary;
+    return summary;
+  } catch {
+    return null;
+  }
+}
+
+async function getBootstrapLookup() {
+  if (bootstrapCache.lookup) return bootstrapCache.lookup;
+  try {
+    const raw = await fs.readFile(path.join(STAGES_DIR, "bootstrap_lookup.json"), "utf-8");
+    bootstrapCache.lookup = JSON.parse(raw);
+    return bootstrapCache.lookup;
+  } catch {
+    return {};
+  }
+}
+
+async function getBootstrapTree(treeId) {
+  const key = `tree_${treeId}`;
+  if (bootstrapCache.trees[key]) return bootstrapCache.trees[key];
+  try {
+    const raw = await fs.readFile(path.join(STAGES_DIR, "bootstrap.json"), "utf-8");
+    const data = JSON.parse(raw);
+    if (data[key]) {
+      bootstrapCache.trees[key] = data[key];
+      return data[key];
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+// GET /api/bootstrap — ringkasan semua 20 pohon
+app.get("/api/bootstrap", async (_req, res) => {
+  try {
+    const summary = await getBootstrapSummary();
+    if (!summary) {
+      return res.status(404).json({ error: "bootstrap.json belum ada. Jalankan python main.py --train." });
+    }
+    res.json(summary);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// GET /api/bootstrap/:treeId — detail sampel & OOB untuk satu pohon (on-demand)
+app.get("/api/bootstrap/:treeId", async (req, res) => {
+  try {
+    const treeId = parseInt(req.params.treeId, 10);
+    if (isNaN(treeId) || treeId < 1 || treeId > 20) {
+      return res.status(400).json({ error: "treeId harus antara 1 dan 20" });
+    }
+
+    const [treeData, lookup] = await Promise.all([
+      getBootstrapTree(treeId),
+      getBootstrapLookup(),
+    ]);
+
+    if (!treeData) {
+      return res.status(404).json({ error: `Data untuk tree_${treeId} tidak ditemukan` });
+    }
+
+    // Enrich sampel dengan nama & deskripsi dari lookup
+    const sampelEnriched = (treeData.sampel || []).map((s) => {
+      const info = lookup[s.kode_pengaduan] || {};
+      return {
+        kode_pengaduan: s.kode_pengaduan,
+        diambil: s.diambil,
+        kategori: s.kategori,
+        nama: info.nama || "-",
+        deskripsi: info.deskripsi || "-",
+      };
+    });
+
+    // Enrich OOB dengan nama & deskripsi dari lookup
+    const oobEnriched = (treeData.oob || []).map((kode) => {
+      const info = lookup[kode] || {};
+      return {
+        kode_pengaduan: kode,
+        kategori: info.kategori || "-",
+        nama: info.nama || "-",
+        deskripsi: info.deskripsi || "-",
+      };
+    });
+
+    res.json({
+      tree_id: treeId,
+      total_sampel: treeData.total_sampel,
+      unique_sampel: treeData.unique_sampel,
+      duplikat: treeData.duplikat,
+      oob_count: treeData.oob_count,
+      class_distribution: treeData.class_distribution,
+      oob_class_distribution: treeData.oob_class_distribution,
+      sampel: sampelEnriched,
+      oob: oobEnriched,
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
 app.get("/api/tfidf", async (req, res) => {
   try {
     const page = Math.max(1, parseInt(req.query.page ?? "1", 10));
@@ -496,6 +702,522 @@ app.get("/api/tfidf/samples", async (_req, res) => {
     const raw = await fs.readFile(path.join(DATA_DIR, "tfidf_sample_docs.json"), "utf-8")
       .catch(() => "[]");
     res.json(JSON.parse(raw));
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// ─────────────────────────────────────────────
+// MAJORITY VOTING — per-pengaduan transparency
+// ─────────────────────────────────────────────
+const votingCache = { data: null, loading: false };
+
+async function getVotingData() {
+  if (votingCache.data) return votingCache.data;
+  if (votingCache.loading) {
+    await new Promise((r) => { const w = setInterval(() => { if (!votingCache.loading) { clearInterval(w); r(); } }, 50); });
+    return votingCache.data;
+  }
+  votingCache.loading = true;
+  try {
+    const raw = await fs.readFile(path.join(STAGES_DIR, "majority_voting.json"), "utf-8");
+    votingCache.data = JSON.parse(raw);
+  } catch { votingCache.data = null; }
+  finally { votingCache.loading = false; }
+  return votingCache.data;
+}
+
+// GET /api/voting — daftar semua pengaduan dengan ringkasan voting (paginasi + filter)
+app.get("/api/voting", async (req, res) => {
+  try {
+    const data = await getVotingData();
+    if (!data) return res.status(404).json({ error: "majority_voting.json belum ada. Jalankan python main.py --train." });
+
+    const page   = Math.max(1, parseInt(req.query.page   ?? "1",  10));
+    const limit  = Math.min(200, Math.max(1, parseInt(req.query.limit ?? "20", 10)));
+    const search = (req.query.search  ?? "").toLowerCase().trim();
+    const filter = (req.query.benar   ?? "semua").toLowerCase(); // benar | salah | semua
+    const kat    = (req.query.kategori ?? "").toUpperCase().trim();
+
+    const kodeLookup = new Map(cache.pengaduan.map((p) => [p.kode_pengaduan, p]));
+
+    let items = Object.entries(data)
+      .filter(([k]) => !k.startsWith("_"))
+      .map(([kode, v]) => {
+        const info = kodeLookup.get(kode) ?? {};
+        // Hitung ringkasan vote
+        const n20   = Object.keys(v.vote_per_pohon ?? {}).length;
+        const winV  = (v.distribusi_vote ?? {})[v.majority_vote] ?? 0;
+        return {
+          kode_pengaduan  : kode,
+          nama            : info.nama ?? "-",
+          deskripsi       : info.deskripsi ?? "-",
+          label_asli      : v.label_asli,
+          majority_vote   : v.majority_vote,
+          confidence      : v.confidence,
+          benar           : v.benar,
+          distribusi_vote : v.distribusi_vote,
+          n_majority_votes: winV,
+          n_total_votes   : n20,
+          low_confidence  : winV < Math.ceil(n20 / 2) + 2, // < 12 suara dari 20
+        };
+      });
+
+    if (search) items = items.filter((i) =>
+      i.kode_pengaduan.toLowerCase().includes(search) ||
+      i.nama.toLowerCase().includes(search) ||
+      i.deskripsi.toLowerCase().includes(search)
+    );
+    if (filter === "benar") items = items.filter((i) => i.benar);
+    if (filter === "salah") items = items.filter((i) => !i.benar);
+    if (kat && kat !== "SEMUA") items = items.filter((i) => i.label_asli === kat || i.majority_vote === kat);
+
+    const total      = items.length;
+    const totalPages = Math.max(1, Math.ceil(total / limit));
+    res.json({ items: items.slice((page - 1) * limit, page * limit), total, page, totalPages });
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+// GET /api/voting/:kode — detail voting lengkap satu pengaduan (on-demand)
+app.get("/api/voting/:kode", async (req, res) => {
+  try {
+    const data = await getVotingData();
+    if (!data) return res.status(404).json({ error: "majority_voting.json belum ada." });
+
+    const kode  = req.params.kode;
+    const entry = data[kode];
+    if (!entry) return res.status(404).json({ error: `${kode} tidak ditemukan` });
+
+    const info  = cache.pengaduan.find((p) => p.kode_pengaduan === kode) ?? {};
+    res.json({
+      kode_pengaduan      : kode,
+      nama                : info.nama ?? "-",
+      deskripsi           : info.deskripsi ?? "-",
+      processed           : info.processed ?? "-",
+      label_asli          : entry.label_asli,
+      majority_vote       : entry.majority_vote,
+      confidence          : entry.confidence,
+      benar               : entry.benar,
+      distribusi_vote     : entry.distribusi_vote,
+      vote_per_pohon      : entry.vote_per_pohon,
+      pohon_representatif : entry.pohon_representatif,
+    });
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+
+// ─────────────────────────────────────────────
+const giniCache = { summary: null, trees: {}, loading: false };
+
+async function loadGiniSummary() {
+  if (giniCache.summary) return giniCache.summary;
+  if (giniCache.loading) {
+    await new Promise((r) => { const w = setInterval(() => { if (!giniCache.loading) { clearInterval(w); r(); } }, 50); });
+    return giniCache.summary;
+  }
+  giniCache.loading = true;
+  try {
+    const raw  = await fs.readFile(path.join(STAGES_DIR, "gini_splitting.json"), "utf-8");
+    const full = JSON.parse(raw);
+    // Simpan ringkasan (tanpa array nodes) + term_split_global
+    const summary = { _meta: full._meta, _term_split_global: full._term_split_global, trees: {} };
+    for (const [k, v] of Object.entries(full)) {
+      if (k.startsWith("tree_")) {
+        summary.trees[k] = {
+          total_node: v.total_node, total_split: v.total_split,
+          total_leaf: v.total_leaf, kedalaman: v.kedalaman,
+          rata_gini: v.rata_gini,   top_term: v.top_term,
+        };
+      }
+    }
+    giniCache.summary = summary;
+    // Cache nodes per pohon lazy (simpan full data tapi pisah)
+    for (const [k, v] of Object.entries(full)) {
+      if (k.startsWith("tree_")) giniCache.trees[k] = v.nodes;
+    }
+  } catch { giniCache.summary = null; }
+  finally { giniCache.loading = false; }
+  return giniCache.summary;
+}
+
+// GET /api/gini — ringkasan semua pohon + term_split_global
+app.get("/api/gini", async (_req, res) => {
+  try {
+    const s = await loadGiniSummary();
+    if (!s) return res.status(404).json({ error: "gini_splitting.json belum ada. Jalankan python main.py --train." });
+    res.json(s);
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+// GET /api/gini/terms — HARUS sebelum /api/gini/:treeId agar tidak terambil sebagai treeId
+// term split global dengan filter min_pohon
+app.get("/api/gini/terms", async (req, res) => {
+  try {
+    const s = await loadGiniSummary();
+    if (!s) return res.status(404).json({ error: "gini_splitting.json belum ada." });
+
+    const minPohon = parseInt(req.query.min_pohon ?? "1", 10);
+    const search   = (req.query.search ?? "").toLowerCase().trim();
+    const page     = Math.max(1, parseInt(req.query.page  ?? "1",  10));
+    const limit    = Math.min(200, Math.max(1, parseInt(req.query.limit ?? "50", 10)));
+
+    let terms = (s._term_split_global ?? [])
+      .filter((t) => t.pohon_unik >= minPohon)
+      .filter((t) => !search || t.term.includes(search));
+
+    const total      = terms.length;
+    const totalPages = Math.max(1, Math.ceil(total / limit));
+    res.json({ items: terms.slice((page - 1) * limit, page * limit), total, page, totalPages });
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+// GET /api/gini/:treeId/nodes — semua node pohon (tanpa sampel_ids)
+app.get("/api/gini/:treeId/nodes", async (req, res) => {
+  try {
+    await loadGiniSummary();
+    const key   = `tree_${req.params.treeId}`;
+    const nodes = giniCache.trees[key];
+    if (!nodes) return res.status(404).json({ error: `tree_${req.params.treeId} tidak ditemukan` });
+
+    const search = (req.query.search ?? "").toLowerCase().trim();
+    const tipe   = (req.query.tipe   ?? "semua").toLowerCase();
+    const pure   = req.query.pure;
+
+    let items = nodes;
+    if (tipe !== "semua")    items = items.filter((n) => n.tipe === tipe);
+    if (pure === "1")        items = items.filter((n) => n.is_pure);
+    if (search)              items = items.filter((n) => n.term_split?.includes(search));
+
+    res.json({ tree_id: parseInt(req.params.treeId), total: items.length, nodes: items });
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+// GET /api/gini/:treeId/node/:nodeId/samples — sampel per node (on-demand)
+app.get("/api/gini/:treeId/node/:nodeId/samples", async (req, res) => {
+  try {
+    const treeId = req.params.treeId;
+    const nodeId = req.params.nodeId;
+    const sampleFile = path.join(STAGES_DIR, "gini_samples", `tree${treeId}_node${nodeId}.json`);
+
+    let kodes = [];
+    try {
+      const raw = await fs.readFile(sampleFile, "utf-8");
+      kodes = JSON.parse(raw);
+    } catch { /* file tidak ada = node kosong */ }
+
+    const kodeLookup = new Map(cache.pengaduan.map((p) => [p.kode_pengaduan, p]));
+    const items = kodes.map((kode) => {
+      const info = kodeLookup.get(kode) ?? {};
+      return {
+        kode_pengaduan   : kode,
+        nama             : info.nama ?? "-",
+        deskripsi        : info.deskripsi ?? "-",
+        label_asli       : info.label_asli ?? "-",
+        kategori_prediksi: info.kategori_prediksi ?? "-",
+      };
+    });
+
+    res.json({ tree_id: parseInt(treeId), node_id: parseInt(nodeId), total: items.length, items });
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+
+// ─────────────────────────────────────────────
+const oobCache = { data: null, loading: false };
+
+async function getOobData() {
+  if (oobCache.data) return oobCache.data;
+  if (oobCache.loading) {
+    await new Promise((r) => { const w = setInterval(() => { if (!oobCache.loading) { clearInterval(w); r(); } }, 50); });
+    return oobCache.data;
+  }
+  oobCache.loading = true;
+  try {
+    const raw = await fs.readFile(path.join(STAGES_DIR, "oob.json"), "utf-8");
+    oobCache.data = JSON.parse(raw);
+  } catch { oobCache.data = null; }
+  finally { oobCache.loading = false; }
+  return oobCache.data;
+}
+
+// GET /api/oob — ringkasan semua pohon (tanpa oob_data detail)
+app.get("/api/oob", async (_req, res) => {
+  try {
+    const data = await getOobData();
+    if (!data) return res.status(404).json({ error: "oob.json belum ada. Jalankan python main.py --train." });
+    const summary = {
+      oob_score_global: data.oob_score_global,
+      jumlah_pohon    : data.jumlah_pohon,
+      per_pohon: Object.fromEntries(
+        Object.entries(data.per_pohon).map(([k, v]) => [k, {
+          oob_count   : v.oob_count,
+          benar       : v.benar,
+          salah       : v.salah,
+          oob_accuracy: v.oob_accuracy,
+        }])
+      ),
+    };
+    res.json(summary);
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+// GET /api/oob/akumulasi — rekap per pengaduan lintas pohon (on-demand, paginasi)
+// HARUS sebelum /api/oob/:treeId agar tidak terambil sebagai treeId
+app.get("/api/oob/akumulasi", async (req, res) => {
+  try {
+    const data = await getOobData();
+    if (!data) return res.status(404).json({ error: "oob.json belum ada." });
+
+    const page    = Math.max(1, parseInt(req.query.page  ?? "1",  10));
+    const limit   = Math.min(200, Math.max(1, parseInt(req.query.limit ?? "50", 10)));
+    const search  = (req.query.search   ?? "").toLowerCase().trim();
+    const filter  = (req.query.konsisten ?? "semua").toLowerCase(); // konsisten | tidak | semua
+
+    const kodeLookup = new Map(cache.pengaduan.map((p) => [p.kode_pengaduan, p]));
+    let items = Object.entries(data.akumulasi ?? {}).map(([kode, v]) => ({
+      kode_pengaduan    : kode,
+      label_asli        : v.label_asli,
+      prediksi_final_oob: v.prediksi_final_oob,
+      muncul_di_pohon   : v.muncul_di_pohon,
+      konsisten         : v.konsisten,
+      nama              : kodeLookup.get(kode)?.nama     ?? "-",
+      deskripsi         : kodeLookup.get(kode)?.deskripsi ?? "-",
+    }));
+
+    if (search) items = items.filter((i) =>
+      i.kode_pengaduan.toLowerCase().includes(search) ||
+      i.nama.toLowerCase().includes(search)
+    );
+    if (filter === "konsisten") items = items.filter((i) => i.konsisten);
+    if (filter === "tidak")     items = items.filter((i) => !i.konsisten);
+
+    const total      = items.length;
+    const totalPages = Math.max(1, Math.ceil(total / limit));
+    res.json({ items: items.slice((page - 1) * limit, page * limit), total, page, totalPages });
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+// GET /api/oob/:treeId — detail oob_data satu pohon (on-demand)
+app.get("/api/oob/:treeId", async (req, res) => {
+  try {
+    const data = await getOobData();
+    if (!data) return res.status(404).json({ error: "oob.json belum ada." });
+    const key     = `tree_${req.params.treeId}`;
+    const treeData = data.per_pohon?.[key];
+    if (!treeData) return res.status(404).json({ error: `tree_${req.params.treeId} tidak ditemukan` });
+
+    // Enrich dengan nama & deskripsi dari cache pengaduan
+    const kodeLookup = new Map(cache.pengaduan.map((p) => [p.kode_pengaduan, p]));
+    const enriched = (treeData.oob_data || []).map((d) => {
+      const info = kodeLookup.get(d.kode_pengaduan) ?? {};
+      return { ...d, nama: info.nama ?? "-", deskripsi: info.deskripsi ?? "-" };
+    });
+    res.json({ ...treeData, oob_data: enriched });
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+// ─────────────────────────────────────────────
+// CROSS VALIDATION — detail per fold
+// ─────────────────────────────────────────────
+const cvCache = { data: null, loading: false };
+
+async function getCvData() {
+  if (cvCache.data) return cvCache.data;
+  if (cvCache.loading) {
+    await new Promise((r) => { const w = setInterval(() => { if (!cvCache.loading) { clearInterval(w); r(); } }, 50); });
+    return cvCache.data;
+  }
+  cvCache.loading = true;
+  try {
+    const raw = await fs.readFile(path.join(STAGES_DIR, "cross_validation.json"), "utf-8");
+    cvCache.data = JSON.parse(raw);
+  } catch { cvCache.data = null; }
+  finally { cvCache.loading = false; }
+  return cvCache.data;
+}
+
+// GET /api/cv — ringkasan semua fold (tanpa hasil_testing detail)
+// GET /api/cv — ringkasan semua fold (tanpa hasil_testing detail)
+app.get("/api/cv", async (_req, res) => {
+  try {
+    const data = await getCvData();
+    if (!data) return res.status(404).json({ error: "cross_validation.json belum ada. Jalankan python main.py --train." });
+    const summary = {
+      n_folds           : data.n_folds,
+      rata_rata_akurasi : data.rata_rata_akurasi,
+      std_akurasi       : data.std_akurasi,
+      cv_scores         : data.cv_scores,
+      folds: Object.fromEntries(
+        Object.entries(data.folds ?? {}).map(([k, v]) => [k, {
+          training_size: v.training_size,
+          testing_size : v.testing_size,
+          akurasi      : v.akurasi,
+        }])
+      ),
+      jumlah_konsisten_salah: (data.data_konsisten_salah ?? []).length,
+    };
+    res.json(summary);
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+// GET /api/cv/konsisten-salah — HARUS sebelum /api/cv/:foldId agar tidak terambil sebagai foldId
+app.get("/api/cv/konsisten-salah", async (req, res) => {
+  try {
+    const data = await getCvData();
+    if (!data) return res.status(404).json({ error: "cross_validation.json belum ada." });
+    const kodeLookup = new Map(cache.pengaduan.map((p) => [p.kode_pengaduan, p]));
+    const items = (data.data_konsisten_salah ?? []).map((d) => ({
+      ...d,
+      nama    : kodeLookup.get(d.kode_pengaduan)?.nama     ?? "-",
+      deskripsi: kodeLookup.get(d.kode_pengaduan)?.deskripsi ?? "-",
+    }));
+    res.json(items);
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+// GET /api/cv/:foldId — detail hasil_testing satu fold (on-demand)
+app.get("/api/cv/:foldId", async (req, res) => {
+  try {
+    const data = await getCvData();
+    if (!data) return res.status(404).json({ error: "cross_validation.json belum ada." });
+    const key      = `fold_${req.params.foldId}`;
+    const foldData = data.folds?.[key];
+    if (!foldData) return res.status(404).json({ error: `fold_${req.params.foldId} tidak ditemukan` });
+
+    const page   = Math.max(1, parseInt(req.query.page  ?? "1", 10));
+    const limit  = Math.min(500, Math.max(1, parseInt(req.query.limit ?? "50", 10)));
+    const search = (req.query.search  ?? "").toLowerCase().trim();
+    const filter = (req.query.benar   ?? "semua").toLowerCase();
+    const kat    = (req.query.kategori ?? "").toUpperCase().trim();
+
+    const kodeLookup = new Map(cache.pengaduan.map((p) => [p.kode_pengaduan, p]));
+    let items = (foldData.hasil_testing ?? []).map((d) => {
+      const info = kodeLookup.get(d.kode_pengaduan) ?? {};
+      return { ...d, nama: info.nama ?? "-", deskripsi: info.deskripsi ?? "-" };
+    });
+
+    if (search) items = items.filter((i) =>
+      i.kode_pengaduan.toLowerCase().includes(search) ||
+      i.nama.toLowerCase().includes(search) ||
+      i.deskripsi.toLowerCase().includes(search)
+    );
+    if (filter === "benar") items = items.filter((i) => i.benar);
+    if (filter === "salah") items = items.filter((i) => !i.benar);
+    if (kat && kat !== "SEMUA") items = items.filter((i) => i.label_asli === kat);
+
+    const total = items.length;
+    const totalPages = Math.max(1, Math.ceil(total / limit));
+    res.json({
+      fold_id      : parseInt(req.params.foldId),
+      akurasi      : foldData.akurasi,
+      training_size: foldData.training_size,
+      testing_size : foldData.testing_size,
+      items        : items.slice((page - 1) * limit, page * limit),
+      total, page, totalPages,
+    });
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+
+// ─────────────────────────────────────────────
+
+// Cache filtering (lazy, dimuat sekali saat pertama request)
+const filteringCache = {
+  data: null,
+  loading: false,
+};
+
+async function getFilteringData() {
+  if (filteringCache.data) return filteringCache.data;
+  if (filteringCache.loading) {
+    await new Promise((resolve) => {
+      const w = setInterval(() => { if (!filteringCache.loading) { clearInterval(w); resolve(); } }, 50);
+    });
+    return filteringCache.data;
+  }
+  filteringCache.loading = true;
+  try {
+    const raw = await fs.readFile(path.join(STAGES_DIR, "filtering.json"), "utf-8");
+    filteringCache.data = JSON.parse(raw);
+  } catch { filteringCache.data = null; }
+  finally { filteringCache.loading = false; }
+  return filteringCache.data;
+}
+
+// GET /api/filtering/summary
+// Query: page, limit, search, jenis (terbuang|lolos|semua), sort (df_asc|df_desc|term_asc)
+app.get("/api/filtering/summary", async (req, res) => {
+  try {
+    const data = await getFilteringData();
+    if (!data) return res.status(404).json({ error: "filtering.json belum ada. Jalankan python main.py --train." });
+
+    const konfigurasi = data["_konfigurasi"] ?? {};
+    const global_     = data["_global"] ?? {};
+
+    const page   = Math.max(1, parseInt(req.query.page  ?? "1",  10));
+    const limit  = Math.min(500, Math.max(1, parseInt(req.query.limit ?? "50", 10)));
+    const search = (req.query.search ?? "").toLowerCase().trim();
+    const jenis  = (req.query.jenis  ?? "semua").toLowerCase();
+    const sort   = (req.query.sort   ?? "df_asc").toLowerCase();
+
+    let terms = [];
+    if (jenis === "terbuang" || jenis === "semua") {
+      terms = terms.concat((global_.term_terbuang ?? []).map((t) => ({ ...t, jenis: "terbuang" })));
+    }
+    if (jenis === "lolos" || jenis === "semua") {
+      terms = terms.concat((global_.term_lolos ?? []).map((t) => ({ ...t, jenis: "lolos" })));
+    }
+
+    if (search) terms = terms.filter((t) => t.term.includes(search));
+
+    if (sort === "df_asc")   terms.sort((a, b) => a.df - b.df);
+    if (sort === "df_desc")  terms.sort((a, b) => b.df - a.df);
+    if (sort === "term_asc") terms.sort((a, b) => a.term.localeCompare(b.term));
+
+    const total      = terms.length;
+    const totalPages = Math.max(1, Math.ceil(total / limit));
+    const items      = terms.slice((page - 1) * limit, page * limit);
+
+    res.json({
+      konfigurasi,
+      stats: {
+        total_sebelum_filter: global_.total_sebelum_filter ?? 0,
+        total_terbuang:       global_.total_terbuang ?? 0,
+        total_lolos:          global_.total_lolos ?? 0,
+      },
+      items,
+      total,
+      page,
+      totalPages,
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// GET /api/filtering/pengaduan/:kode — detail per pengaduan (on-demand)
+app.get("/api/filtering/pengaduan/:kode", async (req, res) => {
+  try {
+    const data = await getFilteringData();
+    if (!data) return res.status(404).json({ error: "filtering.json belum ada." });
+
+    const kode  = req.params.kode;
+    const entry = data[kode];
+    if (!entry) return res.status(404).json({ error: `Kode ${kode} tidak ditemukan` });
+
+    const main = cache.pengaduan.find((p) => p.kode_pengaduan === kode) ?? {};
+
+    res.json({
+      kode_pengaduan : kode,
+      nama           : main.nama ?? "-",
+      deskripsi      : main.deskripsi ?? "-",
+      kategori       : main.kategori_prediksi ?? main.label_asli ?? "-",
+      sebelum        : entry.sebelum ?? [],
+      kena_filter    : entry.kena_filter ?? [],
+      tersisa        : entry.tersisa ?? [],
+      lolos_count    : entry.lolos_count ?? 0,
+      terbuang_count : entry.terbuang_count ?? 0,
+    });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
