@@ -308,7 +308,103 @@ app.patch("/api/pengaduan/:id/status", async (req, res) => {
   res.json({ success: true, status });
 });
 
-// Detail pengaduan + pipeline (lazy load pipeline map)
+// GET /api/summary-pengaduan/:kode — ringkasan 3 tahap untuk halaman detail
+app.get("/api/summary-pengaduan/:kode", async (req, res) => {
+  try {
+    const kode = req.params.kode;
+    const item = cache.pengaduan.find((p) => p.kode_pengaduan === kode);
+    if (!item) return res.status(404).json({ error: "Kode pengaduan tidak ditemukan" });
+
+    // ── Preprocessing summary ──────────────────────────────────────
+    const pipelineMap = await getPipelineMap();
+    const pKey = item.deskripsi?.trim().replace(/\s+/g, " ") ?? "";
+    const pl   = pipelineMap.get(pKey) ?? {};
+    const finalText  = item.processed || item.final_text || pl.final_text || "";
+    const tokenized  = pl.tokenized ?? [];
+
+    // ── TF-IDF summary (dari stages/tfidf.json) ────────────────────
+    let tfidfSummary = { term_aktif: 0, top_terms: [] };
+    try {
+      const tfidfStage = await loadStage("tfidf");
+      const tfidfEntry = tfidfStage[kode] ?? {};
+      const entries = Object.entries(tfidfEntry).sort((a, b) => b[1] - a[1]);
+      tfidfSummary = {
+        term_aktif : entries.length,
+        top_terms  : entries.slice(0, 3).map(([term, score]) => ({ term, score: round4(score) })),
+      };
+    } catch { /* tfidf.json belum ada */ }
+
+    // ── Majority Vote summary (dari stages/majority_voting.json) ───
+    let voteSummary = null;
+    try {
+      const votingData = await loadStage("majority_voting");
+      const vEntry     = votingData[kode];
+      if (vEntry) {
+        const dist = vEntry.distribusi_vote ?? {};
+        const nTrees = Object.values(vEntry.vote_per_pohon ?? {}).length || 1;
+        voteSummary = {
+          hasil      : vEntry.majority_vote,
+          confidence : round4(vEntry.confidence) * 100,
+          label_asli : vEntry.label_asli,
+          benar      : vEntry.benar,
+          distribusi : Object.entries(dist)
+            .sort((a, b) => b[1] - a[1])
+            .map(([kategori, jumlah]) => ({
+              kategori,
+              jumlah,
+              persen: Math.round((jumlah / nTrees) * 100),
+            })),
+        };
+      }
+    } catch { /* majority_voting.json belum ada */ }
+
+    res.json({
+      kode_pengaduan : kode,
+      preprocessing  : {
+        teks_asli   : item.deskripsi ?? "",
+        teks_akhir  : finalText,
+        total_token : tokenized.length || finalText.split(" ").filter(Boolean).length,
+      },
+      tfidf    : tfidfSummary,
+      majority_vote : voteSummary,
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+function round4(v) { return Math.round((v ?? 0) * 10000) / 10000; }
+
+// Detail pengaduan + pipeline by kode_pengaduan (untuk halaman preprocessing)
+app.get("/api/preprocessing/:kode", async (req, res) => {  const kode = req.params.kode;
+  const item = cache.pengaduan.find((p) => p.kode_pengaduan === kode);
+  if (!item) return res.status(404).json({ error: "Kode pengaduan tidak ditemukan" });
+
+  const pipelineMap = await getPipelineMap();
+  const key = item.deskripsi?.trim().replace(/\s+/g, " ") ?? "";
+  const pipelineData = pipelineMap.get(key) ?? {};
+
+  res.json({
+    kode_pengaduan    : kode,
+    nama              : item.nama ?? "-",
+    no_wa             : item.no_wa ?? "-",
+    deskripsi         : item.deskripsi ?? "-",
+    kategori_prediksi : item.kategori_prediksi ?? "-",
+    label_asli        : item.label_asli ?? "-",
+    pipeline: {
+      cleaned      : pipelineData.cleaned      ?? null,
+      casefolded   : pipelineData.casefolded   ?? null,
+      tokenized    : pipelineData.tokenized    ?? null,
+      normalized   : pipelineData.normalized   ?? null,
+      stop_removed : pipelineData.stop_removed ?? null,
+      stemmed      : pipelineData.stemmed      ?? null,
+      final_text   : item.processed || item.final_text || pipelineData.final_text || "",
+    },
+  });
+});
+
+
+// Detail pengaduan + pipeline by ID (lazy load pipeline map)
 app.get("/api/pengaduan/:id/processed", async (req, res) => {
   const item = cache.pengaduan[parseInt(req.params.id)];
   if (!item) return res.status(404).json({ error: "Data tidak ditemukan" });
@@ -1120,6 +1216,107 @@ app.get("/api/cv/:foldId", async (req, res) => {
 
 
 // ─────────────────────────────────────────────
+// MATRIKS TF-IDF — lazy loading per 50 baris
+// ─────────────────────────────────────────────
+const matriksCache = { meta: null, matrix: null, loading: false };
+
+async function loadMatriksTFIDF() {
+  if (matriksCache.meta) return true;
+  if (matriksCache.loading) {
+    await new Promise((r) => { const w = setInterval(() => { if (!matriksCache.loading) { clearInterval(w); r(); } }, 50); });
+    return !!matriksCache.meta;
+  }
+  matriksCache.loading = true;
+  try {
+    const raw = await fs.readFile(path.join(DATA_DIR, "tfidf_matrix.json"), "utf-8");
+    const parsed = JSON.parse(raw);
+    matriksCache.meta   = parsed.meta;
+    matriksCache.matrix = parsed.matrix;
+    return true;
+  } catch { return false; }
+  finally { matriksCache.loading = false; }
+}
+
+// GET /api/matriks-tfidf/meta — dimensi & daftar term (dengan chi2)
+app.get("/api/matriks-tfidf/meta", async (_req, res) => {
+  try {
+    const ok = await loadMatriksTFIDF();
+    if (!ok) return res.status(404).json({ error: "tfidf_matrix.json belum ada. Jalankan python main.py --train." });
+    res.json(matriksCache.meta);
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+// GET /api/matriks-tfidf/rows — baris matriks lazy (50/halaman)
+// Query: page, limit, search, kategori
+app.get("/api/matriks-tfidf/rows", async (req, res) => {
+  try {
+    const ok = await loadMatriksTFIDF();
+    if (!ok) return res.status(404).json({ error: "tfidf_matrix.json belum ada." });
+
+    const page     = Math.max(1, parseInt(req.query.page  ?? "1",  10));
+    const limit    = Math.min(100, Math.max(1, parseInt(req.query.limit ?? "50", 10)));
+    const search   = (req.query.search   ?? "").toLowerCase().trim();
+    const kategori = (req.query.kategori ?? "").toUpperCase().trim();
+
+    const kodeLookup = new Map(cache.pengaduan.map((p) => [p.kode_pengaduan, p]));
+
+    let rows = Object.keys(matriksCache.matrix).map((kode) => {
+      const info = kodeLookup.get(kode) ?? {};
+      return {
+        kode_pengaduan   : kode,
+        nama             : info.nama ?? "-",
+        deskripsi        : info.deskripsi ?? "-",
+        label_asli       : info.label_asli ?? "-",
+        kategori_prediksi: info.kategori_prediksi ?? "-",
+      };
+    });
+
+    if (search) rows = rows.filter((r) =>
+      r.kode_pengaduan.toLowerCase().includes(search) ||
+      r.deskripsi.toLowerCase().includes(search)
+    );
+    if (kategori && kategori !== "SEMUA") {
+      rows = rows.filter((r) => r.kategori_prediksi === kategori || r.label_asli === kategori);
+    }
+
+    const total      = rows.length;
+    const totalPages = Math.max(1, Math.ceil(total / limit));
+    const pageRows   = rows.slice((page - 1) * limit, page * limit);
+
+    const enriched = pageRows.map((r) => ({
+      ...r,
+      values: matriksCache.matrix[r.kode_pengaduan] ?? {},
+    }));
+
+    res.json({ items: enriched, total, page, totalPages, limit });
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+// GET /api/matriks-tfidf/export — export lengkap untuk Excel (JSON)
+app.get("/api/matriks-tfidf/export", async (req, res) => {
+  try {
+    const ok = await loadMatriksTFIDF();
+    if (!ok) return res.status(404).json({ error: "tfidf_matrix.json belum ada." });
+
+    const kodeLookup = new Map(cache.pengaduan.map((p) => [p.kode_pengaduan, p]));
+    const exportData = {
+      meta: matriksCache.meta,
+      rows: Object.entries(matriksCache.matrix).map(([kode, vals]) => {
+        const info = kodeLookup.get(kode) ?? {};
+        return {
+          kode_pengaduan   : kode,
+          deskripsi        : info.deskripsi ?? "-",
+          label_asli       : info.label_asli ?? "-",
+          kategori_prediksi: info.kategori_prediksi ?? "-",
+          values           : vals,
+        };
+      }),
+    };
+    res.setHeader("Content-Type", "application/json");
+    res.setHeader("Content-Disposition", "attachment; filename=tfidf_matrix_export.json");
+    res.json(exportData);
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
 
 // Cache filtering (lazy, dimuat sekali saat pertama request)
 const filteringCache = {

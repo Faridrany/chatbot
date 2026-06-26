@@ -4,7 +4,7 @@ import Header from "../Header";
 import {
   GitBranch, Info, RefreshCw, AlertCircle,
   ChevronDown, ChevronUp, CheckCircle2, Search,
-  Layers, Leaf, BarChart3, TreeDeciduous,
+  Layers, Leaf, BarChart3, TreeDeciduous, Download, Table2,
 } from "lucide-react";
 
 const CATS = ["INFRASTRUKTUR", "KEAMANAN", "LINGKUNGAN", "PELAYANAN"];
@@ -55,7 +55,202 @@ function FallbackNotice() {
   );
 }
 
-// ── Level 1: Tabel ringkasan semua pohon ─────────────────────────────────────
+// ── Helper: parse nodes linear → struktur hierarki IF-ELSE ──────────────────
+/**
+ * Bangun peta child_kiri/child_kanan dari array nodes flat,
+ * lalu rekursif susun jalur aturan IF-ELSE dari root ke tiap leaf.
+ * Return: array baris aturan { depth, label, node, isLeaf }
+ */
+function buildTreeLogicRows(nodes) {
+  if (!nodes || nodes.length === 0) return [];
+
+  // Buat map nodeId → node object
+  const nodeMap = {};
+  nodes.forEach((n) => { nodeMap[n.node_id] = n; });
+
+  const rows = [];
+
+  function traverse(nodeId, depth, prefixLabel) {
+    const n = nodeMap[nodeId];
+    if (!n) return;
+
+    const dominant = Object.entries(n.distribusi ?? {}).sort((a, b) => b[1] - a[1])[0]?.[0] ?? "-";
+
+    if (n.tipe === "leaf") {
+      rows.push({
+        depth,
+        label: prefixLabel,
+        node: n,
+        isLeaf: true,
+        dominant,
+        rule: `THEN → ${dominant}`,
+      });
+      return;
+    }
+
+    const term      = n.term_split ?? "?";
+    const threshold = n.threshold?.toFixed(6) ?? "?";
+    const prefix    = depth === 0 ? "IF" : "AND IF";
+
+    rows.push({
+      depth,
+      label: prefixLabel,
+      node: n,
+      isLeaf: false,
+      dominant,
+      rule: `${prefix} '${term}' ≤ ${threshold}`,
+      ruleRight: `${prefix} '${term}' > ${threshold}`,
+    });
+
+    // Cabang KIRI (≤ threshold)
+    if (n.child_kiri != null) traverse(n.child_kiri, depth + 1, "kiri");
+    // Cabang KANAN (> threshold)
+    if (n.child_kanan != null) traverse(n.child_kanan, depth + 1, "kanan");
+  }
+
+  // Mulai dari root (node_id yang tidak pernah jadi child)
+  const childIds = new Set(
+    nodes.flatMap((n) => [n.child_kiri, n.child_kanan].filter((x) => x != null))
+  );
+  const rootNode = nodes.find((n) => !childIds.has(n.node_id));
+  if (rootNode) traverse(rootNode.node_id, 0, "root");
+
+  return rows;
+}
+
+/**
+ * Konversi rows ke string teks indented untuk export Excel.
+ * Format: "└── IF 'term' <= 0.xxxx  (Samples: N, Gini: 0.xxxx)"
+ */
+function treeRowsToText(rows) {
+  return rows.map((r) => {
+    const indent = "    ".repeat(r.depth) + (r.depth > 0 ? "└── " : "");
+    const meta   = `(Samples: ${r.node.jumlah_sampel}, Gini: ${r.node.gini.toFixed(4)})`;
+    if (r.isLeaf) {
+      return `${indent}${r.rule} ${meta}`;
+    }
+    return `${indent}[Node #${r.node.node_id} - Depth ${r.depth + 1}]: ${r.rule} ${meta}`;
+  });
+}
+
+// ── Tree Logic View component ─────────────────────────────────────────────────
+function TreeLogicView({ nodes }) {
+  const rows = buildTreeLogicRows(nodes);
+
+  if (!rows.length) {
+    return <p className="text-gray-400 text-sm text-center py-8">Tidak ada data node untuk ditampilkan.</p>;
+  }
+
+  const INDENT_PX = 20;
+
+  return (
+    <div className="font-mono text-xs bg-gray-950 text-green-300 rounded-xl p-4 overflow-x-auto max-h-[60vh] overflow-y-auto">
+      {rows.map((r, i) => {
+        const ml  = r.depth * INDENT_PX;
+        const connector = r.depth > 0 ? "└── " : "";
+        const giniColor = r.node.gini <= 0.05 ? "text-green-400" : r.node.gini <= 0.25 ? "text-yellow-400" : r.node.gini <= 0.5 ? "text-orange-400" : "text-red-400";
+        const domColor  = CAT_COLOR[r.dominant]?.bg ?? "#9CA3AF";
+
+        return (
+          <div key={`${r.node.node_id}-${i}`} className="leading-6 hover:bg-white/5 rounded px-1" style={{ marginLeft: ml }}>
+            <span className="text-gray-500">{connector}</span>
+
+            {r.isLeaf ? (
+              <>
+                <span className="text-purple-400 font-bold">THEN → </span>
+                <span className="font-bold" style={{ color: domColor }}>{r.dominant}</span>
+                <span className="text-gray-500 ml-2">
+                  (Samples: <span className="text-white">{r.node.jumlah_sampel}</span>,{" "}
+                  Gini: <span className={giniColor}>{r.node.gini.toFixed(4)}</span>
+                  {r.node.is_pure && <span className="text-green-400 ml-1">✦PURE</span>})
+                </span>
+              </>
+            ) : (
+              <>
+                <span className="text-gray-500 text-[10px] mr-1">[Node #{r.node.node_id} D{r.depth}]</span>
+                <span className={r.depth === 0 ? "text-cyan-400 font-bold" : "text-yellow-300 font-bold"}>
+                  {r.depth === 0 ? "IF" : "AND IF"}{" "}
+                </span>
+                <span className="text-blue-300">'{r.node.term_split}'</span>
+                <span className="text-gray-400"> ≤ </span>
+                <span className="text-orange-300">{r.node.threshold?.toFixed(6)}</span>
+                <span className="text-gray-500 ml-2">
+                  (Samples: <span className="text-white">{r.node.jumlah_sampel}</span>,{" "}
+                  Gini: <span className={giniColor}>{r.node.gini.toFixed(4)}</span>)
+                </span>
+              </>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+// ── Export Excel helper ───────────────────────────────────────────────────────
+async function exportTreeToExcel(treeId, nodes) {
+  // Load SheetJS dari CDN
+  let XLSX;
+  try {
+    XLSX = await import("https://cdn.sheetjs.com/xlsx-0.20.3/package/xlsx.mjs");
+  } catch {
+    alert("Gagal load library Excel. Pastikan ada koneksi internet."); return;
+  }
+
+  const rows    = buildTreeLogicRows(nodes);
+  const textArr = treeRowsToText(rows);
+
+  // Sheet 1: Decision Path (teks visual)
+  const sheet1Data = [
+    ["Decision Path (IF-ELSE Tree Logic)", "", "", "", ""],
+    ["Indented Rule", "Node ID", "Depth", "Gini", "Samples", "Distribusi", "Prediksi / Dominant"],
+  ];
+  rows.forEach((r, i) => {
+    const distStr = Object.entries(r.node.distribusi ?? {})
+      .filter(([, v]) => v > 0)
+      .map(([k, v]) => `${k}:${v}`)
+      .join(", ");
+    sheet1Data.push([
+      textArr[i],
+      r.node.node_id,
+      r.depth,
+      r.node.gini,
+      r.node.jumlah_sampel,
+      distStr,
+      r.isLeaf ? `LEAF → ${r.dominant}` : `${r.node.term_split} ≤ ${r.node.threshold?.toFixed(6)}`,
+    ]);
+  });
+
+  // Sheet 2: Data Tabular (flat)
+  const sheet2Data = [
+    ["node_id", "kedalaman", "tipe", "term_split", "threshold", "gini", "is_pure", "jumlah_sampel",
+     ...CATS.map((c) => `dist_${c}`), "prediksi"],
+  ];
+  nodes.forEach((n) => {
+    sheet2Data.push([
+      n.node_id, n.kedalaman, n.tipe,
+      n.term_split ?? "", n.threshold ?? "",
+      n.gini, n.is_pure,
+      n.jumlah_sampel,
+      ...CATS.map((c) => n.distribusi?.[c] ?? 0),
+      n.prediksi ?? "",
+    ]);
+  });
+
+  const wb  = XLSX.utils.book_new();
+  const ws1 = XLSX.utils.aoa_to_sheet(sheet1Data);
+  const ws2 = XLSX.utils.aoa_to_sheet(sheet2Data);
+
+  // Lebar kolom otomatis untuk sheet 1
+  ws1["!cols"] = [{ wch: 80 }, { wch: 10 }, { wch: 8 }, { wch: 8 }, { wch: 10 }, { wch: 40 }, { wch: 30 }];
+  ws2["!cols"] = [{ wch: 10 }, { wch: 10 }, { wch: 8 }, { wch: 20 }, { wch: 12 }, { wch: 8 }, { wch: 8 }, { wch: 12 }];
+
+  XLSX.utils.book_append_sheet(wb, ws1, "Decision Path");
+  XLSX.utils.book_append_sheet(wb, ws2, "Node Data");
+  XLSX.writeFile(wb, `tree_${treeId}_decision_path.xlsx`);
+}
+
+
 function TreeSummaryTable({ trees, selected, onSelect }) {
   const rows = Object.entries(trees)
     .map(([k, v]) => ({ tree_id: parseInt(k.replace("tree_", "")), ...v }))
@@ -109,160 +304,232 @@ function TreeSummaryTable({ trees, selected, onSelect }) {
 
 // ── Level 2: Tabel node per pohon ─────────────────────────────────────────────
 function NodeTable({ treeId, selectedNode, onSelectNode, onClose }) {
-  const [data, setData]     = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError]   = useState(null);
-  const [search, setSearch] = useState("");
-  const [tipe, setTipe]     = useState("semua");
+  const [data, setData]         = useState(null);
+  const [loading, setLoading]   = useState(true);
+  const [error, setError]       = useState(null);
+  const [search, setSearch]     = useState("");
+  const [tipe, setTipe]         = useState("semua");
   const [pureOnly, setPureOnly] = useState(false);
-  const [page, setPage]     = useState(1);
+  const [page, setPage]         = useState(1);
+  const [viewMode, setViewMode] = useState("table"); // "table" | "logic"
+  const [exporting, setExporting] = useState(false);
   const PAGE = 30;
+
+  // Selalu load SEMUA node (tanpa filter) untuk tree logic view
+  const [allNodes, setAllNodes] = useState([]);
 
   useEffect(() => {
     setLoading(true); setError(null);
-    const params = new URLSearchParams({ tipe, pure: pureOnly ? "1" : "0", search });
-    fetch(`/api/gini/${treeId}/nodes?${params}`)
+    // Load semua node untuk logic view (tanpa filter)
+    fetch(`/api/gini/${treeId}/nodes?tipe=semua&pure=0&search=`)
       .then((r) => r.ok ? r.json() : r.json().then((e) => { throw new Error(e.error); }))
-      .then((d) => { setData(d); setLoading(false); })
+      .then((d) => { setAllNodes(d.nodes ?? []); setLoading(false); })
       .catch((e) => { setError(e.message); setLoading(false); });
     setPage(1);
-  }, [treeId, tipe, pureOnly, search]);
+  }, [treeId]);
 
-  const nodes = data?.nodes ?? [];
-  const pages = Math.max(1, Math.ceil(nodes.length / PAGE));
-  const slice = nodes.slice((page - 1) * PAGE, page * PAGE);
+  // Node yang difilter untuk tampilan tabel
+  const filteredNodes = allNodes.filter((n) => {
+    const matchTipe   = tipe === "semua" || n.tipe === tipe;
+    const matchPure   = !pureOnly || n.is_pure;
+    const matchSearch = !search || n.term_split?.includes(search);
+    return matchTipe && matchPure && matchSearch;
+  });
 
+  const pages = Math.max(1, Math.ceil(filteredNodes.length / PAGE));
+  const slice = filteredNodes.slice((page - 1) * PAGE, page * PAGE);
   const depthIndent = (depth) => Math.min(depth * 12, 96);
+
+  const handleExport = async () => {
+    setExporting(true);
+    try { await exportTreeToExcel(treeId, allNodes); }
+    finally { setExporting(false); }
+  };
 
   return (
     <div className="bg-white rounded-2xl shadow-xl border-2 border-green-200 overflow-hidden">
+      {/* Header */}
       <div className="flex items-center justify-between px-6 py-4 bg-green-700 text-white">
         <div className="flex items-center gap-3">
           <GitBranch className="w-5 h-5" />
           <span className="font-bold">Struktur Node — Tree #{treeId}</span>
-          {data && <span className="text-xs bg-green-600 px-2 py-0.5 rounded-full">{data.total} node ditampilkan</span>}
+          {allNodes.length > 0 && <span className="text-xs bg-green-600 px-2 py-0.5 rounded-full">{allNodes.length} node total</span>}
         </div>
-        <button onClick={onClose} className="hover:bg-green-600 rounded-lg p-1 transition-colors"><ChevronUp className="w-5 h-5" /></button>
+        <div className="flex items-center gap-2">
+          {/* Tombol Export */}
+          <button onClick={handleExport} disabled={exporting || allNodes.length === 0}
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-green-600 hover:bg-green-500 rounded-lg text-xs font-semibold transition-colors disabled:opacity-50">
+            {exporting ? <RefreshCw className="w-3.5 h-3.5 animate-spin" /> : <Download className="w-3.5 h-3.5" />}
+            {exporting ? "Exporting..." : "Export Excel"}
+          </button>
+          <button onClick={onClose} className="hover:bg-green-600 rounded-lg p-1 transition-colors"><ChevronUp className="w-5 h-5" /></button>
+        </div>
       </div>
 
       {error && <div className="m-6 p-4 bg-red-50 border border-red-200 rounded-xl text-red-600 text-sm">{error}</div>}
 
       <div className="p-5 space-y-4">
-        {/* Filter bar */}
-        <div className="flex flex-wrap gap-2">
-          <div className="relative flex-1 min-w-[180px]">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400" />
-            <input type="text" placeholder="Cari term split..." value={search}
-              onChange={(e) => { setSearch(e.target.value); setPage(1); }}
-              className="w-full border border-gray-200 rounded-lg pl-8 pr-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-300" />
+        {/* Tab switcher: Tabel vs Tree Logic */}
+        <div className="flex items-center justify-between flex-wrap gap-3">
+          <div className="flex gap-1 bg-gray-100 rounded-xl p-1">
+            <button onClick={() => setViewMode("table")}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors ${viewMode === "table" ? "bg-white shadow text-green-700" : "text-gray-500 hover:text-gray-700"}`}>
+              <Table2 className="w-4 h-4" />Tabel Linear
+            </button>
+            <button onClick={() => setViewMode("logic")}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors ${viewMode === "logic" ? "bg-white shadow text-green-700" : "text-gray-500 hover:text-gray-700"}`}>
+              <GitBranch className="w-4 h-4" />IF-ELSE Tree Logic
+            </button>
           </div>
-          <select value={tipe} onChange={(e) => { setTipe(e.target.value); setPage(1); }}
-            className="border border-gray-200 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-300">
-            <option value="semua">Semua Node</option>
-            <option value="split">Split Node</option>
-            <option value="leaf">Leaf Node</option>
-          </select>
-          <label className="flex items-center gap-1.5 border border-gray-200 rounded-lg px-3 py-1.5 text-sm cursor-pointer hover:bg-gray-50">
-            <input type="checkbox" checked={pureOnly} onChange={(e) => { setPureOnly(e.target.checked); setPage(1); }} className="rounded" />
-            <Leaf className="w-3.5 h-3.5 text-green-600" />Pure (Gini ≤ 0.05)
-          </label>
-          {loading && <RefreshCw className="w-4 h-4 text-gray-400 animate-spin self-center" />}
+          <p className="text-xs text-gray-400">
+            {viewMode === "logic"
+              ? "Visualisasi bersarang berdasarkan kedalaman node — kiri = kondisi terpenuhi (≤)"
+              : `${filteredNodes.length} node ditampilkan · klik ↓ untuk sampel`}
+          </p>
         </div>
 
-        {/* Tabel node */}
-        <div className="overflow-x-auto rounded-xl border text-xs">
-          <table className="w-full">
-            <thead className="bg-gray-50 text-gray-700">
-              <tr>
-                <th className="p-2.5 text-left font-semibold">Node ID</th>
-                <th className="p-2.5 text-center font-semibold">Depth</th>
-                <th className="p-2.5 text-left font-semibold">Term Split</th>
-                <th className="p-2.5 text-center font-semibold">Threshold</th>
-                <th className="p-2.5 text-left font-semibold">Gini</th>
-                <th className="p-2.5 text-center font-semibold">Sampel</th>
-                <th className="p-2.5 text-left font-semibold">Distribusi</th>
-                <th className="p-2.5 text-center font-semibold">Prediksi</th>
-                <th className="p-2.5 text-center font-semibold">Tipe</th>
-                <th className="p-2.5 text-center font-semibold w-16">Sampel</th>
-              </tr>
-            </thead>
-            <tbody>
-              {loading && !data ? (
-                <tr><td colSpan={10} className="p-8 text-center text-gray-400"><RefreshCw className="w-4 h-4 animate-spin inline mr-2" />Memuat...</td></tr>
-              ) : slice.length === 0 ? (
-                <tr><td colSpan={10} className="p-6 text-center text-gray-400">Tidak ada node yang cocok</td></tr>
-              ) : slice.map((n, i) => {
-                const isSelectedNode = selectedNode?.node_id === n.node_id;
-                const dominant = Object.entries(n.distribusi ?? {}).sort((a, b) => b[1] - a[1])[0]?.[0];
-                return (
-                  <tr key={n.node_id} className={`border-t transition-colors ${isSelectedNode ? "bg-blue-50 ring-2 ring-inset ring-blue-400" : i % 2 === 0 ? "bg-white hover:bg-gray-50" : "bg-gray-50/50 hover:bg-green-50"}`}>
-                    <td className="p-2.5">
-                      <span className="font-mono text-gray-600" style={{ paddingLeft: depthIndent(n.kedalaman) }}>
-                        {n.kedalaman === 0 ? "🌱 " : ""}#{n.node_id}
-                      </span>
-                    </td>
-                    <td className="p-2.5 text-center">
-                      <span className={`px-1.5 rounded text-xs font-mono ${n.kedalaman === 0 ? "bg-purple-100 text-purple-700" : "bg-gray-100 text-gray-600"}`}>
-                        {n.kedalaman === 0 ? "Root" : n.kedalaman}
-                      </span>
-                    </td>
-                    <td className="p-2.5">
-                      {n.term_split
-                        ? <span className="font-mono text-blue-700 bg-blue-50 px-1.5 py-0.5 rounded">{n.term_split}</span>
-                        : <span className="text-gray-300">—</span>}
-                    </td>
-                    <td className="p-2.5 text-center font-mono text-gray-600">{n.threshold ?? "—"}</td>
-                    <td className="p-2.5 min-w-[130px]">
-                      <div className="flex items-center gap-1">
-                        <GiniBar gini={n.gini} />
-                        {n.is_pure && <span className="text-green-600 text-xs font-bold ml-1">✦</span>}
-                      </div>
-                    </td>
-                    <td className="p-2.5 text-center font-mono font-semibold text-gray-700">{n.jumlah_sampel}</td>
-                    <td className="p-2.5 min-w-[200px]">
-                      <div className="flex gap-1">
-                        {CATS.map((cat) => {
-                          const cnt = n.distribusi?.[cat] ?? 0;
-                          if (!cnt) return null;
-                          const c = CAT_COLOR[cat];
-                          return (
-                            <span key={cat} className="text-xs px-1 rounded" style={{ backgroundColor: c.light, color: c.text }}>
-                              {cat.substring(0, 3)}: {cnt}
-                            </span>
-                          );
-                        })}
-                      </div>
-                    </td>
-                    <td className="p-2.5 text-center">{dominant && <CatBadge val={dominant} />}</td>
-                    <td className="p-2.5 text-center">
-                      {n.tipe === "leaf"
-                        ? <span className="flex items-center justify-center gap-1 text-green-600 font-semibold"><Leaf className="w-3 h-3" />Leaf</span>
-                        : <span className="flex items-center justify-center gap-1 text-blue-600"><GitBranch className="w-3 h-3" />Split</span>}
-                    </td>
-                    <td className="p-2.5 text-center">
-                      <button
-                        onClick={() => onSelectNode(isSelectedNode ? null : n)}
-                        title="Lihat sampel di node ini"
-                        className={`px-2 py-1 rounded text-xs font-semibold border transition-colors ${isSelectedNode ? "bg-blue-600 text-white border-blue-600" : "border-gray-300 text-gray-500 hover:border-blue-400 hover:text-blue-600"}`}>
-                        {n.n_sampel_ids}↓
-                      </button>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
-        {pages > 1 && (
-          <div className="flex items-center justify-between text-xs text-gray-500">
-            <span>Halaman {page} dari {pages} · {nodes.length} total</span>
-            <div className="flex gap-1">
-              <button disabled={page === 1} onClick={() => setPage(p => p - 1)} className="px-2 py-1 rounded border disabled:opacity-40 hover:bg-gray-100">‹</button>
-              <button disabled={page === pages} onClick={() => setPage(p => p + 1)} className="px-2 py-1 rounded border disabled:opacity-40 hover:bg-gray-100">›</button>
-            </div>
+        {/* Loading state */}
+        {loading && (
+          <div className="flex items-center justify-center py-12 text-gray-400">
+            <RefreshCw className="w-4 h-4 animate-spin mr-2" />Memuat struktur pohon...
           </div>
         )}
-        <p className="text-xs text-gray-400">✦ = Pure node (Gini ≤ 0.05) · Angka di kolom terakhir = jumlah sampel di node, klik untuk detail</p>
+
+        {/* ── VIEW MODE: Tree Logic ── */}
+        {!loading && viewMode === "logic" && (
+          <div className="space-y-3">
+            <div className="flex items-start gap-3 p-3 bg-blue-50 border border-blue-200 rounded-xl text-xs text-blue-700">
+              <GitBranch className="w-4 h-4 flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="font-semibold mb-1">Cara baca: IF-ELSE Tree Logic</p>
+                <p>Setiap baris menunjukkan satu kondisi split. Cabang <strong>kiri</strong> (indentasi lanjut) = kondisi <strong>terpenuhi (≤ threshold)</strong>.
+                Node dengan label <span className="font-bold text-purple-600">THEN →</span> adalah leaf — prediksi akhir untuk sampel yang mencapainya.</p>
+              </div>
+            </div>
+            <TreeLogicView nodes={allNodes} />
+            <p className="text-xs text-gray-400">
+              ✦ = Pure node · Warna Gini: <span className="text-green-600">hijau ≤0.05</span> · <span className="text-yellow-600">kuning ≤0.25</span> · <span className="text-orange-600">oranye ≤0.5</span> · <span className="text-red-600">merah &gt;0.5</span>
+            </p>
+          </div>
+        )}
+
+        {/* ── VIEW MODE: Tabel Linear ── */}
+        {!loading && viewMode === "table" && (
+          <>
+            {/* Filter bar */}
+            <div className="flex flex-wrap gap-2">
+              <div className="relative flex-1 min-w-[180px]">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400" />
+                <input type="text" placeholder="Cari term split..." value={search}
+                  onChange={(e) => { setSearch(e.target.value); setPage(1); }}
+                  className="w-full border border-gray-200 rounded-lg pl-8 pr-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-300" />
+              </div>
+              <select value={tipe} onChange={(e) => { setTipe(e.target.value); setPage(1); }}
+                className="border border-gray-200 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-300">
+                <option value="semua">Semua Node</option>
+                <option value="split">Split Node</option>
+                <option value="leaf">Leaf Node</option>
+              </select>
+              <label className="flex items-center gap-1.5 border border-gray-200 rounded-lg px-3 py-1.5 text-sm cursor-pointer hover:bg-gray-50">
+                <input type="checkbox" checked={pureOnly} onChange={(e) => { setPureOnly(e.target.checked); setPage(1); }} className="rounded" />
+                <Leaf className="w-3.5 h-3.5 text-green-600" />Pure (Gini ≤ 0.05)
+              </label>
+            </div>
+
+            {/* Tabel node */}
+            <div className="overflow-x-auto rounded-xl border text-xs">
+              <table className="w-full">
+                <thead className="bg-gray-50 text-gray-700">
+                  <tr>
+                    <th className="p-2.5 text-left font-semibold">Node ID</th>
+                    <th className="p-2.5 text-center font-semibold">Depth</th>
+                    <th className="p-2.5 text-left font-semibold">Term Split</th>
+                    <th className="p-2.5 text-center font-semibold">Threshold</th>
+                    <th className="p-2.5 text-left font-semibold">Gini</th>
+                    <th className="p-2.5 text-center font-semibold">Sampel</th>
+                    <th className="p-2.5 text-left font-semibold">Distribusi</th>
+                    <th className="p-2.5 text-center font-semibold">Prediksi</th>
+                    <th className="p-2.5 text-center font-semibold">Tipe</th>
+                    <th className="p-2.5 text-center font-semibold w-16">Sampel</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {slice.length === 0 ? (
+                    <tr><td colSpan={10} className="p-6 text-center text-gray-400">Tidak ada node yang cocok</td></tr>
+                  ) : slice.map((n, i) => {
+                    const isSelectedNode = selectedNode?.node_id === n.node_id;
+                    const dominant = Object.entries(n.distribusi ?? {}).sort((a, b) => b[1] - a[1])[0]?.[0];
+                    return (
+                      <tr key={n.node_id} className={`border-t transition-colors ${isSelectedNode ? "bg-blue-50 ring-2 ring-inset ring-blue-400" : i % 2 === 0 ? "bg-white hover:bg-gray-50" : "bg-gray-50/50 hover:bg-green-50"}`}>
+                        <td className="p-2.5">
+                          <span className="font-mono text-gray-600" style={{ paddingLeft: depthIndent(n.kedalaman) }}>
+                            {n.kedalaman === 0 ? "🌱 " : ""}#{n.node_id}
+                          </span>
+                        </td>
+                        <td className="p-2.5 text-center">
+                          <span className={`px-1.5 rounded text-xs font-mono ${n.kedalaman === 0 ? "bg-purple-100 text-purple-700" : "bg-gray-100 text-gray-600"}`}>
+                            {n.kedalaman === 0 ? "Root" : n.kedalaman}
+                          </span>
+                        </td>
+                        <td className="p-2.5">
+                          {n.term_split
+                            ? <span className="font-mono text-blue-700 bg-blue-50 px-1.5 py-0.5 rounded">{n.term_split}</span>
+                            : <span className="text-gray-300">—</span>}
+                        </td>
+                        <td className="p-2.5 text-center font-mono text-gray-600">{n.threshold ?? "—"}</td>
+                        <td className="p-2.5 min-w-[130px]">
+                          <div className="flex items-center gap-1">
+                            <GiniBar gini={n.gini} />
+                            {n.is_pure && <span className="text-green-600 text-xs font-bold ml-1">✦</span>}
+                          </div>
+                        </td>
+                        <td className="p-2.5 text-center font-mono font-semibold text-gray-700">{n.jumlah_sampel}</td>
+                        <td className="p-2.5 min-w-[200px]">
+                          <div className="flex gap-1 flex-wrap">
+                            {CATS.map((cat) => {
+                              const cnt = n.distribusi?.[cat] ?? 0;
+                              if (!cnt) return null;
+                              const c = CAT_COLOR[cat];
+                              return (
+                                <span key={cat} className="text-xs px-1 rounded" style={{ backgroundColor: c.light, color: c.text }}>
+                                  {cat.substring(0, 3)}: {cnt}
+                                </span>
+                              );
+                            })}
+                          </div>
+                        </td>
+                        <td className="p-2.5 text-center">{dominant && <CatBadge val={dominant} />}</td>
+                        <td className="p-2.5 text-center">
+                          {n.tipe === "leaf"
+                            ? <span className="flex items-center justify-center gap-1 text-green-600 font-semibold"><Leaf className="w-3 h-3" />Leaf</span>
+                            : <span className="flex items-center justify-center gap-1 text-blue-600"><GitBranch className="w-3 h-3" />Split</span>}
+                        </td>
+                        <td className="p-2.5 text-center">
+                          <button
+                            onClick={() => onSelectNode(isSelectedNode ? null : n)}
+                            title="Lihat sampel di node ini"
+                            className={`px-2 py-1 rounded text-xs font-semibold border transition-colors ${isSelectedNode ? "bg-blue-600 text-white border-blue-600" : "border-gray-300 text-gray-500 hover:border-blue-400 hover:text-blue-600"}`}>
+                            {n.n_sampel_ids}↓
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+            {pages > 1 && (
+              <div className="flex items-center justify-between text-xs text-gray-500">
+                <span>Halaman {page} dari {pages} · {filteredNodes.length} total</span>
+                <div className="flex gap-1">
+                  <button disabled={page === 1} onClick={() => setPage(p => p - 1)} className="px-2 py-1 rounded border disabled:opacity-40 hover:bg-gray-100">‹</button>
+                  <button disabled={page === pages} onClick={() => setPage(p => p + 1)} className="px-2 py-1 rounded border disabled:opacity-40 hover:bg-gray-100">›</button>
+                </div>
+              </div>
+            )}
+            <p className="text-xs text-gray-400">✦ = Pure node (Gini ≤ 0.05) · Angka di kolom terakhir = jumlah sampel di node, klik untuk detail</p>
+          </>
+        )}
       </div>
     </div>
   );

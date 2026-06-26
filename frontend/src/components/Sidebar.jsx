@@ -10,9 +10,10 @@ import {
 const EKSTRASI_SUBS = [
   { icon: PieChart,          label: "Statistik Keseluruhan TF-IDF", path: "/ekstraksi/statistik" },
   { icon: Hash,              label: "Term & Tokenisasi",             path: "/ekstraksi/term-tokenisasi" },
-  { icon: SlidersHorizontal, label: "Filtering (Min DF & Max DF)",   path: "/ekstraksi/filtering" },
-  { icon: Star,              label: "Seleksi Fitur & Metode",        path: "/ekstraksi/seleksi-fitur" },
-  { icon: CheckCircle2,      label: "Final Processed",               path: "/ekstraksi/final-processed" },
+  { icon: SlidersHorizontal, label: "Filtering (Min DF & Max DF)",       path: "/ekstraksi/filtering" },
+  { icon: Star,              label: "Seleksi Fitur & Metode",            path: "/ekstraksi/seleksi-fitur" },
+  { icon: Grid3x3,           label: "Output Matriks TF-IDF",             path: "/ekstraksi/matriks-tfidf" },
+  { icon: CheckCircle2,      label: "Penerapan TF-IDF pada Pengaduan",   path: "/ekstraksi/final-processed" },
 ];
 
 const RF_SUBS = [
@@ -24,8 +25,8 @@ const RF_SUBS = [
 ];
 
 const EVAL_SUBS = [
-  { icon: CheckCircle2, label: "Metrik Akurasi & Performa",  path: "/evaluasi/metrik" },
   { icon: Grid3x3,      label: "Confusion Matrix & Analisis", path: "/evaluasi/confusion-matrix" },
+  { icon: CheckCircle2, label: "Metrik Akurasi & Performa",  path: "/evaluasi/metrik" },
   { icon: TrendingUp,   label: "Cross-Validation 5-Fold",    path: "/evaluasi/cross-validation" },
   { icon: AlertCircle,  label: "Error Analysis & Insights",  path: "/evaluasi/error-analysis" },
 ];
@@ -44,6 +45,7 @@ export default function Sidebar({ onLogout }) {
   const menuItems = [
     { icon: LayoutDashboard, label: "Dashboard",      path: "/dashboard" },
     { icon: FileText,        label: "Data Pengaduan", path: "/data-pengaduan" },
+    { icon: FlaskConical,    label: "Preprocessing",  path: "/preprocessing" },
     { icon: BarChart3,       label: "Statistik",      path: "/statistik" },
   ];
 

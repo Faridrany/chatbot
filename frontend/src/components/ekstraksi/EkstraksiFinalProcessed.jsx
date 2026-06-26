@@ -120,9 +120,9 @@ export default function EkstraksiFinalProcessed({ onLogout }) {
               <CheckCircle2 className="w-6 h-6 text-[#2E7D32]" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-gray-800">Final Processed Data</h1>
+              <h1 className="text-2xl font-bold text-gray-800">Penerapan TF-IDF pada Pengaduan</h1>
               <p className="text-sm text-gray-500 mt-1">
-                Hasil akhir preprocessing: teks yang sudah melalui cleaning, casefolding, tokenization, normalization, stopword removal, dan stemming.
+                Hasil akhir preprocessing & pembobotan TF-IDF: teks yang sudah melalui cleaning, casefolding, tokenization, normalization, stopword removal, dan stemming, siap digunakan sebagai input model.
               </p>
               <div className="flex items-center gap-2 mt-2 text-xs text-green-700 bg-green-50 border border-green-200 px-3 py-1.5 rounded-lg w-fit">
                 <Info className="w-3.5 h-3.5" />

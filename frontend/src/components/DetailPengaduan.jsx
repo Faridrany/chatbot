@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight, Cpu, BarChart3, TreeDeciduous, CheckCircle2, XCircle, RefreshCw } from "lucide-react";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
@@ -28,6 +28,8 @@ export default function DetailPengaduan({ onLogout }) {
   const [status, setStatus] = useState("Menunggu");
   const [savingStatus, setSavingStatus] = useState(false);
   const [statusSaved, setStatusSaved] = useState(false);
+  const [summary, setSummary] = useState(null);
+  const [summaryLoading, setSummaryLoading] = useState(false);
 
   useEffect(() => {
     fetch(`/api/pengaduan/${id}/processed`)
@@ -36,6 +38,15 @@ export default function DetailPengaduan({ onLogout }) {
         setData(res);
         setStatus(res.status ?? "Menunggu");
         setLoading(false);
+        // Ambil kode_pengaduan lalu fetch summary
+        const kode = res.kode_pengaduan;
+        if (kode) {
+          setSummaryLoading(true);
+          fetch(`/api/summary-pengaduan/${kode}`)
+            .then((r) => r.ok ? r.json() : null)
+            .then((s) => { setSummary(s); setSummaryLoading(false); })
+            .catch(() => setSummaryLoading(false));
+        }
       })
       .catch((err) => {
         console.error(err);

@@ -541,12 +541,12 @@ def train_model():
     label_encoder = LabelEncoder()
     y_encoded     = label_encoder.fit_transform(y)
 
-    # TF-IDF dengan bigram dan pembatasan fitur
+    # TF-IDF hanya unigram (1-gram)
     vectorizer = TfidfVectorizer(
         max_features=5000,
         min_df=2,
         max_df=0.95,
-        ngram_range=(1, 2),
+        ngram_range=(1, 1),
     )
     X_tfidf = vectorizer.fit_transform(X_text)
     print(f"Shape TF-IDF                : {X_tfidf.shape}")
@@ -577,7 +577,7 @@ def train_model():
     # dari data bootstrap-nya masing-masing, bukan dari keseluruhan dataset.
     # Ini mencegah bias saat satu kelas kurang terwakili di kantong bootstrap tertentu.
     model = RandomForestClassifier(
-        n_estimators=500,
+        n_estimators=5,
         max_depth=30,
         min_samples_split=5,
         min_samples_leaf=2,
@@ -661,8 +661,8 @@ def train_model():
         "kelas"        : sorted(y.unique().tolist()),
         "fitur_tfidf"  : int(X_tfidf.shape[1]),
         "fitur_selected": int(X_selected.shape[1]),
-        "estimators"   : 500,
-        "ngram_range"  : [1, 2],
+        "estimators"   : 5,
+        "ngram_range"  : [1, 1],
         "perClass"     : per_class,
         "confusionMatrix": cm_dict,
     }
@@ -794,9 +794,9 @@ def train_model():
         y_cv_train = y_encoded[cv_train_idx]
         y_cv_test  = y_encoded[cv_test_idx]
 
-        # Train model khusus fold ini (n_estimators lebih kecil agar cepat)
+        # Train model khusus fold ini
         cv_model = RandomForestClassifier(
-            n_estimators=100,
+            n_estimators=5,
             max_depth=30,
             min_samples_split=5,
             min_samples_leaf=2,
@@ -912,7 +912,7 @@ def train_model():
 
     # Hitung DF semua term (sebelum filter) menggunakan CountVectorizer tanpa batasan
     from sklearn.feature_extraction.text import CountVectorizer as _CV
-    count_vec_all = _CV(ngram_range=(1, 2))
+    count_vec_all = _CV(ngram_range=(1, 1))
     X_counts_all  = count_vec_all.fit_transform(df["final_text"])
     all_raw_terms = count_vec_all.get_feature_names_out()
     df_counts_all = (X_counts_all > 0).sum(axis=0).A1
@@ -1154,7 +1154,7 @@ def train_model():
     _train_kode3 = [_df3.iloc[i]["kode_pengaduan"] for i in _train_idx3]
 
     CATS_ORDER = label_encoder.classes_.tolist()  # ['INFRASTRUKTUR', 'KEAMANAN', 'LINGKUNGAN', 'PELAYANAN'] (sorted)
-    N_GINI_TREES = 20
+    N_GINI_TREES = min(20, len(model.estimators_))
 
     gini_output    = {}
     term_split_agg = {}  # term → {frekuensi, pohon_ids, gini_values}
@@ -1312,7 +1312,7 @@ def train_model():
     all_proba = model.predict_proba(X_selected)
     
     # Per-tree predictions untuk 20 pohon pertama (cukup untuk voting transparency)
-    N_VOTE_TREES = 20
+    N_VOTE_TREES = min(20, len(model.estimators_))
     tree_preds_20 = []  # shape (N_VOTE_TREES, n_samples)
     for t_idx in range(min(N_VOTE_TREES, len(model.estimators_))):
         tp = model.estimators_[t_idx].predict(X_selected)
@@ -1532,10 +1532,9 @@ def train_model():
 
     tfidf_terms = []
     for idx, term in enumerate(feature_names):
-        ngram_type = "bigram" if " " in term else "unigram"
         tfidf_terms.append({
             "term"       : term,
-            "ngram"      : ngram_type,
+            "ngram"      : "unigram",
             "tfidf_mean" : round(float(tfidf_mean[idx]), 6),
             "chi2_score" : round(float(chi2_scores[idx]), 4),
             "selected"   : bool(selected_mask[idx]),
@@ -1578,7 +1577,59 @@ def train_model():
     save_json(doc_samples, os.path.join(DATA_DIR, "tfidf_sample_docs.json"))
     print(f"[OK] {len(doc_samples)} sample dokumen disimpan ke: tfidf_sample_docs.json")
 
-    # Export hasil preprocessing ke Excel
+    # ── Generate tfidf_matrix.json (matriks input Random Forest) ──
+    print("[*] Generating tfidf_matrix.json (matriks X_selected per pengaduan)...")
+
+    # X_selected: matriks (1200 × 1000) — nilai TF-IDF setelah SelectKBest
+    # Ini adalah matriks yang BENAR-BENAR masuk ke RandomForest
+    # selected_feature_names sudah tersedia dari bagian sebelumnya
+    if "selected_feature_names" not in dir():
+        selected_feature_names = [feature_names[j] for j in range(len(feature_names)) if selected_mask[j]]
+
+    # Meta: daftar term + chi2 score
+    chi2_scores_arr = selector.scores_
+    selected_indices = [j for j in range(len(feature_names)) if selected_mask[j]]
+    terms_meta = []
+    for rank, j in enumerate(selected_indices):
+        terms_meta.append({
+            "term"       : feature_names[j],
+            "chi2_score" : round(float(chi2_scores_arr[j]), 4),
+            "ngram"      : "unigram",
+        })
+    # Urutkan by chi2 descending untuk tampilan
+    terms_meta.sort(key=lambda x: -x["chi2_score"])
+    selected_term_order = [t["term"] for t in terms_meta]  # urutan term untuk matriks
+
+    # Buat mapping term → posisi di X_selected (X_selected sudah diurutkan oleh selector)
+    # Kolom X_selected[i, c] = TF-IDF term ke-c dalam selected_feature_names
+    term_to_col = {term: c for c, term in enumerate(selected_feature_names)}
+
+    # Bangun matriks per kode_pengaduan (hanya simpan nilai > 0 untuk efisiensi)
+    tfidf_matrix = {}
+    for i, kode in enumerate(kode_list):
+        row = X_selected[i]
+        # Dapatkan nilai per term (sparse row)
+        _, col_idx = row.nonzero()
+        term_vals = {}
+        for c in col_idx:
+            term_name = selected_feature_names[c]
+            term_vals[term_name] = round(float(row[0, c]), 6)
+        tfidf_matrix[kode] = term_vals
+
+    # Simpan dalam format yang dioptimalkan untuk lazy loading
+    tfidf_matrix_output = {
+        "meta": {
+            "total_pengaduan" : len(kode_list),
+            "total_term"      : len(selected_feature_names),
+            "metode_seleksi"  : "SelectKBest chi-squared",
+            "terms"           : selected_term_order,  # urutan by chi2 desc
+            "terms_chi2"      : terms_meta,
+        },
+        "matrix": tfidf_matrix,
+    }
+    tfidf_matrix_path = os.path.join(DATA_DIR, "tfidf_matrix.json")
+    save_json(tfidf_matrix_output, tfidf_matrix_path)
+    print(f"[OK] tfidf_matrix.json disimpan ({len(kode_list)} pengaduan × {len(selected_feature_names)} term)")
     export_preprocessing_to_excel(load_json(DATASET_BERLABEL_PATH), hasil_semua)
 
 # =====================================================
