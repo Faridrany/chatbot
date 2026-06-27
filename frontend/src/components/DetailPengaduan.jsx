@@ -154,175 +154,165 @@ export default function DetailPengaduan({ onLogout }) {
             </div>
           </div>
 
-          {/* Probability Breakdown for All Categories */}
-          {data.proba_all && (
-            <div className="bg-white p-6 rounded-2xl shadow mb-6">
-              <h2 className="text-lg font-bold text-gray-800 mb-1">Rincian Probabilitas Semua Kategori</h2>
-              <p className="text-sm text-gray-500 mb-4">
-                Skor probabilitas prediksi untuk setiap kategori. Kategori dengan skor tertinggi dipilih sebagai hasil
-                klasifikasi.
-              </p>
+          {/* ── BAGIAN 2: RINGKASAN TAHAPAN KLASIFIKASI ── */}
+          <div className="mb-6">
+            <h2 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
+              <BarChart3 className="w-5 h-5 text-green-700" />
+              Ringkasan Tahapan Klasifikasi
+            </h2>
 
+            {summaryLoading && (
+              <div className="flex items-center gap-2 text-gray-400 text-sm py-4">
+                <RefreshCw className="w-4 h-4 animate-spin" />Memuat ringkasan...
+              </div>
+            )}
+
+            {!summaryLoading && summary && (
               <div className="space-y-3">
-                {Object.entries(data.proba_all)
-                  .sort((a, b) => b[1] - a[1])
-                  .map(([cat, prob]) => {
-                    const isSelected = cat === data.kategori_prediksi;
-                    const pct = (prob * 100).toFixed(1);
-                    return (
-                      <div
-                        key={cat}
-                        className={`p-3 rounded-lg border ${isSelected ? "border-green-400 bg-green-50" : "border-gray-200 bg-gray-50"}`}
-                      >
-                        <div className="flex items-center justify-between mb-2">
-                          <div className="flex items-center gap-2">
-                            <Badge className={`${CATEGORY_COLOR[cat] || "bg-gray-200 text-gray-900"}`}>{cat}</Badge>
-                            {isSelected && <span className="text-xs font-semibold text-green-600">✓ Terpilih</span>}
+                {/* CARD 1: Preprocessing */}
+                <div className="bg-white rounded-2xl shadow border-l-4 border-[#E53935] p-5">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-xl bg-red-50 flex items-center justify-center">
+                        <Cpu className="w-4 h-4 text-red-600" />
+                      </div>
+                      <span className="font-bold text-gray-800">Preprocessing Teks</span>
+                    </div>
+                    <button
+                      onClick={() => navigate(`/preprocessing?highlight=${data.kode_pengaduan}`)}
+                      className="flex items-center gap-1 text-xs text-green-700 font-semibold hover:text-green-900 transition-colors">
+                      Lihat Detail <ArrowRight className="w-3 h-3" />
+                    </button>
+                  </div>
+                  <div className="grid grid-cols-1 gap-2 text-sm">
+                    <div className="flex gap-2">
+                      <span className="text-gray-400 w-28 shrink-0">Teks Asli</span>
+                      <span className="text-gray-700 font-mono text-xs truncate">
+                        {summary.preprocessing.teks_asli?.substring(0, 65)}{summary.preprocessing.teks_asli?.length > 65 ? "…" : ""}
+                      </span>
+                    </div>
+                    <div className="flex gap-2">
+                      <span className="text-gray-400 w-28 shrink-0">Teks Akhir</span>
+                      <span className="text-green-700 font-mono text-xs truncate">
+                        {summary.preprocessing.teks_akhir?.substring(0, 65)}{summary.preprocessing.teks_akhir?.length > 65 ? "…" : ""}
+                      </span>
+                    </div>
+                    <div className="flex gap-2">
+                      <span className="text-gray-400 w-28 shrink-0">Total Token</span>
+                      <span className="font-bold text-gray-800">{summary.preprocessing.total_token} token</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* CARD 2: TF-IDF */}
+                <div className="bg-white rounded-2xl shadow border-l-4 border-[#1976D2] p-5">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-xl bg-blue-50 flex items-center justify-center">
+                        <BarChart3 className="w-4 h-4 text-blue-600" />
+                      </div>
+                      <span className="font-bold text-gray-800">Bobot TF-IDF</span>
+                    </div>
+                    <button
+                      onClick={() => navigate(`/ekstraksi/final-processed?highlight=${data.kode_pengaduan}`)}
+                      className="flex items-center gap-1 text-xs text-green-700 font-semibold hover:text-green-900 transition-colors">
+                      Lihat Detail <ArrowRight className="w-3 h-3" />
+                    </button>
+                  </div>
+                  <div className="grid grid-cols-1 gap-2 text-sm">
+                    <div className="flex gap-2">
+                      <span className="text-gray-400 w-28 shrink-0">Term Aktif</span>
+                      <span className="font-bold text-gray-800">{summary.tfidf.term_aktif} term</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-400 text-xs block mb-1">Term Tertinggi</span>
+                      <div className="space-y-1.5">
+                        {summary.tfidf.top_terms.map((t, i) => (
+                          <div key={i} className="flex items-center gap-2">
+                            <span className="font-mono text-xs text-blue-700 w-24 shrink-0">• {t.term}</span>
+                            <div className="flex-1 bg-gray-100 rounded-full h-2">
+                              <div className="h-2 rounded-full bg-blue-500" style={{ width: `${Math.min(100, t.score * 100 * 2.5)}%` }} />
+                            </div>
+                            <span className="font-mono text-xs font-bold text-blue-700 w-14 text-right">{t.score.toFixed(4)}</span>
                           </div>
-                          <span className="text-sm font-bold text-gray-700">{pct}%</span>
-                        </div>
-                        <div className="w-full bg-gray-200 rounded-full h-2">
-                          <div
-                            className={`h-2 rounded-full ${isSelected ? "bg-green-500" : "bg-gray-400"}`}
-                            style={{ width: `${pct}%` }}
-                          />
+                        ))}
+                        {summary.tfidf.top_terms.length === 0 && (
+                          <span className="text-xs text-gray-400 italic">Data TF-IDF belum tersedia</span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* CARD 3: Majority Vote */}
+                <div className="bg-white rounded-2xl shadow border-l-4 border-[#2E7D32] p-5">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-xl bg-green-50 flex items-center justify-center">
+                        <TreeDeciduous className="w-4 h-4 text-green-700" />
+                      </div>
+                      <span className="font-bold text-gray-800">Majority Vote &amp; Hasil Klasifikasi</span>
+                    </div>
+                    <button
+                      onClick={() => navigate(`/random-forest/voting?highlight=${data.kode_pengaduan}`)}
+                      className="flex items-center gap-1 text-xs text-green-700 font-semibold hover:text-green-900 transition-colors">
+                      Lihat Detail <ArrowRight className="w-3 h-3" />
+                    </button>
+                  </div>
+                  {summary.majority_vote ? (
+                    <div className="space-y-3">
+                      {/* Distribusi vote */}
+                      <div>
+                        <span className="text-xs text-gray-400 block mb-1.5">Distribusi Vote</span>
+                        <div className="space-y-1.5">
+                          {(summary.majority_vote.distribusi ?? []).slice(0, 4).map((d) => {
+                            const CAT_COLORS = {
+                              INFRASTRUKTUR: "#2E7D32", KEAMANAN: "#1976D2",
+                              LINGKUNGAN: "#388E3C", PELAYANAN: "#F57C00",
+                            };
+                            const color = CAT_COLORS[d.kategori] ?? "#757575";
+                            return (
+                              <div key={d.kategori} className="flex items-center gap-2">
+                                <span className="text-xs font-semibold w-28 shrink-0" style={{ color }}>{d.kategori}</span>
+                                <div className="flex-1 bg-gray-100 rounded-full h-3 overflow-hidden">
+                                  <div className="h-3 rounded-full transition-all" style={{ width: `${d.persen}%`, backgroundColor: color }} />
+                                </div>
+                                <span className="text-xs text-gray-600 font-mono w-20 text-right">{d.jumlah} pohon ({d.persen}%)</span>
+                              </div>
+                            );
+                          })}
                         </div>
                       </div>
-                    );
-                  })}
-              </div>
-
-              <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg text-xs text-blue-700">
-                <strong>Catatan:</strong> Model memilih kategori <strong>{data.kategori_prediksi}</strong> karena memiliki
-                probabilitas tertinggi. Skor ini menunjukkan tingkat keyakinan model dalam prediksi.
-              </div>
-            </div>
-          )}
-
-          {/* Teks Hasil Preprocessing & Pipeline Detail */}
-          <div className="bg-white p-6 rounded-2xl shadow">
-            <h2 className="text-lg font-bold text-gray-800 mb-1">Detail Preprocessing Teks</h2>
-            <p className="text-sm text-gray-500 mb-4">
-              Tahapan transformasi teks dari input asli hingga siap diklasifikasi oleh model.
-            </p>
-
-            {/* Hasil Akhir Preprocessing */}
-            {data.processed && (
-              <div className="mb-6">
-                <h3 className="text-sm font-semibold text-gray-700 mb-2">✓ Hasil Akhir (Teks untuk Model)</h3>
-                <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                  <p className="text-sm font-mono text-gray-800">{data.processed}</p>
+                      {/* Prediksi akhir */}
+                      <div className="flex items-center gap-4 pt-2 border-t border-gray-100 text-sm">
+                        <div>
+                          <span className="text-xs text-gray-400 block">Prediksi Akhir</span>
+                          <Badge className={`mt-1 ${CATEGORY_COLOR[summary.majority_vote.hasil] || "bg-gray-200 text-gray-900"}`}>
+                            {summary.majority_vote.hasil}
+                          </Badge>
+                        </div>
+                        <div>
+                          <span className="text-xs text-gray-400 block">Confidence</span>
+                          <span className="font-bold text-gray-800">{summary.majority_vote.confidence?.toFixed(2)}%</span>
+                        </div>
+                        {summary.majority_vote.label_asli && summary.majority_vote.label_asli !== "-" && (
+                          <div>
+                            <span className="text-xs text-gray-400 block">Status</span>
+                            {summary.majority_vote.benar
+                              ? <span className="flex items-center gap-1 text-green-700 font-semibold text-xs"><CheckCircle2 className="w-3.5 h-3.5" />Benar</span>
+                              : <span className="flex items-center gap-1 text-red-600 font-semibold text-xs"><XCircle className="w-3.5 h-3.5" />Salah</span>}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  ) : (
+                    <p className="text-xs text-gray-400 italic">Data majority vote belum tersedia.</p>
+                  )}
                 </div>
-              </div>
-            )}
-
-            {/* Pipeline Steps */}
-            {hasPipeline && pipelineSource && (
-              <div className="space-y-4">
-                <h3 className="text-sm font-semibold text-gray-700">Tahapan Preprocessing:</h3>
-
-                {/* 1. Teks Asli */}
-                <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
-                  <p className="text-xs font-semibold text-gray-600 mb-1">1. Teks Asli</p>
-                  <p className="text-sm text-gray-800">{pipelineSource.deskripsi}</p>
-                </div>
-
-                {/* 2. Cleaning */}
-                {pipelineSource.cleaned && (
-                  <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
-                    <p className="text-xs font-semibold text-gray-600 mb-1">2. Cleaning (hapus karakter khusus & URL)</p>
-                    <p className="text-sm text-gray-800">{pipelineSource.cleaned}</p>
-                  </div>
-                )}
-
-                {/* 3. Case Folding */}
-                {pipelineSource.casefolded && (
-                  <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
-                    <p className="text-xs font-semibold text-gray-600 mb-1">3. Case Folding (huruf kecil semua)</p>
-                    <p className="text-sm text-gray-800">{pipelineSource.casefolded}</p>
-                  </div>
-                )}
-
-                {/* 4. Tokenizing */}
-                {pipelineSource.tokenized && (
-                  <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
-                    <p className="text-xs font-semibold text-gray-600 mb-1">4. Tokenizing (pecah kata)</p>
-                    <div className="flex flex-wrap gap-2 mt-2">
-                      {Array.isArray(pipelineSource.tokenized) ? (
-                        pipelineSource.tokenized.map((token, i) => (
-                          <span key={i} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded font-mono">
-                            {token}
-                          </span>
-                        ))
-                      ) : (
-                        <p className="text-sm text-gray-800">{pipelineSource.tokenized}</p>
-                      )}
-                    </div>
-                  </div>
-                )}
-
-                {/* 5. Normalization */}
-                {pipelineSource.normalized && (
-                  <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
-                    <p className="text-xs font-semibold text-gray-600 mb-1">5. Normalization (kata baku)</p>
-                    <div className="flex flex-wrap gap-2 mt-2">
-                      {Array.isArray(pipelineSource.normalized) ? (
-                        pipelineSource.normalized.map((token, i) => (
-                          <span key={i} className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded font-mono">
-                            {token}
-                          </span>
-                        ))
-                      ) : (
-                        <p className="text-sm text-gray-800">{pipelineSource.normalized}</p>
-                      )}
-                    </div>
-                  </div>
-                )}
-
-                {/* 6. Stopword Removal */}
-                {pipelineSource.stop_removed && (
-                  <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
-                    <p className="text-xs font-semibold text-gray-600 mb-1">6. Stopword Removal (hapus kata umum)</p>
-                    <div className="flex flex-wrap gap-2 mt-2">
-                      {Array.isArray(pipelineSource.stop_removed) ? (
-                        pipelineSource.stop_removed.map((token, i) => (
-                          <span key={i} className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded font-mono">
-                            {token}
-                          </span>
-                        ))
-                      ) : (
-                        <p className="text-sm text-gray-800">{pipelineSource.stop_removed}</p>
-                      )}
-                    </div>
-                  </div>
-                )}
-
-                {/* 7. Stemming */}
-                {pipelineSource.stemmed && (
-                  <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
-                    <p className="text-xs font-semibold text-gray-600 mb-1">7. Stemming (bentuk dasar kata)</p>
-                    <div className="flex flex-wrap gap-2 mt-2">
-                      {Array.isArray(pipelineSource.stemmed) ? (
-                        pipelineSource.stemmed.map((token, i) => (
-                          <span key={i} className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded font-mono">
-                            {token}
-                          </span>
-                        ))
-                      ) : (
-                        <p className="text-sm text-gray-800">{pipelineSource.stemmed}</p>
-                      )}
-                    </div>
-                  </div>
-                )}
-              </div>
-            )}
-
-            {!hasPipeline && (
-              <div className="p-3 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-700">
-                ℹ️ Detail tahapan preprocessing tidak tersedia untuk data ini. Hanya teks hasil akhir yang ditampilkan di atas.
               </div>
             )}
           </div>
+
         </main>
       </div>
     </div>

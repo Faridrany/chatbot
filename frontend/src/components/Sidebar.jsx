@@ -8,7 +8,6 @@ import {
 } from "lucide-react";
 
 const EKSTRASI_SUBS = [
-  { icon: PieChart,          label: "Statistik Keseluruhan TF-IDF", path: "/ekstraksi/statistik" },
   { icon: Hash,              label: "Term & Tokenisasi",             path: "/ekstraksi/term-tokenisasi" },
   { icon: SlidersHorizontal, label: "Filtering (Min DF & Max DF)",       path: "/ekstraksi/filtering" },
   { icon: Star,              label: "Seleksi Fitur & Metode",            path: "/ekstraksi/seleksi-fitur" },

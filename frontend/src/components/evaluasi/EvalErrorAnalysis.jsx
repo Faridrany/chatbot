@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Sidebar from "../Sidebar";
 import Header from "../Header";
-import { AlertCircle, Info, XCircle, Lightbulb, TrendingUp } from "lucide-react";
+import { AlertCircle, Info, XCircle, Lightbulb, TrendingUp, ExternalLink } from "lucide-react";
 import { Badge } from "../ui/badge";
 
 const CATEGORY_COLORS = {
@@ -23,14 +24,21 @@ const MISCLASS_EXAMPLES = [
 ];
 
 export default function EvalErrorAnalysis({ onLogout }) {
-  const [data, setData]     = useState(null);
-  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+  const [data, setData]           = useState(null);
+  const [loading, setLoading]     = useState(true);
+  const [errorItems, setErrorItems] = useState([]);
 
   useEffect(() => {
     fetch("/api/evaluasi")
       .then((r) => r.json())
       .then((d) => { setData(d); setLoading(false); })
       .catch(() => setLoading(false));
+    // Ambil data salah dari cross-validation (konsisten salah di ≥3 fold)
+    fetch("/api/cv/konsisten-salah")
+      .then((r) => r.ok ? r.json() : [])
+      .then((items) => setErrorItems(items))
+      .catch(() => {});
   }, []);
 
   const perClass = data?.perClass ?? {};
@@ -138,29 +146,46 @@ export default function EvalErrorAnalysis({ onLogout }) {
                   Berikut adalah contoh data test yang salah diklasifikasi. Analisis ini membantu memahami pola kesalahan dan overlap semantik.
                 </p>
                 <div className="space-y-3">
-                  {MISCLASS_EXAMPLES.map((ex, idx) => (
+                  {/* Data real dari CV jika ada, fallback ke mock */}
+                  {(errorItems.length > 0 ? errorItems : MISCLASS_EXAMPLES.map((ex, i) => ({
+                    kode_pengaduan: null, label_asli: ex.true, prediksi_dominan: ex.pred,
+                    deskripsi: ex.text, nama: ex.id, reason: ex.reason,
+                  }))).map((ex, idx) => {
+                    const isReal = !!ex.kode_pengaduan;
+                    const navIdx = isReal ? parseInt(ex.kode_pengaduan?.replace("PGD-", "") ?? "1") - 1 : null;
+                    return (
                     <div key={idx} className="p-4 bg-red-50 border border-red-200 rounded-xl">
                       <div className="flex items-start justify-between mb-2">
                         <div className="flex items-center gap-2">
-                          <Badge variant="outline" className="text-xs text-gray-600">{ex.id}</Badge>
+                          {isReal
+                            ? <Badge variant="outline" className="text-xs font-mono text-gray-600">{ex.kode_pengaduan}</Badge>
+                            : <Badge variant="outline" className="text-xs text-gray-600">{ex.nama}</Badge>}
                           <XCircle className="w-4 h-4 text-red-500" />
                         </div>
                         <div className="flex items-center gap-2">
-                          <Badge className="text-xs" style={{ backgroundColor: CATEGORY_COLORS[ex.true], color:"white" }}>
-                            True: {ex.true}
+                          <Badge className="text-xs" style={{ backgroundColor: CATEGORY_COLORS[ex.label_asli], color:"white" }}>
+                            True: {ex.label_asli}
                           </Badge>
                           <span className="text-gray-400">→</span>
-                          <Badge className="text-xs" style={{ backgroundColor: CATEGORY_COLORS[ex.pred], color:"white" }}>
-                            Pred: {ex.pred}
+                          <Badge className="text-xs" style={{ backgroundColor: CATEGORY_COLORS[ex.prediksi_dominan], color:"white" }}>
+                            Pred: {ex.prediksi_dominan}
                           </Badge>
+                          {isReal && navIdx !== null && (
+                            <button onClick={() => navigate(`/detail-pengaduan/${navIdx}`)}
+                              className="flex items-center gap-1 text-xs text-blue-600 hover:text-blue-800 font-semibold ml-2 transition-colors">
+                              <ExternalLink className="w-3 h-3" />Detail
+                            </button>
+                          )}
                         </div>
                       </div>
-                      <p className="text-sm text-gray-700 mb-2 italic">"{ex.text}"</p>
-                      <p className="text-xs text-red-700">
-                        <strong>Alasan:</strong> {ex.reason}
-                      </p>
+                      <p className="text-sm text-gray-700 mb-1 italic">"{ex.deskripsi?.substring(0, 100)}{ex.deskripsi?.length > 100 ? '…' : ''}"</p>
+                      {ex.reason && <p className="text-xs text-red-700"><strong>Alasan:</strong> {ex.reason}</p>}
+                      {isReal && (
+                        <p className="text-xs text-gray-400 mt-1">Salah di fold: {(ex.salah_di_fold ?? []).join(", ")}</p>
+                      )}
                     </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
 

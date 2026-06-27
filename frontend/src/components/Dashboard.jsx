@@ -34,31 +34,29 @@ export default function Dashboard({ onLogout }) {
   useEffect(() => {
     fetch("/api/stats")
       .then((r) => r.json())
-      .then((s) => {
-        setStats(s);
-        setLoading(false);
-      })
+      .then((s) => { setStats(s); setLoading(false); })
       .catch(() => setLoading(false));
   }, []);
 
   const categoryData = stats
     ? Object.entries(stats.kategori).map(([name, value]) => ({
-        name: CAT_LABEL[name] ?? name.charAt(0) + name.slice(1).toLowerCase(),
+        name    : CAT_LABEL[name] ?? name,
         value,
-        color: CATEGORY_COLORS[name] || "#ccc",
+        persen  : stats.total ? ((value / stats.total) * 100).toFixed(1) : 0,
+        color   : CATEGORY_COLORS[name] || "#ccc",
       }))
     : [];
 
-  const weeklyData = stats ? stats.weeklyData.map((jumlah, i) => ({ week: `Minggu ${i + 1}`, jumlah })) : [];
+  // Weekly dari timestamp — stats.weeklyData sudah dihitung server dari timestamp nyata
+  const weeklyData = stats
+    ? stats.weeklyData.map((jumlah, i) => ({ week: `Minggu ${i + 1}`, jumlah }))
+    : [];
 
   return (
     <div className="flex min-h-screen bg-gray-50">
       <Sidebar onLogout={onLogout} />
-
-      {/* Main content with left margin for fixed sidebar */}
       <div className="flex-1 ml-64">
         <Header />
-
         <main className="p-8 space-y-8">
           {loading ? (
             <p className="text-gray-500">Memuat data...</p>
@@ -68,19 +66,14 @@ export default function Dashboard({ onLogout }) {
               <div>
                 <h2 className="text-lg font-bold text-gray-700 mb-3">Ringkasan Pengaduan</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                  <InfoCard label="Total Pengaduan" value={stats?.total ?? "-"} sub="Semua data terdaftar" accent="#2E7D32" />
                   <InfoCard
-                    label="Baru 3 Hari Terakhir"
-                    value={stats?.baru3Hari ?? "-"}
-                    sub="Berdasarkan timestamp"
-                    accent="#4CAF50"
+                    label="Total Pengaduan"
+                    value={(stats?.total ?? 0).toLocaleString()}
+                    sub={`${stats?.totalDataLatih ?? 0} data latih + ${(stats?.total ?? 0) - (stats?.totalDataLatih ?? 0)} pengaduan baru`}
+                    accent="#2E7D32"
                   />
-                  <InfoCard
-                    label="Baru 7 Hari Terakhir"
-                    value={stats?.baru7Hari ?? "-"}
-                    sub="Berdasarkan timestamp"
-                    accent="#81C784"
-                  />
+                  <InfoCard label="Baru 3 Hari Terakhir" value={stats?.baru3Hari ?? "-"} sub="Berdasarkan timestamp" accent="#4CAF50" />
+                  <InfoCard label="Baru 7 Hari Terakhir" value={stats?.baru7Hari ?? "-"} sub="Berdasarkan timestamp" accent="#81C784" />
                   <InfoCard
                     label="Kategori Terbanyak"
                     value={stats?.kategoriTerbanyak ? (CAT_LABEL[stats.kategoriTerbanyak] ?? stats.kategoriTerbanyak) : "-"}
@@ -91,29 +84,47 @@ export default function Dashboard({ onLogout }) {
                 </div>
               </div>
 
+              {/* ── Card data latih & uji ── */}
+              <div>
+                <h2 className="text-lg font-bold text-gray-700 mb-3">Detail Data Training Model</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <InfoCard label="Data Latih (Training)" value={(stats?.data_train ?? 0).toLocaleString()} sub="80% dari total data berlabel" accent="#1976D2" />
+                  <InfoCard label="Data Uji (Testing)" value={(stats?.data_test ?? 0).toLocaleString()} sub="20% dari total data berlabel" accent="#F57C00" />
+                  <InfoCard label="Total Data Berlabel" value={(stats?.totalDataLatih ?? 0).toLocaleString()} sub="Dataset untuk training model" accent="#388E3C" />
+                </div>
+              </div>
+
               {/* ── Charts ── */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {/* Distribusi kategori dengan persentase */}
                 <div className="bg-white p-6 rounded-2xl shadow">
-                  <h3 className="font-semibold mb-4 text-gray-800">Distribusi Kategori</h3>
-                  <ResponsiveContainer width="100%" height={280}>
+                  <h3 className="font-semibold mb-1 text-gray-800">Distribusi Kategori</h3>
+                  <p className="text-xs text-gray-400 mb-4">Persentase tiap kategori dari seluruh data pengaduan</p>
+                  <ResponsiveContainer width="100%" height={240}>
                     <PieChart>
-                      <Pie
-                        data={categoryData}
-                        dataKey="value"
-                        nameKey="name"
-                        label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-                      >
-                        {categoryData.map((entry, i) => (
-                          <Cell key={i} fill={entry.color} />
-                        ))}
+                      <Pie data={categoryData} dataKey="value" nameKey="name"
+                        label={({ name, persen }) => `${name} ${persen}%`} labelLine={false}>
+                        {categoryData.map((entry, i) => <Cell key={i} fill={entry.color} />)}
                       </Pie>
-                      <Tooltip />
+                      <Tooltip formatter={(val, name) => [val, name]} />
                     </PieChart>
                   </ResponsiveContainer>
+                  {/* Legenda manual dengan persentase */}
+                  <div className="grid grid-cols-2 gap-2 mt-3">
+                    {categoryData.map((d) => (
+                      <div key={d.name} className="flex items-center gap-2 text-xs">
+                        <span className="w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: d.color }} />
+                        <span className="text-gray-600">{d.name}</span>
+                        <span className="font-bold text-gray-800 ml-auto">{d.persen}%</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
+                {/* Pengaduan per minggu dari timestamp nyata */}
                 <div className="bg-white p-6 rounded-2xl shadow">
-                  <h3 className="font-semibold mb-4 text-gray-800">Pengaduan per Minggu (4 Minggu Terakhir)</h3>
+                  <h3 className="font-semibold mb-1 text-gray-800">Pengaduan per Minggu</h3>
+                  <p className="text-xs text-gray-400 mb-4">4 minggu terakhir berdasarkan timestamp database</p>
                   <ResponsiveContainer width="100%" height={280}>
                     <BarChart data={weeklyData}>
                       <CartesianGrid strokeDasharray="3 3" />

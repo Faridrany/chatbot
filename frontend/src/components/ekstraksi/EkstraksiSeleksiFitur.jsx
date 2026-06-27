@@ -46,6 +46,7 @@ export default function EkstraksiSeleksiFitur({ onLogout }) {
       page: p,
       limit: LIMIT,
       status: "terpilih",
+      sort: "df_desc",   // urutkan dari chi2 tertinggi agar halaman 1 = nilai max
       ...(search && { search }),
     });
     fetch(`/api/tfidf?${params}`)
@@ -55,8 +56,11 @@ export default function EkstraksiSeleksiFitur({ onLogout }) {
         setItems(res.items ?? []);
         setTotal(res.total ?? 0);
         setTotalPages(res.totalPages ?? 1);
-        const chi2Max = Math.max(...(res.items ?? []).map((t) => t.chi2_score), 1);
-        setMaxChi2(chi2Max);
+        // Ambil max chi2 dari halaman 1 (sudah diurutkan descending)
+        if (p === 1 && !search) {
+          const chi2Max = Math.max(...(res.items ?? []).map((t) => t.chi2_score), 1);
+          setMaxChi2(chi2Max);
+        }
         setLoading(false);
       })
       .catch(() => setLoading(false));

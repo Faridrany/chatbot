@@ -91,7 +91,7 @@ export default function EkstraksiTermTokenisasi({ onLogout }) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
               {[
                 { step: "1", title: "Teks Masuk", desc: "Teks sudah melalui preprocessing (cleaning, casefolding, normalisasi, stopword removal, stemming).", color: "#2E7D32" },
-                { step: "2", title: "Tokenisasi", desc: "Sklearn TfidfVectorizer memecah teks menjadi token 1-kata (unigram) dan 2-kata (bigram) sesuai n-gram range (1,2).", color: "#4CAF50" },
+                { step: "2", title: "Tokenisasi", desc: "Sklearn TfidfVectorizer memecah teks menjadi token 1-kata (unigram) sesuai n-gram range (1,1).", color: "#4CAF50" },
                 { step: "3", title: "Pembobotan", desc: "Setiap token diberi bobot TF-IDF. TF = frekuensi dalam dokumen, IDF = log(N/df+1). Nilai akhir = TF × IDF.", color: "#81C784" },
               ].map((item) => (
                 <div key={item.step} className="p-4 rounded-xl border-l-4 bg-gray-50" style={{ borderColor: item.color }}>
@@ -106,6 +106,34 @@ export default function EkstraksiTermTokenisasi({ onLogout }) {
               ))}
             </div>
           </div>
+
+          {/* Card: Informasi term dari tokenisasi mentah */}
+          {!loading && items.length > 0 && (
+            <div className="bg-white rounded-2xl shadow p-6">
+              <h2 className="font-bold text-gray-800 mb-3 flex items-center gap-2">
+                <Hash className="w-4 h-4 text-green-700" />
+                Informasi Term dari Tokenisasi Mentah
+              </h2>
+              <p className="text-xs text-gray-500 mb-4">
+                Data term di bawah berasal dari hasil tokenisasi teks setelah preprocessing (sebelum filtering dan seleksi fitur).
+                Ini adalah semua kata unik yang muncul di seluruh corpus sebelum disaring oleh min_df/max_df.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {[
+                  { label: "Total Term Unik (Vocab)", value: (total).toLocaleString(), sub: "Sebelum filtering", color: "#2E7D32" },
+                  { label: "Term Lolos Filter", value: (items.filter ? total : 0).toLocaleString(), sub: "Setelah min/max DF", color: "#1976D2" },
+                  { label: "Unigram", value: items.filter((t) => t.ngram === "unigram").length.toLocaleString() + (total > items.length ? "+" : ""), sub: "Kata tunggal", color: "#388E3C" },
+                  { label: "Bigram", value: items.filter((t) => t.ngram === "bigram").length.toLocaleString() + (total > items.length ? "+" : ""), sub: "Pasangan kata", color: "#F57C00" },
+                ].map((s) => (
+                  <div key={s.label} className="bg-gray-50 rounded-xl border-l-4 p-3" style={{ borderColor: s.color }}>
+                    <p className="text-xs text-gray-500 mb-0.5">{s.label}</p>
+                    <p className="text-xl font-bold text-gray-800">{s.value}</p>
+                    <p className="text-xs text-gray-400">{s.sub}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Tabel Term */}
           <div className="bg-white rounded-2xl shadow-lg border p-6">

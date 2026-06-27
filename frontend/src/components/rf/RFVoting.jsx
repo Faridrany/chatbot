@@ -1,4 +1,5 @@
 import { useEffect, useState, useCallback, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import Sidebar from "../Sidebar";
 import Header from "../Header";
 import {
@@ -43,7 +44,7 @@ function FallbackNotice() {
 }
 
 // ── Tabel utama daftar pengaduan ──────────────────────────────────────────────
-function PengaduanTable({ onOpenDetail }) {
+function PengaduanTable({ onOpenDetail, highlightKode }) {
   const [data, setData]     = useState(null);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
@@ -51,6 +52,7 @@ function PengaduanTable({ onOpenDetail }) {
   const [filterKat, setFilterKat]     = useState("SEMUA");
   const [page, setPage]     = useState(1);
   const LIMIT = 20;
+  const rowRefs = useRef({});
 
   const fetchData = useCallback(() => {
     setLoading(true);
@@ -63,6 +65,19 @@ function PengaduanTable({ onOpenDetail }) {
 
   useEffect(() => { fetchData(); }, [fetchData]);
   useEffect(() => { setPage(1); }, [search, filterBenar, filterKat]);
+
+  // Scroll + buka modal saat ?highlight= ada
+  useEffect(() => {
+    if (!highlightKode || loading || !data?.items?.length) return;
+    const found = data.items.find((it) => it.kode_pengaduan === highlightKode);
+    if (found) {
+      setTimeout(() => {
+        const el = rowRefs.current[highlightKode];
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+        onOpenDetail(highlightKode);
+      }, 200);
+    }
+  }, [highlightKode, data, loading, onOpenDetail]);
 
   return (
     <div className="bg-white rounded-2xl shadow-lg border p-6 space-y-4">
@@ -107,9 +122,20 @@ function PengaduanTable({ onOpenDetail }) {
           <tbody>
             {!data?.items?.length ? (
               <tr><td colSpan={7} className="p-8 text-center text-gray-400">{loading ? "Memuat..." : "Tidak ada data yang cocok"}</td></tr>
-            ) : data.items.map((d, i) => (
-              <tr key={d.kode_pengaduan} className={`border-t transition-colors ${i % 2 === 0 ? "bg-white hover:bg-gray-50" : "bg-gray-50 hover:bg-green-50"}`}>
-                <td className="p-3 font-mono text-xs text-gray-600 whitespace-nowrap">{d.kode_pengaduan}</td>
+            ) : data.items.map((d, i) => {
+              const isHighlight = highlightKode === d.kode_pengaduan;
+              return (
+              <tr
+                key={d.kode_pengaduan}
+                ref={(el) => { if (el) rowRefs.current[d.kode_pengaduan] = el; }}
+                className={`border-t transition-colors ${
+                  isHighlight ? "bg-yellow-50 ring-2 ring-inset ring-yellow-400" :
+                  i % 2 === 0 ? "bg-white hover:bg-gray-50" : "bg-gray-50 hover:bg-green-50"
+                }`}>
+                <td className="p-3 font-mono text-xs text-gray-600 whitespace-nowrap">
+                  {d.kode_pengaduan}
+                  {isHighlight && <span className="ml-1.5 bg-yellow-400 text-yellow-900 text-[10px] px-1.5 py-0.5 rounded-full font-bold">↩ Dari Detail</span>}
+                </td>
                 <td className="p-3 max-w-xs">
                   <p className="text-xs font-semibold text-gray-700">{d.nama}</p>
                   <p className="text-xs text-gray-500 mt-0.5 truncate" title={d.deskripsi}>{d.deskripsi?.substring(0, 60)}…</p>
@@ -145,7 +171,8 @@ function PengaduanTable({ onOpenDetail }) {
                   </button>
                 </td>
               </tr>
-            ))}
+              );
+            })}
           </tbody>
         </table>
       </div>
@@ -404,7 +431,10 @@ function VoteDetailModal({ kode, onClose }) {
 
 // ── Komponen utama ────────────────────────────────────────────────────────────
 export default function RFVoting({ onLogout }) {
-  const [hasData, setHasData]       = useState(null);  // null=loading, true/false
+  const location = useLocation();
+  const highlightKode = new URLSearchParams(location.search).get("highlight") ?? null;
+
+  const [hasData, setHasData]       = useState(null);
   const [detailKode, setDetailKode] = useState(null);
 
   useEffect(() => {
@@ -413,7 +443,7 @@ export default function RFVoting({ onLogout }) {
       .catch(() => setHasData(false));
   }, []);
 
-  const handleOpenDetail = useCallback((kode) => setDetailKode(kode), []);
+  const handleOpenDetail  = useCallback((kode) => setDetailKode(kode), []);
   const handleCloseDetail = useCallback(() => setDetailKode(null), []);
 
   return (
@@ -443,7 +473,7 @@ export default function RFVoting({ onLogout }) {
 
           {hasData === null && <div className="flex items-center gap-2 text-gray-400 py-12 justify-center"><RefreshCw className="w-5 h-5 animate-spin" />Memuat...</div>}
           {hasData === false && <FallbackNotice />}
-          {hasData === true && <PengaduanTable onOpenDetail={handleOpenDetail} />}
+          {hasData === true && <PengaduanTable onOpenDetail={handleOpenDetail} highlightKode={highlightKode} />}
 
           {/* Penjelasan konsep */}
           <div className="bg-white rounded-2xl shadow p-6">

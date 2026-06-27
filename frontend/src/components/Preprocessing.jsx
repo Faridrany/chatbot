@@ -1,4 +1,5 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 import PreprocessingDetailCard from "./PreprocessingDetailCard";
@@ -41,6 +42,10 @@ function CatBadge({ val }) {
 const LIMIT = 20;
 
 export default function Preprocessing({ onLogout }) {
+  const location = useLocation();
+  const highlightKode = new URLSearchParams(location.search).get("highlight") ?? null;
+  const rowRefs = useRef({});  // kode_pengaduan → DOM ref
+
   const [items, setItems]         = useState([]);
   const [total, setTotal]         = useState(0);
   const [totalPages, setTotalPages] = useState(1);
@@ -68,6 +73,21 @@ export default function Preprocessing({ onLogout }) {
   }, [page, search, filterKat]);
 
   useEffect(() => { fetchData(); }, [fetchData]);
+
+  // Scroll & buka detail saat halaman dibuka via ?highlight=
+  useEffect(() => {
+    if (!highlightKode || loading || !items.length) return;
+    const found = items.find((it) => it.kode_pengaduan === highlightKode);
+    if (found) {
+      // Otomatis buka detail panel
+      setSelectedKode(highlightKode);
+      // Scroll ke baris setelah render
+      setTimeout(() => {
+        const el = rowRefs.current[highlightKode];
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 200);
+    }
+  }, [highlightKode, items, loading]);
 
   useEffect(() => {
     const t = setTimeout(() => { setSearch(searchInput); setPage(1); }, 400);
@@ -205,10 +225,21 @@ export default function Preprocessing({ onLogout }) {
                   {!items.length ? (
                     <tr><td colSpan={5} className="p-8 text-center text-gray-400">{loading ? "Memuat..." : "Tidak ada data"}</td></tr>
                   ) : items.map((item, i) => {
-                    const isSelected = selectedKode === item.kode_pengaduan;
+                    const isSelected  = selectedKode === item.kode_pengaduan;
+                    const isHighlight = highlightKode === item.kode_pengaduan;
                     return (
-                      <tr key={item.kode_pengaduan} className={`border-t transition-colors ${isSelected ? "bg-green-50 ring-2 ring-inset ring-green-400" : i % 2 === 0 ? "bg-white hover:bg-gray-50" : "bg-gray-50 hover:bg-green-50"}`}>
-                        <td className="p-3 font-mono text-xs text-gray-600 whitespace-nowrap">{item.kode_pengaduan}</td>
+                      <tr
+                        key={item.kode_pengaduan}
+                        ref={(el) => { if (el) rowRefs.current[item.kode_pengaduan] = el; }}
+                        className={`border-t transition-colors ${
+                          isHighlight ? "bg-yellow-50 ring-2 ring-inset ring-yellow-400" :
+                          isSelected  ? "bg-green-50 ring-2 ring-inset ring-green-400" :
+                          i % 2 === 0 ? "bg-white hover:bg-gray-50" : "bg-gray-50 hover:bg-green-50"
+                        }`}>
+                        <td className="p-3 font-mono text-xs text-gray-600 whitespace-nowrap">
+                          {item.kode_pengaduan}
+                          {isHighlight && <span className="ml-1.5 bg-yellow-400 text-yellow-900 text-[10px] px-1.5 py-0.5 rounded-full font-bold">↩ Dari Detail</span>}
+                        </td>
                         <td className="p-3 text-xs text-gray-700 whitespace-nowrap">{item.nama}</td>
                         <td className="p-3 text-xs text-gray-600 max-w-xs">
                           <span title={item.deskripsi}>{item.deskripsi?.substring(0, 70)}{item.deskripsi?.length > 70 ? "…" : ""}</span>

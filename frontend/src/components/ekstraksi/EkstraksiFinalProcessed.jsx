@@ -1,4 +1,5 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import Sidebar from "../Sidebar";
 import Header from "../Header";
 import { CheckCircle2, Info, Search, ChevronLeft, ChevronRight, Eye, Hash } from "lucide-react";
@@ -22,6 +23,10 @@ function TermFrequencyBar({ term, count, maxCount }) {
 }
 
 export default function EkstraksiFinalProcessed({ onLogout }) {
+  const location = useLocation();
+  const highlightKode = new URLSearchParams(location.search).get("highlight") ?? null;
+  const rowRefs = useRef({});
+
   const [items, setItems] = useState([]);
   const [total, setTotal] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
@@ -70,6 +75,19 @@ export default function EkstraksiFinalProcessed({ onLogout }) {
     const t = setTimeout(() => { setSearchTerm(searchInput); setPage(1); }, 400);
     return () => clearTimeout(t);
   }, [searchInput]);
+
+  // Scroll & expand saat ?highlight= ada
+  useEffect(() => {
+    if (!highlightKode || loading || !items.length) return;
+    const found = items.find((it) => it.kode_pengaduan === highlightKode);
+    if (found) {
+      setExpandedId(found._id);
+      setTimeout(() => {
+        const el = rowRefs.current[highlightKode];
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 200);
+    }
+  }, [highlightKode, items, loading]);
 
   const handleKategori = (v) => { setFilterKategori(v); setPage(1); };
 
@@ -215,16 +233,23 @@ export default function EkstraksiFinalProcessed({ onLogout }) {
                     const termList = Object.entries(termFreq).sort((a, b) => b[1] - a[1]);
                     const maxFreq = termList.length > 0 ? termList[0][1] : 1;
                     const isExpanded = expandedId === item._id;
+                    const isHighlight = highlightKode === item.kode_pengaduan;
                     const rank = (page - 1) * LIMIT + idx + 1;
 
                     return (
-                      <div key={item._id} className="border rounded-xl p-5 hover:shadow-md transition-shadow bg-white">
+                      <div
+                        key={item._id}
+                        ref={(el) => { if (el) rowRefs.current[item.kode_pengaduan] = el; }}
+                        className={`border rounded-xl p-5 hover:shadow-md transition-shadow ${
+                          isHighlight ? "border-yellow-400 bg-yellow-50 shadow-md ring-2 ring-yellow-300" : "bg-white"
+                        }`}>
                         {/* Header */}
                         <div className="flex items-start justify-between mb-3">
                           <div className="flex-1">
                             <div className="flex items-center gap-2 mb-1">
                               <span className="text-xs font-bold text-gray-500">#{rank}</span>
                               <span className="font-semibold text-gray-800">{item.nama}</span>
+                              {isHighlight && <span className="bg-yellow-400 text-yellow-900 text-[10px] px-1.5 py-0.5 rounded-full font-bold">↩ Dari Detail</span>}
                               <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
                                 item.kategori_prediksi === "KEAMANAN" ? "bg-red-100 text-red-700" :
                                 item.kategori_prediksi === "INFRASTRUKTUR" ? "bg-blue-100 text-blue-700" :
@@ -365,9 +390,13 @@ export default function EkstraksiFinalProcessed({ onLogout }) {
                                     <Hash className="w-4 h-4 text-blue-600" />
                                     <h3 className="font-semibold text-gray-800">Term Frequency Lokal (sebelum IDF)</h3>
                                   </div>
-                                  <div className="space-y-2 max-h-48 overflow-y-auto pr-1">
+                                  <div className="flex flex-wrap gap-2 max-h-48 overflow-y-auto pr-1">
                                     {termList.map(([term, count]) => (
-                                      <TermFrequencyBar key={term} term={term} count={count} maxCount={maxFreq} />
+                                      <span key={term} className="inline-flex items-center gap-1.5 px-2 py-1 bg-gray-50 border border-gray-200 rounded-lg text-xs">
+                                        <span className="font-mono text-gray-700">{term}</span>
+                                        <span className="text-gray-400">·</span>
+                                        <span className="font-semibold text-blue-700">muncul {count}x</span>
+                                      </span>
                                     ))}
                                   </div>
                                 </div>

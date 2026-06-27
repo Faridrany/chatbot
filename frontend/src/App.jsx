@@ -5,6 +5,7 @@ import QRCode from "./components/QRCode";
 import Dashboard from "./components/Dashboard";
 import DataPengaduan from "./components/DataPengaduan";
 import DetailPengaduan from "./components/DetailPengaduan";
+import DetailPengaduanBaru from "./components/DetailPengaduanBaru";
 import Preprocessing from "./components/Preprocessing";
 import Statistik from "./components/Statistik";
 import Klasifikasi from "./components/Klasifikasi";
@@ -44,6 +45,7 @@ function App() {
         <Route path="/dashboard" element={auth(<Dashboard onLogout={handleLogout} />)} />
         <Route path="/data-pengaduan" element={auth(<DataPengaduan onLogout={handleLogout} />)} />
         <Route path="/detail-pengaduan/:id" element={auth(<DetailPengaduan onLogout={handleLogout} />)} />
+        <Route path="/detail-pengaduan-baru/:idx" element={auth(<DetailPengaduanBaru onLogout={handleLogout} />)} />
         <Route path="/preprocessing" element={auth(<Preprocessing onLogout={handleLogout} />)} />
         <Route path="/statistik" element={auth(<Statistik onLogout={handleLogout} />)} />
         <Route path="/klasifikasi" element={auth(<Klasifikasi onLogout={handleLogout} />)} />

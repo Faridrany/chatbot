@@ -207,9 +207,13 @@ app.get("/api/evaluasi", async (_req, res) => {
 
 // Stats dashboard — sumber: final_processed.json
 app.get("/api/stats", (_req, res) => {
+  const training = cache.training ?? {};
   res.json({
     ...cache.stats,
-    totalDataLatih: cache.statsTraining?.totalDataLatih ?? 0,
+    totalDataLatih  : cache.statsTraining?.totalDataLatih ?? 0,
+    data_train      : training.data_train ?? 0,
+    data_test       : training.data_test  ?? 0,
+    distribusiLatih : cache.statsTraining?.distribusiLatih ?? {},
   });
 });
 
@@ -434,6 +438,38 @@ app.get("/api/pengaduan/:id/processed", async (req, res) => {
   });
 });
 
+// Dataset berlabel dengan paginasi + filter
+app.get("/api/dataset-latih", async (req, res) => {
+  try {
+    const raw  = await fs.readFile(path.join(DATA_DIR, "raw/dataset_berlabel.json"), "utf-8");
+    let data   = JSON.parse(raw);
+    const page     = Math.max(1, parseInt(req.query.page     ?? "1",  10));
+    const limit    = Math.min(100, Math.max(1, parseInt(req.query.limit ?? "10", 10)));
+    const search   = (req.query.search   ?? "").toLowerCase().trim();
+    const kategori = (req.query.kategori ?? "").toUpperCase().trim();
+
+    let items = data.map((item, i) => ({
+      _id              : i,
+      kode_pengaduan   : item.kode_pengaduan ?? `PGD-${String(i + 1).padStart(4, "0")}`,
+      nama             : item.nama ?? "",
+      no_wa            : (item.no_wa ?? "").replace("@c.us", ""),
+      deskripsi        : item.deskripsi ?? "",
+      kategori_prediksi: item.Kategori || item.kategori || "-",
+      label_asli       : item.Kategori || item.kategori || "-",
+      timestamp        : item.timestamp ?? "-",
+    }));
+
+    if (search)   items = items.filter((i) => i.deskripsi.toLowerCase().includes(search) || i.nama.toLowerCase().includes(search));
+    if (kategori && kategori !== "SEMUA") items = items.filter((i) => i.kategori_prediksi === kategori);
+
+    const total      = items.length;
+    const totalPages = Math.max(1, Math.ceil(total / limit));
+    res.json({ items: items.slice((page - 1) * limit, page * limit), total, page, totalPages, limit });
+  } catch {
+    res.json({ items: [], total: 0, page: 1, totalPages: 1, limit: 10 });
+  }
+});
+
 // Dataset berlabel
 app.get("/api/dataset", async (_req, res) => {
   try {
@@ -481,6 +517,90 @@ app.get("/api/statistik", (_req, res) => {
 
 // ─────────────────────────────────────────────
 // KLASIFIKASI — data baru dari WhatsApp chatbot
+// Endpoint khusus pengaduan baru (dari hasil prediksi)
+app.get("/api/pengaduan-baru", async (req, res) => {
+  try {
+    const raw   = await fs.readFile(path.join(DATA_DIR, "predictions/hasil_prediksi.json"), "utf-8").catch(() => "[]");
+    let items   = JSON.parse(raw);
+    const page     = Math.max(1, parseInt(req.query.page     ?? "1",  10));
+    const limit    = Math.min(100, Math.max(1, parseInt(req.query.limit ?? "10", 10)));
+    const search   = (req.query.search   ?? "").toLowerCase().trim();
+    const kategori = (req.query.kategori ?? "").toUpperCase().trim();
+
+    let mapped = items.map((item, i) => ({
+      _id              : i,
+      kode_pengaduan   : item.kode_pengaduan ?? `BARU-${String(i + 1).padStart(4, "0")}`,
+      nama             : item.nama ?? "-",
+      no_wa            : (item.no_wa ?? "").replace("@c.us", ""),
+      deskripsi        : item.deskripsi ?? "-",
+      kategori_prediksi: item.kategori_prediksi ?? "-",
+      confidence       : item.confidence ?? null,
+      timestamp        : item.timestamp ?? "-",
+      status           : item.status ?? "Menunggu",
+      // Tandai sebagai data baru (bukan data latih)
+      is_new           : true,
+    }));
+
+    if (search)   mapped = mapped.filter((i) => i.deskripsi.toLowerCase().includes(search) || i.nama.toLowerCase().includes(search));
+    if (kategori && kategori !== "SEMUA") mapped = mapped.filter((i) => i.kategori_prediksi === kategori);
+
+    const total      = mapped.length;
+    const totalPages = Math.max(1, Math.ceil(total / limit));
+    res.json({ items: mapped.slice((page - 1) * limit, page * limit), total, page, totalPages, limit });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// GET detail pengaduan baru by index (tanpa pipeline)
+app.get("/api/pengaduan-baru/:idx", async (req, res) => {
+  try {
+    const raw  = await fs.readFile(path.join(DATA_DIR, "predictions/hasil_prediksi.json"), "utf-8").catch(() => "[]");
+    const items = JSON.parse(raw);
+    const idx  = parseInt(req.params.idx, 10);
+    if (isNaN(idx) || idx < 0 || idx >= items.length) {
+      return res.status(404).json({ error: "Data tidak ditemukan" });
+    }
+    const item = items[idx];
+    res.json({
+      _id              : idx,
+      kode_pengaduan   : item.kode_pengaduan ?? `-`,
+      nama             : item.nama ?? "-",
+      no_wa            : (item.no_wa ?? "").replace("@c.us", ""),
+      deskripsi        : item.deskripsi ?? "-",
+      kategori_prediksi: item.kategori_prediksi ?? "-",
+      confidence       : item.confidence ?? null,
+      proba_all        : item.proba_all ?? null,
+      timestamp        : item.timestamp ?? "-",
+      status           : item.status ?? "Menunggu",
+      is_new           : true,
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// PATCH status pengaduan baru
+app.patch("/api/pengaduan-baru/:idx/status", async (req, res) => {
+  try {
+    const idx    = parseInt(req.params.idx, 10);
+    const { status } = req.body;
+    const VALID  = ["Menunggu", "Diproses", "Selesai"];
+    if (!VALID.includes(status)) return res.status(400).json({ error: "Status tidak valid" });
+
+    const raw    = await fs.readFile(path.join(DATA_DIR, "predictions/hasil_prediksi.json"), "utf-8").catch(() => "[]");
+    const items  = JSON.parse(raw);
+    if (isNaN(idx) || idx < 0 || idx >= items.length) return res.status(404).json({ error: "Tidak ditemukan" });
+
+    items[idx].status = status;
+    await fs.writeFile(path.join(DATA_DIR, "predictions/hasil_prediksi.json"), JSON.stringify(items, null, 2), "utf-8");
+    res.json({ success: true, status });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
 // ─────────────────────────────────────────────
 
 app.get("/api/data-baru", async (_req, res) => {

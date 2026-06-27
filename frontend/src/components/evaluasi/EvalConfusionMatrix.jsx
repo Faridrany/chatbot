@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Sidebar from "../Sidebar";
 import Header from "../Header";
-import { Grid3x3, Info, CheckCircle2, XCircle } from "lucide-react";
+import { Grid3x3, Info, CheckCircle2, XCircle, ExternalLink } from "lucide-react";
 
 const CATEGORY_COLORS = {
   INFRASTRUKTUR: "#2E7D32",
@@ -11,14 +12,29 @@ const CATEGORY_COLORS = {
 };
 
 export default function EvalConfusionMatrix({ onLogout }) {
+  const navigate = useNavigate();
   const [data, setData]     = useState(null);
   const [loading, setLoading] = useState(true);
+  const [errorData, setErrorData] = useState({});
 
   useEffect(() => {
     fetch("/api/evaluasi")
       .then((r) => r.json())
       .then((d) => { setData(d); setLoading(false); })
       .catch(() => setLoading(false));
+    // Ambil data pengaduan salah klasifikasi dari CV untuk mapping
+    fetch("/api/cv/konsisten-salah")
+      .then((r) => r.ok ? r.json() : [])
+      .then((items) => {
+        const map = {};
+        items.forEach((it) => {
+          const key = `${it.label_asli}→${it.prediksi_dominan}`;
+          if (!map[key]) map[key] = [];
+          map[key].push(it);
+        });
+        setErrorData(map);
+      })
+      .catch(() => {});
   }, []);
 
   const classes = data?.kelas ?? [];
@@ -210,6 +226,8 @@ export default function EvalConfusionMatrix({ onLogout }) {
                   ].map((p, i) => {
                     const count = matrix[p.from]?.[p.to] ?? 0;
                     if (count === 0) return null;
+                    const errorKey  = `${p.from}→${p.to}`;
+                    const examples  = errorData[errorKey] ?? [];
                     return (
                       <div key={i} className="p-4 bg-red-50 border border-red-200 rounded-xl">
                         <div className="flex items-center gap-2 mb-2">
@@ -218,7 +236,30 @@ export default function EvalConfusionMatrix({ onLogout }) {
                           <span className="font-bold" style={{ color: CATEGORY_COLORS[p.to] }}>{p.to}</span>
                           <span className="ml-auto text-xs text-gray-500">{count} kasus</span>
                         </div>
-                        <p className="text-xs text-red-700">{p.reason}</p>
+                        <p className="text-xs text-red-700 mb-2">{p.reason}</p>
+                        {examples.length > 0 && (
+                          <div className="space-y-1">
+                            {examples.slice(0, 3).map((ex) => (
+                              <button key={ex.kode_pengaduan}
+                                onClick={() => {
+                                  const idx = parseInt(ex.kode_pengaduan?.replace("PGD-", "") ?? "1") - 1;
+                                  navigate(`/detail-pengaduan/${idx}`);
+                                }}
+                                className="flex items-center gap-2 w-full text-left text-xs bg-white border border-red-200 rounded-lg px-2.5 py-1.5 hover:border-red-400 hover:bg-red-50 transition-colors group">
+                                <span className="font-mono text-gray-500">{ex.kode_pengaduan}</span>
+                                <span className="text-gray-600 truncate flex-1">{ex.deskripsi?.substring(0, 50)}…</span>
+                                <ExternalLink className="w-3 h-3 text-gray-400 group-hover:text-red-600 flex-shrink-0" />
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                        {examples.length === 0 && (
+                          <button
+                            onClick={() => navigate(`/random-forest/voting?filter_from=${p.from}&filter_to=${p.to}`)}
+                            className="flex items-center gap-1.5 text-xs text-red-600 hover:text-red-800 mt-1 transition-colors">
+                            <ExternalLink className="w-3 h-3" />Lihat contoh di Majority Voting
+                          </button>
+                        )}
                       </div>
                     );
                   })}
