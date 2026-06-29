@@ -87,7 +87,7 @@ export default function EkstraksiSeleksiFitur({ onLogout }) {
             <div>
               <h1 className="text-2xl font-bold text-gray-800">Seleksi Fitur &amp; Metode</h1>
               <p className="text-sm text-gray-500 mt-1">
-                Output SelectKBest dengan metode Chi-squared (χ²) — hanya menampilkan fitur yang terpilih masuk ke model Random Forest.
+                Output SelectPercentile dengan metode Chi-squared (χ²) — hanya menampilkan fitur yang terpilih masuk ke model Random Forest.
               </p>
               <div className="flex items-center gap-2 mt-2 text-xs text-green-700 bg-green-50 border border-green-200 px-3 py-1.5 rounded-lg w-fit">
                 <Info className="w-3.5 h-3.5" />
@@ -99,11 +99,11 @@ export default function EkstraksiSeleksiFitur({ onLogout }) {
 
           {/* Penjelasan Metode */}
           <div className="bg-white rounded-2xl shadow p-6">
-            <SectionLabel>Metode Seleksi: SelectKBest + Chi-squared (χ²)</SectionLabel>
+            <SectionLabel>Metode Seleksi: SelectPercentile + Chi-squared (χ²)</SectionLabel>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
               <div className="space-y-3">
                 <p className="text-gray-600 leading-relaxed">
-                  <strong>SelectKBest</strong> dari scikit-learn memilih <em>k</em> fitur terbaik berdasarkan skor statistik terhadap label kelas.
+                  <strong>SelectPercentile</strong> dari scikit-learn memilih persentase fitur terbaik berdasarkan skor statistik terhadap label kelas (dalam sistem ini dipilih 80% fitur terbaik).
                   Metode scoring yang digunakan adalah <strong>chi-squared (χ²)</strong>.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
@@ -117,12 +117,13 @@ export default function EkstraksiSeleksiFitur({ onLogout }) {
               </div>
               <div className="space-y-2">
                 {[
-                  { label: "Library",              value: "sklearn.feature_selection.SelectKBest" },
+                  { label: "Library",              value: "sklearn.feature_selection.SelectPercentile" },
                   { label: "Fungsi Scoring",       value: "chi2 (chi-squared)" },
-                  { label: "k (jumlah dipilih)",   value: (summary?.fitur_selected ?? "–").toLocaleString() },
+                  { label: "Persentil",            value: "80%" },
+                  { label: "Jumlah Fitur Terpilih", value: (summary?.fitur_selected ?? "–").toLocaleString() },
                   { label: "Total Kandidat (n)",   value: (summary?.fitur_tfidf    ?? "–").toLocaleString() },
                   { label: "Data Fit",             value: `${summary?.data_train ?? "–"} sampel (train set)` },
-                  { label: "Output",               value: "Matriks X berukuran (n_docs × k)" },
+                  { label: "Output",               value: "Matriks X berukuran (n_docs × fitur terpilih)" },
                 ].map((row) => (
                   <div key={row.label} className="flex justify-between py-1.5 border-b last:border-0">
                     <span className="text-gray-500">{row.label}</span>
@@ -242,7 +243,7 @@ export default function EkstraksiSeleksiFitur({ onLogout }) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
               {[
                 { step: "A", title: "Sebelum Seleksi", desc: `Matriks TF-IDF berukuran (n_docs × ${(summary?.fitur_tfidf ?? "–").toLocaleString()}) fitur`, color: "#9E9E9E" },
-                { step: "B", title: "Setelah SelectKBest", desc: `Matriks diciutkan menjadi (n_docs × ${(summary?.fitur_selected ?? "–").toLocaleString()}) fitur terpilih`, color: "#2E7D32" },
+                { step: "B", title: "Setelah SelectPercentile", desc: `Matriks diciutkan menjadi (n_docs × ${(summary?.fitur_selected ?? "–").toLocaleString()}) fitur terpilih`, color: "#2E7D32" },
                 { step: "C", title: "Input Random Forest", desc: `Vektor ${(summary?.fitur_selected ?? "–").toLocaleString()}-dimensi menjadi X_train / X_test untuk 500 pohon keputusan`, color: "#1565C0" },
               ].map((item) => (
                 <div key={item.step} className="p-4 rounded-xl border-l-4 bg-gray-50" style={{ borderColor: item.color }}>

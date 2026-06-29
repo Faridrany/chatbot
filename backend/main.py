@@ -4,6 +4,7 @@ import re
 import sys
 import json
 import joblib
+import numpy as np
 import pandas as pd
 import hashlib
 from datetime import datetime
@@ -11,7 +12,7 @@ from collections import Counter
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.feature_selection import SelectKBest, chi2
+from sklearn.feature_selection import SelectPercentile, chi2
 from sklearn.metrics import (
     accuracy_score, precision_score, recall_score,
     f1_score, classification_report, confusion_matrix
@@ -552,8 +553,8 @@ def train_model():
     print(f"Shape TF-IDF                : {X_tfidf.shape}")
     # TIDAK disimpan ke disk — matriks TF-IDF tidak diperlukan saat inferensi
 
-    # Seleksi fitur dengan SelectKBest + chi2 (lebih cepat & hemat RAM)
-    selector   = SelectKBest(score_func=chi2, k=min(1000, X_tfidf.shape[1]))
+    # Seleksi fitur dengan SelectPercentile + chi2 (ambil 80% fitur terbaik)
+    selector   = SelectPercentile(score_func=chi2, percentile=80)
     X_selected = selector.fit_transform(X_tfidf, y_encoded)
     print(f"Shape setelah seleksi fitur : {X_selected.shape}")
 
@@ -578,7 +579,7 @@ def train_model():
     # Ini mencegah bias saat satu kelas kurang terwakili di kantong bootstrap tertentu.
     model = RandomForestClassifier(
         n_estimators=5,
-        max_depth=30,
+        max_depth=None,
         min_samples_split=5,
         min_samples_leaf=2,
         class_weight="balanced_subsample",
@@ -662,8 +663,7 @@ def train_model():
         "fitur_tfidf"  : int(X_tfidf.shape[1]),
         "fitur_selected": int(X_selected.shape[1]),
         "estimators"   : 5,
-        "ngram_range"  : [1, 1],
-        "perClass"     : per_class,
+        "ngram_range"  : [1, 1],        "perClass"     : per_class,
         "confusionMatrix": cm_dict,
     }
     save_json(hasil_evaluasi, os.path.join(DATA_DIR, "hasil_training.json"))
@@ -1037,7 +1037,7 @@ def train_model():
         
         seleksi_fitur_dict[kode] = {
             "metode": "chi-square",
-            "k_best": 1000,
+            "percentile": 80,
             "term_terpilih": term_terpilih,
             "term_tidak_terpilih": term_tidak_terpilih,
             "terpilih_count": len(term_terpilih),
@@ -1194,9 +1194,16 @@ def train_model():
 
             # Distribusi kelas di node ini (dari sk_tree.value)
             # sk_tree.value shape: (n_nodes, n_outputs, n_classes)
-            class_values = sk_tree.value[node_id][0]
-            distribusi   = {CATS_ORDER[ci]: int(class_values[ci]) for ci in range(len(CATS_ORDER))}
-            prediksi_node = CATS_ORDER[int(class_values.argmax())]
+            # Dengan class_weight, value berisi proporsi — kalikan n_node_samples untuk count nyata
+            class_values_raw = sk_tree.value[node_id][0]
+            total_val = class_values_raw.sum()
+            if total_val > 0 and abs(total_val - 1.0) < 0.01:
+                # Proporsi — konversi ke count
+                class_counts = np.round(class_values_raw * n_samp).astype(int)
+            else:
+                class_counts = class_values_raw.astype(int)
+            distribusi   = {CATS_ORDER[ci]: int(class_counts[ci]) for ci in range(len(CATS_ORDER))}
+            prediksi_node = CATS_ORDER[int(class_counts.argmax())]
 
             # Term split
             term_split  = None
@@ -1580,7 +1587,7 @@ def train_model():
     # ── Generate tfidf_matrix.json (matriks input Random Forest) ──
     print("[*] Generating tfidf_matrix.json (matriks X_selected per pengaduan)...")
 
-    # X_selected: matriks (1200 × 1000) — nilai TF-IDF setelah SelectKBest
+    # X_selected: matriks (n_dok × n_term) — nilai TF-IDF setelah SelectPercentile
     # Ini adalah matriks yang BENAR-BENAR masuk ke RandomForest
     # selected_feature_names sudah tersedia dari bagian sebelumnya
     if "selected_feature_names" not in dir():
@@ -1621,7 +1628,7 @@ def train_model():
         "meta": {
             "total_pengaduan" : len(kode_list),
             "total_term"      : len(selected_feature_names),
-            "metode_seleksi"  : "SelectKBest chi-squared",
+            "metode_seleksi"  : "SelectPercentile chi-squared",
             "terms"           : selected_term_order,  # urutan by chi2 desc
             "terms_chi2"      : terms_meta,
         },

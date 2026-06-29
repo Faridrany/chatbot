@@ -52,6 +52,12 @@ export default function Dashboard({ onLogout }) {
     ? stats.weeklyData.map((jumlah, i) => ({ week: `Minggu ${i + 1}`, jumlah }))
     : [];
 
+  // Task 4: sembunyikan chart jika rentang data ≥ 4 minggu (28 hari)
+  // Server mengembalikan data berdasarkan 4 minggu terakhir dari timestamp terbaru.
+  // Jika total pengaduan > 0 tapi semua weeklyData = 0, berarti semua data > 4 minggu lalu.
+  const totalWeekly = weeklyData.reduce((s, w) => s + w.jumlah, 0);
+  const weeklyHasData = totalWeekly > 0;
+
   return (
     <div className="flex min-h-screen bg-gray-50">
       <Sidebar onLogout={onLogout} />
@@ -121,19 +127,31 @@ export default function Dashboard({ onLogout }) {
                   </div>
                 </div>
 
-                {/* Pengaduan per minggu dari timestamp nyata */}
+                {/* Pengaduan per minggu — hanya tampil jika ada data dalam 4 minggu terakhir */}
                 <div className="bg-white p-6 rounded-2xl shadow">
                   <h3 className="font-semibold mb-1 text-gray-800">Pengaduan per Minggu</h3>
                   <p className="text-xs text-gray-400 mb-4">4 minggu terakhir berdasarkan timestamp database</p>
-                  <ResponsiveContainer width="100%" height={280}>
-                    <BarChart data={weeklyData}>
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis dataKey="week" tick={{ fontSize: 12 }} />
-                      <YAxis tick={{ fontSize: 12 }} />
-                      <Tooltip />
-                      <Bar dataKey="jumlah" fill="#2E7D32" radius={[4, 4, 0, 0]} />
-                    </BarChart>
-                  </ResponsiveContainer>
+                  {weeklyHasData ? (
+                    <ResponsiveContainer width="100%" height={280}>
+                      <BarChart data={weeklyData}>
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="week" tick={{ fontSize: 12 }} />
+                        <YAxis tick={{ fontSize: 12 }} />
+                        <Tooltip />
+                        <Bar dataKey="jumlah" fill="#2E7D32" radius={[4, 4, 0, 0]} />
+                      </BarChart>
+                    </ResponsiveContainer>
+                  ) : (
+                    <div className="flex flex-col items-center justify-center h-[280px] bg-gray-50 rounded-xl border border-dashed border-gray-300 text-center px-6">
+                      <span className="text-3xl mb-3">📅</span>
+                      <p className="text-sm font-semibold text-gray-500 mb-1">
+                        Grafik mingguan tidak tersedia
+                      </p>
+                      <p className="text-xs text-gray-400 leading-relaxed">
+                        Data pengaduan telah melewati rentang 4 minggu terakhir, atau belum ada pengaduan dengan timestamp yang valid.
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
             </>

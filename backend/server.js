@@ -895,12 +895,11 @@ app.get("/api/tfidf", async (req, res) => {
       summary: {
         fitur_tfidf: training.fitur_tfidf ?? 2612,
         fitur_selected: training.fitur_selected ?? 1000,
-        ngram_range: training.ngram_range ?? [1, 2],
+        ngram_range: training.ngram_range ?? [1, 1],
         total_data: training.total_data ?? 1200,
         data_train: training.data_train ?? 960,
         data_test: training.data_test ?? 240,
         total_unigram: JSON.parse(rawTerms).filter(t => t.ngram === "unigram").length,
-        total_bigram: JSON.parse(rawTerms).filter(t => t.ngram === "bigram").length,
       },
       items,
       total,

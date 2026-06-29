@@ -123,7 +123,7 @@ export default function TfidfDetail({ onLogout }) {
           <div>
             <h1 className="text-2xl font-bold text-gray-800">Detail TF-IDF</h1>
             <p className="text-sm text-gray-500 mt-1">
-              Analisis mendalam proses TF-IDF Vectorizer dan SelectKBest yang digunakan pada model Random Forest
+              Analisis mendalam proses TF-IDF Vectorizer dan SelectPercentile yang digunakan pada model Random Forest
             </p>
           </div>
 
@@ -138,15 +138,15 @@ export default function TfidfDetail({ onLogout }) {
                   accent="#2E7D32"
                 />
                 <StatCard
-                  label="Fitur Terpilih (SelectKBest)"
+                  label="Fitur Terpilih (SelectPercentile)"
                   value={(summary.fitur_selected ?? 0).toLocaleString()}
                   sub={`${(((summary.fitur_selected ?? 0) / (summary.fitur_tfidf || 1)) * 100).toFixed(1)}% dari total fitur`}
                   accent="#4CAF50"
                 />
                 <StatCard
                   label="N-gram Range"
-                  value={summary.ngram_range ? `(${summary.ngram_range.join(", ")})` : "(1, 2)"}
-                  sub="Unigram + Bigram"
+                  value={summary.ngram_range ? `(${summary.ngram_range.join(", ")})` : "(1, 1)"}
+                  sub="Unigram only"
                   accent="#81C784"
                 />
                 <StatCard
@@ -172,13 +172,9 @@ export default function TfidfDetail({ onLogout }) {
                       <span className="font-semibold text-green-700">{(summary.total_unigram ?? 0).toLocaleString()} term</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b">
-                      <span className="text-gray-500">Bigram (2 kata)</span>
-                      <span className="font-semibold text-green-700">{(summary.total_bigram ?? 0).toLocaleString()} term</span>
-                    </div>
-                    <div className="flex justify-between items-center py-2 border-b">
                       <span className="text-gray-500">N-gram Range</span>
                       <span className="font-semibold text-green-700">
-                        {summary.ngram_range ? `(${summary.ngram_range.join(", ")})` : "(1, 2)"}
+                        {summary.ngram_range ? `(${summary.ngram_range.join(", ")})` : "(1, 1)"}
                       </span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b">
@@ -192,16 +188,16 @@ export default function TfidfDetail({ onLogout }) {
                   </div>
                 </div>
 
-                {/* SelectKBest */}
+                {/* SelectPercentile */}
                 <div className="bg-white rounded-2xl shadow p-6">
-                  <h2 className="font-bold text-gray-800 mb-4">Seleksi Fitur — SelectKBest (chi²)</h2>
+                  <h2 className="font-bold text-gray-800 mb-4">Seleksi Fitur — SelectPercentile (chi²)</h2>
                   <div className="space-y-3 text-sm">
                     <div className="flex justify-between items-center py-2 border-b">
                       <span className="text-gray-500">Metode Seleksi</span>
-                      <span className="font-semibold text-green-700">Chi-squared (χ²)</span>
+                      <span className="font-semibold text-green-700">SelectPercentile chi-squared (χ²)</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b">
-                      <span className="text-gray-500">k (fitur terpilih)</span>
+                      <span className="text-gray-500">Fitur Terpilih</span>
                       <span className="font-semibold text-green-700">{(summary.fitur_selected ?? 0).toLocaleString()}</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b">
@@ -230,7 +226,7 @@ export default function TfidfDetail({ onLogout }) {
 
               {/* ── Penjelasan Cara Kerja ── */}
               <div className="bg-white rounded-2xl shadow p-6">
-                <h2 className="font-bold text-gray-800 mb-4">Cara Kerja TF-IDF + SelectKBest</h2>
+                <h2 className="font-bold text-gray-800 mb-4">Cara Kerja TF-IDF + SelectPercentile</h2>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-sm">
                   {[
                     {
@@ -242,19 +238,19 @@ export default function TfidfDetail({ onLogout }) {
                     {
                       step: "2",
                       title: "TF-IDF Vectorizer",
-                      desc: `Teks diubah ke vektor numerik. TF = frekuensi term dalam dokumen. IDF = log(N/df). Menghasilkan ${(summary.fitur_tfidf ?? 2612).toLocaleString()} fitur dengan n-gram (1,2).`,
+                      desc: `Teks diubah ke vektor numerik. TF = frekuensi term dalam dokumen. IDF = log(N/df). Menghasilkan ${(summary.fitur_tfidf ?? 0).toLocaleString()} fitur unigram.`,
                       color: "#4CAF50",
                     },
                     {
                       step: "3",
-                      title: "SelectKBest χ²",
-                      desc: `Skor chi-squared dihitung untuk setiap fitur terhadap label kelas. ${(summary.fitur_selected ?? 1000).toLocaleString()} fitur dengan skor chi² tertinggi dipilih sebagai input model.`,
+                      title: "SelectPercentile χ²",
+                      desc: `Skor chi-squared dihitung untuk setiap fitur. ${(summary.fitur_selected ?? 0).toLocaleString()} fitur persentil tertinggi dipilih sebagai input model.`,
                       color: "#81C784",
                     },
                     {
                       step: "4",
                       title: "Random Forest",
-                      desc: `Vektor ${(summary.fitur_selected ?? 1000).toLocaleString()}-dimensi menjadi input 500 pohon keputusan. Voting mayoritas menentukan kategori pengaduan.`,
+                      desc: `Vektor ${(summary.fitur_selected ?? 0).toLocaleString()}-dimensi menjadi input pohon keputusan. Voting mayoritas menentukan kategori pengaduan.`,
                       color: "#A5D6A7",
                     },
                   ].map((item) => (
@@ -307,19 +303,18 @@ export default function TfidfDetail({ onLogout }) {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="semua">Semua Status</SelectItem>
-                  <SelectItem value="terpilih">Terpilih (SelectKBest)</SelectItem>
+                  <SelectItem value="terpilih">Terpilih (SelectPercentile)</SelectItem>
                   <SelectItem value="eliminasi">Tereliminasi</SelectItem>
                 </SelectContent>
               </Select>
               <Select value={filterNgram} onValueChange={handleNgram}>
                 <SelectTrigger className="w-40">
                   <Hash className="w-4 h-4 mr-2" />
-                  <SelectValue placeholder="Tipe N-gram" />
+                  <SelectValue placeholder="Tipe Term" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="semua">Semua Tipe</SelectItem>
                   <SelectItem value="unigram">Unigram (1 kata)</SelectItem>
-                  <SelectItem value="bigram">Bigram (2 kata)</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -337,9 +332,9 @@ export default function TfidfDetail({ onLogout }) {
                       <tr>
                         <th className="p-3 text-left font-semibold w-8">#</th>
                         <th className="p-3 text-left font-semibold">Term</th>
-                        <th className="p-3 text-center font-semibold w-28">Tipe N-gram</th>
+                        <th className="p-3 text-center font-semibold w-28">Tipe</th>
                         <th className="p-3 text-left font-semibold">Bobot TF-IDF Rata-rata</th>
-                        <th className="p-3 text-left font-semibold">Skor SelectKBest (χ²)</th>
+                        <th className="p-3 text-left font-semibold">Skor SelectPercentile (χ²)</th>
                         <th className="p-3 text-center font-semibold w-36">Status</th>
                       </tr>
                     </thead>
@@ -349,15 +344,9 @@ export default function TfidfDetail({ onLogout }) {
                           <td className="p-3 text-gray-400 tabular-nums">{(page - 1) * LIMIT + idx + 1}</td>
                           <td className="p-3 font-mono text-gray-800 font-medium">{term.term}</td>
                           <td className="p-3 text-center">
-                            {term.ngram === "bigram" ? (
-                              <span className="inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200 font-medium">
-                                <GitBranch className="w-3 h-3" /> Bigram
-                              </span>
-                            ) : (
-                              <span className="inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full bg-purple-50 text-purple-700 border border-purple-200 font-medium">
-                                <Hash className="w-3 h-3" /> Unigram
-                              </span>
-                            )}
+                            <span className="inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full bg-purple-50 text-purple-700 border border-purple-200 font-medium">
+                              <Hash className="w-3 h-3" /> Unigram
+                            </span>
                           </td>
                           <td className="p-3 min-w-48">
                             <MiniBar value={term.tfidf_mean} max={maxTfidf} color="#4CAF50" />

@@ -4652,1168 +4652,1168 @@
         "ngram": "unigram",
         "tfidf_mean": 0.000607,
         "chi2_score": 2.1848,
-        "selected": true
+        "selected": false
     },
     {
         "term": "darat",
         "ngram": "unigram",
         "tfidf_mean": 0.010909,
         "chi2_score": 2.1697,
-        "selected": true
+        "selected": false
     },
     {
         "term": "handil",
         "ngram": "unigram",
         "tfidf_mean": 0.010909,
         "chi2_score": 2.1697,
-        "selected": true
+        "selected": false
     },
     {
         "term": "ngetem",
         "ngram": "unigram",
         "tfidf_mean": 0.000602,
         "chi2_score": 2.1688,
-        "selected": true
+        "selected": false
     },
     {
         "term": "sanca",
         "ngram": "unigram",
         "tfidf_mean": 0.000602,
         "chi2_score": 2.1657,
-        "selected": true
+        "selected": false
     },
     {
         "term": "ngincer",
         "ngram": "unigram",
         "tfidf_mean": 0.000601,
         "chi2_score": 2.1625,
-        "selected": true
+        "selected": false
     },
     {
         "term": "akta",
         "ngram": "unigram",
         "tfidf_mean": 0.0006,
         "chi2_score": 2.1609,
-        "selected": true
+        "selected": false
     },
     {
         "term": "mandi",
         "ngram": "unigram",
         "tfidf_mean": 0.000594,
         "chi2_score": 2.1377,
-        "selected": true
+        "selected": false
     },
     {
         "term": "dalam",
         "ngram": "unigram",
         "tfidf_mean": 0.001268,
         "chi2_score": 2.1321,
-        "selected": true
+        "selected": false
     },
     {
         "term": "oli",
         "ngram": "unigram",
         "tfidf_mean": 0.000589,
         "chi2_score": 2.1212,
-        "selected": true
+        "selected": false
     },
     {
         "term": "tenang",
         "ngram": "unigram",
         "tfidf_mean": 0.001218,
         "chi2_score": 2.121,
-        "selected": true
+        "selected": false
     },
     {
         "term": "harap",
         "ngram": "unigram",
         "tfidf_mean": 0.001094,
         "chi2_score": 2.1205,
-        "selected": true
+        "selected": false
     },
     {
         "term": "gali",
         "ngram": "unigram",
         "tfidf_mean": 0.000589,
         "chi2_score": 2.1196,
-        "selected": true
+        "selected": false
     },
     {
         "term": "kenceng",
         "ngram": "unigram",
         "tfidf_mean": 0.000588,
         "chi2_score": 2.1186,
-        "selected": true
+        "selected": false
     },
     {
         "term": "susah",
         "ngram": "unigram",
         "tfidf_mean": 0.001284,
         "chi2_score": 2.0978,
-        "selected": true
+        "selected": false
     },
     {
         "term": "ternak",
         "ngram": "unigram",
         "tfidf_mean": 0.001687,
         "chi2_score": 2.0758,
-        "selected": true
+        "selected": false
     },
     {
         "term": "potong",
         "ngram": "unigram",
         "tfidf_mean": 0.001539,
         "chi2_score": 2.0413,
-        "selected": true
+        "selected": false
     },
     {
         "term": "kadang",
         "ngram": "unigram",
         "tfidf_mean": 0.001688,
         "chi2_score": 2.0296,
-        "selected": true
+        "selected": false
     },
     {
         "term": "sampai",
         "ngram": "unigram",
         "tfidf_mean": 0.001117,
         "chi2_score": 2.0156,
-        "selected": true
+        "selected": false
     },
     {
         "term": "pada",
         "ngram": "unigram",
         "tfidf_mean": 0.000556,
         "chi2_score": 2.0032,
-        "selected": true
+        "selected": false
     },
     {
         "term": "bus",
         "ngram": "unigram",
         "tfidf_mean": 0.002128,
         "chi2_score": 1.972,
-        "selected": true
+        "selected": false
     },
     {
         "term": "lansia",
         "ngram": "unigram",
         "tfidf_mean": 0.001618,
         "chi2_score": 1.9656,
-        "selected": true
+        "selected": false
     },
     {
         "term": "vandalisme",
         "ngram": "unigram",
         "tfidf_mean": 0.001276,
         "chi2_score": 1.9463,
-        "selected": true
+        "selected": false
     },
     {
         "term": "arus",
         "ngram": "unigram",
         "tfidf_mean": 0.001112,
         "chi2_score": 1.9442,
-        "selected": true
+        "selected": false
     },
     {
         "term": "pagi",
         "ngram": "unigram",
         "tfidf_mean": 0.006694,
         "chi2_score": 1.9345,
-        "selected": true
+        "selected": false
     },
     {
         "term": "mampet",
         "ngram": "unigram",
         "tfidf_mean": 0.00255,
         "chi2_score": 1.9173,
-        "selected": true
+        "selected": false
     },
     {
         "term": "keburu",
         "ngram": "unigram",
         "tfidf_mean": 0.00053,
         "chi2_score": 1.9071,
-        "selected": true
+        "selected": false
     },
     {
         "term": "tangkap",
         "ngram": "unigram",
         "tfidf_mean": 0.001465,
         "chi2_score": 1.9006,
-        "selected": true
+        "selected": false
     },
     {
         "term": "nyopet",
         "ngram": "unigram",
         "tfidf_mean": 0.000527,
         "chi2_score": 1.8962,
-        "selected": true
+        "selected": false
     },
     {
         "term": "muncul",
         "ngram": "unigram",
         "tfidf_mean": 0.001808,
         "chi2_score": 1.8798,
-        "selected": true
+        "selected": false
     },
     {
         "term": "lagi",
         "ngram": "unigram",
         "tfidf_mean": 0.00052,
         "chi2_score": 1.871,
-        "selected": true
+        "selected": false
     },
     {
         "term": "longsor",
         "ngram": "unigram",
         "tfidf_mean": 0.001052,
         "chi2_score": 1.8676,
-        "selected": true
+        "selected": false
     },
     {
         "term": "sana",
         "ngram": "unigram",
         "tfidf_mean": 0.001939,
         "chi2_score": 1.8472,
-        "selected": true
+        "selected": false
     },
     {
         "term": "konslet",
         "ngram": "unigram",
         "tfidf_mean": 0.001392,
         "chi2_score": 1.8377,
-        "selected": true
+        "selected": false
     },
     {
         "term": "mampu",
         "ngram": "unigram",
         "tfidf_mean": 0.001149,
         "chi2_score": 1.8244,
-        "selected": true
+        "selected": false
     },
     {
         "term": "musik",
         "ngram": "unigram",
         "tfidf_mean": 0.001161,
         "chi2_score": 1.8121,
-        "selected": true
+        "selected": false
     },
     {
         "term": "ancam",
         "ngram": "unigram",
         "tfidf_mean": 0.002257,
         "chi2_score": 1.8089,
-        "selected": true
+        "selected": false
     },
     {
         "term": "irigasi",
         "ngram": "unigram",
         "tfidf_mean": 0.001099,
         "chi2_score": 1.7788,
-        "selected": true
+        "selected": false
     },
     {
         "term": "habis",
         "ngram": "unigram",
         "tfidf_mean": 0.001575,
         "chi2_score": 1.7736,
-        "selected": true
+        "selected": false
     },
     {
         "term": "tumpang",
         "ngram": "unigram",
         "tfidf_mean": 0.001043,
         "chi2_score": 1.7557,
-        "selected": true
+        "selected": false
     },
     {
         "term": "sempat",
         "ngram": "unigram",
         "tfidf_mean": 0.001054,
         "chi2_score": 1.7508,
-        "selected": true
+        "selected": false
     },
     {
         "term": "mesin",
         "ngram": "unigram",
         "tfidf_mean": 0.001044,
         "chi2_score": 1.7488,
-        "selected": true
+        "selected": false
     },
     {
         "term": "tangan",
         "ngram": "unigram",
         "tfidf_mean": 0.003015,
         "chi2_score": 1.7479,
-        "selected": true
+        "selected": false
     },
     {
         "term": "makin",
         "ngram": "unigram",
         "tfidf_mean": 0.006649,
         "chi2_score": 1.7045,
-        "selected": true
+        "selected": false
     },
     {
         "term": "keras",
         "ngram": "unigram",
         "tfidf_mean": 0.00407,
         "chi2_score": 1.7037,
-        "selected": true
+        "selected": false
     },
     {
         "term": "khusus",
         "ngram": "unigram",
         "tfidf_mean": 0.001021,
         "chi2_score": 1.689,
-        "selected": true
+        "selected": false
     },
     {
         "term": "dua",
         "ngram": "unigram",
         "tfidf_mean": 0.000968,
         "chi2_score": 1.6829,
-        "selected": true
+        "selected": false
     },
     {
         "term": "semua",
         "ngram": "unigram",
         "tfidf_mean": 0.005859,
         "chi2_score": 1.6467,
-        "selected": true
+        "selected": false
     },
     {
         "term": "untuk",
         "ngram": "unigram",
         "tfidf_mean": 0.001013,
         "chi2_score": 1.6417,
-        "selected": true
+        "selected": false
     },
     {
         "term": "hari",
         "ngram": "unigram",
         "tfidf_mean": 0.016042,
         "chi2_score": 1.6377,
-        "selected": true
+        "selected": false
     },
     {
         "term": "mana",
         "ngram": "unigram",
         "tfidf_mean": 0.001826,
         "chi2_score": 1.626,
-        "selected": true
+        "selected": false
     },
     {
         "term": "cuma",
         "ngram": "unigram",
         "tfidf_mean": 0.00183,
         "chi2_score": 1.6078,
-        "selected": true
+        "selected": false
     },
     {
         "term": "mereka",
         "ngram": "unigram",
         "tfidf_mean": 0.000995,
         "chi2_score": 1.5978,
-        "selected": true
+        "selected": false
     },
     {
         "term": "sama",
         "ngram": "unigram",
         "tfidf_mean": 0.002104,
         "chi2_score": 1.5779,
-        "selected": true
+        "selected": false
     },
     {
         "term": "tampung",
         "ngram": "unigram",
         "tfidf_mean": 0.001296,
         "chi2_score": 1.5762,
-        "selected": true
+        "selected": false
     },
     {
         "term": "angin",
         "ngram": "unigram",
         "tfidf_mean": 0.002788,
         "chi2_score": 1.5539,
-        "selected": true
+        "selected": false
     },
     {
         "term": "sopir",
         "ngram": "unigram",
         "tfidf_mean": 0.001282,
         "chi2_score": 1.5501,
-        "selected": true
+        "selected": false
     },
     {
         "term": "diri",
         "ngram": "unigram",
         "tfidf_mean": 0.001053,
         "chi2_score": 1.5496,
-        "selected": true
+        "selected": false
     },
     {
         "term": "cara",
         "ngram": "unigram",
         "tfidf_mean": 0.001023,
         "chi2_score": 1.5434,
-        "selected": true
+        "selected": false
     },
     {
         "term": "mudah",
         "ngram": "unigram",
         "tfidf_mean": 0.003108,
         "chi2_score": 1.5418,
-        "selected": true
+        "selected": false
     },
     {
         "term": "henti",
         "ngram": "unigram",
         "tfidf_mean": 0.001257,
         "chi2_score": 1.5187,
-        "selected": true
+        "selected": false
     },
     {
         "term": "kunjung",
         "ngram": "unigram",
         "tfidf_mean": 0.001118,
         "chi2_score": 1.5137,
-        "selected": true
+        "selected": false
     },
     {
         "term": "potensi",
         "ngram": "unigram",
         "tfidf_mean": 0.001119,
         "chi2_score": 1.4953,
-        "selected": true
+        "selected": false
     },
     {
         "term": "raya",
         "ngram": "unigram",
         "tfidf_mean": 0.000975,
         "chi2_score": 1.4824,
-        "selected": true
+        "selected": false
     },
     {
         "term": "arah",
         "ngram": "unigram",
         "tfidf_mean": 0.001638,
         "chi2_score": 1.4798,
-        "selected": true
+        "selected": false
     },
     {
         "term": "kena",
         "ngram": "unigram",
         "tfidf_mean": 0.003013,
         "chi2_score": 1.4744,
-        "selected": true
+        "selected": false
     },
     {
         "term": "hingga",
         "ngram": "unigram",
         "tfidf_mean": 0.002618,
         "chi2_score": 1.4646,
-        "selected": true
+        "selected": false
     },
     {
         "term": "panas",
         "ngram": "unigram",
         "tfidf_mean": 0.001052,
         "chi2_score": 1.447,
-        "selected": true
+        "selected": false
     },
     {
         "term": "masjid",
         "ngram": "unigram",
         "tfidf_mean": 0.001039,
         "chi2_score": 1.4455,
-        "selected": true
+        "selected": false
     },
     {
         "term": "batang",
         "ngram": "unigram",
         "tfidf_mean": 0.000889,
         "chi2_score": 1.4287,
-        "selected": true
+        "selected": false
     },
     {
         "term": "lanjut",
         "ngram": "unigram",
         "tfidf_mean": 0.001063,
         "chi2_score": 1.4102,
-        "selected": true
+        "selected": false
     },
     {
         "term": "sawah",
         "ngram": "unigram",
         "tfidf_mean": 0.000999,
         "chi2_score": 1.4032,
-        "selected": true
+        "selected": false
     },
     {
         "term": "empat",
         "ngram": "unigram",
         "tfidf_mean": 0.001024,
         "chi2_score": 1.3949,
-        "selected": true
+        "selected": false
     },
     {
         "term": "kunci",
         "ngram": "unigram",
         "tfidf_mean": 0.00116,
         "chi2_score": 1.3943,
-        "selected": true
+        "selected": false
     },
     {
         "term": "fasilitas",
         "ngram": "unigram",
         "tfidf_mean": 0.002302,
         "chi2_score": 1.3916,
-        "selected": true
+        "selected": false
     },
     {
         "term": "tajam",
         "ngram": "unigram",
         "tfidf_mean": 0.000927,
         "chi2_score": 1.3841,
-        "selected": true
+        "selected": false
     },
     {
         "term": "apa",
         "ngram": "unigram",
         "tfidf_mean": 0.001131,
         "chi2_score": 1.3801,
-        "selected": true
+        "selected": false
     },
     {
         "term": "kusam",
         "ngram": "unigram",
         "tfidf_mean": 0.001033,
         "chi2_score": 1.373,
-        "selected": true
+        "selected": false
     },
     {
         "term": "kemarin",
         "ngram": "unigram",
         "tfidf_mean": 0.002806,
         "chi2_score": 1.3673,
-        "selected": true
+        "selected": false
     },
     {
         "term": "akhir",
         "ngram": "unigram",
         "tfidf_mean": 0.003211,
         "chi2_score": 1.3652,
-        "selected": true
+        "selected": false
     },
     {
         "term": "cat",
         "ngram": "unigram",
         "tfidf_mean": 0.000889,
         "chi2_score": 1.3588,
-        "selected": true
+        "selected": false
     },
     {
         "term": "kursi",
         "ngram": "unigram",
         "tfidf_mean": 0.002656,
         "chi2_score": 1.3501,
-        "selected": true
+        "selected": false
     },
     {
         "term": "besi",
         "ngram": "unigram",
         "tfidf_mean": 0.000926,
         "chi2_score": 1.3206,
-        "selected": true
+        "selected": false
     },
     {
         "term": "timpa",
         "ngram": "unigram",
         "tfidf_mean": 0.002035,
         "chi2_score": 1.3158,
-        "selected": true
+        "selected": false
     },
     {
         "term": "sakit",
         "ngram": "unigram",
         "tfidf_mean": 0.001721,
         "chi2_score": 1.3079,
-        "selected": true
+        "selected": false
     },
     {
         "term": "sibuk",
         "ngram": "unigram",
         "tfidf_mean": 0.001722,
         "chi2_score": 1.3047,
-        "selected": true
+        "selected": false
     },
     {
         "term": "tegas",
         "ngram": "unigram",
         "tfidf_mean": 0.00089,
         "chi2_score": 1.3005,
-        "selected": true
+        "selected": false
     },
     {
         "term": "situ",
         "ngram": "unigram",
         "tfidf_mean": 0.000917,
         "chi2_score": 1.2982,
-        "selected": true
+        "selected": false
     },
     {
         "term": "rembes",
         "ngram": "unigram",
         "tfidf_mean": 0.000939,
         "chi2_score": 1.2881,
-        "selected": true
+        "selected": false
     },
     {
         "term": "lima",
         "ngram": "unigram",
         "tfidf_mean": 0.002538,
         "chi2_score": 1.21,
-        "selected": true
+        "selected": false
     },
     {
         "term": "darurat",
         "ngram": "unigram",
         "tfidf_mean": 0.000844,
         "chi2_score": 1.1982,
-        "selected": true
+        "selected": false
     },
     {
         "term": "putus",
         "ngram": "unigram",
         "tfidf_mean": 0.002343,
         "chi2_score": 1.1678,
-        "selected": true
+        "selected": false
     },
     {
         "term": "main",
         "ngram": "unigram",
         "tfidf_mean": 0.003648,
         "chi2_score": 1.167,
-        "selected": true
+        "selected": false
     },
     {
         "term": "kata",
         "ngram": "unigram",
         "tfidf_mean": 0.000847,
         "chi2_score": 1.1604,
-        "selected": true
+        "selected": false
     },
     {
         "term": "hewan",
         "ngram": "unigram",
         "tfidf_mean": 0.001771,
         "chi2_score": 1.1571,
-        "selected": true
+        "selected": false
     },
     {
         "term": "truk",
         "ngram": "unigram",
         "tfidf_mean": 0.001665,
         "chi2_score": 1.1409,
-        "selected": true
+        "selected": false
     },
     {
         "term": "bensin",
         "ngram": "unigram",
         "tfidf_mean": 0.000832,
         "chi2_score": 1.0877,
-        "selected": true
+        "selected": false
     },
     {
         "term": "umum",
         "ngram": "unigram",
         "tfidf_mean": 0.009719,
         "chi2_score": 1.086,
-        "selected": true
+        "selected": false
     },
     {
         "term": "atas",
         "ngram": "unigram",
         "tfidf_mean": 0.002601,
         "chi2_score": 1.047,
-        "selected": true
+        "selected": false
     },
     {
         "term": "risiko",
         "ngram": "unigram",
         "tfidf_mean": 0.000821,
         "chi2_score": 1.0149,
-        "selected": true
+        "selected": false
     },
     {
         "term": "dan",
         "ngram": "unigram",
         "tfidf_mean": 0.000801,
         "chi2_score": 0.9805,
-        "selected": true
+        "selected": false
     },
     {
         "term": "mushola",
         "ngram": "unigram",
         "tfidf_mean": 0.00078,
         "chi2_score": 0.9681,
-        "selected": true
+        "selected": false
     },
     {
         "term": "rambu",
         "ngram": "unigram",
         "tfidf_mean": 0.000744,
         "chi2_score": 0.948,
-        "selected": true
+        "selected": false
     },
     {
         "term": "sabtu",
         "ngram": "unigram",
         "tfidf_mean": 0.000784,
         "chi2_score": 0.9414,
-        "selected": true
+        "selected": false
     },
     {
         "term": "erosi",
         "ngram": "unigram",
         "tfidf_mean": 0.000762,
         "chi2_score": 0.9403,
-        "selected": true
+        "selected": false
     },
     {
         "term": "isi",
         "ngram": "unigram",
         "tfidf_mean": 0.001259,
         "chi2_score": 0.9399,
-        "selected": true
+        "selected": false
     },
     {
         "term": "cuaca",
         "ngram": "unigram",
         "tfidf_mean": 0.000776,
         "chi2_score": 0.9333,
-        "selected": true
+        "selected": false
     },
     {
         "term": "istirahat",
         "ngram": "unigram",
         "tfidf_mean": 0.00206,
         "chi2_score": 0.9325,
-        "selected": true
+        "selected": false
     },
     {
         "term": "sejak",
         "ngram": "unigram",
         "tfidf_mean": 0.008799,
         "chi2_score": 0.9135,
-        "selected": true
+        "selected": false
     },
     {
         "term": "toko",
         "ngram": "unigram",
         "tfidf_mean": 0.001481,
         "chi2_score": 0.9098,
-        "selected": true
+        "selected": false
     },
     {
         "term": "keropos",
         "ngram": "unigram",
         "tfidf_mean": 0.00196,
         "chi2_score": 0.9037,
-        "selected": true
+        "selected": false
     },
     {
         "term": "normal",
         "ngram": "unigram",
         "tfidf_mean": 0.000752,
         "chi2_score": 0.9021,
-        "selected": true
+        "selected": false
     },
     {
         "term": "jarak",
         "ngram": "unigram",
         "tfidf_mean": 0.000737,
         "chi2_score": 0.8882,
-        "selected": true
+        "selected": false
     },
     {
         "term": "dasar",
         "ngram": "unigram",
         "tfidf_mean": 0.000731,
         "chi2_score": 0.8861,
-        "selected": true
+        "selected": false
     },
     {
         "term": "dapur",
         "ngram": "unigram",
         "tfidf_mean": 0.000717,
         "chi2_score": 0.8796,
-        "selected": true
+        "selected": false
     },
     {
         "term": "kasus",
         "ngram": "unigram",
         "tfidf_mean": 0.000716,
         "chi2_score": 0.8779,
-        "selected": true
+        "selected": false
     },
     {
         "term": "tepat",
         "ngram": "unigram",
         "tfidf_mean": 0.000678,
         "chi2_score": 0.8714,
-        "selected": true
+        "selected": false
     },
     {
         "term": "jarang",
         "ngram": "unigram",
         "tfidf_mean": 0.000714,
         "chi2_score": 0.857,
-        "selected": true
+        "selected": false
     },
     {
         "term": "doyong",
         "ngram": "unigram",
         "tfidf_mean": 0.000695,
         "chi2_score": 0.8503,
-        "selected": true
+        "selected": false
     },
     {
         "term": "sd",
         "ngram": "unigram",
         "tfidf_mean": 0.000699,
         "chi2_score": 0.8427,
-        "selected": true
+        "selected": false
     },
     {
         "term": "struktur",
         "ngram": "unigram",
         "tfidf_mean": 0.000665,
         "chi2_score": 0.8372,
-        "selected": true
+        "selected": false
     },
     {
         "term": "mobil",
         "ngram": "unigram",
         "tfidf_mean": 0.00482,
         "chi2_score": 0.8306,
-        "selected": true
+        "selected": false
     },
     {
         "term": "beli",
         "ngram": "unigram",
         "tfidf_mean": 0.001594,
         "chi2_score": 0.8291,
-        "selected": true
+        "selected": false
     },
     {
         "term": "kondisi",
         "ngram": "unigram",
         "tfidf_mean": 0.002025,
         "chi2_score": 0.8175,
-        "selected": true
+        "selected": false
     },
     {
         "term": "nama",
         "ngram": "unigram",
         "tfidf_mean": 0.000639,
         "chi2_score": 0.8167,
-        "selected": true
+        "selected": false
     },
     {
         "term": "sesak",
         "ngram": "unigram",
         "tfidf_mean": 0.000657,
         "chi2_score": 0.8027,
-        "selected": true
+        "selected": false
     },
     {
         "term": "sempit",
         "ngram": "unigram",
         "tfidf_mean": 0.00066,
         "chi2_score": 0.7998,
-        "selected": true
+        "selected": false
     },
     {
         "term": "kawat",
         "ngram": "unigram",
         "tfidf_mean": 0.000664,
         "chi2_score": 0.7995,
-        "selected": true
+        "selected": false
     },
     {
         "term": "dadak",
         "ngram": "unigram",
         "tfidf_mean": 0.001287,
         "chi2_score": 0.7962,
-        "selected": true
+        "selected": false
     },
     {
         "term": "jaga",
         "ngram": "unigram",
         "tfidf_mean": 0.000659,
         "chi2_score": 0.7912,
-        "selected": true
+        "selected": false
     },
     {
         "term": "pas",
         "ngram": "unigram",
         "tfidf_mean": 0.000656,
         "chi2_score": 0.7904,
-        "selected": true
+        "selected": false
     },
     {
         "term": "nyaman",
         "ngram": "unigram",
         "tfidf_mean": 0.002054,
         "chi2_score": 0.7782,
-        "selected": true
+        "selected": false
     },
     {
         "term": "fogging",
         "ngram": "unigram",
         "tfidf_mean": 0.000642,
         "chi2_score": 0.7768,
-        "selected": true
+        "selected": false
     },
     {
         "term": "rokok",
         "ngram": "unigram",
         "tfidf_mean": 0.00064,
         "chi2_score": 0.775,
-        "selected": true
+        "selected": false
     },
     {
         "term": "panen",
         "ngram": "unigram",
         "tfidf_mean": 0.000643,
         "chi2_score": 0.7716,
-        "selected": true
+        "selected": false
     },
     {
         "term": "teman",
         "ngram": "unigram",
         "tfidf_mean": 0.000639,
         "chi2_score": 0.7701,
-        "selected": true
+        "selected": false
     },
     {
         "term": "sentuh",
         "ngram": "unigram",
         "tfidf_mean": 0.001427,
         "chi2_score": 0.7669,
-        "selected": true
+        "selected": false
     },
     {
         "term": "copot",
         "ngram": "unigram",
         "tfidf_mean": 0.000632,
         "chi2_score": 0.7666,
-        "selected": true
+        "selected": false
     },
     {
         "term": "mancur",
         "ngram": "unigram",
         "tfidf_mean": 0.000635,
         "chi2_score": 0.7655,
-        "selected": true
+        "selected": false
     },
     {
         "term": "meja",
         "ngram": "unigram",
         "tfidf_mean": 0.000626,
         "chi2_score": 0.7582,
-        "selected": true
+        "selected": false
     },
     {
         "term": "sebentar",
         "ngram": "unigram",
         "tfidf_mean": 0.000631,
         "chi2_score": 0.7581,
-        "selected": true
+        "selected": false
     },
     {
         "term": "busa",
         "ngram": "unigram",
         "tfidf_mean": 0.000631,
         "chi2_score": 0.7573,
-        "selected": true
+        "selected": false
     },
     {
         "term": "kualitas",
         "ngram": "unigram",
         "tfidf_mean": 0.000622,
         "chi2_score": 0.7569,
-        "selected": true
+        "selected": false
     },
     {
         "term": "bak",
         "ngram": "unigram",
         "tfidf_mean": 0.000616,
         "chi2_score": 0.7527,
-        "selected": true
+        "selected": false
     },
     {
         "term": "tandon",
         "ngram": "unigram",
         "tfidf_mean": 0.000616,
         "chi2_score": 0.7524,
-        "selected": true
+        "selected": false
     },
     {
         "term": "bangkai",
         "ngram": "unigram",
         "tfidf_mean": 0.000623,
         "chi2_score": 0.7487,
-        "selected": true
+        "selected": false
     },
     {
         "term": "binatang",
         "ngram": "unigram",
         "tfidf_mean": 0.000623,
         "chi2_score": 0.7487,
-        "selected": true
+        "selected": false
     },
     {
         "term": "dinas",
         "ngram": "unigram",
         "tfidf_mean": 0.000609,
         "chi2_score": 0.7474,
-        "selected": true
+        "selected": false
     },
     {
         "term": "lahir",
         "ngram": "unigram",
         "tfidf_mean": 0.000618,
         "chi2_score": 0.7443,
-        "selected": true
+        "selected": false
     },
     {
         "term": "dengar",
         "ngram": "unigram",
         "tfidf_mean": 0.000615,
         "chi2_score": 0.7436,
-        "selected": true
+        "selected": false
     },
     {
         "term": "kali",
         "ngram": "unigram",
         "tfidf_mean": 0.002944,
         "chi2_score": 0.7372,
-        "selected": true
+        "selected": false
     },
     {
         "term": "tegur",
         "ngram": "unigram",
         "tfidf_mean": 0.000594,
         "chi2_score": 0.7141,
-        "selected": true
+        "selected": false
     },
     {
         "term": "fungsi",
         "ngram": "unigram",
         "tfidf_mean": 0.003273,
         "chi2_score": 0.6881,
-        "selected": true
+        "selected": false
     },
     {
         "term": "di",
         "ngram": "unigram",
         "tfidf_mean": 0.004836,
         "chi2_score": 0.6809,
-        "selected": true
+        "selected": false
     },
     {
         "term": "baru",
         "ngram": "unigram",
         "tfidf_mean": 0.013723,
         "chi2_score": 0.6586,
-        "selected": true
+        "selected": false
     },
     {
         "term": "terminal",
         "ngram": "unigram",
         "tfidf_mean": 0.001323,
         "chi2_score": 0.6373,
-        "selected": true
+        "selected": false
     },
     {
         "term": "salah",
         "ngram": "unigram",
         "tfidf_mean": 0.002221,
         "chi2_score": 0.5694,
-        "selected": true
+        "selected": false
     },
     {
         "term": "rutin",
         "ngram": "unigram",
         "tfidf_mean": 0.001074,
         "chi2_score": 0.4708,
-        "selected": true
+        "selected": false
     },
     {
         "term": "biasa",
         "ngram": "unigram",
         "tfidf_mean": 0.001052,
         "chi2_score": 0.4624,
-        "selected": true
+        "selected": false
     },
     {
         "term": "got",
         "ngram": "unigram",
         "tfidf_mean": 0.001986,
         "chi2_score": 0.4535,
-        "selected": true
+        "selected": false
     },
     {
         "term": "enak",
         "ngram": "unigram",
         "tfidf_mean": 0.001,
         "chi2_score": 0.4141,
-        "selected": true
+        "selected": false
     },
     {
         "term": "sendiri",
         "ngram": "unigram",
         "tfidf_mean": 0.002828,
         "chi2_score": 0.4091,
-        "selected": true
+        "selected": false
     },
     {
         "term": "tiga",
         "ngram": "unigram",
         "tfidf_mean": 0.00098,
         "chi2_score": 0.4067,
-        "selected": true
+        "selected": false
     },
     {
         "term": "merah",
         "ngram": "unigram",
         "tfidf_mean": 0.000975,
         "chi2_score": 0.3943,
-        "selected": true
+        "selected": false
     },
     {
         "term": "hasil",
         "ngram": "unigram",
         "tfidf_mean": 0.002401,
         "chi2_score": 0.3369,
-        "selected": true
+        "selected": false
     },
     {
         "term": "biar",
         "ngram": "unigram",
         "tfidf_mean": 0.001917,
         "chi2_score": 0.3017,
-        "selected": true
+        "selected": false
     },
     {
         "term": "pakai",
         "ngram": "unigram",
         "tfidf_mean": 0.002722,
         "chi2_score": 0.0684,
-        "selected": true
+        "selected": false
     }
 ]

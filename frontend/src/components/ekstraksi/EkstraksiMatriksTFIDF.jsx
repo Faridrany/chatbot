@@ -49,8 +49,8 @@ function DimensiInfo({ meta }) {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {[
           { label: "Total Pengaduan (baris)", value: meta.total_pengaduan?.toLocaleString(), sub: "setelah preprocessing", color: "#2E7D32" },
-          { label: "Total Term Terpilih (kolom)", value: meta.total_term?.toLocaleString(), sub: "hasil SelectKBest", color: "#1976D2" },
-          { label: "Metode Seleksi", value: "SelectKBest", sub: "chi-squared scoring", color: "#F57C00" },
+          { label: "Total Term Terpilih (kolom)", value: meta.total_term?.toLocaleString(), sub: "hasil SelectPercentile", color: "#1976D2" },
+          { label: "Metode Seleksi", value: "SelectPercentile", sub: "chi-squared scoring", color: "#F57C00" },
           { label: "Ukuran Matriks", value: `${meta.total_pengaduan} × ${meta.total_term}`, sub: "baris × kolom", color: "#388E3C" },
         ].map((c) => (
           <div key={c.label} className="bg-gray-50 rounded-xl border-l-4 p-4" style={{ borderColor: c.color }}>
@@ -356,7 +356,7 @@ export default function EkstraksiMatriksTFIDF({ onLogout }) {
               <h2 className="font-bold text-gray-800">Catatan Teknis</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-gray-600">
                 {[
-                  { title: "Sumber kebenaran tunggal", desc: "Nilai dalam tabel ini identik dengan nilai X yang masuk ke proses training Random Forest. Tidak ada transformasi tambahan setelah SelectKBest." },
+                  { title: "Sumber kebenaran tunggal", desc: "Nilai dalam tabel ini identik dengan nilai X yang masuk ke proses training Random Forest. Tidak ada transformasi tambahan setelah SelectPercentile." },
                   { title: "Konsistensi dengan Seleksi Fitur", desc: `${meta.total_term} term yang ditampilkan di sini adalah term yang sama dengan yang tampil di halaman "Seleksi Fitur & Metode" dengan status 'Terpilih'.` },
                   { title: "Sparse Matrix", desc: "Sebagian besar sel bernilai 0 karena setiap pengaduan hanya menggunakan sebagian kecil dari total term. Ini disebut sparse matrix dan efisien untuk komputasi." },
                   { title: "Export Excel", desc: "File Excel berisi dua sheet: (1) Matriks lengkap dengan semua kolom term, (2) Daftar term dengan skor chi-squared masing-masing diurutkan dari tertinggi." },

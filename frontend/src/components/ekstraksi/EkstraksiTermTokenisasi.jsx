@@ -123,7 +123,6 @@ export default function EkstraksiTermTokenisasi({ onLogout }) {
                   { label: "Total Term Unik (Vocab)", value: (total).toLocaleString(), sub: "Sebelum filtering", color: "#2E7D32" },
                   { label: "Term Lolos Filter", value: (items.filter ? total : 0).toLocaleString(), sub: "Setelah min/max DF", color: "#1976D2" },
                   { label: "Unigram", value: items.filter((t) => t.ngram === "unigram").length.toLocaleString() + (total > items.length ? "+" : ""), sub: "Kata tunggal", color: "#388E3C" },
-                  { label: "Bigram", value: items.filter((t) => t.ngram === "bigram").length.toLocaleString() + (total > items.length ? "+" : ""), sub: "Pasangan kata", color: "#F57C00" },
                 ].map((s) => (
                   <div key={s.label} className="bg-gray-50 rounded-xl border-l-4 p-3" style={{ borderColor: s.color }}>
                     <p className="text-xs text-gray-500 mb-0.5">{s.label}</p>
@@ -155,12 +154,11 @@ export default function EkstraksiTermTokenisasi({ onLogout }) {
               <Select value={filterNgram} onValueChange={handleNgram}>
                 <SelectTrigger className="w-44">
                   <Hash className="w-4 h-4 mr-2" />
-                  <SelectValue placeholder="Tipe N-gram" />
+                  <SelectValue placeholder="Tipe Term" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="semua">Semua Tipe</SelectItem>
+                  <SelectItem value="semua">Semua Term</SelectItem>
                   <SelectItem value="unigram">Unigram (1 kata)</SelectItem>
-                  <SelectItem value="bigram">Bigram (2 kata)</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -177,7 +175,7 @@ export default function EkstraksiTermTokenisasi({ onLogout }) {
                       <tr>
                         <th className="p-3 text-left font-semibold w-8">#</th>
                         <th className="p-3 text-left font-semibold">Term</th>
-                        <th className="p-3 text-center font-semibold w-28">Tipe N-gram</th>
+                        <th className="p-3 text-center font-semibold w-28">Tipe</th>
                         <th className="p-3 text-left font-semibold">Bobot TF-IDF Rata-rata</th>
                         <th className="p-3 text-center font-semibold w-32">Status Seleksi</th>
                       </tr>
@@ -188,15 +186,9 @@ export default function EkstraksiTermTokenisasi({ onLogout }) {
                           <td className="p-3 text-gray-400 tabular-nums">{(page - 1) * LIMIT + idx + 1}</td>
                           <td className="p-3 font-mono text-gray-800 font-medium">{term.term}</td>
                           <td className="p-3 text-center">
-                            {term.ngram === "bigram" ? (
-                              <span className="inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200 font-medium">
-                                <GitBranch className="w-3 h-3" /> Bigram
-                              </span>
-                            ) : (
-                              <span className="inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full bg-purple-50 text-purple-700 border border-purple-200 font-medium">
-                                <Hash className="w-3 h-3" /> Unigram
-                              </span>
-                            )}
+                            <span className="inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full bg-purple-50 text-purple-700 border border-purple-200 font-medium">
+                              <Hash className="w-3 h-3" /> Unigram
+                            </span>
                           </td>
                           <td className="p-3 min-w-48">
                             <MiniBar value={term.tfidf_mean} max={maxTfidf} color="#4CAF50" />

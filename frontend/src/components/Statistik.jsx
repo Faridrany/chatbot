@@ -220,13 +220,13 @@ export default function Statistik({ onLogout }) {
                   <span className="font-semibold text-green-700">{(fitur_tfidf || 0).toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b">
-                  <span className="text-sm text-gray-500">Fitur Terpilih (SelectKBest)</span>
+                  <span className="text-sm text-gray-500">Fitur Terpilih (SelectPercentile)</span>
                   <span className="font-semibold text-green-700">{(fitur_selected || 0).toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b">
                   <span className="text-sm text-gray-500">N-gram Range</span>
                   <span className="font-semibold text-green-700">
-                    {ngram_range ? `(${ngram_range.join(", ")})` : "(1, 2)"} — Unigram + Bigram
+                    {ngram_range ? `(${ngram_range.join(", ")})` : "(1, 1)"} — Unigram only
                   </span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b">

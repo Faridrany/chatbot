@@ -4,7 +4,7 @@
         "deskripsi": "Lampu PJU di sekitar Jembatan Merah Margomulyo mati total. Sangat rawan jambret setelah pukul 10 malam.",
         "processed": "lampu terang jalan umum sekitar jembatan merah margomulyo mati total sangat rawan jambret pukul malam",
         "label_asli": "KEAMANAN",
-        "kategori": "KEAMANAN",
+        "kategori": "INFRASTRUKTUR",
         "terms": [
             [
                 "merah",
@@ -191,7 +191,7 @@
         "deskripsi": "Lampu jalan di gang belakang Selili mati sudah hampir seminggu. Malam jadi gelap banget dan bikin takut lewat.",
         "processed": "lampu jalan gang belakang lil mati hampir minggu malam jadi gelap banget bikin takut lewat",
         "label_asli": "KEAMANAN",
-        "kategori": "INFRASTRUKTUR",
+        "kategori": "KEAMANAN",
         "terms": [
             [
                 "belakang",

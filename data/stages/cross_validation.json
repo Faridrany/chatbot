@@ -1,13 +1,13 @@
 {
     "n_folds": 5,
-    "rata_rata_akurasi": 0.8358,
-    "std_akurasi": 0.0157,
+    "rata_rata_akurasi": 0.8317,
+    "std_akurasi": 0.0176,
     "cv_scores": [
-        0.8417,
+        0.8333,
         0.8125,
-        0.8417,
-        0.825,
-        0.8583
+        0.8125,
+        0.8583,
+        0.8417
     ],
     "folds": {
         "fold_1": {
@@ -1263,8 +1263,8 @@
                 {
                     "kode_pengaduan": "PGD-0034",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "KEAMANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0037",
@@ -1305,13 +1305,13 @@
                 {
                     "kode_pengaduan": "PGD-0067",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0069",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "LINGKUNGAN",
+                    "prediksi": "INFRASTRUKTUR",
                     "benar": false
                 },
                 {
@@ -1323,8 +1323,8 @@
                 {
                     "kode_pengaduan": "PGD-0089",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0090",
@@ -1365,8 +1365,8 @@
                 {
                     "kode_pengaduan": "PGD-0127",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "KEAMANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0140",
@@ -1383,8 +1383,8 @@
                 {
                     "kode_pengaduan": "PGD-0163",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0164",
@@ -1407,8 +1407,8 @@
                 {
                     "kode_pengaduan": "PGD-0174",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0178",
@@ -1455,8 +1455,8 @@
                 {
                     "kode_pengaduan": "PGD-0213",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "PELAYANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0217",
@@ -1527,14 +1527,14 @@
                 {
                     "kode_pengaduan": "PGD-0260",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "KEAMANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0262",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": false
+                    "prediksi": "KEAMANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0264",
@@ -1545,25 +1545,25 @@
                 {
                     "kode_pengaduan": "PGD-0271",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "KEAMANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0272",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "INFRASTRUKTUR",
+                    "prediksi": "LINGKUNGAN",
                     "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0278",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "PELAYANAN",
-                    "benar": false
+                    "prediksi": "KEAMANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0279",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "LINGKUNGAN",
+                    "prediksi": "INFRASTRUKTUR",
                     "benar": false
                 },
                 {
@@ -1599,8 +1599,8 @@
                 {
                     "kode_pengaduan": "PGD-0333",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": true
+                    "prediksi": "KEAMANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0337",
@@ -1611,8 +1611,8 @@
                 {
                     "kode_pengaduan": "PGD-0339",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": true
+                    "prediksi": "KEAMANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0347",
@@ -1689,8 +1689,8 @@
                 {
                     "kode_pengaduan": "PGD-0415",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": true
+                    "prediksi": "PELAYANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0422",
@@ -1743,14 +1743,14 @@
                 {
                     "kode_pengaduan": "PGD-0463",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0467",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "PELAYANAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0468",
@@ -1791,8 +1791,8 @@
                 {
                     "kode_pengaduan": "PGD-0503",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": true
+                    "prediksi": "KEAMANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0506",
@@ -1869,8 +1869,8 @@
                 {
                     "kode_pengaduan": "PGD-0557",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0566",
@@ -1911,8 +1911,8 @@
                 {
                     "kode_pengaduan": "PGD-0588",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": true
+                    "prediksi": "LINGKUNGAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0589",
@@ -1971,7 +1971,7 @@
                 {
                     "kode_pengaduan": "PGD-0640",
                     "label_asli": "PELAYANAN",
-                    "prediksi": "LINGKUNGAN",
+                    "prediksi": "INFRASTRUKTUR",
                     "benar": false
                 },
                 {
@@ -2037,8 +2037,8 @@
                 {
                     "kode_pengaduan": "PGD-0686",
                     "label_asli": "PELAYANAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": false
+                    "prediksi": "PELAYANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0695",
@@ -2061,8 +2061,8 @@
                 {
                     "kode_pengaduan": "PGD-0723",
                     "label_asli": "PELAYANAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": false
+                    "prediksi": "PELAYANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0731",
@@ -2079,8 +2079,8 @@
                 {
                     "kode_pengaduan": "PGD-0747",
                     "label_asli": "PELAYANAN",
-                    "prediksi": "PELAYANAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0751",
@@ -2145,8 +2145,8 @@
                 {
                     "kode_pengaduan": "PGD-0788",
                     "label_asli": "PELAYANAN",
-                    "prediksi": "PELAYANAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0791",
@@ -2295,14 +2295,14 @@
                 {
                     "kode_pengaduan": "PGD-0890",
                     "label_asli": "PELAYANAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": false
+                    "prediksi": "PELAYANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0911",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "LINGKUNGAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0913",
@@ -2361,8 +2361,8 @@
                 {
                     "kode_pengaduan": "PGD-0946",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0947",
@@ -2433,8 +2433,8 @@
                 {
                     "kode_pengaduan": "PGD-0987",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0989",
@@ -2445,13 +2445,13 @@
                 {
                     "kode_pengaduan": "PGD-0995",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0998",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "KEAMANAN",
+                    "prediksi": "INFRASTRUKTUR",
                     "benar": false
                 },
                 {
@@ -2511,14 +2511,14 @@
                 {
                     "kode_pengaduan": "PGD-1081",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-1086",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "LINGKUNGAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-1089",
@@ -2529,8 +2529,8 @@
                 {
                     "kode_pengaduan": "PGD-1094",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "LINGKUNGAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-1105",
@@ -2625,7 +2625,7 @@
                 {
                     "kode_pengaduan": "PGD-1172",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "KEAMANAN",
+                    "prediksi": "INFRASTRUKTUR",
                     "benar": false
                 },
                 {
@@ -2649,8 +2649,8 @@
                 {
                     "kode_pengaduan": "PGD-1187",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-1193",
@@ -2659,7 +2659,7 @@
                     "benar": true
                 }
             ],
-            "akurasi": 0.8417
+            "akurasi": 0.8333
         },
         "fold_2": {
             "training_size": 960,
@@ -3878,8 +3878,8 @@
                 {
                     "kode_pengaduan": "PGD-0021",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "KEAMANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0022",
@@ -3944,8 +3944,8 @@
                 {
                     "kode_pengaduan": "PGD-0049",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "KEAMANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0054",
@@ -3968,14 +3968,14 @@
                 {
                     "kode_pengaduan": "PGD-0071",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0077",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0078",
@@ -4148,7 +4148,7 @@
                 {
                     "kode_pengaduan": "PGD-0216",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "PELAYANAN",
+                    "prediksi": "INFRASTRUKTUR",
                     "benar": false
                 },
                 {
@@ -4280,8 +4280,8 @@
                 {
                     "kode_pengaduan": "PGD-0341",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0355",
@@ -4436,8 +4436,8 @@
                 {
                     "kode_pengaduan": "PGD-0464",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0466",
@@ -4454,8 +4454,8 @@
                 {
                     "kode_pengaduan": "PGD-0477",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": true
+                    "prediksi": "KEAMANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0478",
@@ -4478,8 +4478,8 @@
                 {
                     "kode_pengaduan": "PGD-0497",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": true
+                    "prediksi": "KEAMANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0499",
@@ -4562,8 +4562,8 @@
                 {
                     "kode_pengaduan": "PGD-0564",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0575",
@@ -4574,20 +4574,20 @@
                 {
                     "kode_pengaduan": "PGD-0578",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0582",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0595",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0606",
@@ -4604,14 +4604,14 @@
                 {
                     "kode_pengaduan": "PGD-0614",
                     "label_asli": "PELAYANAN",
-                    "prediksi": "LINGKUNGAN",
+                    "prediksi": "INFRASTRUKTUR",
                     "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0616",
                     "label_asli": "PELAYANAN",
-                    "prediksi": "PELAYANAN",
-                    "benar": true
+                    "prediksi": "LINGKUNGAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0624",
@@ -4682,8 +4682,8 @@
                 {
                     "kode_pengaduan": "PGD-0668",
                     "label_asli": "PELAYANAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "PELAYANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0682",
@@ -4766,8 +4766,8 @@
                 {
                     "kode_pengaduan": "PGD-0739",
                     "label_asli": "PELAYANAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": false
+                    "prediksi": "PELAYANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0740",
@@ -4838,8 +4838,8 @@
                 {
                     "kode_pengaduan": "PGD-0784",
                     "label_asli": "PELAYANAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": false
+                    "prediksi": "PELAYANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0789",
@@ -4952,13 +4952,13 @@
                 {
                     "kode_pengaduan": "PGD-0903",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0904",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "INFRASTRUKTUR",
+                    "prediksi": "KEAMANAN",
                     "benar": false
                 },
                 {
@@ -4970,8 +4970,8 @@
                 {
                     "kode_pengaduan": "PGD-0921",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "KEAMANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0927",
@@ -5000,8 +5000,8 @@
                 {
                     "kode_pengaduan": "PGD-0937",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0939",
@@ -5186,8 +5186,8 @@
                 {
                     "kode_pengaduan": "PGD-1111",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-1115",
@@ -5198,14 +5198,14 @@
                 {
                     "kode_pengaduan": "PGD-1119",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "KEAMANAN",
+                    "prediksi": "INFRASTRUKTUR",
                     "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-1123",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-1124",
@@ -5222,14 +5222,14 @@
                 {
                     "kode_pengaduan": "PGD-1129",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-1140",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "LINGKUNGAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-1141",
@@ -5240,14 +5240,14 @@
                 {
                     "kode_pengaduan": "PGD-1142",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "LINGKUNGAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-1143",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-1144",
@@ -5258,8 +5258,8 @@
                 {
                     "kode_pengaduan": "PGD-1161",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "KEAMANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-1165",
@@ -5276,7 +5276,7 @@
                 {
                     "kode_pengaduan": "PGD-1176",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "INFRASTRUKTUR",
+                    "prediksi": "KEAMANAN",
                     "benar": false
                 },
                 {
@@ -5300,14 +5300,14 @@
                 {
                     "kode_pengaduan": "PGD-1194",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "LINGKUNGAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-1195",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "KEAMANAN",
+                    "benar": false
                 }
             ],
             "akurasi": 0.8125
@@ -6535,8 +6535,8 @@
                 {
                     "kode_pengaduan": "PGD-0019",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "PELAYANAN",
-                    "benar": false
+                    "prediksi": "KEAMANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0020",
@@ -6565,8 +6565,8 @@
                 {
                     "kode_pengaduan": "PGD-0065",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0072",
@@ -6583,8 +6583,8 @@
                 {
                     "kode_pengaduan": "PGD-0081",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0082",
@@ -6595,8 +6595,8 @@
                 {
                     "kode_pengaduan": "PGD-0084",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0097",
@@ -6679,8 +6679,8 @@
                 {
                     "kode_pengaduan": "PGD-0139",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "KEAMANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0142",
@@ -6703,8 +6703,8 @@
                 {
                     "kode_pengaduan": "PGD-0147",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0154",
@@ -6769,8 +6769,8 @@
                 {
                     "kode_pengaduan": "PGD-0208",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0210",
@@ -6811,8 +6811,8 @@
                 {
                     "kode_pengaduan": "PGD-0246",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0253",
@@ -6829,8 +6829,8 @@
                 {
                     "kode_pengaduan": "PGD-0266",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0268",
@@ -6847,8 +6847,8 @@
                 {
                     "kode_pengaduan": "PGD-0277",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "PELAYANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0283",
@@ -6859,8 +6859,8 @@
                 {
                     "kode_pengaduan": "PGD-0287",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0288",
@@ -6871,14 +6871,14 @@
                 {
                     "kode_pengaduan": "PGD-0289",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0293",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "PELAYANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0303",
@@ -6901,8 +6901,8 @@
                 {
                     "kode_pengaduan": "PGD-0316",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0321",
@@ -6937,7 +6937,7 @@
                 {
                     "kode_pengaduan": "PGD-0360",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "PELAYANAN",
+                    "prediksi": "KEAMANAN",
                     "benar": false
                 },
                 {
@@ -6961,8 +6961,8 @@
                 {
                     "kode_pengaduan": "PGD-0374",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0379",
@@ -6997,8 +6997,8 @@
                 {
                     "kode_pengaduan": "PGD-0410",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0413",
@@ -7033,8 +7033,8 @@
                 {
                     "kode_pengaduan": "PGD-0437",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": true
+                    "prediksi": "LINGKUNGAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0441",
@@ -7081,8 +7081,8 @@
                 {
                     "kode_pengaduan": "PGD-0471",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0472",
@@ -7093,8 +7093,8 @@
                 {
                     "kode_pengaduan": "PGD-0473",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0484",
@@ -7105,14 +7105,14 @@
                 {
                     "kode_pengaduan": "PGD-0488",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0493",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "PELAYANAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0514",
@@ -7147,20 +7147,20 @@
                 {
                     "kode_pengaduan": "PGD-0538",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0543",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "PELAYANAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0546",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": true
+                    "prediksi": "LINGKUNGAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0549",
@@ -7183,14 +7183,14 @@
                 {
                     "kode_pengaduan": "PGD-0558",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0561",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": true
+                    "prediksi": "KEAMANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0562",
@@ -7225,8 +7225,8 @@
                 {
                     "kode_pengaduan": "PGD-0585",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": true
+                    "prediksi": "KEAMANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0587",
@@ -7261,8 +7261,8 @@
                 {
                     "kode_pengaduan": "PGD-0631",
                     "label_asli": "PELAYANAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": false
+                    "prediksi": "PELAYANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0634",
@@ -7273,8 +7273,8 @@
                 {
                     "kode_pengaduan": "PGD-0636",
                     "label_asli": "PELAYANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "PELAYANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0639",
@@ -7477,8 +7477,8 @@
                 {
                     "kode_pengaduan": "PGD-0820",
                     "label_asli": "PELAYANAN",
-                    "prediksi": "PELAYANAN",
-                    "benar": true
+                    "prediksi": "LINGKUNGAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0822",
@@ -7627,20 +7627,20 @@
                 {
                     "kode_pengaduan": "PGD-0949",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "KEAMANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0951",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "LINGKUNGAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0953",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0966",
@@ -7681,8 +7681,8 @@
                 {
                     "kode_pengaduan": "PGD-0992",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0994",
@@ -7699,14 +7699,14 @@
                 {
                     "kode_pengaduan": "PGD-1005",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "LINGKUNGAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-1009",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-1010",
@@ -7717,8 +7717,8 @@
                 {
                     "kode_pengaduan": "PGD-1013",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-1020",
@@ -7813,8 +7813,8 @@
                 {
                     "kode_pengaduan": "PGD-1085",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "KEAMANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-1092",
@@ -7825,26 +7825,26 @@
                 {
                     "kode_pengaduan": "PGD-1096",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "LINGKUNGAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-1098",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "LINGKUNGAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-1100",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "KEAMANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-1103",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-1120",
@@ -7855,7 +7855,7 @@
                 {
                     "kode_pengaduan": "PGD-1133",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "KEAMANAN",
+                    "prediksi": "INFRASTRUKTUR",
                     "benar": false
                 },
                 {
@@ -7879,8 +7879,8 @@
                 {
                     "kode_pengaduan": "PGD-1149",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "KEAMANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-1150",
@@ -7897,8 +7897,8 @@
                 {
                     "kode_pengaduan": "PGD-1155",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "LINGKUNGAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-1157",
@@ -7909,8 +7909,8 @@
                 {
                     "kode_pengaduan": "PGD-1158",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-1160",
@@ -7951,17 +7951,17 @@
                 {
                     "kode_pengaduan": "PGD-1191",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "KEAMANAN",
+                    "prediksi": "INFRASTRUKTUR",
                     "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-1198",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "KEAMANAN",
+                    "prediksi": "INFRASTRUKTUR",
                     "benar": false
                 }
             ],
-            "akurasi": 0.8417
+            "akurasi": 0.8125
         },
         "fold_4": {
             "training_size": 960,
@@ -9174,8 +9174,8 @@
                 {
                     "kode_pengaduan": "PGD-0001",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "KEAMANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0005",
@@ -9192,8 +9192,8 @@
                 {
                     "kode_pengaduan": "PGD-0007",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "KEAMANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0011",
@@ -9210,8 +9210,8 @@
                 {
                     "kode_pengaduan": "PGD-0015",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "KEAMANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0016",
@@ -9234,8 +9234,8 @@
                 {
                     "kode_pengaduan": "PGD-0035",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "PELAYANAN",
-                    "benar": false
+                    "prediksi": "KEAMANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0047",
@@ -9252,8 +9252,8 @@
                 {
                     "kode_pengaduan": "PGD-0050",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "KEAMANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0051",
@@ -9306,7 +9306,7 @@
                 {
                     "kode_pengaduan": "PGD-0091",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "INFRASTRUKTUR",
+                    "prediksi": "LINGKUNGAN",
                     "benar": false
                 },
                 {
@@ -9348,8 +9348,8 @@
                 {
                     "kode_pengaduan": "PGD-0120",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "KEAMANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0123",
@@ -9402,8 +9402,8 @@
                 {
                     "kode_pengaduan": "PGD-0181",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0193",
@@ -9462,8 +9462,8 @@
                 {
                     "kode_pengaduan": "PGD-0240",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "KEAMANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0242",
@@ -9492,8 +9492,8 @@
                 {
                     "kode_pengaduan": "PGD-0259",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0274",
@@ -9504,8 +9504,8 @@
                 {
                     "kode_pengaduan": "PGD-0276",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "KEAMANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0280",
@@ -9564,8 +9564,8 @@
                 {
                     "kode_pengaduan": "PGD-0322",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": true
+                    "prediksi": "KEAMANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0323",
@@ -9588,14 +9588,14 @@
                 {
                     "kode_pengaduan": "PGD-0334",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0336",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0343",
@@ -9618,14 +9618,14 @@
                 {
                     "kode_pengaduan": "PGD-0352",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": true
+                    "prediksi": "LINGKUNGAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0353",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0370",
@@ -9654,8 +9654,8 @@
                 {
                     "kode_pengaduan": "PGD-0387",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "PELAYANAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0392",
@@ -9678,8 +9678,8 @@
                 {
                     "kode_pengaduan": "PGD-0407",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "PELAYANAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0414",
@@ -9690,8 +9690,8 @@
                 {
                     "kode_pengaduan": "PGD-0416",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": true
+                    "prediksi": "LINGKUNGAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0426",
@@ -9720,14 +9720,14 @@
                 {
                     "kode_pengaduan": "PGD-0439",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": true
+                    "prediksi": "LINGKUNGAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0442",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0447",
@@ -9744,8 +9744,8 @@
                 {
                     "kode_pengaduan": "PGD-0449",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0452",
@@ -9756,8 +9756,8 @@
                 {
                     "kode_pengaduan": "PGD-0453",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0479",
@@ -9786,8 +9786,8 @@
                 {
                     "kode_pengaduan": "PGD-0501",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": true
+                    "prediksi": "LINGKUNGAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0507",
@@ -9798,14 +9798,14 @@
                 {
                     "kode_pengaduan": "PGD-0517",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "KEAMANAN",
+                    "prediksi": "LINGKUNGAN",
                     "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0521",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": true
+                    "prediksi": "PELAYANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0523",
@@ -9816,8 +9816,8 @@
                 {
                     "kode_pengaduan": "PGD-0528",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": true
+                    "prediksi": "KEAMANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0534",
@@ -9858,14 +9858,14 @@
                 {
                     "kode_pengaduan": "PGD-0576",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": true
+                    "prediksi": "KEAMANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0579",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0581",
@@ -9948,7 +9948,7 @@
                 {
                     "kode_pengaduan": "PGD-0630",
                     "label_asli": "PELAYANAN",
-                    "prediksi": "KEAMANAN",
+                    "prediksi": "INFRASTRUKTUR",
                     "benar": false
                 },
                 {
@@ -9990,7 +9990,7 @@
                 {
                     "kode_pengaduan": "PGD-0670",
                     "label_asli": "PELAYANAN",
-                    "prediksi": "LINGKUNGAN",
+                    "prediksi": "INFRASTRUKTUR",
                     "benar": false
                 },
                 {
@@ -10056,8 +10056,8 @@
                 {
                     "kode_pengaduan": "PGD-0735",
                     "label_asli": "PELAYANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "PELAYANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0736",
@@ -10260,8 +10260,8 @@
                 {
                     "kode_pengaduan": "PGD-0907",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0909",
@@ -10326,8 +10326,8 @@
                 {
                     "kode_pengaduan": "PGD-0977",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "KEAMANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0978",
@@ -10362,8 +10362,8 @@
                 {
                     "kode_pengaduan": "PGD-0996",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "LINGKUNGAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0997",
@@ -10374,8 +10374,8 @@
                 {
                     "kode_pengaduan": "PGD-1000",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-1011",
@@ -10398,8 +10398,8 @@
                 {
                     "kode_pengaduan": "PGD-1017",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "LINGKUNGAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-1025",
@@ -10428,8 +10428,8 @@
                 {
                     "kode_pengaduan": "PGD-1031",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "PELAYANAN",
-                    "benar": false
+                    "prediksi": "LINGKUNGAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-1032",
@@ -10488,14 +10488,14 @@
                 {
                     "kode_pengaduan": "PGD-1073",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "LINGKUNGAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-1075",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "KEAMANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-1079",
@@ -10566,7 +10566,7 @@
                 {
                     "kode_pengaduan": "PGD-1167",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "KEAMANAN",
+                    "prediksi": "INFRASTRUKTUR",
                     "benar": false
                 },
                 {
@@ -10608,11 +10608,11 @@
                 {
                     "kode_pengaduan": "PGD-1200",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "KEAMANAN",
+                    "prediksi": "INFRASTRUKTUR",
                     "benar": false
                 }
             ],
-            "akurasi": 0.825
+            "akurasi": 0.8583
         },
         "fold_5": {
             "training_size": 960,
@@ -11831,8 +11831,8 @@
                 {
                     "kode_pengaduan": "PGD-0017",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0023",
@@ -11861,14 +11861,14 @@
                 {
                     "kode_pengaduan": "PGD-0043",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0055",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "LINGKUNGAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0056",
@@ -11969,8 +11969,8 @@
                 {
                     "kode_pengaduan": "PGD-0155",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0156",
@@ -11981,8 +11981,8 @@
                 {
                     "kode_pengaduan": "PGD-0167",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "KEAMANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0168",
@@ -12053,8 +12053,8 @@
                 {
                     "kode_pengaduan": "PGD-0207",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "KEAMANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0212",
@@ -12095,8 +12095,8 @@
                 {
                     "kode_pengaduan": "PGD-0233",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0234",
@@ -12149,8 +12149,8 @@
                 {
                     "kode_pengaduan": "PGD-0275",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "KEAMANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0281",
@@ -12167,8 +12167,8 @@
                 {
                     "kode_pengaduan": "PGD-0286",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "KEAMANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0294",
@@ -12179,14 +12179,14 @@
                 {
                     "kode_pengaduan": "PGD-0299",
                     "label_asli": "KEAMANAN",
-                    "prediksi": "KEAMANAN",
-                    "benar": true
+                    "prediksi": "LINGKUNGAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0301",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": true
+                    "prediksi": "KEAMANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0306",
@@ -12251,8 +12251,8 @@
                 {
                     "kode_pengaduan": "PGD-0364",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0366",
@@ -12341,8 +12341,8 @@
                 {
                     "kode_pengaduan": "PGD-0411",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": true
+                    "prediksi": "LINGKUNGAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0419",
@@ -12359,8 +12359,8 @@
                 {
                     "kode_pengaduan": "PGD-0421",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0433",
@@ -12479,8 +12479,8 @@
                 {
                     "kode_pengaduan": "PGD-0527",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0552",
@@ -12503,8 +12503,8 @@
                 {
                     "kode_pengaduan": "PGD-0571",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0573",
@@ -12539,8 +12539,8 @@
                 {
                     "kode_pengaduan": "PGD-0600",
                     "label_asli": "INFRASTRUKTUR",
-                    "prediksi": "KEAMANAN",
-                    "benar": false
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0601",
@@ -12575,7 +12575,7 @@
                 {
                     "kode_pengaduan": "PGD-0638",
                     "label_asli": "PELAYANAN",
-                    "prediksi": "LINGKUNGAN",
+                    "prediksi": "INFRASTRUKTUR",
                     "benar": false
                 },
                 {
@@ -12599,8 +12599,8 @@
                 {
                     "kode_pengaduan": "PGD-0653",
                     "label_asli": "PELAYANAN",
-                    "prediksi": "PELAYANAN",
-                    "benar": true
+                    "prediksi": "LINGKUNGAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0658",
@@ -12617,14 +12617,14 @@
                 {
                     "kode_pengaduan": "PGD-0661",
                     "label_asli": "PELAYANAN",
-                    "prediksi": "INFRASTRUKTUR",
+                    "prediksi": "KEAMANAN",
                     "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0667",
                     "label_asli": "PELAYANAN",
-                    "prediksi": "INFRASTRUKTUR",
-                    "benar": false
+                    "prediksi": "PELAYANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0669",
@@ -12881,8 +12881,8 @@
                 {
                     "kode_pengaduan": "PGD-0885",
                     "label_asli": "PELAYANAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": false
+                    "prediksi": "PELAYANAN",
+                    "benar": true
                 },
                 {
                     "kode_pengaduan": "PGD-0895",
@@ -12893,8 +12893,8 @@
                 {
                     "kode_pengaduan": "PGD-0896",
                     "label_asli": "PELAYANAN",
-                    "prediksi": "PELAYANAN",
-                    "benar": true
+                    "prediksi": "LINGKUNGAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0898",
@@ -12911,8 +12911,8 @@
                 {
                     "kode_pengaduan": "PGD-0908",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-0910",
@@ -12935,7 +12935,7 @@
                 {
                     "kode_pengaduan": "PGD-0917",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "INFRASTRUKTUR",
+                    "prediksi": "KEAMANAN",
                     "benar": false
                 },
                 {
@@ -13037,8 +13037,8 @@
                 {
                     "kode_pengaduan": "PGD-1024",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-1028",
@@ -13103,8 +13103,8 @@
                 {
                     "kode_pengaduan": "PGD-1056",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-1069",
@@ -13151,8 +13151,8 @@
                 {
                     "kode_pengaduan": "PGD-1117",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "INFRASTRUKTUR",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-1121",
@@ -13169,8 +13169,8 @@
                 {
                     "kode_pengaduan": "PGD-1128",
                     "label_asli": "LINGKUNGAN",
-                    "prediksi": "LINGKUNGAN",
-                    "benar": true
+                    "prediksi": "KEAMANAN",
+                    "benar": false
                 },
                 {
                     "kode_pengaduan": "PGD-1131",
@@ -13263,7 +13263,7 @@
                     "benar": true
                 }
             ],
-            "akurasi": 0.8583
+            "akurasi": 0.8417
         }
     },
     "data_konsisten_salah": []

@@ -122,7 +122,7 @@ export default function RandomForestDetail({ onLogout }) {
             <StatCard label="Data Training" value={(training?.data_train ?? 960).toLocaleString()}
               sub="Sampel untuk melatih model" accent="#4CAF50" icon={Shuffle} />
             <StatCard label="Total Fitur TF-IDF" value={(totalFeatures).toLocaleString()}
-              sub="Dari proses SelectKBest" accent="#81C784" icon={Filter} />
+              sub="Dari proses SelectPercentile" accent="#81C784" icon={Filter} />
             <StatCard label="Fitur per Split" value={featuresPerSplit}
               sub={`√${totalFeatures} fitur random`} accent="#A5D6A7" icon={GitBranch} />
           </div>

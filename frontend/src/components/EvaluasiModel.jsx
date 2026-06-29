@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 import { Activity, Target, TrendingUp, CheckCircle2, XCircle, AlertCircle, BarChart3 } from "lucide-react";
@@ -119,7 +119,7 @@ export default function EvaluasiModel({ onLogout }) {
                 <h2 className="font-bold text-green-800 text-lg">Random Forest Classifier</h2>
                 <p className="text-sm text-green-700 mt-1">
                   {training.estimators ?? 500} Estimators &middot; {totalData} data &middot;
-                  TF-IDF {training.fitur_tfidf ?? "—"} fitur &rarr; SelectKBest {training.fitur_selected ?? "—"} fitur
+                  TF-IDF {training.fitur_tfidf ?? "—"} fitur &rarr; SelectPercentile {training.fitur_selected ?? "—"} fitur
                 </p>
               </div>
               <Badge className="bg-green-600 text-white text-sm px-3 py-1">Hasil Training Terbaru</Badge>

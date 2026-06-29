@@ -393,18 +393,18 @@ function VoteDetailModal({ kode, onClose }) {
                             {isAlt && <span className="bg-orange-200 text-orange-700 text-xs px-1.5 rounded font-semibold ml-1">⚠️ Minority</span>}
                             {rep.is_oob && <span className="bg-blue-100 text-blue-700 text-xs px-1.5 rounded font-semibold">OOB</span>}
                           </div>
-                          <div className="space-y-1.5">
+                          <div className="space-y-1.5 overflow-x-auto max-w-full pb-2">
                             {(rep.jalur_node ?? []).map((node, ni) => (
-                              <div key={ni} className="flex items-center gap-2 text-xs" style={{ paddingLeft: ni * 16 }}>
+                              <div key={ni} className="flex items-center gap-2 text-xs whitespace-nowrap shrink-0" style={{ paddingLeft: ni * 8 }}>
                                 {ni > 0 && <ChevronRight className="w-3 h-3 text-gray-400 shrink-0" />}
                                 {node.tipe === "leaf" ? (
-                                  <span className="flex items-center gap-1.5 px-2 py-1 rounded-lg font-semibold"
+                                  <span className="flex items-center gap-1.5 px-2 py-1 rounded-lg font-semibold shrink-0"
                                     style={{ backgroundColor: c.light, color: c.bg, border: `1px solid ${c.bg}40` }}>
                                     🍃 Leaf → <strong>{node.prediksi}</strong>
                                     <span className="ml-1 text-gray-500 font-normal">Gini: {node.gini}</span>
                                   </span>
                                 ) : (
-                                  <span className="flex items-center gap-1.5 px-2 py-1 bg-white rounded-lg border border-gray-200 text-gray-700">
+                                  <span className="flex items-center gap-1.5 px-2 py-1 bg-white rounded-lg border border-gray-200 text-gray-700 shrink-0">
                                     <span className="font-mono font-semibold text-blue-700">{node.term}</span>
                                     <span className="text-gray-400">{">"} {node.threshold}</span>
                                     <span className="text-gray-500">→</span>

@@ -95,7 +95,7 @@ export default function EkstraksiStatistik({ onLogout }) {
                   icon={Layers}
                 />
                 <StatCard
-                  label="Fitur Terpilih (SelectKBest)"
+                  label="Fitur Terpilih (SelectPercentile)"
                   value={(summary.fitur_selected ?? 0).toLocaleString()}
                   sub={`${pctSelected}% dari total fitur`}
                   accent="#4CAF50"
@@ -184,7 +184,7 @@ export default function EkstraksiStatistik({ onLogout }) {
                     { label: "min_df",            value: "2 dokumen" },
                     { label: "max_df",            value: "0.95 (95%)" },
                     { label: "Metode Seleksi",    value: "Chi-squared (χ²)" },
-                    { label: "k (SelectKBest)",   value: (summary.fitur_selected ?? 0).toLocaleString() },
+                    { label: "Seleksi (SelectPercentile)", value: "80% (" + (summary.fitur_selected ?? 0).toLocaleString() + " fitur)" },
                     { label: "Analizer",          value: "word" },
                   ].map((row) => (
                     <div key={row.label} className="p-4 rounded-xl bg-gray-50 border">
