@@ -1,1 +1,18 @@
-[]
+[
+    {
+        "nama": "Pak Budi",
+        "no_wa": "6281234567890",
+        "deskripsi": "Jalan di Gang Mawar penuh lubang, motor saya sampai masuk lubang kemarin",
+        "processed": "jalan gang mawar penuh lubang motor sampai masuk lubang kemarin",
+        "label_asli": "-",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "confidence": 0.662,
+        "proba_all": {
+            "INFRASTRUKTUR": 0.662,
+            "KEAMANAN": 0.1579,
+            "LINGKUNGAN": 0.1721,
+            "PELAYANAN": 0.008
+        },
+        "timestamp": "2026-07-14T23:33:43.814Z"
+    }
+]

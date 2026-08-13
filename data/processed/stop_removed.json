@@ -19926,5 +19926,137 @@
             "hujan",
             "lebat"
         ]
+    },
+    {
+        "kode_pengaduan": "PGD-0001",
+        "deskripsi": "Lampu PJU di Gang Mawar mati total sudah 3 hari. Warga takut lewat malam hari karena gelap.",
+        "stop_removed": [
+            "lampu",
+            "penerangan",
+            "jalan",
+            "umum",
+            "gang",
+            "mawar",
+            "mati",
+            "total",
+            "hari",
+            "warga",
+            "takut",
+            "lewat",
+            "malam",
+            "hari",
+            "gelap"
+        ]
+    },
+    {
+        "kode_pengaduan": "PGD-0001",
+        "deskripsi": "Ada tumpukan sampah di pinggir jalan Karya Jaya yang sudah menimbulkan bau busuk.",
+        "stop_removed": [
+            "tumpukan",
+            "sampah",
+            "pinggir",
+            "jalan",
+            "karya",
+            "jaya",
+            "sudah",
+            "menimbulkan",
+            "bau",
+            "busuk"
+        ]
+    },
+    {
+        "kode_pengaduan": "PGD-0001",
+        "deskripsi": "Sekelompok remaja sering buat keributan dan mabuk-mabukan di depan rumah warga.",
+        "stop_removed": [
+            "sekelompok",
+            "remaja",
+            "sering",
+            "buat",
+            "keributan",
+            "mabuk",
+            "mabukan",
+            "depan",
+            "rumah",
+            "warga"
+        ]
+    },
+    {
+        "kode_pengaduan": "PGD-0001",
+        "deskripsi": "Pelayanan di kantor kelurahan sangat lambat, sudah menunggu 3 jam belum dilayani.",
+        "stop_removed": [
+            "pelayanan",
+            "kantor",
+            "kelurahan",
+            "sangat",
+            "lambat",
+            "menunggu",
+            "jam",
+            "dilayani"
+        ]
+    },
+    {
+        "kode_pengaduan": "PGD-0001",
+        "deskripsi": "Jalan di komplek Handil Bakti rusak parah, banyak lubang besar. Motor bisa masuk lubang.",
+        "stop_removed": [
+            "jalan",
+            "komplek",
+            "handil",
+            "bakti",
+            "rusak",
+            "parah",
+            "banyak",
+            "lubang",
+            "besar",
+            "motor",
+            "masuk",
+            "lubang"
+        ]
+    },
+    {
+        "kode_pengaduan": "PGD-0001",
+        "deskripsi": "Ada bau busuk dari saluran air di Gang Melati. Kayanya ada yang mampet.",
+        "stop_removed": [
+            "bau",
+            "busuk",
+            "saluran",
+            "air",
+            "gang",
+            "melati",
+            "kayanya",
+            "yang",
+            "mampet"
+        ]
+    },
+    {
+        "kode_pengaduan": "PGD-0001",
+        "deskripsi": "Maling motor sering beraksi di parkiran pasar. Kemarin motor tetangga hilang lagi.",
+        "stop_removed": [
+            "maling",
+            "motor",
+            "sering",
+            "beraksi",
+            "parkiran",
+            "pasar",
+            "kemarin",
+            "motor",
+            "tetangga",
+            "hilang"
+        ]
+    },
+    {
+        "kode_pengaduan": "PGD-0001",
+        "deskripsi": "Jalan di Gang Mawar penuh lubang, motor saya sampai masuk lubang kemarin",
+        "stop_removed": [
+            "jalan",
+            "gang",
+            "mawar",
+            "penuh",
+            "lubang",
+            "motor",
+            "sampai",
+            "masuk",
+            "lubang",
+            "kemarin"
+        ]
     }
 ]

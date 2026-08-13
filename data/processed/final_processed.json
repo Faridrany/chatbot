@@ -13198,5 +13198,133 @@
         "kategori_prediksi": "KEAMANAN",
         "confidence": 0.4902,
         "timestamp": "2025-10-10 19:10:58"
+    },
+    {
+        "nama": "John Doe",
+        "no_wa": "6281234567890",
+        "deskripsi": "Lampu PJU di Gang Mawar mati total sudah 3 hari. Warga takut lewat malam hari karena gelap.",
+        "processed": "lampu terang jalan umum gang mawar mati total hari warga takut lewat malam hari gelap",
+        "label_asli": "-",
+        "kategori_prediksi": "KEAMANAN",
+        "confidence": 0.6904,
+        "proba_all": {
+            "INFRASTRUKTUR": 0.218,
+            "KEAMANAN": 0.6904,
+            "LINGKUNGAN": 0.0558,
+            "PELAYANAN": 0.0358
+        },
+        "timestamp": "2026-07-15 07:09:32"
+    },
+    {
+        "nama": "Jane Smith",
+        "no_wa": "6285678901234",
+        "deskripsi": "Ada tumpukan sampah di pinggir jalan Karya Jaya yang sudah menimbulkan bau busuk.",
+        "processed": "tumpu sampah pinggir jalan karya jaya sudah timbul bau busuk",
+        "label_asli": "-",
+        "kategori_prediksi": "LINGKUNGAN",
+        "confidence": 0.8849,
+        "proba_all": {
+            "INFRASTRUKTUR": 0.0,
+            "KEAMANAN": 0.0,
+            "LINGKUNGAN": 0.8849,
+            "PELAYANAN": 0.1151
+        },
+        "timestamp": "2026-07-15 07:09:36"
+    },
+    {
+        "nama": "Bob Wilson",
+        "no_wa": "6289876543210",
+        "deskripsi": "Sekelompok remaja sering buat keributan dan mabuk-mabukan di depan rumah warga.",
+        "processed": "kelompok remaja sering buat ribut mabuk mabuk depan rumah warga",
+        "label_asli": "-",
+        "kategori_prediksi": "KEAMANAN",
+        "confidence": 0.982,
+        "proba_all": {
+            "INFRASTRUKTUR": 0.0,
+            "KEAMANAN": 0.982,
+            "LINGKUNGAN": 0.018,
+            "PELAYANAN": 0.0
+        },
+        "timestamp": "2026-07-15 07:09:39"
+    },
+    {
+        "nama": "Alice Brown",
+        "no_wa": "6287654321098",
+        "deskripsi": "Pelayanan di kantor kelurahan sangat lambat, sudah menunggu 3 jam belum dilayani.",
+        "processed": "layan kantor lurah sangat lambat tunggu jam layan",
+        "label_asli": "-",
+        "kategori_prediksi": "PELAYANAN",
+        "confidence": 0.9581,
+        "proba_all": {
+            "INFRASTRUKTUR": 0.0,
+            "KEAMANAN": 0.0,
+            "LINGKUNGAN": 0.0419,
+            "PELAYANAN": 0.9581
+        },
+        "timestamp": "2026-07-15 07:09:43"
+    },
+    {
+        "nama": "Pak Rahman",
+        "no_wa": "6281234567890",
+        "deskripsi": "Jalan di komplek Handil Bakti rusak parah, banyak lubang besar. Motor bisa masuk lubang.",
+        "processed": "jalan komplek handil bakti rusak parah banyak lubang besar motor masuk lubang",
+        "label_asli": "-",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "confidence": 0.9506,
+        "proba_all": {
+            "INFRASTRUKTUR": 0.9506,
+            "KEAMANAN": 0.0282,
+            "LINGKUNGAN": 0.0211,
+            "PELAYANAN": 0.0
+        },
+        "timestamp": "2026-07-14T23:14:44.812Z"
+    },
+    {
+        "nama": "Bu Sari",
+        "no_wa": "6285678901234",
+        "deskripsi": "Ada bau busuk dari saluran air di Gang Melati. Kayanya ada yang mampet.",
+        "processed": "bau busuk salur air gang melati kaya yang mampet",
+        "label_asli": "-",
+        "kategori_prediksi": "LINGKUNGAN",
+        "confidence": 0.7449,
+        "proba_all": {
+            "INFRASTRUKTUR": 0.1653,
+            "KEAMANAN": 0.0188,
+            "LINGKUNGAN": 0.7449,
+            "PELAYANAN": 0.0709
+        },
+        "timestamp": "2026-07-14T23:14:49.121Z"
+    },
+    {
+        "nama": "Bapak Andi",
+        "no_wa": "6289876543210",
+        "deskripsi": "Maling motor sering beraksi di parkiran pasar. Kemarin motor tetangga hilang lagi.",
+        "processed": "maling motor sering aksi parkir pasar kemarin motor tetangga hilang",
+        "label_asli": "-",
+        "kategori_prediksi": "KEAMANAN",
+        "confidence": 0.5577,
+        "proba_all": {
+            "INFRASTRUKTUR": 0.2646,
+            "KEAMANAN": 0.5577,
+            "LINGKUNGAN": 0.0892,
+            "PELAYANAN": 0.0885
+        },
+        "timestamp": "2026-07-14T23:14:53.125Z"
+    },
+    {
+        "nama": "Pak Budi",
+        "no_wa": "6281234567890",
+        "deskripsi": "Jalan di Gang Mawar penuh lubang, motor saya sampai masuk lubang kemarin",
+        "processed": "jalan gang mawar penuh lubang motor sampai masuk lubang kemarin",
+        "label_asli": "-",
+        "kategori_prediksi": "INFRASTRUKTUR",
+        "confidence": 0.662,
+        "proba_all": {
+            "INFRASTRUKTUR": 0.662,
+            "KEAMANAN": 0.1579,
+            "LINGKUNGAN": 0.1721,
+            "PELAYANAN": 0.008
+        },
+        "timestamp": "2026-07-14T23:33:43.814Z"
     }
 ]

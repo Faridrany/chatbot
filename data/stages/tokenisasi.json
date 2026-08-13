@@ -1,39 +1,32 @@
 {
     "PGD-0001": {
         "unigram": {
-            "lampu": 1,
-            "pju": 1,
+            "jalan": 1,
             "di": 1,
-            "sekitar": 1,
-            "jembatan": 1,
-            "merah": 1,
-            "margomulyo": 1,
-            "mati": 1,
-            "total": 1,
-            "sangat": 1,
-            "rawan": 1,
-            "jambret": 1,
-            "setelah": 1,
-            "pukul": 1,
-            "malam": 1
+            "gang": 1,
+            "mawar": 1,
+            "penuh": 1,
+            "lubang": 2,
+            "motor": 1,
+            "saya": 1,
+            "sampai": 1,
+            "masuk": 1,
+            "kemarin": 1
         },
         "bigram": {
-            "lampu pju": 1,
-            "pju di": 1,
-            "di sekitar": 1,
-            "sekitar jembatan": 1,
-            "jembatan merah": 1,
-            "merah margomulyo": 1,
-            "margomulyo mati": 1,
-            "mati total": 1,
-            "total sangat": 1,
-            "sangat rawan": 1,
-            "rawan jambret": 1,
-            "jambret setelah": 1,
-            "setelah pukul": 1,
-            "pukul malam": 1
+            "jalan di": 1,
+            "di gang": 1,
+            "gang mawar": 1,
+            "mawar penuh": 1,
+            "penuh lubang": 1,
+            "lubang motor": 1,
+            "motor saya": 1,
+            "saya sampai": 1,
+            "sampai masuk": 1,
+            "masuk lubang": 1,
+            "lubang kemarin": 1
         },
-        "total_tokens": 15
+        "total_tokens": 12
     },
     "PGD-0002": {
         "unigram": {

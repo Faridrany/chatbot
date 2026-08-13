@@ -171,13 +171,27 @@ export default function DataPengaduan({ onLogout }) {
   const [confirmDelete, setConfirmDelete] = useState(null);
   const [deleting, setDeleting]           = useState(false);
 
-  // ── Fetch data pengaduan baru ──
+  // ── Fetch data pengaduan baru yang sudah diklasifikasi dari WhatsApp ──
   const fetchNew = useCallback((page, search, kategori) => {
     setNewLoading(true);
     const p = new URLSearchParams({ page, limit: LIMIT, ...(search && { search }), ...(kategori !== "semua" && { kategori }) });
-    fetch(`/api/pengaduan-baru?${p}`)
+    // Fetch all classified complaints then filter for WhatsApp bot data (yang sudah ada no_wa)
+    fetch(`/api/pengaduan?${p}`)
       .then((r) => r.json())
-      .then((res) => { setNewItems(res.items ?? []); setNewTotal(res.total ?? 0); setNewTotalPages(res.totalPages ?? 1); setNewLoading(false); })
+      .then((res) => { 
+        // Filter hanya data yang sudah diklasifikasi dari WhatsApp bot 
+        // (ada no_wa dan sudah ada kategori_prediksi)
+        const whatsappComplaints = (res.items || []).filter(item => 
+          item.no_wa && 
+          item.kategori_prediksi && 
+          item.kategori_prediksi !== '-' &&
+          (item.no_wa.includes('@c.us') || item.no_wa.length > 10)
+        );
+        setNewItems(whatsappComplaints); 
+        setNewTotal(whatsappComplaints.length); 
+        setNewTotalPages(Math.ceil(whatsappComplaints.length / LIMIT) || 1); 
+        setNewLoading(false); 
+      })
       .catch(() => setNewLoading(false));
   }, []);
 
@@ -228,10 +242,10 @@ export default function DataPengaduan({ onLogout }) {
             </div>
           )}
 
-          {/* Card atas: Pengaduan Baru */}
+          {/* Card atas: Pengaduan Baru yang Sudah Diklasifikasi */}
           <PengaduanTableCard
-            title="Data Pengaduan Baru"
-            subtitle={`Data real-time dari WhatsApp — ${newTotal} pengaduan`}
+            title="Data Pengaduan Baru (Terklasifikasi)"
+            subtitle={`Pengaduan dari WhatsApp bot yang sudah diklasifikasi — ${newTotal} pengaduan`}
             icon={MessageCircle}
             borderColor="#2E7D32"
             items={newItems}
@@ -246,15 +260,15 @@ export default function DataPengaduan({ onLogout }) {
             filterStatus={newStatus}
             handleStatus={(v) => setNewStatus(v)}
             showStatus={true}
-            onNavigate={(id) => navigate(`/detail-pengaduan-baru/${id}`)}
+            onNavigate={(id) => navigate(`/detail-pengaduan/${id}`)}
             onDelete={null}
             startIndex={(newPage - 1) * LIMIT}
             setCurrentPage={setNewPage}
           />
 
-          {/* Card bawah: Data Latih */}
+          {/* Card bawah: Data Klasifikasi (Dataset Berlabel) */}
           <PengaduanTableCard
-            title="Data Pengaduan Klasifikasi"
+            title="Data Klasifikasi (Dataset Berlabel)"
             subtitle={`1.200 data latih yang digunakan untuk training model — ${trainTotal} total`}
             icon={Database}
             borderColor="#1976D2"
@@ -270,7 +284,7 @@ export default function DataPengaduan({ onLogout }) {
             filterStatus="semua"
             handleStatus={() => {}}
             showStatus={false}
-            onNavigate={(id) => navigate(`/detail-pengaduan/${id}`)}
+            onNavigate={(id) => navigate(`/detail-dataset/${id}`)}
             onDelete={null}
             startIndex={(trainPage - 1) * LIMIT}
             setCurrentPage={setTrainPage}

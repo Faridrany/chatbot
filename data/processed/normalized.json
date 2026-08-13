@@ -23065,5 +23065,156 @@
             "hujan",
             "lebat"
         ]
+    },
+    {
+        "kode_pengaduan": "PGD-0001",
+        "deskripsi": "Lampu PJU di Gang Mawar mati total sudah 3 hari. Warga takut lewat malam hari karena gelap.",
+        "normalized": [
+            "lampu",
+            "penerangan jalan umum",
+            "di",
+            "gang",
+            "mawar",
+            "mati",
+            "total",
+            "sudah",
+            "hari",
+            "warga",
+            "takut",
+            "lewat",
+            "malam",
+            "hari",
+            "karena",
+            "gelap"
+        ]
+    },
+    {
+        "kode_pengaduan": "PGD-0001",
+        "deskripsi": "Ada tumpukan sampah di pinggir jalan Karya Jaya yang sudah menimbulkan bau busuk.",
+        "normalized": [
+            "ada",
+            "tumpukan",
+            "sampah",
+            "di",
+            "pinggir",
+            "jalan",
+            "karya",
+            "jaya",
+            "yang",
+            "sudah",
+            "menimbulkan",
+            "bau",
+            "busuk"
+        ]
+    },
+    {
+        "kode_pengaduan": "PGD-0001",
+        "deskripsi": "Sekelompok remaja sering buat keributan dan mabuk-mabukan di depan rumah warga.",
+        "normalized": [
+            "sekelompok",
+            "remaja",
+            "sering",
+            "buat",
+            "keributan",
+            "dan",
+            "mabuk",
+            "mabukan",
+            "di",
+            "depan",
+            "rumah",
+            "warga"
+        ]
+    },
+    {
+        "kode_pengaduan": "PGD-0001",
+        "deskripsi": "Pelayanan di kantor kelurahan sangat lambat, sudah menunggu 3 jam belum dilayani.",
+        "normalized": [
+            "pelayanan",
+            "di",
+            "kantor",
+            "kelurahan",
+            "sangat",
+            "lambat",
+            "sudah",
+            "menunggu",
+            "jam",
+            "belum",
+            "dilayani"
+        ]
+    },
+    {
+        "kode_pengaduan": "PGD-0001",
+        "deskripsi": "Jalan di komplek Handil Bakti rusak parah, banyak lubang besar. Motor bisa masuk lubang.",
+        "normalized": [
+            "jalan",
+            "di",
+            "komplek",
+            "handil",
+            "bakti",
+            "rusak",
+            "parah",
+            "banyak",
+            "lubang",
+            "besar",
+            "motor",
+            "bisa",
+            "masuk",
+            "lubang"
+        ]
+    },
+    {
+        "kode_pengaduan": "PGD-0001",
+        "deskripsi": "Ada bau busuk dari saluran air di Gang Melati. Kayanya ada yang mampet.",
+        "normalized": [
+            "ada",
+            "bau",
+            "busuk",
+            "dari",
+            "saluran",
+            "air",
+            "di",
+            "gang",
+            "melati",
+            "kayanya",
+            "ada",
+            "yang",
+            "mampet"
+        ]
+    },
+    {
+        "kode_pengaduan": "PGD-0001",
+        "deskripsi": "Maling motor sering beraksi di parkiran pasar. Kemarin motor tetangga hilang lagi.",
+        "normalized": [
+            "maling",
+            "motor",
+            "sering",
+            "beraksi",
+            "di",
+            "parkiran",
+            "pasar",
+            "kemarin",
+            "motor",
+            "tetangga",
+            "hilang",
+            "lagi"
+        ]
+    },
+    {
+        "kode_pengaduan": "PGD-0001",
+        "deskripsi": "Jalan di Gang Mawar penuh lubang, motor saya sampai masuk lubang kemarin",
+        "normalized": [
+            "jalan",
+            "di",
+            "gang",
+            "mawar",
+            "penuh",
+            "lubang",
+            "motor",
+            "saya",
+            "sampai",
+            "masuk",
+            "lubang",
+            "kemarin"
+        ]
     }
 ]

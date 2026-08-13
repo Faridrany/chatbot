@@ -8,9 +8,12 @@
     "frontend"
   ],
   "scripts": {
-    "dev": "concurrently --names \"BACKEND,CHATBOT,FRONTEND\" --prefix-colors \"green,yellow,cyan\" \"npm start --workspace=backend\" \"npm start --workspace=chatbot-whatsapp\" \"npm run dev --workspace=klasifikasi-pengaduan-frontend\""
+    "dev": "concurrently --names \"BACKEND,CHATBOT,FRONTEND\" --prefix-colors \"green,yellow,cyan\" \"npm start --workspace=backend\" \"npm start --workspace=chatbotdol\" \"npm run dev --workspace=frontend\""
   },
   "devDependencies": {
     "concurrently": "^9.2.1"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0"
   }
 }

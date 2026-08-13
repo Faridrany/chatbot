@@ -45,7 +45,6 @@ export default function Sidebar({ onLogout }) {
     { icon: LayoutDashboard, label: "Dashboard",      path: "/dashboard" },
     { icon: FileText,        label: "Data Pengaduan", path: "/data-pengaduan" },
     { icon: FlaskConical,    label: "Preprocessing",  path: "/preprocessing" },
-    { icon: BarChart3,       label: "Statistik",      path: "/statistik" },
   ];
 
   const menuItemsAfter = [

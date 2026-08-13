@@ -3,11 +3,11 @@ import { useState } from "react";
 import Login from "./components/Login";
 import QRCode from "./components/QRCode";
 import Dashboard from "./components/Dashboard";
+import KlasifikasiPengaduan from "./components/KlasifikasiPengaduan";
 import DataPengaduan from "./components/DataPengaduan";
 import DetailPengaduan from "./components/DetailPengaduan";
 import DetailPengaduanBaru from "./components/DetailPengaduanBaru";
 import Preprocessing from "./components/Preprocessing";
-import Statistik from "./components/Statistik";
 import Klasifikasi from "./components/Klasifikasi";
 import TfidfDetail from "./components/TfidfDetail";
 import RandomForestDetail from "./components/RandomForestDetail";
@@ -43,11 +43,11 @@ function App() {
         <Route path="/login" element={!isAuthenticated ? <Login onLogin={handleLogin} /> : <Navigate to="/qr-code" replace />} />
         <Route path="/qr-code" element={auth(<QRCode onConnect={() => {}} />)} />
         <Route path="/dashboard" element={auth(<Dashboard onLogout={handleLogout} />)} />
+        <Route path="/klasifikasi-manual" element={auth(<KlasifikasiPengaduan onLogout={handleLogout} />)} />
         <Route path="/data-pengaduan" element={auth(<DataPengaduan onLogout={handleLogout} />)} />
         <Route path="/detail-pengaduan/:id" element={auth(<DetailPengaduan onLogout={handleLogout} />)} />
         <Route path="/detail-pengaduan-baru/:idx" element={auth(<DetailPengaduanBaru onLogout={handleLogout} />)} />
         <Route path="/preprocessing" element={auth(<Preprocessing onLogout={handleLogout} />)} />
-        <Route path="/statistik" element={auth(<Statistik onLogout={handleLogout} />)} />
         <Route path="/klasifikasi" element={auth(<Klasifikasi onLogout={handleLogout} />)} />
         <Route path="/tfidf" element={auth(<TfidfDetail onLogout={handleLogout} />)} />
 

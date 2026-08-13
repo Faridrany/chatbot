@@ -39,7 +39,7 @@ export default function EkstraksiTermTokenisasi({ onLogout }) {
       ...(search && { search }),
       ...(ngram !== "semua" && { ngram }),
     });
-    fetch(`/api/tfidf?${params}`)
+    fetch(`/api/tokenisasi?${params}`)
       .then((r) => r.json())
       .then((res) => {
         setItems(res.items ?? []);
@@ -75,11 +75,11 @@ export default function EkstraksiTermTokenisasi({ onLogout }) {
             <div>
               <h1 className="text-2xl font-bold text-gray-800">Term &amp; Tokenisasi</h1>
               <p className="text-sm text-gray-500 mt-1">
-                Daftar seluruh term hasil tokenisasi TF-IDF beserta tipe n-gram dan bobot TF-IDF rata-rata.
+                Daftar seluruh term hasil tokenisasi sebelum filtering dan seleksi fitur (1217 term).
               </p>
               <div className="flex items-center gap-2 mt-2 text-xs text-green-700 bg-green-50 border border-green-200 px-3 py-1.5 rounded-lg w-fit">
                 <Info className="w-3.5 h-3.5" />
-                Sumber data: <span className="font-semibold ml-1">/api/tfidf</span>
+                Sumber data: <span className="font-semibold ml-1">/api/tokenisasi</span>
                 &nbsp;→ field <code>items[]</code>
               </div>
             </div>
@@ -116,13 +116,11 @@ export default function EkstraksiTermTokenisasi({ onLogout }) {
               </h2>
               <p className="text-xs text-gray-500 mb-4">
                 Data term di bawah berasal dari hasil tokenisasi teks setelah preprocessing (sebelum filtering dan seleksi fitur).
-                Ini adalah semua kata unik yang muncul di seluruh corpus sebelum disaring oleh min_df/max_df.
+                Ini adalah semua kata unik yang muncul di seluruh corpus dengan total 1217 term.
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 gap-4">
                 {[
-                  { label: "Total Term Unik (Vocab)", value: (total).toLocaleString(), sub: "Sebelum filtering", color: "#2E7D32" },
-                  { label: "Term Lolos Filter", value: (items.filter ? total : 0).toLocaleString(), sub: "Setelah min/max DF", color: "#1976D2" },
-                  { label: "Unigram", value: items.filter((t) => t.ngram === "unigram").length.toLocaleString() + (total > items.length ? "+" : ""), sub: "Kata tunggal", color: "#388E3C" },
+                  { label: "Total Term Unik", value: "1,217", sub: "Sebelum filtering", color: "#2E7D32" },
                 ].map((s) => (
                   <div key={s.label} className="bg-gray-50 rounded-xl border-l-4 p-3" style={{ borderColor: s.color }}>
                     <p className="text-xs text-gray-500 mb-0.5">{s.label}</p>
@@ -177,7 +175,6 @@ export default function EkstraksiTermTokenisasi({ onLogout }) {
                         <th className="p-3 text-left font-semibold">Term</th>
                         <th className="p-3 text-center font-semibold w-28">Tipe</th>
                         <th className="p-3 text-left font-semibold">Bobot TF-IDF Rata-rata</th>
-                        <th className="p-3 text-center font-semibold w-32">Status Seleksi</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -192,17 +189,6 @@ export default function EkstraksiTermTokenisasi({ onLogout }) {
                           </td>
                           <td className="p-3 min-w-48">
                             <MiniBar value={term.tfidf_mean} max={maxTfidf} color="#4CAF50" />
-                          </td>
-                          <td className="p-3 text-center">
-                            {term.selected ? (
-                              <span className="inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full bg-green-50 text-green-700 border border-green-200 font-semibold">
-                                <CheckCircle2 className="w-3 h-3" /> Terpilih
-                              </span>
-                            ) : (
-                              <span className="inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full bg-red-50 text-red-500 border border-red-200 font-medium">
-                                <XCircle className="w-3 h-3" /> Eliminasi
-                              </span>
-                            )}
                           </td>
                         </tr>
                       ))}

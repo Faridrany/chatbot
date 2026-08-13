@@ -5998,5 +5998,45 @@
         "kode_pengaduan": "PGD-1200",
         "deskripsi": "Pohon besar di dekat sekolah Margomulyo sudah tua dan batangnya berlubang. Takut tumbang saat hujan lebat.",
         "cleaned": "Pohon besar di dekat sekolah Margomulyo sudah tua dan batangnya berlubang Takut tumbang saat hujan lebat"
+    },
+    {
+        "kode_pengaduan": "PGD-0001",
+        "deskripsi": "Lampu PJU di Gang Mawar mati total sudah 3 hari. Warga takut lewat malam hari karena gelap.",
+        "cleaned": "Lampu PJU di Gang Mawar mati total sudah hari Warga takut lewat malam hari karena gelap"
+    },
+    {
+        "kode_pengaduan": "PGD-0001",
+        "deskripsi": "Ada tumpukan sampah di pinggir jalan Karya Jaya yang sudah menimbulkan bau busuk.",
+        "cleaned": "Ada tumpukan sampah di pinggir jalan Karya Jaya yang sudah menimbulkan bau busuk"
+    },
+    {
+        "kode_pengaduan": "PGD-0001",
+        "deskripsi": "Sekelompok remaja sering buat keributan dan mabuk-mabukan di depan rumah warga.",
+        "cleaned": "Sekelompok remaja sering buat keributan dan mabuk mabukan di depan rumah warga"
+    },
+    {
+        "kode_pengaduan": "PGD-0001",
+        "deskripsi": "Pelayanan di kantor kelurahan sangat lambat, sudah menunggu 3 jam belum dilayani.",
+        "cleaned": "Pelayanan di kantor kelurahan sangat lambat sudah menunggu jam belum dilayani"
+    },
+    {
+        "kode_pengaduan": "PGD-0001",
+        "deskripsi": "Jalan di komplek Handil Bakti rusak parah, banyak lubang besar. Motor bisa masuk lubang.",
+        "cleaned": "Jalan di komplek Handil Bakti rusak parah banyak lubang besar Motor bisa masuk lubang"
+    },
+    {
+        "kode_pengaduan": "PGD-0001",
+        "deskripsi": "Ada bau busuk dari saluran air di Gang Melati. Kayanya ada yang mampet.",
+        "cleaned": "Ada bau busuk dari saluran air di Gang Melati Kayanya ada yang mampet"
+    },
+    {
+        "kode_pengaduan": "PGD-0001",
+        "deskripsi": "Maling motor sering beraksi di parkiran pasar. Kemarin motor tetangga hilang lagi.",
+        "cleaned": "Maling motor sering beraksi di parkiran pasar Kemarin motor tetangga hilang lagi"
+    },
+    {
+        "kode_pengaduan": "PGD-0001",
+        "deskripsi": "Jalan di Gang Mawar penuh lubang, motor saya sampai masuk lubang kemarin",
+        "cleaned": "Jalan di Gang Mawar penuh lubang motor saya sampai masuk lubang kemarin"
     }
 ]

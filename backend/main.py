@@ -1761,6 +1761,7 @@ if __name__ == "__main__":
 
     force_train   = "--train"  in sys.argv
     export_only   = "--export" in sys.argv
+    classify_only = "--classify" in sys.argv
 
     if export_only:
         print("[*] Mode export Excel...")
@@ -1771,6 +1772,13 @@ if __name__ == "__main__":
         else:
             print("[!] final_processed.json belum ada. Jalankan training terlebih dahulu.")
             sys.exit(1)
+    elif classify_only:
+        print("[*] Mode klasifikasi real-time...")
+        if not os.path.exists(MODEL_PATH):
+            print(f"[ERROR] Model belum tersedia: {MODEL_PATH}")
+            print("[INFO] Jalankan: python main.py --train")
+            sys.exit(1)
+        predict_new_data()
     elif not os.path.exists(MODEL_PATH) or force_train:
         print("[*] Force retrain..." if force_train else "[*] Model belum ada. Melatih...")
         train_model()

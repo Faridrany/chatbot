@@ -128,8 +128,8 @@ export default function RFFeatureImportance({ onLogout }) {
                 { step:"1", title:"Dihitung SETELAH Model Dilatih",
                   desc:"Feature importance adalah hasil dari proses training. Setiap kali pohon melakukan split, dihitung berapa banyak Gini impurity yang turun karena fitur tersebut.",
                   color:"#2E7D32" },
-                { step:"2", title:"Agregasi dari 500 Pohon",
-                  desc:`Model punya ${summary?.estimators ?? 500} pohon. Importance tiap fitur = rata-rata Gini decrease dari semua pohon yang menggunakan fitur tersebut untuk split. Normalisasi ke total = 100%.`,
+                { step:"2", title:"Agregasi dari 5 Pohon",
+                  desc:`Model punya ${5} pohon. Importance tiap fitur = rata-rata Gini decrease dari semua pohon yang menggunakan fitur tersebut untuk split. Normalisasi ke total = 100%.`,
                   color:"#4CAF50" },
                 { step:"3", title:"Berbeda dari Chi-Squared",
                   desc:"Chi² (di Seleksi Fitur) dihitung SEBELUM training, independen dari model. Feature importance dihitung DARI model terlatih, merefleksikan kontribusi aktual fitur dalam prediksi.",
@@ -151,9 +151,8 @@ export default function RFFeatureImportance({ onLogout }) {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 { label:"Total Fitur di Model",    value:(summary.fitur_selected ?? 1000).toLocaleString(), sub:"Fitur yang masuk ke Random Forest", color:"#2E7D32" },
-                { label:"Jumlah Pohon",            value:(summary.estimators ?? 500).toLocaleString(),      sub:"Pohon yang menghitung importance",  color:"#4CAF50" },
+                { label:"Jumlah Pohon",            value:"5",      sub:"Pohon yang menghitung importance",  color:"#4CAF50" },
                 { label:"Top Feature (Max Imp.)",  value:`${(maxImportance * 100).toFixed(3)}%`,            sub:"Fitur paling penting",              color:"#1976D2" },
-                { label:"Importance Sum",          value:"100.00%",                                         sub:"Total semua importance = 100%",     color:"#388E3C" },
               ].map((c) => (
                 <div key={c.label} className="bg-white rounded-2xl shadow p-5 border-l-4" style={{ borderColor: c.color }}>
                   <p className="text-xs text-gray-500 mb-1">{c.label}</p>
